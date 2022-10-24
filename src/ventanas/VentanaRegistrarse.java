@@ -1,5 +1,7 @@
 package ventanas;
 
-public class VentanaRegistrarse {
+import javax.swing.JFrame;
+
+public class VentanaRegistrarse extends JFrame {
 
 }
