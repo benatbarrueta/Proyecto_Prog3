@@ -12,8 +12,8 @@ public class VentanaLogIn extends JFrame {
 	protected JTextField textoContrasena;
 	protected JLabel usuario;
 	protected JLabel contrasena;
-	protected JButton continuar;
-	protected JButton registrarse;
+	protected JButton botoncontinuar;
+	protected JButton botonregistrarse;
 	public VentanaLogIn () {
 		
 		Container cp = this.getContentPane();
@@ -24,17 +24,26 @@ public class VentanaLogIn extends JFrame {
 		contrasena= new JLabel("Contraseña");
 		textoContrasena = new JTextField();
 		textoUsuario = new JTextField();
-		continuar = new  JButton("Continuar");
-		registrarse = new JButton("Registrarse");
+		botoncontinuar = new  JButton("Continuar");
+		botonregistrarse = new JButton("Registrarse");
 		
+		
+		botoncontinuar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 		
 		
 		center.add(usuario);
 		center.add(textoUsuario);
 		center.add(contrasena);
 		center.add(textoContrasena);
-		center.add(continuar);
-		center.add(registrarse);
+		center.add(botoncontinuar);
+		center.add(botonregistrarse);
 		
 		cp.add(center, BorderLayout.CENTER);
 	
