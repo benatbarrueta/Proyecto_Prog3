@@ -36,7 +36,14 @@ public class VentanaLogIn extends JFrame {
 				
 			}
 		});
-		
+		botonregistrarse.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 		
 		center.add(usuario);
 		center.add(textoUsuario);
