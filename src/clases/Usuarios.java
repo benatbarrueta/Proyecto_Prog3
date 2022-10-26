@@ -1,3 +1,4 @@
+package clases;
 
 public class Usuarios {
 	protected String nombre;
