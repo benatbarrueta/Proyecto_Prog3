@@ -5,14 +5,18 @@ public class Usuarios {
 	protected int edad;
 	protected String direccion;
 	protected boolean alumno;
+	protected String nombreUsuario;
+	protected String contraseña;
 	
-	public Usuarios(String nombre, String apellidos, int edad, String direccion, boolean alumno) {
+	public Usuarios(String nombre, String apellidos, int edad, String direccion, boolean alumno, String nombreUsuario) {
 		super();
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.edad = edad;
 		this.direccion = direccion;
 		this.alumno = alumno;
+		this.nombreUsuario = nombreUsuario;
+		this.contraseña = contraseña;
 	}
 	
 	public Usuarios() {
@@ -22,6 +26,8 @@ public class Usuarios {
 		this.edad = 0;
 		this.direccion = "";
 		this.alumno = true;
+		this.nombreUsuario = "";
+		this.contraseña = "";
 	}
 
 	public String getNombre() {
@@ -63,11 +69,28 @@ public class Usuarios {
 	public void setAlumno(boolean alumno) {
 		this.alumno = alumno;
 	}
+	
+	public String getNombreUsuario() {
+		return nombreUsuario;
+	}
+
+	public void setnombreUsuario(String nombreUsuario) {
+		this.nombreUsuario = nombreUsuario;
+	}
+	
+	public String getContraseña() {
+		return contraseña;
+	}
+
+	public void setContraseña(String contraseña) {
+		this.contraseña = contraseña;
+	}
 
 	@Override
 	public String toString() {
-		return "Usuarios: " + nombre + apellidos + ", " + edad + "años.";
+		return "Usuario: " + nombre + apellidos + ", " + edad + "años.";
 	}
+	
 	
 	
 }
