@@ -89,7 +89,7 @@ public class Usuarios {
 
 	@Override
 	public String toString() {
-		return "Usuario: " + nombre + apellidos + ", " + edad + "años.";
+		return "Usuario " + nombre + apellidos + ", " + edad + "años.";
 	}
 	
 	
