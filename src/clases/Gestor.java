@@ -5,4 +5,17 @@ public class Gestor {
 	protected ArrayList<Usuarios> usuarios;
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	public void leerUsuarios(String fichero){
+		
+		
+		
+		
+	}
 }
