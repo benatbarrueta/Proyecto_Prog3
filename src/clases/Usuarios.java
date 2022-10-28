@@ -5,17 +5,15 @@ public class Usuarios {
 	protected String apellidos;
 	protected int edad;
 	protected String direccion;
-	protected boolean alumno;
 	protected String nombreUsuario;
 	protected String contraseña;
 	
-	public Usuarios(String nombre, String apellidos, int edad, String direccion, boolean alumno, String nombreUsuario) {
+	public Usuarios(String nombre, String apellidos, int edad, String direccion, String nombreUsuario, String contraseña) {
 		super();
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.edad = edad;
 		this.direccion = direccion;
-		this.alumno = alumno;
 		this.nombreUsuario = nombreUsuario;
 		this.contraseña = contraseña;
 	}
@@ -26,7 +24,6 @@ public class Usuarios {
 		this.apellidos = "";
 		this.edad = 0;
 		this.direccion = "";
-		this.alumno = true;
 		this.nombreUsuario = "";
 		this.contraseña = "";
 	}
@@ -61,14 +58,6 @@ public class Usuarios {
 
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
-	}
-
-	public boolean isAlumno() {
-		return alumno;
-	}
-
-	public void setAlumno(boolean alumno) {
-		this.alumno = alumno;
 	}
 	
 	public String getNombreUsuario() {
