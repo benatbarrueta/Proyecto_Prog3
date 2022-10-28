@@ -1,5 +1,5 @@
 package clases;
 
-public class Alumno {
-
+public class Alumno extends Usuarios {
+	
 }
