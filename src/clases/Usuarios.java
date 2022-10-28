@@ -8,7 +8,7 @@ public class Usuarios {
 	protected String nombreUsuario;
 	protected String contraseña;
 	
-	public Usuarios(String nombre, String apellidos, int edad, String direccion, boolean alumno, String nombreUsuario) {
+	public Usuarios(String nombre, String apellidos, int edad, String direccion, String nombreUsuario, String contraseña) {
 		super();
 		this.nombre = nombre;
 		this.apellidos = apellidos;
