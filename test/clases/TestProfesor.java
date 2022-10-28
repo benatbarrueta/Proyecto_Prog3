@@ -6,7 +6,7 @@ import org.junit.Test;
 public class TestProfesor {
 
 	@Test
-	public void test() {
+	public void test() throws Exception {
 		fail("Not yet implemented");
 	}
 
