@@ -37,7 +37,7 @@ public class Gestor {
 	public void setProfesor(ArrayList<Profesor> profesor) {
 		this.profesor = profesor;
 	}
-	public ArrayList<Asignatura> getAsignatura() {
+	public ArrayList<Asignatura> getAsignatura() { 
 		return asignatura;
 	}
 	public void setAsignatura(ArrayList<Asignatura> asignatura) {
