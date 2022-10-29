@@ -114,7 +114,7 @@ public class Gestor {
 		}
 
 	}
-	public void guardarDatosCSV(String filename) {
+	public void guardarTareaCSV(String filename) {
 	 System.out.println(filename);
 	try  {	 	  	   
 	
@@ -140,7 +140,7 @@ public class Gestor {
 		 Gestor gestor= new Gestor();
 		Properties properties = loadProperties(); 
 		gestor.leerTareasCSV(properties.getProperty(INPUT_KEY_TAREA ));
-		gestor.guardarDatosCSV(properties.getProperty(OUTPUT_KEY_TAREA ));
+		gestor.guardarTareaCSV(properties.getProperty(OUTPUT_KEY_TAREA ));
 	}
 	
 }
