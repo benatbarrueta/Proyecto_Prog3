@@ -1,6 +1,10 @@
 package clases;
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileReader;
+import java.io.ObjectInputStream;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 import java.util.Properties;
@@ -110,13 +114,33 @@ public class Gestor {
 		}
 
 	}
-	public void guardarDatosCSV() {}
+	public void guardarDatosCSV(String filename) {
+	 System.out.println(filename);
+	try  {	 	  	   
 	
+	     PrintWriter pw = new PrintWriter(filename);
+	     pw.println("Compania" + ";" + "Fecha" +";" + "Estatus" +";"+ "calificacion");
+	     
+	     for (Tarea tarea : tareas) {
+	    	 pw.println(
+	    			 tarea.getNombre() + ";" + tarea.getFecha_inicio() + ";" + tarea.getFecha_fin()+ ";" +tarea.getCalificacion() +";"
+	    			 );		
+		}
+	     
+	    pw.close();
+	     
+	} catch (Exception e) {
+		System.err.println(String.format("Error en el main: %s", e.getMessage()));
+		e.printStackTrace();
+	}
+	}
+
 	
 	public static void main(String[] args) {
 		 Gestor gestor= new Gestor();
 		Properties properties = loadProperties(); 
 		gestor.leerTareasCSV(properties.getProperty(INPUT_KEY_TAREA ));
+		gestor.guardarDatosCSV(properties.getProperty(OUTPUT_KEY_TAREA ));
 	}
 	
 }
