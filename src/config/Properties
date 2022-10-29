@@ -1,2 +1,2 @@
-leerTarea=ficheros/tarea.csv
+leerTarea=src/ficheros/tarea.csv
 guardarTarea=ficheros/tarea.csv

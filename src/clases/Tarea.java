@@ -6,13 +6,14 @@ public class Tarea {
 	protected Integer fecha_fin;
 	protected String calificacion;
 	protected String nombre;
-	public Tarea(Integer fecha_inicio, Integer fecha_fin, String calificacion, String nombre) {
+	public Tarea() {
 		super();
-		this.fecha_inicio = fecha_inicio;
-		this.fecha_fin = fecha_fin;
-		this.calificacion = calificacion;
-		this.nombre = nombre;
+		this.fecha_inicio =0;
+		this.fecha_fin = 0;
+		this.calificacion = "";
+		this.nombre = "";
 	}
+	
 	public Integer getFecha_inicio() {
 		return fecha_inicio;
 	}

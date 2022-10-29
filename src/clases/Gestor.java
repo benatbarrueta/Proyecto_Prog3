@@ -1,28 +1,36 @@
 package clases;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.StringTokenizer;
+import java.util.Properties;
+
 
 public class Gestor {
 	protected ArrayList<Alumno> alumnos;
 	protected ArrayList<Profesor> profesor;
 	protected ArrayList<Asignatura> asignatura;
-	protected ArrayList<Tarea> tarea;
-	
+	protected ArrayList<Tarea> tareas;
+	protected Properties properties;
+	private static final String PROPERTIES_FILE = "src/config/Properties";
+	private static final String INPUT_KEY_TAREA = "leerTarea";
+	private static final String OUTPUT_KEY_TAREA = "guardarTarea";
 	
 	
 	public Gestor(ArrayList<Alumno> alumnos, ArrayList<Profesor> profesor, ArrayList<Asignatura> asignatura,
-			ArrayList<Tarea> tarea) {
+			ArrayList<Tarea> tareas) {
 		super();
 		this.alumnos = alumnos;
 		this.profesor = profesor;
 		this.asignatura = asignatura;
-		this.tarea = tarea;
+		this.tareas = tareas;
 	}
 	public Gestor() {
 		super();
 		this.alumnos = new ArrayList<Alumno>();
 		this.profesor = new ArrayList<Profesor>();
 		this.asignatura = new ArrayList<Asignatura>();
-		this.tarea = new ArrayList<Tarea>();
+		this.tareas = new ArrayList<Tarea>();
 	}
 
 	public ArrayList<Alumno> getAlumnos() {
@@ -44,22 +52,71 @@ public class Gestor {
 		this.asignatura = asignatura;
 	}
 	public ArrayList<Tarea> getTarea() {
-		return tarea;
+		return tareas;
 	}
 	public void setTarea(ArrayList<Tarea> tarea) {
-		this.tarea = tarea;
+		this.tareas = tarea;
 	}
 	public void leerUsuarios(String fichero){
 			
 		
 	}
 	
-	public void leerTareasCSV() {
+	private  static Properties loadProperties() {
+		Properties properties = new Properties();
+
+		try {
+			// Se carga el fichero Properties
+			properties.load(new FileReader(PROPERTIES_FILE));
+			
+		} catch (Exception ex) {
+			System.err.println(String.format("Error leyendo propiedades: %s", ex.getMessage()));
+			ex.printStackTrace();
+		}
+
+		return properties;
+		}
+	
+	
+	public void leerTareasCSV(String filename) {
+
+	
+		try (BufferedReader in = new BufferedReader(new FileReader(filename))){
 		
+			String linea;
+			StringTokenizer tokenizer;
+			Tarea tarea;
+			tareas= new ArrayList<>();
+			
+			in.readLine(); // Saltar linea cabezera
+			while((linea = in.readLine())!= null) {
+				tokenizer= new StringTokenizer(linea,";");
+			
+				tarea= new Tarea();	
+				tarea.setNombre(tokenizer.nextToken());		
+				tarea.setFecha_inicio(Integer.parseInt((tokenizer.nextToken())));			
+				tarea.setFecha_fin(Integer.parseInt((tokenizer.nextToken())));				
+				tarea.setCalificacion(tokenizer.nextToken());
+			
+				tareas.add(tarea);
+			}
+			System.out.println(tareas);
+			
+			
+		}catch (Exception ex) {
+			// TODO: handle exception
+			System.err.println("Error en el main: " +ex);
+			ex.printStackTrace();
+		}
+
 	}
 	public void guardarDatosCSV() {}
 	
 	
-	
+	public static void main(String[] args) {
+		 Gestor gestor= new Gestor();
+		Properties properties = loadProperties(); 
+		gestor.leerTareasCSV(properties.getProperty(INPUT_KEY_TAREA ));
+	}
 	
 }
