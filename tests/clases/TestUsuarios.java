@@ -59,6 +59,7 @@ public class TestUsuarios {
 	@Test
 	public void testSetNombre() throws Exception {
 		iniciar();
+		assertEquals(nombre,usuario.getNombre());
 		String newNombre = "nombre2";
 		
 	
@@ -75,6 +76,7 @@ public class TestUsuarios {
 	@Test
 	public void testSetApellido() throws Exception {
 		iniciar();
+		assertEquals(apellidos,usuario.getApellido());
 		String newApellidos = "apellido2";
 		usuario.setApellido(newApellidos);
 		assertEquals(newApellidos, usuario.getApellido());
@@ -89,6 +91,7 @@ public class TestUsuarios {
 	@Test
 	public void testSetEdad() throws Exception {
 		iniciar();
+		assertEquals(edad,usuario.getEdad());
 		int newEdad= 1;
 		usuario.setEdad(newEdad);
 		assertEquals(newEdad, usuario.getEdad());
@@ -104,6 +107,7 @@ public class TestUsuarios {
 	@Test
 	public void testSetDireccion() throws Exception {
 		iniciar();
+		assertEquals(direccion,usuario.getDireccion());
 		String newDireccion = "direccion2";
 		usuario.setDireccion(newDireccion);
 		assertEquals(newDireccion, usuario.getDireccion());
@@ -119,6 +123,7 @@ public class TestUsuarios {
 	@Test
 	public void testSetnombreUsuario() throws Exception {
 		iniciar();
+		assertEquals(nombreUsuario,usuario.getNombreUsuario());
 		String newNombreUsuario = "nombreUsuario2";
 		usuario.setnombreUsuario(newNombreUsuario);
 		assertEquals(newNombreUsuario, usuario.getNombreUsuario());
@@ -134,6 +139,7 @@ public class TestUsuarios {
 	@Test
 	public void testSetContraseña() throws Exception {
 		iniciar();
+		assertEquals(contraseña,usuario.getContraseña());
 		String newContraseña ="contraseña2";
 		usuario.setContraseña(newContraseña);
 		assertEquals(newContraseña, usuario.getContraseña());
