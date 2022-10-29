@@ -13,9 +13,10 @@ public class Alumno extends Usuarios {
 	}
 
 	public Alumno() {
+
 		super();
-		this.email = email;
-		this.curso = curso;
+		this.email = "";
+		this.curso ="";
 	}
 	public String getEmail() {
 		return email;

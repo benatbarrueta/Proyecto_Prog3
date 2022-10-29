@@ -1,5 +1,7 @@
 package clases;
 
+import static org.junit.Assert.assertArrayEquals;
+
 public class Usuarios {
 	protected String nombre;
 	protected String apellidos;
@@ -29,6 +31,7 @@ public class Usuarios {
 	}
 
 	public String getNombre() {
+		
 		return nombre;
 	}
 
@@ -40,7 +43,7 @@ public class Usuarios {
 		return apellidos;
 	}
 
-	public void setApellido(String apellido) {
+	public void setApellido(String apellidos) {
 		this.apellidos = apellidos;
 	}
 
