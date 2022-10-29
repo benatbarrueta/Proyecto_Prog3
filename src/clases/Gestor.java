@@ -54,4 +54,12 @@ public class Gestor {
 		
 	}
 	
+	public void leerTareasCSV() {
+		
+	}
+	public void guardarDatosCSV() {}
+	
+	
+	
+	
 }
