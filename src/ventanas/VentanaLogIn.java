@@ -60,10 +60,6 @@ public class VentanaLogIn extends JFrame {
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 
-	public static void main(String[] args) {
-		VentanaLogIn v = new VentanaLogIn();
-		v.setVisible(true);
-		
-	}
+
 
 }
