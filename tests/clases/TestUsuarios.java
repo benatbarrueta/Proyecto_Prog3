@@ -2,6 +2,7 @@ package clases;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class TestUsuarios {
@@ -12,7 +13,7 @@ public class TestUsuarios {
 	private String direccion="direccion";
 	private String nombreUsuario="nombreUsuario";
 	private String contraseña="contraseña";
-	
+	@Before
 	public void iniciar() throws Exception{
 		 usuario = new Usuarios(nombre,apellidos,edad,direccion,nombreUsuario,contraseña);
 	}
@@ -23,8 +24,8 @@ public class TestUsuarios {
 	
 	
 	@Test
-	public void testUsuariosStringStringIntStringStringString() throws Exception {
-	iniciar();
+	public void testUsuariosStringStringIntStringStringString()  {
+
 		
 		assertNotNull(usuario);
 		
@@ -36,7 +37,7 @@ public class TestUsuarios {
 		assertEquals(contraseña,usuario.getContraseña());
 	}
 	@Test
-	public void testUsuarios() throws Exception {
+	public void testUsuarios()  {
 		
 		Usuarios usuario2 = new Usuarios();
 		
@@ -51,14 +52,14 @@ public class TestUsuarios {
 	}
 
 	@Test
-	public void testGetNombre() throws Exception {
-		iniciar();
+	public void testGetNombre()  {
+		
 		assertEquals(nombre, usuario.getNombre());
 	}
 
 	@Test
-	public void testSetNombre() throws Exception {
-		iniciar();
+	public void testSetNombre()  {
+		
 		assertEquals(nombre,usuario.getNombre());
 		String newNombre = "nombre2";
 		
@@ -68,14 +69,14 @@ public class TestUsuarios {
 	}
 
 	@Test
-	public void testGetApellido() throws Exception {
-		iniciar();
+	public void testGetApellido()  {
+		
 		assertEquals(apellidos, usuario.getApellido());
 	}
 
 	@Test
-	public void testSetApellido() throws Exception {
-		iniciar();
+	public void testSetApellido()  {
+		
 		assertEquals(apellidos,usuario.getApellido());
 		String newApellidos = "apellido2";
 		usuario.setApellido(newApellidos);
@@ -83,14 +84,14 @@ public class TestUsuarios {
 	}
 
 	@Test
-	public void testGetEdad() throws Exception {
-		iniciar();
+	public void testGetEdad() {
+		
 		assertEquals(edad,usuario.getEdad());
 	}
 
 	@Test
-	public void testSetEdad() throws Exception {
-		iniciar();
+	public void testSetEdad()  {
+		
 		assertEquals(edad,usuario.getEdad());
 		int newEdad= 1;
 		usuario.setEdad(newEdad);
@@ -99,14 +100,14 @@ public class TestUsuarios {
 	}
 
 	@Test
-	public void testGetDireccion() throws Exception {
-		iniciar();
+	public void testGetDireccion() {
+		
 		assertEquals(direccion,usuario.getDireccion());
 	}
 
 	@Test
-	public void testSetDireccion() throws Exception {
-		iniciar();
+	public void testSetDireccion()  {
+		
 		assertEquals(direccion,usuario.getDireccion());
 		String newDireccion = "direccion2";
 		usuario.setDireccion(newDireccion);
@@ -115,14 +116,14 @@ public class TestUsuarios {
 
 
 	@Test
-	public void testGetNombreUsuario() throws Exception {
-		iniciar();
+	public void testGetNombreUsuario() {
+		
 		assertEquals(nombreUsuario, usuario.getNombreUsuario());
 	}
 
 	@Test
-	public void testSetnombreUsuario() throws Exception {
-		iniciar();
+	public void testSetnombreUsuario()  {
+		
 		assertEquals(nombreUsuario,usuario.getNombreUsuario());
 		String newNombreUsuario = "nombreUsuario2";
 		usuario.setnombreUsuario(newNombreUsuario);
@@ -131,14 +132,14 @@ public class TestUsuarios {
 	}
 
 	@Test
-	public void testGetContraseña() throws Exception {
-		iniciar();
+	public void testGetContraseña()  {
+	
 		assertEquals(contraseña,usuario.getContraseña());
 	}
 
 	@Test
-	public void testSetContraseña() throws Exception {
-		iniciar();
+	public void testSetContraseña() {
+	
 		assertEquals(contraseña,usuario.getContraseña());
 		String newContraseña ="contraseña2";
 		usuario.setContraseña(newContraseña);
@@ -147,8 +148,8 @@ public class TestUsuarios {
 	}
 
 	@Test
-	public void testToString() throws Exception {
-		iniciar();
+	public void testToString()  {
+		
 		String toString = "Usuario " + nombre + apellidos + ", " + edad + "años.";
 		assertEquals(usuario.toString(),toString );
 	}
