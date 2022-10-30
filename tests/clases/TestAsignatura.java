@@ -8,7 +8,7 @@ import org.junit.Test;
 
 public class TestAsignatura {
 	protected Asignatura asignatura = new Asignatura();
-	protected String nombre ="";
+	protected String nombre = "";
 	protected Profesor profesor = new Profesor();
 	protected ArrayList<Alumno> alumnos =new ArrayList<Alumno>();
 	protected ArrayList<Tarea> tareas= new ArrayList<Tarea>();
