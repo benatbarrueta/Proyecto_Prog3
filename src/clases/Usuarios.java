@@ -9,6 +9,7 @@ public class Usuarios {
 	protected String direccion;
 	protected String nombreUsuario;
 	protected String contraseña;
+	private int id = -1;
 	
 	public Usuarios(String nombre, String apellidos, int edad, String direccion, String nombreUsuario, String contraseña) {
 		super();
@@ -18,6 +19,8 @@ public class Usuarios {
 		this.direccion = direccion;
 		this.nombreUsuario = nombreUsuario;
 		this.contraseña = contraseña;
+		id++;
+		this.id =id;
 	}
 	
 	public Usuarios() {
@@ -28,6 +31,15 @@ public class Usuarios {
 		this.direccion = "";
 		this.nombreUsuario = "";
 		this.contraseña = "";
+		id++;
+		this.id =id;
+	}
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getNombre() {
@@ -81,8 +93,11 @@ public class Usuarios {
 
 	@Override
 	public String toString() {
-		return "Usuario " + nombre + apellidos + ", " + edad + "años.";
+		return "Usuario Nombre=" + nombre + ",Apellidos:" + apellidos + ", Edad:" + edad + ", Direccion=" + direccion
+				+ ", NombreUsuario:" + nombreUsuario + ", Contraseña:" + contraseña + ", Id:" + id + "]";
 	}
+
+	
 	
 	
 	
