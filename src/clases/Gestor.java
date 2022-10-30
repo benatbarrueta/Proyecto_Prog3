@@ -141,6 +141,11 @@ public class Gestor {
 		Properties properties = loadProperties(); 
 		gestor.leerTareasCSV(properties.getProperty(INPUT_KEY_TAREA ));
 		gestor.guardarTareaCSV(properties.getProperty(OUTPUT_KEY_TAREA ));
+		
+	//	GestorBD gestorBD = new GestorBD();		
+		
+		//CREATE DATABASE: Se crea la BBDD
+	
 	}
 	
 }
