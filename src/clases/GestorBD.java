@@ -32,13 +32,12 @@ public class GestorBD {
 		     Statement stmt = con.createStatement()) {
 			
 	        String sql = "CREATE TABLE IF NOT EXISTS USUARIO(\n"
-	        		   + " ID INTEGER PRIMARY KEY AUTOINCREMENT,\n"
+	        		   + " NOMBRE_USUARIO INTEGER PRIMARY KEY AUTOINCREMENT,\n"
 	                   + " NOMBRE TEXT NOT NULL,\n"
 	                   + " APELLIDO TEXT NOT NULL,\n"
 	                   + " CONTRASEÑA TEXT NOT NULL,\n"
 	                   + " DIRECCION TEXT NOT NULL\n"
 	                   + " EDAD TEXT NOT NULL,\n"
-	                   + " NOMBRE_USUARIO TEXT NOT NULL\n"
 	                   + ");";
 	   
 		
@@ -115,7 +114,7 @@ public class GestorBD {
 			//Se recorre el ResultSet y se crean objetos Cliente
 			while (rs.next()) {
 				usuario= new Usuarios();
-				usuario.setId(rs.getInt("ID"));
+				
 				usuario.setNombre(rs.getString("NOMBRE"));
 				usuario.setApellido(rs.getString("APELLIDO"));
 				usuario.setContraseña(rs.getString("CONTRASEÑA"));
@@ -145,9 +144,9 @@ public class GestorBD {
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement stmt = con.createStatement()) {
 			//Se ejecuta la sentencia de borrado de datos
-			String sql = "UPDATE CLIENTE SET EDAD = '%s' WHERE ID = %d;";
+			String sql = "UPDATE CLIENTE SET EDAD = '%s' NOMBRE_USUARIO ID = %S;";
 			
-			int result = stmt.executeUpdate(String.format(sql, newEdad, usuario.getId()));
+			int result = stmt.executeUpdate(String.format(sql, newEdad, usuario.getNombreUsuario()));
 			
 			System.out.println(String.format("- Se ha actulizado %d usuarios", result));
 		} catch (Exception ex) {
