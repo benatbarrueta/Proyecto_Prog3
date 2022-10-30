@@ -13,6 +13,7 @@ public class TestUsuarios {
 	private String direccion="direccion";
 	private String nombreUsuario="nombreUsuario";
 	private String contraseña="contraseña";
+
 	@Before
 	public void iniciar() throws Exception{
 		 usuario = new Usuarios(nombre,apellidos,edad,direccion,nombreUsuario,contraseña);
@@ -150,7 +151,8 @@ public class TestUsuarios {
 	@Test
 	public void testToString()  {
 		
-		String toString = "Usuario " + nombre + apellidos + ", " + edad + "años.";
+		String toString = "Usuarios [nombre=" + nombre + ", apellidos=" + apellidos + ", edad=" + edad + ", direccion=" + direccion
+				+ ", nombreUsuario=" + nombreUsuario + ", contraseña=" + contraseña + "]";
 		assertEquals(usuario.toString(),toString );
 	}
 

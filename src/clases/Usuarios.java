@@ -9,6 +9,7 @@ public class Usuarios {
 	protected String direccion;
 	protected String nombreUsuario;
 	protected String contraseña;
+
 	
 	public Usuarios(String nombre, String apellidos, int edad, String direccion, String nombreUsuario, String contraseña) {
 		super();
@@ -18,6 +19,7 @@ public class Usuarios {
 		this.direccion = direccion;
 		this.nombreUsuario = nombreUsuario;
 		this.contraseña = contraseña;
+		
 	}
 	
 	public Usuarios() {
@@ -28,7 +30,9 @@ public class Usuarios {
 		this.direccion = "";
 		this.nombreUsuario = "";
 		this.contraseña = "";
+	
 	}
+	
 
 	public String getNombre() {
 		
@@ -81,8 +85,13 @@ public class Usuarios {
 
 	@Override
 	public String toString() {
-		return "Usuario " + nombre + apellidos + ", " + edad + "años.";
+		return "Usuarios [nombre=" + nombre + ", apellidos=" + apellidos + ", edad=" + edad + ", direccion=" + direccion
+				+ ", nombreUsuario=" + nombreUsuario + ", contraseña=" + contraseña + "]";
 	}
+
+
+
+	
 	
 	
 	
