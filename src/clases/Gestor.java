@@ -142,58 +142,13 @@ public class Gestor {
 		e.printStackTrace();
 	}
 	}
-	public void guardarAsignaturaCSV(String filename) {
+	public void guardarAsignaturaBinario(String filename) {
 	
-		try  {	 	  	 	
-			System.out.println(filename);  
 		
-		     PrintWriter pw = new PrintWriter(filename);
-		     pw.println("NOMBRE " + ";" + "PROFESOR" +";" + "ALUMNOS" +";"+ "TAREAS" +"CALIFICACION" +";");
-
-		     for (Asignatura asignatura : asignaturas) {
-		    	 pw.println(
-		    			 asignatura.getNombre() + ";" + asignatura.getProfesor() + ";" + asignatura.getAlumnos()+ ";" +asignatura.getTareas() +";" +asignatura.getNombre()		+";"    );		
-			}
-		     
-		    pw.close();
-		     
-		} catch (Exception e) {
-			System.err.println(String.format("Error en el main: %s", e.getMessage()));
-			e.printStackTrace();
 		}
-		}
-	public void leerAsignaturasCSV(String filename) {
+	public void leerAsignaturasBinario(String filename) {
 
-	//	System.out.println(filename);
-		try (BufferedReader in = new BufferedReader(new FileReader(filename))){
-		
-			String linea;
-			StringTokenizer tokenizer;
-			Asignatura asignatura;
-			asignaturas= new ArrayList<>();
-			
-			in.readLine(); // Saltar linea cabezera
-			while((linea = in.readLine())!= null) {
-				tokenizer= new StringTokenizer(linea,";");
-			
-				asignatura= new Asignatura();	
-				asignatura.setNombre(tokenizer.nextToken());		
-				asignatura.setProfesor((Profesor)tokenizer.nextElement());			
-				asignatura.setAlumnos((ArrayList<Alumno>)tokenizer.nextElement());				
-				asignatura.setTareas((ArrayList<Tarea>)tokenizer.nextElement());
-				asignatura.setCalificacion(Double.parseDouble(tokenizer.nextToken()));
-			
-				asignaturas.add(asignatura);
-			}
-			System.out.println(asignaturas);
-			
-			
-		}catch (Exception ex) {
-			// TODO: handle exception
-			System.err.println("Error en el main: " +ex);
-			ex.printStackTrace();
-		}
-
+	
 	}
 	public void CrearAsignaturas() {
 	Asignatura	asignatura;
@@ -226,8 +181,6 @@ public class Gestor {
 		gestor.guardarTareaCSV(properties.getProperty(OUTPUT_KEY_TAREA ));
 		gestor.CrearAsignaturas();
 		
-		gestor.guardarAsignaturaCSV(properties.getProperty(KEY_ASIGNATURA));
-	
 	
 		//gestor.leerAsignaturasCSV(KEY_ASIGNATURA);
 		
