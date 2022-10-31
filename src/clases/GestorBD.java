@@ -121,7 +121,8 @@ public class GestorBD {
 				usuario.setApellido(rs.getString("APELLIDO"));
 				usuario.setContraseña(rs.getString("CONTRASEÑA"));
 				usuario.setDireccion(rs.getString("DIRECCION"));
-				usuario.setEdad(Integer.parseInt(rs.getString("EDAD")));
+			
+				usuario.setEdad(rs.getInt("DIRECCION"));
 				usuario.setnombreUsuario(rs.getString("NOMBRE_USUARIO"));
 			
 				
