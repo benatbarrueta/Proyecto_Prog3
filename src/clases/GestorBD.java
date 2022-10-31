@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-
+import java.sql.*;
 public class GestorBD {
 
 	protected static final String DRIVER_NAME = "org.sqlite.JDBC";
