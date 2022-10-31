@@ -73,7 +73,7 @@ public class Gestor {
 		try {
 			// Se carga el fichero Properties
 			properties.load(new FileReader(PROPERTIES_FILE));
-			
+		
 		} catch (Exception ex) {
 			System.err.println(String.format("Error leyendo propiedades: %s", ex.getMessage()));
 			ex.printStackTrace();
@@ -117,9 +117,9 @@ public class Gestor {
 
 	}
 	public void guardarTareaCSV(String filename) {
-	 System.out.println(filename);
+	 
 	try  {	 	  	   
-	
+		System.out.println(filename);
 	     PrintWriter pw = new PrintWriter(filename);
 	     pw.println("Compania" + ";" + "Fecha" +";" + "Estatus" +";"+ "calificacion");
 	     
@@ -138,7 +138,8 @@ public class Gestor {
 	}
 	public void guardarAsignaturaCSV(String filename) {
 	
-		try  {	 	  	   
+		try  {	 	  	 	
+			System.out.println(filename);  
 		
 		     PrintWriter pw = new PrintWriter(filename);
 		     pw.println("NOMBRE " + ";" + "PROFESOR" +";" + "ALUMNOS" +";"+ "TAREAS" +"CALIFICACION" +";");
@@ -157,7 +158,7 @@ public class Gestor {
 		}
 	public void leerAsignaturasCSV(String filename) {
 
-		
+	//	System.out.println(filename);
 		try (BufferedReader in = new BufferedReader(new FileReader(filename))){
 		
 			String linea;
@@ -205,7 +206,11 @@ public class Gestor {
 		
 		gestor.guardarTareaCSV(properties.getProperty(OUTPUT_KEY_TAREA ));
 		gestor.CrearAsignaturas();
-		gestor.guardarAsignaturaCSV(KEY_ASIGNATURA);
+		
+		gestor.guardarAsignaturaCSV(properties.getProperty(KEY_ASIGNATURA));
+	
+	//	System.out.println(KEY_ASIGNATURA);
+	//	System.out.println(INPUT_KEY_TAREA);
 	//	gestor.leerAsignaturasCSV(KEY_ASIGNATURA);
 	//	GestorBD gestorBD = new GestorBD();		
 		
