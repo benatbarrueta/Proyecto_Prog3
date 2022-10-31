@@ -13,7 +13,7 @@ import java.util.Properties;
 public class Gestor {
 	protected ArrayList<Alumno> alumnos;
 	protected ArrayList<Profesor> profesor;
-	protected ArrayList<Asignatura> asignatura;
+	protected ArrayList<Asignatura> asignaturas;
 	protected ArrayList<Tarea> tareas;
 	protected Properties properties;
 	private static final String PROPERTIES_FILE = "src/config/Properties";
@@ -26,14 +26,14 @@ public class Gestor {
 		super();
 		this.alumnos = alumnos;
 		this.profesor = profesor;
-		this.asignatura = asignatura;
+		this.asignaturas = asignatura;
 		this.tareas = tareas;
 	}
 	public Gestor() {
 		super();
 		this.alumnos = new ArrayList<Alumno>();
 		this.profesor = new ArrayList<Profesor>();
-		this.asignatura = new ArrayList<Asignatura>();
+		this.asignaturas = new ArrayList<Asignatura>();
 		this.tareas = new ArrayList<Tarea>();
 	}
 
@@ -50,10 +50,10 @@ public class Gestor {
 		this.profesor = profesor;
 	}
 	public ArrayList<Asignatura> getAsignatura() { 
-		return asignatura;
+		return asignaturas;
 	}
 	public void setAsignatura(ArrayList<Asignatura> asignatura) {
-		this.asignatura = asignatura;
+		this.asignaturas = asignatura;
 	}
 	public ArrayList<Tarea> getTarea() {
 		return tareas;
@@ -134,7 +134,25 @@ public class Gestor {
 		e.printStackTrace();
 	}
 	}
-
+	public void guardarAsignaturaCSV(String filename) {
+		 System.out.println(filename);
+		try  {	 	  	   
+		
+		     PrintWriter pw = new PrintWriter(filename);
+		     pw.println("NOMBRE " + ";" + "PROFESOR" +";" + "ALUMNOS" +";"+ "TAREAS" +"CALIFICACION" +";");
+		     
+		     for (Asignatura asignatura : asignaturas) {
+		    	 pw.println(
+		    			 asignatura.getNombre() + ";" + asignatura.getProfesor() + ";" + asignatura.getAlumnos()+ ";" +asignatura.getTareas() +";" +asignatura.getNombre()		+";"    );		
+			}
+		     
+		    pw.close();
+		     
+		} catch (Exception e) {
+			System.err.println(String.format("Error en el main: %s", e.getMessage()));
+			e.printStackTrace();
+		}
+		}
 	
 	public static void main(String[] args) {
 		 Gestor gestor= new Gestor();
