@@ -24,13 +24,16 @@ public class Gestor {
 	private static final String OUTPUT_KEY_TAREA = "guardarTarea";
 	private static final String KEY_ASIGNATURA = "guardarLeerAsgignatura";
 	
-	public Gestor(ArrayList<Alumno> alumnos, ArrayList<Profesor> profesor, ArrayList<Asignatura> asignatura,
-			ArrayList<Tarea> tareas) {
+
+	public Gestor(ArrayList<Alumno> alumnos, ArrayList<Profesor> profesor, ArrayList<Asignatura> asignaturas,
+			ArrayList<Tarea> tareas, ArrayList<Usuarios> usuarios) {
 		super();
 		this.alumnos = alumnos;
 		this.profesor = profesor;
-		this.asignaturas = asignatura;
+		this.asignaturas = asignaturas;
 		this.tareas = tareas;
+		this.usuarios = usuarios;
+		
 	}
 	public Gestor() {
 		super();
@@ -38,8 +41,9 @@ public class Gestor {
 		this.profesor = new ArrayList<Profesor>();
 		this.asignaturas = new ArrayList<Asignatura>();
 		this.tareas = new ArrayList<Tarea>();
+		this.usuarios = new ArrayList<Usuarios>();
+		
 	}
-
 	public ArrayList<Alumno> getAlumnos() {
 		return alumnos;
 	}
@@ -226,10 +230,10 @@ public class Gestor {
 	
 	
 		//gestor.leerAsignaturasCSV(KEY_ASIGNATURA);
-		gestor.usuarios = new ArrayList<Usuarios>();
+		
 		GestorBD gestorBD = new GestorBD();		
 		gestorBD.crearBBDD();
-	//	gestorBD.borrarBBDD();
+		gestorBD.borrarBBDD();
 		ArrayList<Usuarios> usuarios = gestor.initUsuarios();
 		//gestorBD.insertarDatos(usuarios.toArray(new Usuarios[usuarios.size()]));
 		
