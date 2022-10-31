@@ -12,7 +12,7 @@ public class TestAsignatura {
 	protected Profesor profesor = new Profesor();
 	protected ArrayList<Alumno> alumnos =new ArrayList<Alumno>();
 	protected ArrayList<Tarea> tareas= new ArrayList<Tarea>();
-
+	protected double calificacion =0;
 	@Test
 	public void testAsignaturaStringProfesorArrayListOfAlumnoArrayListOfTareaDouble() {
 		assertNotNull(asignatura);
@@ -27,11 +27,11 @@ public class TestAsignatura {
 	public void testAsignatura() {
 		Asignatura asignatura2 = new Asignatura();
 		assertNotNull(asignatura2);
-		assertEquals(asignatura.getNombre(), "");
-		assertEquals(asignatura.getProfesor(), new Profesor());
-		assertEquals(asignatura.getAlumnos(), new ArrayList<Alumno>());
-		assertEquals(asignatura.getTareas(), new ArrayList<Tarea>());
-		assertEquals(asignatura.getCalificacion(), 0,0);
+		assertEquals(asignatura2.getNombre(), "");
+		assertEquals(asignatura2.getProfesor(), profesor);
+		assertEquals(asignatura2.getAlumnos(), alumnos);
+		assertEquals(asignatura2.getTareas(), new ArrayList<Tarea>());
+		assertEquals(asignatura2.getCalificacion(), 0,0);
 	}
 
 	@Test
@@ -49,6 +49,7 @@ public class TestAsignatura {
 
 	@Test
 	public void testGetProfesor() {
+	
 		assertEquals(asignatura.getProfesor(), profesor);
 	}
 
@@ -101,7 +102,8 @@ public class TestAsignatura {
 
 	@Test
 	public void testToString() {
-		String toString = "Nombre " + profesor + alumnos + tareas + "calificacion";
+		String toString ="Nombre: " + nombre + ", profesor=" + profesor + ", alumnos=" + alumnos + ", tareas=" + tareas
+				+ ", calificacion=" + calificacion + "]";
 		
 		assertEquals(asignatura.toString(), toString);
 	}

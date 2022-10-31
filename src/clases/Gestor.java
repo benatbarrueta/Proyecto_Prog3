@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.ObjectInputStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.StringTokenizer;
 import java.util.Properties;
 
@@ -19,7 +20,7 @@ public class Gestor {
 	private static final String PROPERTIES_FILE = "src/config/Properties";
 	private static final String INPUT_KEY_TAREA = "leerTarea";
 	private static final String OUTPUT_KEY_TAREA = "guardarTarea";
-	
+	private static final String KEY_ASIGNATURA = "RWAsgignatura";
 	
 	public Gestor(ArrayList<Alumno> alumnos, ArrayList<Profesor> profesor, ArrayList<Asignatura> asignatura,
 			ArrayList<Tarea> tareas) {
@@ -135,12 +136,12 @@ public class Gestor {
 	}
 	}
 	public void guardarAsignaturaCSV(String filename) {
-		 System.out.println(filename);
+	
 		try  {	 	  	   
 		
 		     PrintWriter pw = new PrintWriter(filename);
 		     pw.println("NOMBRE " + ";" + "PROFESOR" +";" + "ALUMNOS" +";"+ "TAREAS" +"CALIFICACION" +";");
-		     
+
 		     for (Asignatura asignatura : asignaturas) {
 		    	 pw.println(
 		    			 asignatura.getNombre() + ";" + asignatura.getProfesor() + ";" + asignatura.getAlumnos()+ ";" +asignatura.getTareas() +";" +asignatura.getNombre()		+";"    );		
@@ -186,12 +187,23 @@ public class Gestor {
 		}
 
 	}
+	public void CrearAsignaturas() {
+	Asignatura	asignatura;
+		for (int i = 0; i < 10; i++) {
+			String name = "asignatura" +i;
+			asignatura=new Asignatura(name,new Profesor(),new ArrayList<Alumno>(),new ArrayList<Tarea>(),i);
+			asignaturas.add(asignatura);
+		}
+		//System.out.println(asignaturas);
+	}
 	public static void main(String[] args) {
 		 Gestor gestor= new Gestor();
 		Properties properties = loadProperties(); 
 		gestor.leerTareasCSV(properties.getProperty(INPUT_KEY_TAREA ));
 		gestor.guardarTareaCSV(properties.getProperty(OUTPUT_KEY_TAREA ));
-		
+		gestor.CrearAsignaturas();
+		gestor.guardarAsignaturaCSV(KEY_ASIGNATURA);
+	//	gestor.leerAsignaturasCSV(KEY_ASIGNATURA);
 	//	GestorBD gestorBD = new GestorBD();		
 		
 		//CREATE DATABASE: Se crea la BBDD
