@@ -153,7 +153,39 @@ public class Gestor {
 			e.printStackTrace();
 		}
 		}
-	
+	public void leerAsignaturasCSV(String filename) {
+
+		
+		try (BufferedReader in = new BufferedReader(new FileReader(filename))){
+		
+			String linea;
+			StringTokenizer tokenizer;
+			Asignatura asignatura;
+			asignaturas= new ArrayList<>();
+			
+			in.readLine(); // Saltar linea cabezera
+			while((linea = in.readLine())!= null) {
+				tokenizer= new StringTokenizer(linea,";");
+			
+				asignatura= new Asignatura();	
+				asignatura.setNombre(tokenizer.nextToken());		
+				asignatura.setProfesor((Profesor)tokenizer.nextElement());			
+				asignatura.setAlumnos((ArrayList<Alumno>)tokenizer.nextElement());				
+				asignatura.setTareas((ArrayList<Tarea>)tokenizer.nextElement());
+				asignatura.setCalificacion(Double.parseDouble(tokenizer.nextToken()));
+			
+				asignaturas.add(asignatura);
+			}
+			System.out.println(asignaturas);
+			
+			
+		}catch (Exception ex) {
+			// TODO: handle exception
+			System.err.println("Error en el main: " +ex);
+			ex.printStackTrace();
+		}
+
+	}
 	public static void main(String[] args) {
 		 Gestor gestor= new Gestor();
 		Properties properties = loadProperties(); 
