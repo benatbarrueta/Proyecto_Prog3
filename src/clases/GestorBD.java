@@ -11,14 +11,14 @@ import java.util.List;
 import java.sql.*;
 public class GestorBD {
 
-	protected static final String DRIVER_NAME = "org.sqlite.JDBC";
+	protected static final String DRIVER_NAME = "lib/sqlite-jdbc";
 	protected static final String DATABASE_FILE = "db/database.db";
 	protected static final String CONNECTION_STRING = "jdbc:sqlite:" + DATABASE_FILE;
 	
 	public GestorBD() {		
 		try {
 			//Cargar el diver SQLite
-			Class.forName(DRIVER_NAME);
+			Class.forName("org.sqlite.JDBC");
 		} catch (ClassNotFoundException ex) {
 			System.err.println(String.format("* Error al cargar el driver de BBDD: %s", ex.getMessage()));
 			ex.printStackTrace();
