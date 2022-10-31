@@ -105,6 +105,7 @@ public class Gestor {
 			
 				tareas.add(tarea);
 			}
+		
 			System.out.println(tareas);
 			
 			
@@ -200,6 +201,7 @@ public class Gestor {
 		 Gestor gestor= new Gestor();
 		Properties properties = loadProperties(); 
 		gestor.leerTareasCSV(properties.getProperty(INPUT_KEY_TAREA ));
+		
 		gestor.guardarTareaCSV(properties.getProperty(OUTPUT_KEY_TAREA ));
 		gestor.CrearAsignaturas();
 		gestor.guardarAsignaturaCSV(KEY_ASIGNATURA);
