@@ -198,6 +198,7 @@ public class Gestor {
 		//System.out.println(asignaturas);
 	}
 	public static void main(String[] args) {
+		
 		 Gestor gestor= new Gestor();
 		Properties properties = loadProperties(); 
 		gestor.leerTareasCSV(properties.getProperty(INPUT_KEY_TAREA ));

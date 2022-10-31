@@ -9,7 +9,7 @@ import org.junit.Test;
 public class TestAsignatura {
 	protected Asignatura asignatura = new Asignatura();
 	protected String nombre = "";
-	protected Profesor profesor = new Profesor();
+	protected Profesor profesor = new Profesor("", "", 0, "", "", "", 0, "");
 	protected ArrayList<Alumno> alumnos =new ArrayList<Alumno>();
 	protected ArrayList<Tarea> tareas= new ArrayList<Tarea>();
 	protected double calificacion =0;
@@ -31,7 +31,7 @@ public class TestAsignatura {
 		assertEquals(asignatura2.getProfesor(), profesor);
 		assertEquals(asignatura2.getAlumnos(), alumnos);
 		assertEquals(asignatura2.getTareas(), new ArrayList<Tarea>());
-		assertEquals(asignatura2.getCalificacion(), 0,0);
+		assertEquals(asignatura2.getCalificacion(), 0,0.0);
 	}
 
 	@Test
