@@ -186,11 +186,11 @@ public class Gestor {
 		
 		GestorBD gestorBD = new GestorBD();		
 		gestorBD.crearBBDD();
-		//gestorBD.borrarBBDD();
+		//
 		ArrayList<Usuarios> usuarios = gestor.initUsuarios();
 		gestorBD.insertarDatos(usuarios.toArray(new Usuarios[usuarios.size()]));
-	
-		System.out.println(	gestorBD.obtenerDatos());
+		gestorBD.borrarBBDD();
+	//	System.out.println(	gestorBD.obtenerDatos());
 	//	gestorBD.obtenerDatos();
 		//CREATE DATABASE: Se crea la BBDD
 	
