@@ -11,8 +11,10 @@ public class TestAlumno {
 
 	@Test
 	public void testToString() {
-		String toString="Usuario " + "Nombre"+ "Apellidos" + ", " + 0 + "años." +", email" + email;;
-	
+		String toString="Usuarios [nombre=" + "Nombre, "+"apellidos=" + "Apellidos"+ ", edad=" + 0+ ", direccion=" + "direccion"
+				+ ", nombreUsuario=" + "nombreUsuario" + ", contraseña=" + "contraseña" + "]" + ", email" + email;
+	System.out.println(toString);
+	System.out.println(alumno.toString());
 		assertEquals(alumno.toString(),toString);
 	}
 
