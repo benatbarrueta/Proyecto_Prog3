@@ -20,7 +20,7 @@ public class Gestor {
 	private static final String PROPERTIES_FILE = "src/config/Properties";
 	private static final String INPUT_KEY_TAREA = "leerTarea";
 	private static final String OUTPUT_KEY_TAREA = "guardarTarea";
-	private static final String KEY_ASIGNATURA = "RWAsgignatura";
+	private static final String KEY_ASIGNATURA = "guardarLeerAsgignatura";
 	
 	public Gestor(ArrayList<Alumno> alumnos, ArrayList<Profesor> profesor, ArrayList<Asignatura> asignatura,
 			ArrayList<Tarea> tareas) {

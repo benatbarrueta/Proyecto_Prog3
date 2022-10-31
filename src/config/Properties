@@ -1,3 +1,3 @@
 leerTarea=src/ficheros/tarea.csv
 guardarTarea=src/ficheros/tarea.csv
-RWAsgignatura=src/ficheros/asignatura.csv
+guardarLeerAsgignatura=src/ficheros/asignatura.csv
