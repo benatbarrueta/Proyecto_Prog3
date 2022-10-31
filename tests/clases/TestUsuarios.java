@@ -13,7 +13,7 @@ public class TestUsuarios {
 	private String direccion="direccion";
 	private String nombreUsuario="nombreUsuario";
 	private String contraseña="contraseña";
-
+	private int id = -1;
 	@Before
 	public void iniciar() throws Exception{
 		 usuario = new Usuarios(nombre,apellidos,edad,direccion,nombreUsuario,contraseña);
@@ -68,12 +68,20 @@ public class TestUsuarios {
 		usuario.setNombre(newNombre);
 		assertEquals(newNombre, usuario.getNombre());
 	}
-
 	@Test
-	public void testGetApellido()  {
+	public void testGetId()  {
 		
-		assertEquals(apellidos, usuario.getApellido());
+		assertEquals(id,usuario.getId(),0.0);
 	}
+	@Test
+	public void testSetId()  {
+		assertEquals(id,usuario.getId(),0.0);
+		int newID= 0;
+		usuario.setId(newID);
+		
+		assertEquals(newID, usuario.getId());
+	}
+	
 
 	@Test
 	public void testSetApellido()  {

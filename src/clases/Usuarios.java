@@ -9,7 +9,7 @@ public class Usuarios {
 	protected String direccion;
 	protected String nombreUsuario;
 	protected String contraseña;
-
+	private int id = -1;
 	
 	public Usuarios(String nombre, String apellidos, int edad, String direccion, String nombreUsuario, String contraseña) {
 		super();
@@ -33,7 +33,13 @@ public class Usuarios {
 	
 	}
 	
+	public int getId() {
+		return id;
+	}
 
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getNombre() {
 		
 		return nombre;

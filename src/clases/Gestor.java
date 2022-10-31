@@ -7,6 +7,7 @@ import java.io.ObjectInputStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.StringTokenizer;
 import java.util.Properties;
 
@@ -16,6 +17,7 @@ public class Gestor {
 	protected ArrayList<Profesor> profesor;
 	protected ArrayList<Asignatura> asignaturas;
 	protected ArrayList<Tarea> tareas;
+	protected ArrayList<Usuarios> usuarios;
 	protected Properties properties;
 	private static final String PROPERTIES_FILE = "src/config/Properties";
 	private static final String INPUT_KEY_TAREA = "leerTarea";
@@ -129,7 +131,7 @@ public class Gestor {
 	    			 );		
 		}
 	     
-	    pw.close();
+	    pw.close(); 
 	     
 	} catch (Exception e) {
 		System.err.println(String.format("Error en el main: %s", e.getMessage()));
@@ -198,6 +200,19 @@ public class Gestor {
 		}
 		//System.out.println(asignaturas);
 	}
+	public ArrayList<Usuarios> initUsuarios() {
+		Usuarios	usuario;
+			for (int i = 0; i < 10; i++) {
+			String name = i +"";
+			String username="nombreUsuario"+i;
+		
+				usuario= new Usuarios(name,"apellidos",0,"direccion",username,username);
+			usuarios.add(usuario);
+			}
+			System.out.println(usuarios);
+			return usuarios;
+			//System.out.println(asignaturas);
+		}
 	public static void main(String[] args) {
 		
 		 Gestor gestor= new Gestor();
@@ -211,8 +226,14 @@ public class Gestor {
 	
 	
 		//gestor.leerAsignaturasCSV(KEY_ASIGNATURA);
+		gestor.usuarios = new ArrayList<Usuarios>();
 		GestorBD gestorBD = new GestorBD();		
+		gestorBD.crearBBDD();
+	//	gestorBD.borrarBBDD();
+		ArrayList<Usuarios> usuarios = gestor.initUsuarios();
+		//gestorBD.insertarDatos(usuarios.toArray(new Usuarios[usuarios.size()]));
 		
+	//	gestorBD.obtenerDatos();
 		//CREATE DATABASE: Se crea la BBDD
 	
 	}

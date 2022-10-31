@@ -32,12 +32,13 @@ public class GestorBD {
 		     Statement stmt = con.createStatement()) {
 			
 	        String sql = "CREATE TABLE IF NOT EXISTS USUARIO(\n"
-	        		   + " NOMBRE_USUARIO INTEGER PRIMARY KEY AUTOINCREMENT,\n"
+	        		   + " ID INTEGER PRIMARY KEY AUTOINCREMENT,\n"
 	                   + " NOMBRE TEXT NOT NULL,\n"
 	                   + " APELLIDO TEXT NOT NULL,\n"
 	                   + " CONTRASEÑA TEXT NOT NULL,\n"
-	                   + " DIRECCION TEXT NOT NULL\n"
+	                   + " DIRECCION TEXT NOT NULL,\n"
 	                   + " EDAD TEXT NOT NULL,\n"
+	                   + " NOMBRE_USUARIO TEXT NOT NULL\n"
 	                   + ");";
 	   
 		
@@ -81,7 +82,7 @@ public class GestorBD {
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement stmt = con.createStatement()) {
 			//Se define la plantilla de la sentencia SQL
-			String sql = "INSERT INTO USUARIO (NOMBRE, APELLIDO, CONTRASEÑA, DIRECCION, EDAD, NOMBRE_USUARIO) VALUES ('%s', '%s', '%s', '%s', '%s', '%s');";
+			String sql = "INSERT INTO USUARIO ( NOMBRE, APELLIDO, CONTRASEÑA, DIRECCION, EDAD, NOMBRE_USUARIO) VALUES ('%s', '%s', '%s', '%s', '%s', '%s');";
 			
 			System.out.println("- Insertando usuarios...");
 			
@@ -105,7 +106,8 @@ public class GestorBD {
 		//Se abre la conexión y se obtiene el Statement
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement stmt = con.createStatement()) {
-			String sql = "SELECT * FROM CLIENTE WHERE ID >= 0";
+			String sql = "SELECT * FROM USUARIO WHERE ID >= 0";
+			
 			
 			//Se ejecuta la sentencia y se obtiene el ResultSet con los resutlados
 			ResultSet rs = stmt.executeQuery(sql);			
@@ -114,7 +116,7 @@ public class GestorBD {
 			//Se recorre el ResultSet y se crean objetos Cliente
 			while (rs.next()) {
 				usuario= new Usuarios();
-				
+				usuario.setId(rs.getInt("ID"));
 				usuario.setNombre(rs.getString("NOMBRE"));
 				usuario.setApellido(rs.getString("APELLIDO"));
 				usuario.setContraseña(rs.getString("CONTRASEÑA"));
@@ -144,7 +146,7 @@ public class GestorBD {
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement stmt = con.createStatement()) {
 			//Se ejecuta la sentencia de borrado de datos
-			String sql = "UPDATE CLIENTE SET EDAD = '%s' NOMBRE_USUARIO ID = %S;";
+			String sql = "UPDATE USUARIO SET EDAD = '%s' NOMBRE_USUARIO ID = %S;";
 			
 			int result = stmt.executeUpdate(String.format(sql, newEdad, usuario.getNombreUsuario()));
 			

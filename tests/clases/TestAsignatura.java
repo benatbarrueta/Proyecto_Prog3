@@ -32,7 +32,10 @@ public class TestAsignatura {
 		assertEquals(asignatura2.getAlumnos(), alumnos);
 		assertEquals(asignatura2.getTareas(), new ArrayList<Tarea>());
 		assertEquals(asignatura2.getCalificacion(), 0,0.0);
+	
 	}
+
+	
 
 	@Test
 	public void testGetNombre() {
