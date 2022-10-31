@@ -209,9 +209,8 @@ public class Gestor {
 		
 		gestor.guardarAsignaturaCSV(properties.getProperty(KEY_ASIGNATURA));
 	
-	//	System.out.println(KEY_ASIGNATURA);
-	//	System.out.println(INPUT_KEY_TAREA);
-	//	gestor.leerAsignaturasCSV(KEY_ASIGNATURA);
+	
+		gestor.leerAsignaturasCSV(KEY_ASIGNATURA);
 	//	GestorBD gestorBD = new GestorBD();		
 		
 		//CREATE DATABASE: Se crea la BBDD
