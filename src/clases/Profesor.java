@@ -37,7 +37,7 @@ public class Profesor extends Usuarios {
 
 	@Override
 	public String toString() {
-		return super.toString() + "email" + email;
+		return super.toString() + ", email:" + email;
 	}
 	
 	

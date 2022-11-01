@@ -9,7 +9,7 @@ import org.junit.Test;
 public class TestAsignatura {
 	protected Asignatura asignatura = new Asignatura();
 	protected String nombre = "";
-	protected Profesor profesor = new Profesor("", "", 0, "", "", "", 0, "");
+	private Profesor profesor = new Profesor();
 	protected ArrayList<Alumno> alumnos =new ArrayList<Alumno>();
 	protected ArrayList<Tarea> tareas= new ArrayList<Tarea>();
 	protected double calificacion =0;
@@ -52,14 +52,17 @@ public class TestAsignatura {
 
 	@Test
 	public void testGetProfesor() {
-	
-		assertEquals(asignatura.getProfesor(), profesor);
+	System.out.println(profesor);
+	System.out.println(asignatura.getProfesor());
+		assertEquals(profesor, asignatura.getProfesor());
 	}
 
 	@Test
 	public void testSetProfesor() {
 		Profesor newProfesor = new Profesor();
+	
 		assertEquals(asignatura.getProfesor(), profesor);
+	//	assertEquals(profesor, asignatura.getProfesor());
 		asignatura.setProfesor(newProfesor);
 		assertEquals(asignatura.getProfesor(), newProfesor);
 	}

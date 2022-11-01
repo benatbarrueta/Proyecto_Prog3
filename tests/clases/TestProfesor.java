@@ -14,7 +14,8 @@ public class TestProfesor {
 	public void testToString() {
 		String toString="Usuarios [nombre=" +"Nombre" + ", apellidos=" +"Apellidos" + ", edad=" + 0 + ", direccion=" + "direccion"
 				+ ", nombreUsuario=" + "nombreUsuario"+ ", contraseña=" +"contraseña"+ "]"+ ", email:" + email + "";
-		
+		System.out.println(toString);
+		System.out.println(profesor.toString());
 		assertEquals(profesor.toString(), toString);
 	}
 
