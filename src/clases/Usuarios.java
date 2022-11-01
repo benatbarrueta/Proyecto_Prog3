@@ -41,10 +41,12 @@ public class Usuarios {
 	}
 
 	public String getNombre() {
+		
 		return nombre;
 	}
 
 	public void setNombre(String nombre) {
+		this.email= nombre + this.apellidos + "@email.com";
 		this.nombre = nombre;
 	}
 
@@ -53,6 +55,7 @@ public class Usuarios {
 	}
 
 	public void setApellidos(String apellidos) {
+		this.email= this.nombre + apellidos + "@email.com";
 		this.apellidos = apellidos;
 	}
 

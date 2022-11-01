@@ -11,12 +11,24 @@ public class TestAlumno {
 	
 	@Before
 	public void SetUp() {
+		alumno = new Alumno();
+		alumno.setApellidos("Apellidos");
+		alumno.setContraseña("Contraseña");
+		alumno.setCurso(curso);
+		alumno.setDireccion("Direccion");
+		alumno.setEdad(0);
+		alumno.setNombre("Nombre");
+		alumno.setNombreUsuario("Usuario");
 		
 	}
 
 	@Test
 	public void testToString() {
-		fail("Not yet implemented");
+		String toString= "Alumno [curso=" + curso + ", nombre=" + "Nombre" + ", apellidos=" + "Apellidos" + ", edad=" + "0"
+				+ ", direccion=" + "Direccion" + ", nombreUsuario=" + "Usuario" + ", contraseña=" + "Contraseña"
+				+ ", email=" + "NombreApellidos@email.com"+ "]";
+
+		assertEquals(alumno.toString(), toString);
 	}
 
 	@Test
@@ -31,12 +43,15 @@ public class TestAlumno {
 
 	@Test
 	public void testGetCurso() {
-		fail("Not yet implemented");
+		assertEquals(alumno.getCurso(), curso);
 	}
 
 	@Test
 	public void testSetCurso() {
-		fail("Not yet implemented");
+		String newCurso ="Segundo";
+		assertEquals(alumno.getCurso(), curso);
+		alumno.setCurso(newCurso);
+		assertEquals(alumno.getCurso(), newCurso);
 	}
 
 }
