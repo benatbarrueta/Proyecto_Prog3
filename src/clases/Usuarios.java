@@ -9,8 +9,11 @@ public class Usuarios {
 	protected String direccion;
 	protected String nombreUsuario;
 	protected String contraseña;
-	private int id = -1;
+	private   int  id = -1;
 	private Boolean tipo;
+	protected String email;
+	
+
 	public Usuarios(String nombre, String apellidos, int edad, String direccion, String nombreUsuario, String contraseña, Boolean tipo) {
 		super();
 		this.nombre = nombre;
@@ -20,7 +23,8 @@ public class Usuarios {
 		this.nombreUsuario = nombreUsuario;
 		this.contraseña = contraseña;
 		this.tipo =tipo;
-		
+		this.email= nombre + apellidos + "@email.com";
+	
 	}
 	
 	public Usuarios() {
@@ -32,50 +36,23 @@ public class Usuarios {
 		this.nombreUsuario = "";
 		this.contraseña = "";
 		this.tipo= true;
+		this.email="@email.com";
 	
-	}
-	
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-	public String getApellidos() {
-		return apellidos;
-	}
-
-	public void setApellidos(String apellidos) {
-		this.apellidos = apellidos;
-	}
-
-	public void setNombreUsuario(String nombreUsuario) {
-		this.nombreUsuario = nombreUsuario;
-	}
-
-	public Boolean getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(Boolean profesor) {
-		this.tipo= profesor;
 	}
 
 	public String getNombre() {
-		
 		return nombre;
 	}
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	
-	public String getApellido() {
+
+	public String getApellidos() {
 		return apellidos;
 	}
 
-	public void setApellido(String apellidos) {
+	public void setApellidos(String apellidos) {
 		this.apellidos = apellidos;
 	}
 
@@ -94,13 +71,15 @@ public class Usuarios {
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
-	
+
 	public String getNombreUsuario() {
 		return nombreUsuario;
 	}
 
-	
-	
+	public void setNombreUsuario(String nombreUsuario) {
+		this.nombreUsuario = nombreUsuario;
+	}
+
 	public String getContraseña() {
 		return contraseña;
 	}
@@ -109,11 +88,37 @@ public class Usuarios {
 		this.contraseña = contraseña;
 	}
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Boolean getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(Boolean tipo) {
+		this.tipo = tipo;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	@Override
 	public String toString() {
 		return "Usuarios [nombre=" + nombre + ", apellidos=" + apellidos + ", edad=" + edad + ", direccion=" + direccion
-				+ ", nombreUsuario=" + nombreUsuario + ", contraseña=" + contraseña + "]";
+				+ ", nombreUsuario=" + nombreUsuario + ", contraseña=" + contraseña + ", id=" + id + ", tipo=" + tipo
+				+ ", email=" + email + "]";
 	}
+	
 
 
 

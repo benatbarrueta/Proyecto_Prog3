@@ -1,44 +1,40 @@
 package clases;
 
 public class Profesor extends Usuarios {
-	protected double salario;
-	protected String email;
-	
+	protected Integer salario;
 
-	
 	public Profesor(String nombre, String apellidos, int edad, String direccion, String nombreUsuario,
-			String contraseña, double salario, String email, Boolean tipo) {
+			String contraseña, Boolean tipo, Integer salario) {
 		super(nombre, apellidos, edad, direccion, nombreUsuario, contraseña, tipo);
 		this.salario = salario;
-		this.email = email;
 	}
-
+	
+	
 	public Profesor() {
 		super();
 		this.salario = 0;
-		this.email = "";
 	}
+
 
 	public double getSalario() {
 		return salario;
 	}
 
-	public void setSalario(double salario) {
+
+	public void setSalario(Integer salario) {
 		this.salario = salario;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
 
 	@Override
 	public String toString() {
-		return super.toString() + ", email:" + email;
+		return "Profesor [salario=" + salario + ", nombre=" + nombre + ", apellidos=" + apellidos + ", edad=" + edad
+				+ ", direccion=" + direccion + ", nombreUsuario=" + nombreUsuario + ", contraseña=" + contraseña
+				+ ", email=" + email + "]";
 	}
+	
+	
+	
 	
 	
 	
