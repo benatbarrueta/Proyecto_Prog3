@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class TestProfesor {
 	private Profesor profesor;
-	private Integer salario =0;
+	private int salario =0;
 	
 	@Before
 	public void SetUp() {
@@ -43,7 +43,7 @@ public class TestProfesor {
 
 	@Test
 	public void testSetSalario() {
-		Integer newSalario =1;
+		int newSalario =1;
 		assertEquals(profesor.getSalario(), salario,0);
 		profesor.setSalario(newSalario);
 		assertEquals(profesor.getSalario(), newSalario,0);

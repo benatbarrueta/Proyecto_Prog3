@@ -14,7 +14,7 @@ public class Usuarios {
 	protected String email;
 	
 
-	public Usuarios(String nombre, String apellidos, int edad, String direccion, String nombreUsuario, String contraseña, Boolean tipo) {
+	public Usuarios(String nombre, String apellidos, int edad, String direccion, String nombreUsuario, String contraseña) {
 		super();
 		this.nombre = nombre;
 		this.apellidos = apellidos;
@@ -22,7 +22,7 @@ public class Usuarios {
 		this.direccion = direccion;
 		this.nombreUsuario = nombreUsuario;
 		this.contraseña = contraseña;
-		this.tipo =tipo;
+		
 		this.email= nombre + apellidos + "@email.com";
 	
 	}
@@ -35,7 +35,7 @@ public class Usuarios {
 		this.direccion = "";
 		this.nombreUsuario = "";
 		this.contraseña = "";
-		this.tipo= true;
+	
 		this.email="@email.com";
 	
 	}

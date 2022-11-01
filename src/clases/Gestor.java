@@ -12,6 +12,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.StringTokenizer;
+
+
+
 import java.util.Properties;
 
 
@@ -202,7 +205,7 @@ public class Gestor {
 			String name = i +"";
 			String username="nombreUsuario"+i;
 		
-				usuario= new Usuarios(name,"apellidos",0,"direccion",username,username,false);
+				usuario= new Usuarios(name,"apellidos",0,"direccion",username,username);
 			usuarios.add(usuario);
 			}
 			System.out.println(usuarios);
@@ -221,9 +224,24 @@ public class Gestor {
 	
 		//gestor.leerAsignaturasCSV(KEY_ASIGNATURA);
 		
-		GestorBD gestorBD = new GestorBD();		
+		GestorBD gestorBD = new GestorBD();	
 		gestorBD.crearBBDDAlumno();
 		gestorBD.crearBBDDProfesor();
+		for (int i = 0; i < 5; i++) {
+			Profesor profesor = new Profesor();
+			profesor.setId(-1);
+			gestor.profesor.add(profesor);
+		}
+		for (int i = 0; i < 6; i++) {
+			Alumno alumno= new Alumno();
+			gestor.alumnos.add(alumno);
+		}
+		gestorBD.insertarDatosAlumno(gestor.alumnos.toArray(new Alumno[gestor.alumnos.size()]));
+		gestorBD.insertarDatosProfesor(gestor.profesor.toArray(new Profesor[gestor.profesor.size()]));
+		gestorBD.borrarDatosAlumnos();
+		gestorBD.borrarDatosProfesores();
+		gestorBD.borrarBBDDAlumno();
+		gestorBD.borrarBBDDProfesor();
 		//
 		
 	//	System.out.println(	gestorBD.obtenerDatos());

@@ -141,7 +141,7 @@ public class GestorBD {
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_ALUMNO);
 		     Statement stmt = con.createStatement()) {
 			//Se define la plantilla de la sentencia SQL
-			String sql = "INSERT INTO ALUMNO ( NOMBRE, APELLIDO, CONTRASEÑA, DIRECCION, EDAD, EDAD, CURSO, NOMBRE_USUARIO) VALUES ('%s', '%s', '%s', '%s', '%d', '%s', '%s');";
+			String sql = "INSERT INTO ALUMNO ( NOMBRE, APELLIDO, CONTRASEÑA, DIRECCION, EDAD, EMAIL, CURSO, NOMBRE_USUARIO) VALUES ( '%s', '%s', '%s', '%s', '%d','%s', '%s', '%s');";
 			
 			System.out.println("- Insertando alumnos...");
 			
@@ -164,7 +164,7 @@ public class GestorBD {
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_PROFESOR);
 		     Statement stmt = con.createStatement()) {
 			//Se define la plantilla de la sentencia SQL
-			String sql = "INSERT INTO PROFESOR ( NOMBRE, APELLIDO, CONTRASEÑA, DIRECCION, EDAD, EMAIL, SALARIO, NOMBRE_USUARIO) VALUES ('%s', '%s', '%s', '%s', '%d', '%d', '%s');";
+			String sql = "INSERT INTO PROFESOR ( NOMBRE, APELLIDO, CONTRASEÑA, DIRECCION, EDAD, EMAIL, SALARIO, NOMBRE_USUARIO) VALUES ('%s', '%s', '%s', '%s', '%d','%s', '%d', '%s');";
 			
 			System.out.println("- Insertando profesores...");
 			
