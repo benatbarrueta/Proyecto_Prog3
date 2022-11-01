@@ -8,6 +8,9 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
+import es.deusto.prog3.practica3c.Cliente;
+
 import java.sql.*;
 public class GestorBD {
 
@@ -281,6 +284,36 @@ public class GestorBD {
 			ex.printStackTrace();						
 		}		
 	}	
+	public void actualizarPasswordAlumno(Alumno alumno, String newPassword) {
+		//Se abre la conexiÃ³n y se obtiene el Statement
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+		     Statement stmt = con.createStatement()) {
+			//Se ejecuta la sentencia de borrado de datos
+			String sql = "UPDATE CLIENTE SET PASSWORD = '%s' WHERE ID = %d;";
+			
+			int result = stmt.executeUpdate(String.format(sql, newPassword, cliente.getId()));
+			
+			System.out.println(String.format("- Se ha actulizado %d clientes", result));
+		} catch (Exception ex) {
+			System.err.println(String.format("* Error actualizando datos de la BBDD: %s", ex.getMessage()));
+			ex.printStackTrace();						
+		}		
+	}
+	public void actualizarPasswordProfesor(Cliente cliente, String newPassword) {
+		//Se abre la conexiÃ³n y se obtiene el Statement
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+		     Statement stmt = con.createStatement()) {
+			//Se ejecuta la sentencia de borrado de datos
+			String sql = "UPDATE CLIENTE SET PASSWORD = '%s' WHERE ID = %d;";
+			
+			int result = stmt.executeUpdate(String.format(sql, newPassword, cliente.getId()));
+			
+			System.out.println(String.format("- Se ha actulizado %d clientes", result));
+		} catch (Exception ex) {
+			System.err.println(String.format("* Error actualizando datos de la BBDD: %s", ex.getMessage()));
+			ex.printStackTrace();						
+		}		
+	}
 	public void borrarDatosProfesores() {
 		//Se abre la conexión y se obtiene el Statement
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_PROFESOR);
