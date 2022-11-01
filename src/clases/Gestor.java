@@ -143,10 +143,42 @@ public class Gestor {
 	}
 	}
 	public void guardarAsignaturaBinario(String filename) {
-	
-		
+		try {
+			FileOutputStream fos= new FileOutputStream("fichero.txt");
+			
+			ObjectOutputStream oos = new ObjectOutputStream(fos);
+			
+			oos.writeObject(pedidos);
+			oos.close();
+			fos.close();
+			
+			
+		} catch (IOException e ) {
+			// TODO: handle exception
+			System.err.println("Error guardar datos ");
 		}
+	}
+
+	
+	
+
+		
+		
 	public void leerAsignaturasBinario(String filename) {
+		try {
+			FileInputStream fis= new FileInputStream("fichero.txt");
+			
+			ObjectInputStream ois = new ObjectInputStream(fis);
+			
+			this.pedidos= (ArrayList<Pedido>) ois.readObject();
+			ois.close();
+			fis.close();
+								
+			
+		} catch (IOException | ClassNotFoundException e ) {
+			// TODO: handle exception
+			System.err.println("Error cargar datos");
+		}
 
 	
 	}
