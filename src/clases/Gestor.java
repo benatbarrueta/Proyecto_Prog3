@@ -165,7 +165,7 @@ public class Gestor {
 			String name = i +"";
 			String username="nombreUsuario"+i;
 		
-				usuario= new Usuarios(name,"apellidos",0,"direccion",username,username);
+				usuario= new Usuarios(name,"apellidos",0,"direccion",username,username,false);
 			usuarios.add(usuario);
 			}
 			System.out.println(usuarios);
