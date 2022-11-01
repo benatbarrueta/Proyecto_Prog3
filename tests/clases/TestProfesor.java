@@ -11,7 +11,14 @@ public class TestProfesor {
 	
 	@Before
 	public void SetUp() {
-		
+		profesor=new Profesor();
+		profesor.setApellidos("Apellidos");
+		profesor.setContraseña("Contraseña");
+		profesor.setSalario(0);
+		profesor.setDireccion("Direccion");
+		profesor.setEdad(0);
+		profesor.setNombre("Nombre");
+		profesor.setNombreUsuario("Usuario");
 	}
 	@Test
 	public void testToString() {

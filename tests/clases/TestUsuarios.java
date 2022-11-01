@@ -5,6 +5,15 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class TestUsuarios {
+	private String nombre ="Nombre";
+	private String apellidos ="Apellidos";
+	private int edad =0;
+	private String direccion ="Direccion";
+	private String nombreUsuario ="Usuario";
+	private String contraseña ="contraseña";
+	private   int  id = -1;
+	private Boolean tipo =true;
+	private String email ="@email.com";
 
 	@Test
 	public void testUsuariosStringStringIntStringStringStringBoolean() {
