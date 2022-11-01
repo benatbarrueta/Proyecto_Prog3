@@ -2,9 +2,11 @@ package clases;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class TestUsuarios {
+	private Usuarios usuario;
 	private String nombre ="Nombre";
 	private String apellidos ="Apellidos";
 	private int edad =0;
@@ -15,109 +17,168 @@ public class TestUsuarios {
 	private Boolean tipo =true;
 	private String email ="@email.com";
 
+	@Before
+	public void setUp() throws Exception {
+		usuario = new Usuarios();
+		usuario.setNombre(nombre);
+		usuario.setApellidos(apellidos);
+		usuario.setEdad(edad);
+		usuario.setDireccion(direccion);
+		usuario.setNombreUsuario(nombreUsuario);
+		usuario.setContraseña(contraseña);
+		usuario.setId(id);
+		usuario.setTipo(tipo);
+		usuario.setEmail(email);
+		
+	}
+	
 	@Test
 	public void testUsuariosStringStringIntStringStringStringBoolean() {
-		fail("Not yet implemented");
+		Usuarios newUsuario = new Usuarios();
+		assertEquals(newUsuario.getNombre(), "");
+		assertEquals(newUsuario.getApellidos(), "");
+		assertEquals(newUsuario.getEdad(), 0);
+		assertEquals(newUsuario.getDireccion(), "");
+		assertEquals(newUsuario.getNombreUsuario(), "");
+		assertEquals(newUsuario.getContraseña(), "");
+		assertEquals(newUsuario.getTipo(), true);
+		assertEquals(newUsuario.getEmail(), "");
 	}
 
 	@Test
 	public void testUsuarios() {
-		fail("Not yet implemented");
+		Usuarios newUsuario2 = new Usuarios();
+		assertEquals(newUsuario2.getNombre(), "");
+		assertEquals(newUsuario2.getApellidos(), "");
+		assertEquals(newUsuario2.getEdad(), 0);
+		assertEquals(newUsuario2.getDireccion(), "");
+		assertEquals(newUsuario2.getNombreUsuario(), "");
+		assertEquals(newUsuario2.getContraseña(), "");
+		assertEquals(newUsuario2.getTipo(), true);
+		assertEquals(newUsuario2.getEmail(), "");
 	}
 
 	@Test
 	public void testGetNombre() {
-		fail("Not yet implemented");
+		assertEquals(usuario.getNombre(), nombre);
 	}
 
 	@Test
 	public void testSetNombre() {
-		fail("Not yet implemented");
+		String newNombre = "newNombre";
+		assertEquals(usuario.getNombre(), nombre);
+		usuario.setNombre(newNombre);
+		assertEquals(usuario.getNombre(), newNombre);
 	}
 
 	@Test
 	public void testGetApellidos() {
-		fail("Not yet implemented");
+		assertEquals(usuario.getApellidos(), apellidos);	
 	}
 
 	@Test
 	public void testSetApellidos() {
-		fail("Not yet implemented");
+		String newApellido = "newApellido";
+		assertEquals(usuario.getApellidos(), apellidos);
+		usuario.setApellidos(newApellido);
+		assertEquals(usuario.getApellidos(), newApellido);
 	}
 
 	@Test
 	public void testGetEdad() {
-		fail("Not yet implemented");
+		assertEquals(usuario.getEdad(), edad);
 	}
 
 	@Test
 	public void testSetEdad() {
-		fail("Not yet implemented");
+		Integer newEdad = 2;
+		assertEquals(usuario.getEdad(), edad);
+		usuario.setEdad(newEdad);
+		assertEquals(usuario.getEdad(), newEdad, 0);
 	}
 
 	@Test
 	public void testGetDireccion() {
-		fail("Not yet implemented");
+		assertEquals(usuario.getDireccion(), direccion);
 	}
 
 	@Test
 	public void testSetDireccion() {
-		fail("Not yet implemented");
+		String newDireccion = "newDireccion";
+		assertEquals(usuario.getDireccion(), direccion);
+		usuario.setDireccion(newDireccion);
+		assertEquals(usuario.getDireccion(), newDireccion);
 	}
 
 	@Test
 	public void testGetNombreUsuario() {
-		fail("Not yet implemented");
+		assertEquals(usuario.getNombreUsuario(), nombreUsuario);
 	}
 
 	@Test
 	public void testSetNombreUsuario() {
-		fail("Not yet implemented");
+		String newNombreUsuario = "newNombreUsuario";
+		assertEquals(usuario.getNombre(), nombre);
+		usuario.setNombreUsuario(newNombreUsuario);
+		assertEquals(usuario.getNombreUsuario(), newNombreUsuario);
 	}
 
 	@Test
 	public void testGetContraseña() {
-		fail("Not yet implemented");
+		assertEquals(usuario.getContraseña(), contraseña);
 	}
 
 	@Test
 	public void testSetContraseña() {
-		fail("Not yet implemented");
+		String newContraseña = "newContraseña";
+		assertEquals(usuario.getContraseña(), contraseña);
+		usuario.setContraseña(newContraseña);
+		assertEquals(usuario.getContraseña(), newContraseña);
 	}
 
 	@Test
 	public void testGetId() {
-		fail("Not yet implemented");
+		assertEquals(usuario.getId(), id);
 	}
 
 	@Test
 	public void testSetId() {
-		fail("Not yet implemented");
+		Integer newId = 1;
+		assertEquals(usuario.getId(), id);
+		usuario.setId(newId);
+		assertEquals(usuario.getId(), newId, 0);
 	}
 
 	@Test
 	public void testGetTipo() {
-		fail("Not yet implemented");
+		assertEquals(usuario.getTipo(), tipo);
 	}
 
 	@Test
 	public void testSetTipo() {
-		fail("Not yet implemented");
+		Boolean newTipo = true;
+		assertEquals(usuario.getTipo(), tipo);
+		usuario.setTipo(newTipo);
+		assertEquals(usuario.getTipo(), newTipo);
 	}
 
 	@Test
 	public void testGetEmail() {
-		fail("Not yet implemented");
+		assertEquals(usuario.getEmail(), email);
 	}
 
 	@Test
 	public void testSetEmail() {
-		fail("Not yet implemented");
+		String newEmail = "newEmail";
+		assertEquals(usuario.getEmail(), email);
+		usuario.setEmail(newEmail);
+		assertEquals(usuario.getEmail(), newEmail);
 	}
 
 	@Test
 	public void testToString() {
-		fail("Not yet implemented");
+		String toString = "Usuario: " + nombre + apellidos + ", " + edad + " años";
+		assertEquals(usuario.toString(), toString);
 	}
 
 }
