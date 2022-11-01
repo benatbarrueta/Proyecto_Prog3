@@ -185,11 +185,10 @@ public class Gestor {
 		//gestor.leerAsignaturasCSV(KEY_ASIGNATURA);
 		
 		GestorBD gestorBD = new GestorBD();		
-		gestorBD.crearBBDD();
+		gestorBD.crearBBDDAlumno();
+		gestorBD.crearBBDDProfesor();
 		//
-		ArrayList<Usuarios> usuarios = gestor.initUsuarios();
-		gestorBD.insertarDatos(usuarios.toArray(new Usuarios[usuarios.size()]));
-		gestorBD.borrarBBDD();
+		
 	//	System.out.println(	gestorBD.obtenerDatos());
 	//	gestorBD.obtenerDatos();
 		//CREATE DATABASE: Se crea la BBDD

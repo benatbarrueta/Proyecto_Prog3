@@ -131,11 +131,11 @@ public class TestUsuarios {
 	}
 
 	@Test
-	public void testSetnombreUsuario()  {
+	public void testSetNombreUsuario()  {
 		
 		assertEquals(nombreUsuario,usuario.getNombreUsuario());
 		String newNombreUsuario = "nombreUsuario2";
-		usuario.setnombreUsuario(newNombreUsuario);
+		usuario.setNombreUsuario(newNombreUsuario);
 		assertEquals(newNombreUsuario, usuario.getNombreUsuario());
 		
 	}

@@ -7,7 +7,7 @@ import org.junit.Test;
 public class TestAlumno {
 	protected String email ="email";
 	protected String curso="1";
-	protected Alumno alumno = new Alumno("Nombre","Apellidos",0,"direccion","nombreUsuario","contraseña",email,curso);
+	protected Alumno alumno = new Alumno("Nombre","Apellidos",0,"direccion","nombreUsuario","contraseña",email,curso , true);
 
 	@Test
 	public void testToString() {

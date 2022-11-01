@@ -10,8 +10,8 @@ public class Usuarios {
 	protected String nombreUsuario;
 	protected String contraseña;
 	private int id = -1;
-	
-	public Usuarios(String nombre, String apellidos, int edad, String direccion, String nombreUsuario, String contraseña) {
+	private Boolean tipo;
+	public Usuarios(String nombre, String apellidos, int edad, String direccion, String nombreUsuario, String contraseña, Boolean tipo) {
 		super();
 		this.nombre = nombre;
 		this.apellidos = apellidos;
@@ -19,6 +19,7 @@ public class Usuarios {
 		this.direccion = direccion;
 		this.nombreUsuario = nombreUsuario;
 		this.contraseña = contraseña;
+		this.tipo =tipo;
 		
 	}
 	
@@ -30,6 +31,7 @@ public class Usuarios {
 		this.direccion = "";
 		this.nombreUsuario = "";
 		this.contraseña = "";
+		this.tipo= true;
 	
 	}
 	
@@ -40,6 +42,26 @@ public class Usuarios {
 	public void setId(int id) {
 		this.id = id;
 	}
+	public String getApellidos() {
+		return apellidos;
+	}
+
+	public void setApellidos(String apellidos) {
+		this.apellidos = apellidos;
+	}
+
+	public void setNombreUsuario(String nombreUsuario) {
+		this.nombreUsuario = nombreUsuario;
+	}
+
+	public Boolean getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(Boolean profesor) {
+		this.tipo= profesor;
+	}
+
 	public String getNombre() {
 		
 		return nombre;
@@ -77,9 +99,7 @@ public class Usuarios {
 		return nombreUsuario;
 	}
 
-	public void setnombreUsuario(String nombreUsuario) {
-		this.nombreUsuario = nombreUsuario;
-	}
+	
 	
 	public String getContraseña() {
 		return contraseña;

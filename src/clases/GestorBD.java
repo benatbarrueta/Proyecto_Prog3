@@ -12,8 +12,10 @@ import java.sql.*;
 public class GestorBD {
 
 	protected static final String DRIVER_NAME = "lib/sqlite-jdbc";
-	protected static final String DATABASE_FILE = "db/database.db";
-	protected static final String CONNECTION_STRING = "jdbc:sqlite:" + DATABASE_FILE;
+	protected static final String DATABASE_FILE_ALUMNO = "db/databaseprofesor.db";
+	protected static final String DATABASE_FILE_PROFESOR = "db/databasealumno.db";
+	protected static final String CONNECTION_STRING_ALUMNO = "jdbc:sqlite:" + DATABASE_FILE_ALUMNO;
+	protected static final String CONNECTION_STRING_PROFESOR = "jdbc:sqlite:" + DATABASE_FILE_PROFESOR;
 	
 	public GestorBD() {		
 		try {
@@ -25,25 +27,55 @@ public class GestorBD {
 		}
 	}
 		
-	public void crearBBDD() {
+	public void crearBBDDAlumno() {
 		//Se abre la conexión y se obtiene el Statement
 		//Al abrir la conexión, si no existía el fichero, se crea la base de datos
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_ALUMNO);
 		     Statement stmt = con.createStatement()) {
 			
-	        String sql = "CREATE TABLE IF NOT EXISTS USUARIO(\n"
+	        String sql = "CREATE TABLE IF NOT EXISTS ALUMNO(\n"
 	        		   + " ID INTEGER PRIMARY KEY AUTOINCREMENT,\n"
 	                   + " NOMBRE TEXT NOT NULL,\n"
 	                   + " APELLIDO TEXT NOT NULL,\n"
 	                   + " CONTRASEÑA TEXT NOT NULL,\n"
 	                   + " DIRECCION TEXT NOT NULL,\n"
 	                   + " EDAD TEXT NOT NULL,\n"
+	                   + " EMAIL TEXT NOT NULL,\n"
+	                   + " CURSO TEXT NOT NULL,\n"
 	                   + " NOMBRE_USUARIO TEXT NOT NULL\n"
 	                   + ");";
 	   
 		
 	        if (!stmt.execute(sql)) {
-	        	System.out.println("- Se ha creado la tabla Usuario");
+	        	System.out.println("- Se ha creado la tabla Alumno");
+	        }
+		} catch (Exception ex) {
+			System.err.println(String.format("* Error al crear la BBDD: %s", ex.getMessage()));
+			ex.printStackTrace();			
+		}
+	}
+	public void crearBBDDProfesor() {
+		//Se abre la conexión y se obtiene el Statement
+		//Al abrir la conexión, si no existía el fichero, se crea la base de datos
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_PROFESOR);
+		     Statement stmt = con.createStatement()) {
+			
+	        String sql = "CREATE TABLE IF NOT EXISTS PROFESOR(\n"
+	        		   + " ID INTEGER PRIMARY KEY AUTOINCREMENT,\n"
+	                   + " NOMBRE TEXT NOT NULL,\n"
+	                   + " APELLIDO TEXT NOT NULL,\n"
+	                   + " CONTRASEÑA TEXT NOT NULL,\n"
+	                   + " DIRECCION TEXT NOT NULL,\n"
+	                   + " EDAD TEXT NOT NULL,\n"
+	                   + "  TEXT NOT NULL,\n"
+	                   + " EMAIL TEXT NOT NULL,\n"
+	                   + " SALARIO TEXT NOT NULL,\n"
+	                   + " NOMBRE_USUARIO TEXT NOT NULL\n"
+	                   + ");";
+	   
+		
+	        if (!stmt.execute(sql)) {
+	        	System.out.println("- Se ha creado la tabla Profesor");
 	        }
 		} catch (Exception ex) {
 			System.err.println(String.format("* Error al crear la BBDD: %s", ex.getMessage()));
@@ -123,7 +155,7 @@ public class GestorBD {
 				usuario.setDireccion(rs.getString("DIRECCION"));
 			
 				usuario.setEdad(rs.getInt("DIRECCION"));
-				usuario.setnombreUsuario(rs.getString("NOMBRE_USUARIO"));
+				usuario.setNombreUsuario(rs.getString("NOMBRE_USUARIO"));
 			
 				
 				//Se inserta cada nuevo cliente en la lista de clientes

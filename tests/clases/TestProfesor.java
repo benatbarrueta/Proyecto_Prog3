@@ -7,7 +7,7 @@ import org.junit.Test;
 public class TestProfesor {
 	protected double salario = 0;
 	protected String email = "email";
-	private Profesor profesor= new Profesor("Nombre","Apellidos",0,"direccion","nombreUsuario","contraseña",salario,email);
+	private Profesor profesor= new Profesor("Nombre","Apellidos",0,"direccion","nombreUsuario","contraseña",salario,email, true);
 	
 	
 	@Test

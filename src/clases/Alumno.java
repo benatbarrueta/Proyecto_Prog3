@@ -6,8 +6,8 @@ public class Alumno extends Usuarios {
 
 
 	public Alumno(String nombre, String apellidos, int edad, String direccion, String nombreUsuario, String contraseña,
-			String email, String curso) {
-		super(nombre, apellidos, edad, direccion, nombreUsuario, contraseña);
+			String email, String curso, Boolean tipo) {
+		super(nombre, apellidos, edad, direccion, nombreUsuario, contraseña,tipo);
 		this.email = email;
 		this.curso = curso;
 	}
