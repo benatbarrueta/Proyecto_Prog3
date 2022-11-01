@@ -16,7 +16,7 @@ public class TestUsuarios {
 	private int id = -1;
 	@Before
 	public void iniciar() throws Exception{
-		 usuario = new Usuarios(nombre,apellidos,edad,direccion,nombreUsuario,contraseña);
+		 usuario = new Usuarios(nombre,apellidos,edad,direccion,nombreUsuario,contraseña,true);
 	}
 	
 	
