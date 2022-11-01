@@ -30,10 +30,8 @@ public class TestProfesor {
 	}
 	@Test
 	public void testToString() {
-		String toString = "Profesor [salario=" + salario + ", nombre=" + nombre + ", apellidos=" + apellidos + ", edad=" + edad
-				+ ", direccion=" + direccion + ", nombreUsuario=" + nombreUsuario + ", contraseña=" + contraseña
-				+ ", email=" + email + "]";
-			assertEquals(profesor.toString(), toString);
+		String toString = "Profesor: " + nombre + apellidos + ", " + edad + " años";;
+		assertEquals(profesor.toString(), toString);
 	}
 
 	@Test

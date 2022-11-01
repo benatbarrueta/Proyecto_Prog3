@@ -8,6 +8,9 @@ import org.junit.Test;
 public class TestAlumno {
 	private Alumno alumno;
 	private String curso ="Primero";
+	protected String nombre = "nombre";
+	protected String apellidos= "apellido";
+	protected int edad = 0;
 	
 	@Before
 	public void SetUp() {
@@ -24,9 +27,7 @@ public class TestAlumno {
 
 	@Test
 	public void testToString() {
-		String toString= "Alumno [curso=" + curso + ", nombre=" + "Nombre" + ", apellidos=" + "Apellidos" + ", edad=" + "0"
-				+ ", direccion=" + "Direccion" + ", nombreUsuario=" + "Usuario" + ", contraseña=" + "Contraseña"
-				+ ", email=" + "NombreApellidos@email.com"+ "]";
+		String toString= "Alumno: " + nombre + apellidos + ", " + edad + " años";
 
 		assertEquals(alumno.toString(), toString);
 	}

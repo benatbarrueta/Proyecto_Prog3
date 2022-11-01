@@ -25,10 +25,10 @@ public class Alumno extends Usuarios {
 
 	@Override
 	public String toString() {
-		return "Alumno [curso=" + curso + ", nombre=" + nombre + ", apellidos=" + apellidos + ", edad=" + edad
-				+ ", direccion=" + direccion + ", nombreUsuario=" + nombreUsuario + ", contraseña=" + contraseña
-				+ ", email=" + email +" id: " + id +"]";
+		return "Alumno: " + nombre + apellidos + ", " + edad + " años";
 	}
+
+	
 
 
 

@@ -28,9 +28,7 @@ public class Profesor extends Usuarios {
 
 	@Override
 	public String toString() {
-		return "Profesor [salario=" + salario + ", nombre=" + nombre + ", apellidos=" + apellidos + ", edad=" + edad
-				+ ", direccion=" + direccion + ", nombreUsuario=" + nombreUsuario + ", contraseña=" + contraseña
-				+ ", email=" + email + "]";
+		return "Profesor: " + nombre + apellidos + ", " + edad + " años";
 	}
 	
 	
