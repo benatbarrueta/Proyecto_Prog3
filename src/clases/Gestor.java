@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
@@ -146,11 +147,13 @@ public class Gestor {
 	}
 	public void guardarAsignaturaBinario(String filename) {
 		try {
-			FileOutputStream fos= new FileOutputStream("fichero.txt");
+			FileOutputStream fos= new FileOutputStream(filename);
 			
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
+			for (Asignatura asignatura : asignaturas) {
+				oos.writeObject(asignatura);
+			}
 			
-			oos.writeObject(pedidos);
 			oos.close();
 			fos.close();
 			
@@ -168,16 +171,16 @@ public class Gestor {
 		
 	public void leerAsignaturasBinario(String filename) {
 		try {
-			FileInputStream fis= new FileInputStream("fichero.txt");
+			FileInputStream fis= new FileInputStream(filename);
 			
 			ObjectInputStream ois = new ObjectInputStream(fis);
 			
-			this.pedidos= (ArrayList<Pedido>) ois.readObject();
+			this.asignaturas= (ArrayList<Asignatura>) ois.readObject();
 			ois.close();
 			fis.close();
 								
 			
-		} catch (IOException | ClassNotFoundException e ) {
+		} catch (IOException  | ClassNotFoundException e ) {
 			// TODO: handle exception
 			System.err.println("Error cargar datos");
 		}
