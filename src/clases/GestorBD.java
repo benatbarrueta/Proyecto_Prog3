@@ -9,7 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import es.deusto.prog3.practica3c.Cliente;
+
 
 import java.sql.*;
 public class GestorBD {
@@ -286,12 +286,12 @@ public class GestorBD {
 	}	
 	public void actualizarPasswordAlumno(Alumno alumno, String newPassword) {
 		//Se abre la conexiÃ³n y se obtiene el Statement
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_ALUMNO);
 		     Statement stmt = con.createStatement()) {
 			//Se ejecuta la sentencia de borrado de datos
-			String sql = "UPDATE CLIENTE SET PASSWORD = '%s' WHERE ID = %d;";
+			String sql = "UPDATE ALUMNO SET PASSWORD = '%s' WHERE ID = %d;";
 			
-			int result = stmt.executeUpdate(String.format(sql, newPassword, cliente.getId()));
+			int result = stmt.executeUpdate(String.format(sql, newPassword, alumno.getId()));
 			
 			System.out.println(String.format("- Se ha actulizado %d clientes", result));
 		} catch (Exception ex) {
@@ -299,16 +299,16 @@ public class GestorBD {
 			ex.printStackTrace();						
 		}		
 	}
-	public void actualizarPasswordProfesor(Cliente cliente, String newPassword) {
+	public void actualizarPasswordProfesor(Profesor profesor, String newPassword) {
 		//Se abre la conexiÃ³n y se obtiene el Statement
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_PROFESOR);
 		     Statement stmt = con.createStatement()) {
 			//Se ejecuta la sentencia de borrado de datos
-			String sql = "UPDATE CLIENTE SET PASSWORD = '%s' WHERE ID = %d;";
+			String sql = "UPDATE PROFESOR SET PASSWORD = '%s' WHERE ID = %d;";
 			
-			int result = stmt.executeUpdate(String.format(sql, newPassword, cliente.getId()));
+			int result = stmt.executeUpdate(String.format(sql, newPassword, profesor.getId()));
 			
-			System.out.println(String.format("- Se ha actulizado %d clientes", result));
+			System.out.println(String.format("- Se ha actulizado %d profesor", result));
 		} catch (Exception ex) {
 			System.err.println(String.format("* Error actualizando datos de la BBDD: %s", ex.getMessage()));
 			ex.printStackTrace();						
