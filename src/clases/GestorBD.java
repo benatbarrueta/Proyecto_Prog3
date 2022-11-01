@@ -187,7 +187,7 @@ public class GestorBD {
 		ArrayList<Alumno> alumnos = new ArrayList<>();
 		
 		//Se abre la conexión y se obtiene el Statement
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_PROFESOR);
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_ALUMNO);
 		     Statement stmt = con.createStatement()) {
 			String sql = "SELECT * FROM ALUMNO WHERE ID >= 0";
 			
@@ -265,7 +265,7 @@ public class GestorBD {
 			System.err.println(String.format("* Error al obtener datos de la BBDD: %s", ex.getMessage()));
 			ex.printStackTrace();						
 		}		
-		
+		System.out.println(profesores);
 		return profesores;
 	}
 
@@ -293,7 +293,7 @@ public class GestorBD {
 			
 			int result = stmt.executeUpdate(String.format(sql, newPassword, alumno.getId()));
 			
-			System.out.println(String.format("- Se ha actulizado %d clientes", result));
+			System.out.println(String.format("- Se ha actulizado %d alumnos", result));
 		} catch (Exception ex) {
 			System.err.println(String.format("* Error actualizando datos de la BBDD: %s", ex.getMessage()));
 			ex.printStackTrace();						

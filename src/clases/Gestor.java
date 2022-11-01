@@ -227,19 +227,26 @@ public class Gestor {
 		GestorBD gestorBD = new GestorBD();	
 		gestorBD.crearBBDDAlumno();
 		gestorBD.crearBBDDProfesor();
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 4; i++) {
 			Profesor profesor = new Profesor();
 			profesor.setId(-1);
 			gestor.profesor.add(profesor);
 		}
-		for (int i = 0; i < 6; i++) {
+		for (int i = 0; i < 4; i++) {
 			Alumno alumno= new Alumno();
 			gestor.alumnos.add(alumno);
 		}
 		gestorBD.insertarDatosAlumno(gestor.alumnos.toArray(new Alumno[gestor.alumnos.size()]));
 		gestorBD.insertarDatosProfesor(gestor.profesor.toArray(new Profesor[gestor.profesor.size()]));
-		gestorBD.actualizarPasswordAlumno(gestor.alumnos.get(1), "2345");
+		gestorBD.obtenerDatosProfesor();
+		
+		gestorBD.obtenerDatosAlumnos();
+		gestorBD.actualizarPasswordAlumno(gestor.alumnos.get(2), "2345");
 		gestorBD.actualizarPasswordProfesor(gestor.profesor.get(0), "1234");
+		gestorBD.obtenerDatosProfesor();
+		
+
+		
 		gestorBD.borrarDatosAlumnos();
 		gestorBD.borrarDatosProfesores();
 		gestorBD.borrarBBDDAlumno();

@@ -9,7 +9,7 @@ public class Usuarios {
 	protected String direccion;
 	protected String nombreUsuario;
 	protected String contraseña;
-	private   int  id = -1;
+	protected   int  id = -1;
 	private Boolean tipo;
 	protected String email;
 	

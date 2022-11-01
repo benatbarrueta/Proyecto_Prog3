@@ -27,7 +27,7 @@ public class Alumno extends Usuarios {
 	public String toString() {
 		return "Alumno [curso=" + curso + ", nombre=" + nombre + ", apellidos=" + apellidos + ", edad=" + edad
 				+ ", direccion=" + direccion + ", nombreUsuario=" + nombreUsuario + ", contraseña=" + contraseña
-				+ ", email=" + email + "]";
+				+ ", email=" + email +" id: " + id +"]";
 	}
 
 
