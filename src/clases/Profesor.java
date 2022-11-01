@@ -21,7 +21,7 @@ public class Profesor extends Usuarios {
 	}
 
 
-	public void setSalario(Integer salario) {
+	public void setSalario(int salario) {
 		this.salario = salario;
 	}
 

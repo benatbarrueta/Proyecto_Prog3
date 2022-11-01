@@ -164,7 +164,7 @@ public class GestorBD {
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_PROFESOR);
 		     Statement stmt = con.createStatement()) {
 			//Se define la plantilla de la sentencia SQL
-			String sql = "INSERT INTO PROFESOR ( NOMBRE, APELLIDO, CONTRASEÑA, DIRECCION, EDAD, EMAIL, SALARIO, NOMBRE_USUARIO) VALUES ('%s', '%s', '%s', '%s', '%d','%s', '%d', '%s');";
+			String sql = "INSERT INTO PROFESOR ( NOMBRE, APELLIDO, CONTRASEÑA, DIRECCION, EDAD, EMAIL, SALARIO, NOMBRE_USUARIO) VALUES ('%s', '%s', '%s', '%s', '%d','%s', '%f', '%s');";
 			
 			System.out.println("- Insertando profesores...");
 			
