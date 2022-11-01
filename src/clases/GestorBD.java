@@ -83,16 +83,16 @@ public class GestorBD {
 		}
 	}
 	
-	public void borrarBBDD() {
+	public void borrarBBDDAlumno() {
 		//Se abre la conexión y se obtiene el Statement
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_ALUMNO);
 		     Statement stmt = con.createStatement()) {
 			
-	        String sql = "DROP TABLE IF EXISTS USUARIO";
+	        String sql = "DROP TABLE IF EXISTS ALUMNO";
 			
 	        //Se ejecuta la sentencia de creación de la tabla Estudiantes
 	        if (!stmt.execute(sql)) {
-	        	System.out.println("- Se ha borrado la tabla Usuraio");
+	        	System.out.println("- Se ha borrado la tabla Alumno");
 	        }
 		} catch (Exception ex) {
 			System.err.println(String.format("* Error al borrar la BBDD: %s", ex.getMessage()));
@@ -101,7 +101,32 @@ public class GestorBD {
 		
 		try {
 			//Se borra el fichero de la BBDD
-			Files.delete(Paths.get(DATABASE_FILE));
+			Files.delete(Paths.get(DATABASE_FILE_ALUMNO));
+			System.out.println("- Se ha borrado el fichero de la BBDD");
+		} catch (Exception ex) {
+			System.err.println(String.format("* Error al borrar el archivo de la BBDD: %s", ex.getMessage()));
+			ex.printStackTrace();						
+		}
+	}
+	public void borrarBBDDProfesor() {
+		//Se abre la conexión y se obtiene el Statement
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_PROFESOR);
+		     Statement stmt = con.createStatement()) {
+			
+	        String sql = "DROP TABLE IF EXISTS PROFESOR";
+			
+	        //Se ejecuta la sentencia de creación de la tabla Estudiantes
+	        if (!stmt.execute(sql)) {
+	        	System.out.println("- Se ha borrado la tabla Profesor*");
+	        }
+		} catch (Exception ex) {
+			System.err.println(String.format("* Error al borrar la BBDD: %s", ex.getMessage()));
+			ex.printStackTrace();			
+		}
+		
+		try {
+			//Se borra el fichero de la BBDD
+			Files.delete(Paths.get(DATABASE_FILE_PROFESOR));
 			System.out.println("- Se ha borrado el fichero de la BBDD");
 		} catch (Exception ex) {
 			System.err.println(String.format("* Error al borrar el archivo de la BBDD: %s", ex.getMessage()));
