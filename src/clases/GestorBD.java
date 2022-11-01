@@ -190,10 +190,12 @@ public class GestorBD {
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_ALUMNO);
 		     Statement stmt = con.createStatement()) {
 			String sql = "SELECT * FROM ALUMNO WHERE ID >= 0";
-			
+	//		System.out.println(sql);
 			
 			//Se ejecuta la sentencia y se obtiene el ResultSet con los resutlados
-			ResultSet rs = stmt.executeQuery(sql);			
+			ResultSet rs = stmt.executeQuery(sql);		
+			
+			
 			Alumno alumno;
 			
 			//Se recorre el ResultSet y se crean objetos Cliente
@@ -290,21 +292,24 @@ public class GestorBD {
 		     Statement stmt = con.createStatement()) {
 			//Se ejecuta la sentencia de borrado de datos
 			String sql = "UPDATE ALUMNO SET CONTRASEÑA = '%s' WHERE ID = %d;";
+	
 			
 			int result = stmt.executeUpdate(String.format(sql, newPassword, alumno.getId()));
-			
+	
 			System.out.println(String.format("- Se ha actulizado %d alumnos", result));
+			
+			//	System.out.println();
 		} catch (Exception ex) {
 			System.err.println(String.format("* Error actualizando datos de la BBDD: %s", ex.getMessage()));
 			ex.printStackTrace();						
 		}		
 	}
-	public void actualizarPasswordProfesor(Profesor profesor, String newPassword) {
+	public void actualizarEmailProfesor(Profesor profesor, String newPassword) {
 		//Se abre la conexiÃ³n y se obtiene el Statement
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_PROFESOR);
 		     Statement stmt = con.createStatement()) {
 			//Se ejecuta la sentencia de borrado de datos
-			String sql = "UPDATE PROFESOR SET CONTRASEÑA = '%s' WHERE ID = %d;";
+			String sql = "UPDATE PROFESOR SET EMAIL = '%s' WHERE ID = %d;";
 			
 			int result = stmt.executeUpdate(String.format(sql, newPassword, profesor.getId()));
 			

@@ -222,33 +222,37 @@ public class Gestor {
 		gestor.CrearAsignaturas();
 		
 	
-		//gestor.leerAsignaturasCSV(KEY_ASIGNATURA);
+	//	gestor.leerAsignaturasBinario(KEY_ASIGNATURA);
 		
 		GestorBD gestorBD = new GestorBD();	
 		gestorBD.crearBBDDAlumno();
 		gestorBD.crearBBDDProfesor();
-		for (int i = 0; i < 4; i++) {
-			Profesor profesor = new Profesor();
-			profesor.setId(-1);
-			gestor.profesor.add(profesor);
+		for (int i = 0; i < 1; i++) {
+		Profesor profesor = new Profesor();
+		profesor.setId(-1);
+		gestor.profesor.add(profesor);
 		}
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < 1; i++) {
 			Alumno alumno= new Alumno();
 			gestor.alumnos.add(alumno);
 		}
 		gestorBD.insertarDatosAlumno(gestor.alumnos.toArray(new Alumno[gestor.alumnos.size()]));
 		gestorBD.insertarDatosProfesor(gestor.profesor.toArray(new Profesor[gestor.profesor.size()]));
-		gestorBD.obtenerDatosProfesor();
+		gestor.profesor= gestorBD.obtenerDatosProfesor();
 		
-		gestorBD.obtenerDatosAlumnos();
-		gestorBD.actualizarPasswordAlumno(gestor.alumnos.get(2), "2345");
-		gestorBD.actualizarPasswordProfesor(gestor.profesor.get(0), "1234");
-		gestorBD.obtenerDatosProfesor();
+		String newPassword = "hWaPvd6R28%1";
+	  gestor.alumnos= gestorBD.obtenerDatosAlumnos();
+
+		gestor.alumnos.get(0).getId();
+
+		gestorBD.actualizarPasswordAlumno(gestor.alumnos.get(0), newPassword);
+		gestorBD.actualizarEmailProfesor(gestor.profesor.get(0), "1234");
+		System.out.println(gestorBD.obtenerDatosAlumnos());
 		
 
 		
-		gestorBD.borrarDatosAlumnos();
-		gestorBD.borrarDatosProfesores();
+	//	gestorBD.borrarDatosAlumnos();
+	//	gestorBD.borrarDatosProfesores();
 		gestorBD.borrarBBDDAlumno();
 		gestorBD.borrarBBDDProfesor();
 		//

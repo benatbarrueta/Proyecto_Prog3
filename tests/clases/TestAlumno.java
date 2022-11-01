@@ -12,7 +12,7 @@ public class TestAlumno {
 	protected String apellidos= "Apellidos";
 	protected int edad = 0;
 	protected String direccion = "Direccion";
-	protected String nombreUsuario = "NombreUsuario";
+	protected String nombreUsuario = "Usuario";
 	protected String contraseña = "Contraseña";
 	protected Boolean tipo = true;
 	@Before
@@ -30,8 +30,10 @@ public class TestAlumno {
 
 	@Test
 	public void testToString() {
-		String toString= "Alumno: " + nombre + apellidos + ", " + edad + " años";
-		
+		String toString= "Alumno [curso=" + curso + ", nombre=" + nombre + ", apellidos=" + apellidos + ", edad=" + edad
+				+ ", direccion=" + direccion + ", nombreUsuario=" + nombreUsuario + ", contraseña=" + contraseña
+				+ ", id=" + -1 + ", email=" +nombre+apellidos+"@email.com" + "]";;
+	
 		assertEquals(alumno.toString(), toString);
 	}
 
