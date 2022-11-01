@@ -9,6 +9,14 @@ public class TestProfesor {
 	private Profesor profesor;
 	private int salario =0;
 	
+	protected String nombre = "nombre";
+	protected String apellidos = "apellidos";
+	protected int edad = 0;
+	protected String direccion = "direccion";
+	protected String nombreUsuario = "nombreUsuario";
+	protected String contraseña = "contraseña";
+	protected String email = "email";
+	
 	@Before
 	public void SetUp() {
 		profesor=new Profesor();
@@ -22,18 +30,35 @@ public class TestProfesor {
 	}
 	@Test
 	public void testToString() {
-		String toString="";
+		String toString = "Profesor [salario=" + salario + ", nombre=" + nombre + ", apellidos=" + apellidos + ", edad=" + edad
+				+ ", direccion=" + direccion + ", nombreUsuario=" + nombreUsuario + ", contraseña=" + contraseña
+				+ ", email=" + email + "]";
 			assertEquals(profesor.toString(), toString);
 	}
 
 	@Test
 	public void testProfesorStringStringIntStringStringStringBooleanDouble() {
-		fail("Not yet implemented");
+		Profesor newProfesor = new Profesor();
+		assertEquals(newProfesor.getNombre(), "");
+		assertEquals(newProfesor.getApellidos(), "");
+		assertEquals(newProfesor.getEdad(), 0,0);
+		assertEquals(newProfesor.getDireccion(), "");
+		assertEquals(newProfesor.getNombreUsuario(), "");
+		assertEquals(newProfesor.getContraseña(), "");
+		assertEquals(newProfesor.getSalario(), 0,0);
+		
 	}
 
 	@Test
 	public void testProfesor() {
-		fail("Not yet implemented");
+		Profesor newProfesor2 = new Profesor();
+		assertEquals(newProfesor2.getNombre(), "");
+		assertEquals(newProfesor2.getApellidos(), "");
+		assertEquals(newProfesor2.getEdad(), 0,0);
+		assertEquals(newProfesor2.getDireccion(), "");
+		assertEquals(newProfesor2.getNombreUsuario(), "");
+		assertEquals(newProfesor2.getContraseña(), "");
+		assertEquals(newProfesor2.getSalario(), 0,0);
 	}
 
 	@Test
