@@ -34,15 +34,14 @@ public class TestUsuarios {
 	
 	@Test
 	public void testUsuariosStringStringIntStringStringStringBoolean() {
-		Usuarios newUsuario = new Usuarios();
-		assertEquals(newUsuario.getNombre(), "");
-		assertEquals(newUsuario.getApellidos(), "");
+		Usuarios newUsuario = new Usuarios(nombre,apellidos,edad,direccion,nombreUsuario,contraseña);
+		assertEquals(newUsuario.getNombre(), nombre);
+		assertEquals(newUsuario.getApellidos(), apellidos);
 		assertEquals(newUsuario.getEdad(), 0);
-		assertEquals(newUsuario.getDireccion(), "");
-		assertEquals(newUsuario.getNombreUsuario(), "");
-		assertEquals(newUsuario.getContraseña(), "");
-		assertEquals(newUsuario.getTipo(), true);
-		assertEquals(newUsuario.getEmail(), "");
+		assertEquals(newUsuario.getDireccion(), direccion);
+		assertEquals(newUsuario.getNombreUsuario(), nombreUsuario);
+		assertEquals(newUsuario.getContraseña(), contraseña);
+		assertEquals(newUsuario.getEmail(), nombre + apellidos + "@email.com");
 	}
 
 	@Test
@@ -54,8 +53,7 @@ public class TestUsuarios {
 		assertEquals(newUsuario2.getDireccion(), "");
 		assertEquals(newUsuario2.getNombreUsuario(), "");
 		assertEquals(newUsuario2.getContraseña(), "");
-		assertEquals(newUsuario2.getTipo(), true);
-		assertEquals(newUsuario2.getEmail(), "");
+		assertEquals(newUsuario2.getEmail(), "@email.com");
 	}
 
 	@Test
