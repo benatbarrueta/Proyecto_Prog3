@@ -289,7 +289,7 @@ public class GestorBD {
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_ALUMNO);
 		     Statement stmt = con.createStatement()) {
 			//Se ejecuta la sentencia de borrado de datos
-			String sql = "UPDATE ALUMNO SET PASSWORD = '%s' WHERE ID = %d;";
+			String sql = "UPDATE ALUMNO SET CONTRASEÑA = '%s' WHERE ID = %d;";
 			
 			int result = stmt.executeUpdate(String.format(sql, newPassword, alumno.getId()));
 			
@@ -304,7 +304,7 @@ public class GestorBD {
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_PROFESOR);
 		     Statement stmt = con.createStatement()) {
 			//Se ejecuta la sentencia de borrado de datos
-			String sql = "UPDATE PROFESOR SET PASSWORD = '%s' WHERE ID = %d;";
+			String sql = "UPDATE PROFESOR SET CONTRASEÑA = '%s' WHERE ID = %d;";
 			
 			int result = stmt.executeUpdate(String.format(sql, newPassword, profesor.getId()));
 			

@@ -238,6 +238,8 @@ public class Gestor {
 		}
 		gestorBD.insertarDatosAlumno(gestor.alumnos.toArray(new Alumno[gestor.alumnos.size()]));
 		gestorBD.insertarDatosProfesor(gestor.profesor.toArray(new Profesor[gestor.profesor.size()]));
+		gestorBD.actualizarPasswordAlumno(gestor.alumnos.get(1), "2345");
+		gestorBD.actualizarPasswordProfesor(gestor.profesor.get(0), "1234");
 		gestorBD.borrarDatosAlumnos();
 		gestorBD.borrarDatosProfesores();
 		gestorBD.borrarBBDDAlumno();
