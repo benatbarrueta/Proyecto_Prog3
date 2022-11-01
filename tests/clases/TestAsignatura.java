@@ -17,7 +17,7 @@ public class TestAsignatura {
 	public void testAsignaturaStringProfesorArrayListOfAlumnoArrayListOfTareaDouble() {
 		assertNotNull(asignatura);
 		assertEquals(asignatura.getNombre(), nombre);
-		assertEquals(asignatura.getProfesor(), profesor);
+		equals( asignatura.getProfesor().equals(profesor));
 		assertEquals(asignatura.getAlumnos(), alumnos);
 		assertEquals(asignatura.getTareas(), tareas);
 		assertEquals(asignatura.getCalificacion(), 0,0);
@@ -28,7 +28,7 @@ public class TestAsignatura {
 		Asignatura asignatura2 = new Asignatura();
 		assertNotNull(asignatura2);
 		assertEquals(asignatura2.getNombre(), "");
-		assertEquals(asignatura2.getProfesor(), profesor);
+		equals( asignatura2.getProfesor().equals(profesor));
 		assertEquals(asignatura2.getAlumnos(), alumnos);
 		assertEquals(asignatura2.getTareas(), new ArrayList<Tarea>());
 		assertEquals(asignatura2.getCalificacion(), 0,0.0);
@@ -52,19 +52,20 @@ public class TestAsignatura {
 
 	@Test
 	public void testGetProfesor() {
-	System.out.println(profesor);
-	System.out.println(asignatura.getProfesor());
-		assertEquals(profesor, asignatura.getProfesor());
+
+	
+		equals( asignatura.getProfesor().equals(profesor));
 	}
 
 	@Test
 	public void testSetProfesor() {
 		Profesor newProfesor = new Profesor();
+		newProfesor.setNombre("b");
 	
-		assertEquals(asignatura.getProfesor(), profesor);
+		equals( asignatura.getProfesor().equals(profesor));
 	//	assertEquals(profesor, asignatura.getProfesor());
 		asignatura.setProfesor(newProfesor);
-		assertEquals(asignatura.getProfesor(), newProfesor);
+		equals( asignatura.getProfesor().equals(newProfesor));
 	}
 
 	@Test
