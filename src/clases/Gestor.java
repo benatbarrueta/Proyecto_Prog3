@@ -246,15 +246,19 @@ public class Gestor {
 		gestor.alumnos.get(0).getId();
 
 		gestorBD.actualizarPasswordAlumno(gestor.alumnos.get(0), newPassword);
-		gestorBD.actualizarEmailProfesor(gestor.profesor.get(0), "1234");
-	System.out.println(gestorBD.obtenerDatosAlumnos());
-			
+
+		gestorBD.actualizarPaswordProfesor(gestor.profesor.get(0), "1234");
+		System.out.println(gestorBD.obtenerDatosAlumnos());
+		System.out.println(gestorBD.obtenerDatosProfesor());
+		
 
 		
-	//	gestorBD.borrarDatosAlumnos();
-	//	gestorBD.borrarDatosProfesores();
-		//gestorBD.borrarBBDDAlumno();
-	//	gestorBD.borrarBBDDProfesor();
+		gestorBD.borrarDatosAlumnos();
+		gestorBD.borrarDatosProfesores();
+		gestorBD.borrarBBDDAlumno(); 
+		gestorBD.borrarBBDDProfesor();
+
+
 		//
 		
 	//	System.out.println(	gestorBD.obtenerDatos());

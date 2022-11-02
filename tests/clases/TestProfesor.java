@@ -12,10 +12,10 @@ public class TestProfesor {
 	protected String nombre = "Nombre";
 	protected String apellidos = "Apellidos";
 	protected int edad = 0;
-	protected String direccion = "direccion";
-	protected String nombreUsuario = "nombreUsuario";
-	protected String contraseña = "contraseña";
-	protected String email = "email";
+	protected String direccion = "Direccion";
+	protected String nombreUsuario = "Usuario";
+	protected String contraseña = "Contraseña";
+	protected String email = nombre+apellidos+"@email.com";
 	
 	@Before
 	public void SetUp() {
@@ -30,7 +30,9 @@ public class TestProfesor {
 	}
 	@Test
 	public void testToString() {
-		String toString = "Profesor: " + nombre + apellidos + ", " + edad + " años";
+		String toString = "Profesor [salario=" + salario + ", nombre=" + nombre + ", apellidos=" + apellidos + ", edad=" + edad
+				+ ", direccion=" + direccion + ", nombreUsuario=" + nombreUsuario + ", contraseña=" + contraseña
+				+ ", id=" + profesor.getId() + ", email=" + email + "]";
 	
 		assertEquals(profesor.toString(), toString);
 	}

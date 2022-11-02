@@ -304,12 +304,12 @@ public class GestorBD {
 			ex.printStackTrace();						
 		}		
 	}
-	public void actualizarEmailProfesor(Profesor profesor, String newPassword) {
+	public void actualizarPaswordProfesor(Profesor profesor, String newPassword) {
 		//Se abre la conexiÃ³n y se obtiene el Statement
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_PROFESOR);
 		     Statement stmt = con.createStatement()) {
 			//Se ejecuta la sentencia de borrado de datos
-			String sql = "UPDATE PROFESOR SET EMAIL = '%s' WHERE ID = %d;";
+			String sql = "UPDATE PROFESOR SET CONTRASEÑA = '%s' WHERE ID = %d;";
 			
 			int result = stmt.executeUpdate(String.format(sql, newPassword, profesor.getId()));
 			
