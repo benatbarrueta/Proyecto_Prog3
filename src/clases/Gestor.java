@@ -59,11 +59,11 @@ public class Gestor {
 	public ArrayList<Profesor> getProfesor() {
 		return profesor;
 	}
-	public void setProfesor(ArrayList<Profesor> profesor) {
-		this.profesor = profesor;
-	}
 	public ArrayList<Asignatura> getAsignatura() { 
 		return asignaturas;
+	}
+	public void setProfesor(ArrayList<Profesor> profesor) {
+		this.profesor = profesor;
 	}
 	public void setAsignatura(ArrayList<Asignatura> asignatura) {
 		this.asignaturas = asignatura;
@@ -226,8 +226,8 @@ public class Gestor {
 		
 		GestorBD gestorBD = new GestorBD();	
 		gestorBD.crearBBDDAlumno();
-		gestorBD.crearBBDDProfesor();
-		for (int i = 0; i < 1; i++) {
+	//	gestorBD.crearBBDDProfesor();
+	/*	for (int i = 0; i < 1; i++) {
 		Profesor profesor = new Profesor();
 		profesor.setId(-1);
 		gestor.profesor.add(profesor);
@@ -247,14 +247,14 @@ public class Gestor {
 
 		gestorBD.actualizarPasswordAlumno(gestor.alumnos.get(0), newPassword);
 		gestorBD.actualizarEmailProfesor(gestor.profesor.get(0), "1234");
-		System.out.println(gestorBD.obtenerDatosAlumnos());
-		
+	System.out.println(gestorBD.obtenerDatosAlumnos());
+		*/	
 
 		
 	//	gestorBD.borrarDatosAlumnos();
 	//	gestorBD.borrarDatosProfesores();
-		gestorBD.borrarBBDDAlumno();
-		gestorBD.borrarBBDDProfesor();
+		//gestorBD.borrarBBDDAlumno();
+	//	gestorBD.borrarBBDDProfesor();
 		//
 		
 	//	System.out.println(	gestorBD.obtenerDatos());
