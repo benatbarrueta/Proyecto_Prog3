@@ -252,10 +252,10 @@ public class Gestor {
 		
 
 		
-	//	gestorBD.borrarDatosAlumnos();
-	//	gestorBD.borrarDatosProfesores();
-	//	gestorBD.borrarBBDDAlumno();
-	//	gestorBD.borrarBBDDProfesor();
+		gestorBD.borrarDatosAlumnos();
+		gestorBD.borrarDatosProfesores();
+		gestorBD.borrarBBDDAlumno();
+		gestorBD.borrarBBDDProfesor();
 		//
 		
 	//	System.out.println(	gestorBD.obtenerDatos());
