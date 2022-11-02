@@ -4,15 +4,21 @@ import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class TestAsignatura {
-	protected Asignatura asignatura = new Asignatura();
+	protected Asignatura asignatura; 
 	protected String nombre = "";
 	private Profesor profesor = new Profesor();
 	protected ArrayList<Alumno> alumnos =new ArrayList<Alumno>();
 	protected ArrayList<Tarea> tareas= new ArrayList<Tarea>();
 	protected double calificacion =0;
+	
+	@Before
+	public void SetUp() {
+		asignatura = new Asignatura(nombre,profesor,alumnos,tareas,calificacion);
+	}
 	@Test
 	public void testAsignaturaStringProfesorArrayListOfAlumnoArrayListOfTareaDouble() {
 		assertNotNull(asignatura);
@@ -28,8 +34,8 @@ public class TestAsignatura {
 		Asignatura asignatura2 = new Asignatura();
 		assertNotNull(asignatura2);
 		assertEquals(asignatura2.getNombre(), "");
-		equals( asignatura2.getProfesor().equals(profesor));
-		assertEquals(asignatura2.getAlumnos(), alumnos);
+		equals( asignatura2.getProfesor().equals(new Profesor()));
+		assertEquals(asignatura2.getAlumnos(), new ArrayList<Alumno>());
 		assertEquals(asignatura2.getTareas(), new ArrayList<Tarea>());
 		assertEquals(asignatura2.getCalificacion(), 0,0.0);
 	
