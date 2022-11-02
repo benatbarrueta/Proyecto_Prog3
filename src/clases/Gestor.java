@@ -263,7 +263,7 @@ public class Gestor {
 		
 		//DATOS ALUMNOS Y PROFESORES CAMBIADOS
 		System.out.println(gestorBD.obtenerDatosAlumnos());
-		System.out.println(gestorBD.obtenerDatosProfesor());
+		gestorBD.obtenerDatosProfesor();
 		
 
 		//BORRAR DATOS
