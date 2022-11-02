@@ -222,50 +222,63 @@ public class Gestor {
 		gestor.CrearAsignaturas();
 		
 	
-	//	gestor.leerAsignaturasBinario(KEY_ASIGNATURA);
+		//CREAR BASE DE DATOS
 		
 		GestorBD gestorBD = new GestorBD();	
 		gestorBD.crearBBDDAlumno();
 		gestorBD.crearBBDDProfesor();
-		for (int i = 0; i < 1; i++) {
+		
+		
+		//CREAR PROFESORES Y ALUMNOS 
+		for (int i = 0; i < 5; i++) {
 			Profesor profesor = new Profesor();
 			profesor.setId(-1);
 			gestor.profesor.add(profesor);
 		}
-		for (int i = 0; i < 1; i++) {
+		for (int i = 0; i < 5; i++) {
 			Alumno alumno= new Alumno();
 			gestor.alumnos.add(alumno);
 		}
+		
+		
+		//INSERTAS ALUMNOS Y PROFESORES EN LAS TABLAS DE DATOS 
 		gestorBD.insertarDatosAlumno(gestor.alumnos.toArray(new Alumno[gestor.alumnos.size()]));
 		gestorBD.insertarDatosProfesor(gestor.profesor.toArray(new Profesor[gestor.profesor.size()]));
-		gestor.profesor= gestorBD.obtenerDatosProfesor();
 		
-		String newPassword = "hWaPvd6R28%1";
+		
+		
+		//DATOS PROFESOR ALUMNOS
+		
+		gestor.profesor= gestorBD.obtenerDatosProfesor();
 		gestor.alumnos= gestorBD.obtenerDatosAlumnos();
+		
+	
+		
+		
+		//EDIAR CONTRASEÑA ALUMNO PROFESOR
 
-		gestor.alumnos.get(0).getId();
-
-		gestorBD.actualizarPasswordAlumno(gestor.alumnos.get(0), newPassword);
+		gestorBD.actualizarPasswordAlumno(gestor.alumnos.get(0), "ADAWASADG");
 
 		gestorBD.actualizarPaswordProfesor(gestor.profesor.get(0), "1234");
+		
+		//DATOS ALUMNOS Y PROFESORES CAMBIADOS
 		System.out.println(gestorBD.obtenerDatosAlumnos());
 		System.out.println(gestorBD.obtenerDatosProfesor());
 		
 
+		//BORRAR DATOS
 		
-
 		gestorBD.borrarDatosAlumnos();
 		gestorBD.borrarDatosProfesores();
+		
+		//BORRAR BASE DE DATOS
+		
 		gestorBD.borrarBBDDAlumno(); 
 		gestorBD.borrarBBDDProfesor();
 
 
 
-		//
-		
-	//	System.out.println(	gestorBD.obtenerDatos());
-	//	gestorBD.obtenerDatos();
-		//CREATE DATABASE: Se crea la BBDD
+
 	
 	}
 	
