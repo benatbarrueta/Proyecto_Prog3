@@ -228,9 +228,9 @@ public class Gestor {
 		gestorBD.crearBBDDAlumno();
 		gestorBD.crearBBDDProfesor();
 		for (int i = 0; i < 1; i++) {
-		Profesor profesor = new Profesor();
-		profesor.setId(-1);
-		gestor.profesor.add(profesor);
+			Profesor profesor = new Profesor();
+			profesor.setId(-1);
+			gestor.profesor.add(profesor);
 		}
 		for (int i = 0; i < 1; i++) {
 			Alumno alumno= new Alumno();
@@ -241,7 +241,7 @@ public class Gestor {
 		gestor.profesor= gestorBD.obtenerDatosProfesor();
 		
 		String newPassword = "hWaPvd6R28%1";
-	  gestor.alumnos= gestorBD.obtenerDatosAlumnos();
+		gestor.alumnos= gestorBD.obtenerDatosAlumnos();
 
 		gestor.alumnos.get(0).getId();
 
