@@ -226,8 +226,8 @@ public class Gestor {
 		
 		GestorBD gestorBD = new GestorBD();	
 		gestorBD.crearBBDDAlumno();
-	//	gestorBD.crearBBDDProfesor();
-	/*	for (int i = 0; i < 1; i++) {
+		gestorBD.crearBBDDProfesor();
+		for (int i = 0; i < 1; i++) {
 		Profesor profesor = new Profesor();
 		profesor.setId(-1);
 		gestor.profesor.add(profesor);
@@ -248,7 +248,7 @@ public class Gestor {
 		gestorBD.actualizarPasswordAlumno(gestor.alumnos.get(0), newPassword);
 		gestorBD.actualizarEmailProfesor(gestor.profesor.get(0), "1234");
 	System.out.println(gestorBD.obtenerDatosAlumnos());
-		*/	
+			
 
 		
 	//	gestorBD.borrarDatosAlumnos();
