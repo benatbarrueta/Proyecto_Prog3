@@ -14,7 +14,6 @@ public class TestAlumno {
 	protected String direccion = "Direccion";
 	protected String nombreUsuario = "Usuario";
 	protected String contraseña = "Contraseña";
-	protected Boolean tipo = true;
 	@Before
 	public void SetUp() {
 		alumno = new Alumno();
