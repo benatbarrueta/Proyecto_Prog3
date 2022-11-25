@@ -1,4 +1,5 @@
 package clases;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -13,7 +14,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.StringTokenizer;
 
+import javax.swing.SwingUtilities;
 
+import ventanas.*;
 
 import java.util.Properties;
 
@@ -276,7 +279,12 @@ public class Gestor {
 		gestorBD.borrarBBDDAlumno(); 
 		gestorBD.borrarBBDDProfesor();
 
-
+		// VENTANAS
+		
+		
+		
+		SwingUtilities.invokeLater(() -> new VentanaLogIn());
+		
 
 
 	
