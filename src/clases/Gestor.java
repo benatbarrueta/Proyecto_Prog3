@@ -239,7 +239,7 @@ public class Gestor {
 			gestor.profesor.add(profesor);
 		}
 		for (int i = 0; i < 5; i++) {
-			Alumno alumno= new Alumno();
+			Alumno alumno= new Alumno("Alumno", "" + i, i*10, "", "Alumno"+i, "123456", "PRIMERO");
 			gestor.alumnos.add(alumno);
 		}
 		
@@ -247,43 +247,12 @@ public class Gestor {
 		//INSERTAS ALUMNOS Y PROFESORES EN LAS TABLAS DE DATOS 
 		gestorBD.insertarDatosAlumno(gestor.alumnos.toArray(new Alumno[gestor.alumnos.size()]));
 		gestorBD.insertarDatosProfesor(gestor.profesor.toArray(new Profesor[gestor.profesor.size()]));
-		
-		
-		
-		//DATOS PROFESOR ALUMNOS
-		
-		gestor.profesor= gestorBD.obtenerDatosProfesor();
-		gestor.alumnos= gestorBD.obtenerDatosAlumnos();
-		
-	
-		
-		
-		//EDIAR CONTRASEÑA ALUMNO PROFESOR
-
-		gestorBD.actualizarPasswordAlumno(gestor.alumnos.get(0), "ADAWASADG");
-
-		gestorBD.actualizarPaswordProfesor(gestor.profesor.get(0), "1234");
-		
-		//DATOS ALUMNOS Y PROFESORES CAMBIADOS
-		System.out.println(gestorBD.obtenerDatosAlumnos());
-		gestorBD.obtenerDatosProfesor();
-		
-
-		//BORRAR DATOS
-		
-		gestorBD.borrarDatosAlumnos();
-		gestorBD.borrarDatosProfesores();
-		
-		//BORRAR BASE DE DATOS
-		
-		gestorBD.borrarBBDDAlumno(); 
-		gestorBD.borrarBBDDProfesor();
 
 		// VENTANAS
 		
 		
 		
-		SwingUtilities.invokeLater(() -> new VentanaLogIn());
+		VentanaLogIn v = new VentanaLogIn();
 		
 
 

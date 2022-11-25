@@ -2,9 +2,11 @@ package ventanas;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
+
 import javax.swing.*;
 
-import clases.Tipo;
+import clases.*;
 
 
 
@@ -17,6 +19,7 @@ public class VentanaLogIn extends JFrame {
 	protected JButton botoncontinuar;
 	protected JButton botonregistrarse;
 	protected JComboBox comboTipo;
+	protected GestorBD gestor = new GestorBD();
 	
 	
 	public VentanaLogIn () {
@@ -31,7 +34,6 @@ public class VentanaLogIn extends JFrame {
 		textoUsuario = new JTextField();
 		comboTipo = new JComboBox(Tipo.values());
 		botoncontinuar = new  JButton("Continuar");
-		//botonregistrarse = new JButton("Registrarse");
 		
 		
 		botoncontinuar.addActionListener(new ActionListener() {
@@ -40,17 +42,27 @@ public class VentanaLogIn extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				// TODO Auto-generated method stub
-				
+				if (comboTipo.getSelectedItem() == Tipo.ALUMNO) {
+					for (Alumno alumno : gestor.obtenerDatosAlumnos()) {
+						if(textoUsuario.getText() == alumno.getNombreUsuario() && textoContrasena.getText() == alumno.getContraseña()) {
+							VentanaAlumno v = new VentanaAlumno(alumno);
+							System.out.println("Hola");
+						} else {
+							//JOptionPane.showInputDialog("Los datos introducidos son erroneos");
+							System.out.println("Adios");
+						}
+					}
+					
+					
+				} else {
+					for (Profesor profesor : gestor.obtenerDatosProfesor()) {
+						if(textoUsuario.getText() == profesor.getNombreUsuario() && textoContrasena.getText() == profesor.getContraseña()) {
+							VentanaProfesor v = new VentanaProfesor(profesor);
+						}
+					}
+				}
 			}
 		});
-//		botonregistrarse.addActionListener(new ActionListener() {
-//			
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//				// TODO Auto-generated method stub
-//				
-//			}
-//		});
 		
 		center.add(usuario);
 		center.add(textoUsuario);
