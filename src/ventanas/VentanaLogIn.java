@@ -44,7 +44,7 @@ public class VentanaLogIn extends JFrame {
 				// TODO Auto-generated method stub
 				if (comboTipo.getSelectedItem() == Tipo.ALUMNO) {
 					for (Alumno alumno : gestor.obtenerDatosAlumnos()) {
-						if(textoUsuario.getText() == alumno.getNombreUsuario() && textoContrasena.getText() == alumno.getContraseña()) {
+						if(textoUsuario.getText() .equals(alumno.getNombreUsuario())  && textoContrasena.getText() .equals(alumno.getContraseña())   ) {
 							VentanaAlumno v = new VentanaAlumno(alumno);
 							System.out.println("Hola");
 						} else {
@@ -56,7 +56,7 @@ public class VentanaLogIn extends JFrame {
 					
 				} else {
 					for (Profesor profesor : gestor.obtenerDatosProfesor()) {
-						if(textoUsuario.getText() == profesor.getNombreUsuario() && textoContrasena.getText() == profesor.getContraseña()) {
+						if(textoUsuario.getText() .equals(profesor.getNombreUsuario())  && textoContrasena.getText() .equals(profesor.getContraseña())) {
 							VentanaProfesor v = new VentanaProfesor(profesor);
 						}
 					}
