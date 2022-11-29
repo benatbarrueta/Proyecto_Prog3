@@ -85,6 +85,13 @@ public class VentanaEdita extends JFrame {
 			norte.add(new JLabel(alumno.getNombre() + " " + alumno.getApellidos()));
 		} else {
 			Profesor profesor = (Profesor) objeto;
+			nombre.setText(profesor.getNombre());
+			apellido.setText(profesor.getApellidos());
+			email.setText(profesor.getEmail());
+			direccion.setText(profesor.getDireccion());
+			nombreUsuario.setText(profesor.getNombreUsuario());
+			contraseña.setText(profesor.getContraseña());
+			
 			norte.add(new JLabel(profesor.getNombre() + " " + profesor.getApellidos()));
 		}
 		
