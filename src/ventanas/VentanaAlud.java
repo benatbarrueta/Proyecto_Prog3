@@ -1,6 +1,5 @@
 package ventanas;
 
-import javax.swing.JFrame;
 import java.awt.*;
 import java.awt.event.*;
 
@@ -11,17 +10,27 @@ import javax.swing.*;
 public class VentanaAlud extends JFrame {
 	
 	protected JLabel prueba;
+	protected JScrollPane scrollAsignaturas;
+	protected JButton edita;
+	protected JList asignaturas;
+	protected DefaultListModel modeloAsignaturas = new DefaultListModel();
 
-	public VentanaAlud (Object objeto, String tipo) {
-		
-		
-		
+	public VentanaAlud (Object objeto, String tipo, Gestor gestor) {
+			
 		Container cp = this.getContentPane();
 		
-		JPanel panel = new JPanel();
-		panel.setLayout(new BorderLayout());
+		cp.setLayout(new BorderLayout());
 		
-		cp.add(panel);
+		JPanel centro = new JPanel();
+		JPanel norte = new JPanel();
+		
+		cp.add(centro, BorderLayout.CENTER);
+		cp.add(norte, BorderLayout.NORTH);
+		
+		norte.setLayout(new GridLayout(1,8));
+		centro.setLayout(new GridLayout(1,1));
+		
+		edita = new JButton("EDITA");
 		
 	
 		this.setSize(600,400);
@@ -30,15 +39,35 @@ public class VentanaAlud extends JFrame {
 		
 		if (tipo == "Alumno") {
 			Alumno alumno = (Alumno) objeto;
-			JLabel prueba = new JLabel(alumno.getNombre());
-			panel.add(prueba, BorderLayout.CENTER);
-			System.out.println(alumno);
+			norte.add(new JLabel(alumno.getNombre()));
+			norte.add(new JLabel(alumno.getApellidos()));
 			this.setTitle(alumno.getNombre() + " " + alumno.getApellidos());
+			
+			for (Asignatura asig : gestor.getAsignatura()) {
+				if (asig.getAlumnos().contains(alumno)) {
+					System.out.println(asig.getNombre());
+				} else {
+					
+				}
+			}
 		} else {
 			Profesor profesor = (Profesor) objeto;
 			JLabel prueba = new JLabel(profesor.getNombre());
 			this.setTitle(profesor.getNombre() + " " + profesor.getApellidos());
-			panel.add(prueba, BorderLayout.CENTER);
+			centro.add(prueba);
 		}
+		
+		asignaturas = new JList(modeloAsignaturas);
+		scrollAsignaturas = new JScrollPane(asignaturas);
+		
+		centro.add(scrollAsignaturas);
+		
+		norte.add(new JLabel(""));
+		norte.add(new JLabel(""));
+		norte.add(new JLabel(""));
+		norte.add(new JLabel(""));
+		norte.add(new JLabel(""));
+		norte.add(edita);
+		System.out.println(gestor.getAsignatura().get(0).getAlumnos());
 	}
 }

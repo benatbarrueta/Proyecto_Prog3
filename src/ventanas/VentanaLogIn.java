@@ -19,10 +19,10 @@ public class VentanaLogIn extends JFrame {
 	protected JButton botoncontinuar;
 	protected JButton botonregistrarse;
 	protected JComboBox comboTipo;
-	protected GestorBD gestor = new GestorBD();
+	protected GestorBD gestorBD = new GestorBD();
 	
 	
-	public VentanaLogIn () {
+	public VentanaLogIn (Gestor gestor) {
 		
 		Container cp = this.getContentPane();
 	
@@ -43,9 +43,9 @@ public class VentanaLogIn extends JFrame {
 				
 				// TODO Auto-generated method stub
 				if (comboTipo.getSelectedItem() == Tipo.ALUMNO) {
-					for (Alumno alumno : gestor.obtenerDatosAlumnos()) {
+					for (Alumno alumno : gestorBD.obtenerDatosAlumnos()) {
 						if(textoUsuario.getText() .equals(alumno.getNombreUsuario())  && textoContrasena.getText() .equals(alumno.getContraseña())   ) {
-							VentanaAlud v = new VentanaAlud(alumno, "Alumno");
+							VentanaAlud v = new VentanaAlud(alumno, "Alumno", gestor);
 						} else {
 							//JOptionPane.showInputDialog("Los datos introducidos son erroneos");
 						}
@@ -53,9 +53,9 @@ public class VentanaLogIn extends JFrame {
 					
 					
 				} else {
-					for (Profesor profesor : gestor.obtenerDatosProfesor()) {
+					for (Profesor profesor : gestorBD.obtenerDatosProfesor()) {
 						if(textoUsuario.getText() .equals(profesor.getNombreUsuario())  && textoContrasena.getText() .equals(profesor.getContraseña())) {
-							VentanaAlud v = new VentanaAlud(profesor, "Profesor");
+							VentanaAlud v = new VentanaAlud(profesor, "Profesor", gestor);
 						}
 					}
 				}

@@ -236,6 +236,8 @@ public class Gestor {
 		//CREAR PROFESORES Y ALUMNOS
 		ArrayList<Profesor> profesores = gestorBD.obtenerDatosProfesor();
 		ArrayList<Alumno> alumnos = gestorBD.obtenerDatosAlumnos();
+		gestor.asignaturas.get(0).getAlumnos().add(alumnos.get(0));
+		System.out.println(gestor.asignaturas.get(0).getAlumnos());
 		
 		if (profesores.size() == 0) {
 			for (int i = 0; i < 5; i++) {
@@ -248,10 +250,12 @@ public class Gestor {
 		if (alumnos.size() == 0) {
 			for (int i = 0; i < 5; i++) {
 				Alumno alumno= new Alumno("Alumno", "Juan", i*10, "", "Alumno"+i, "123456", "PRIMERO");
+				
+				gestor.asignaturas.get(0).getAlumnos().add(alumno);
+				
 				gestor.alumnos.add(alumno);
 			}
 		}
-		System.out.println(gestor.alumnos);
 		//INSERTAS ALUMNOS Y PROFESORES EN LAS TABLAS DE DATOS 
 		gestorBD.insertarDatosAlumno(gestor.alumnos.toArray(new Alumno[gestor.alumnos.size()]));
 		gestorBD.insertarDatosProfesor(gestor.profesor.toArray(new Profesor[gestor.profesor.size()]));
@@ -260,7 +264,7 @@ public class Gestor {
 		
 		
 		
-		VentanaLogIn v = new VentanaLogIn();
+		VentanaLogIn v = new VentanaLogIn(gestor);
 		
 
 
