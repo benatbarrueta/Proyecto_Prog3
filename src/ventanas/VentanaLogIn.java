@@ -45,11 +45,9 @@ public class VentanaLogIn extends JFrame {
 				if (comboTipo.getSelectedItem() == Tipo.ALUMNO) {
 					for (Alumno alumno : gestor.obtenerDatosAlumnos()) {
 						if(textoUsuario.getText() .equals(alumno.getNombreUsuario())  && textoContrasena.getText() .equals(alumno.getContraseña())   ) {
-							VentanaAlumno v = new VentanaAlumno(alumno);
-							System.out.println("Hola");
+							VentanaAlud v = new VentanaAlud(alumno, "Alumno");
 						} else {
 							//JOptionPane.showInputDialog("Los datos introducidos son erroneos");
-							System.out.println("Adios");
 						}
 					}
 					
@@ -57,7 +55,7 @@ public class VentanaLogIn extends JFrame {
 				} else {
 					for (Profesor profesor : gestor.obtenerDatosProfesor()) {
 						if(textoUsuario.getText() .equals(profesor.getNombreUsuario())  && textoContrasena.getText() .equals(profesor.getContraseña())) {
-							VentanaProfesor v = new VentanaProfesor(profesor);
+							VentanaAlud v = new VentanaAlud(profesor, "Profesor");
 						}
 					}
 				}

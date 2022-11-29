@@ -147,6 +147,7 @@ public class GestorBD {
 			
 			//Se recorren los clientes y se insertan uno a uno
 			for (Alumno c : alumno) {
+				System.out.println(c.getApellidos());
 				if (1 == stmt.executeUpdate(String.format(sql, c.getNombre(), c.getApellidos(), c.getContraseña(), c.getDireccion(),  c.getEdad(), c.getEmail(), c.getCurso(), c.getNombreUsuario()))) {					
 					System.out.println(String.format(" - Alumno insertado: %s", c.toString()));
 				} else {
@@ -203,7 +204,7 @@ public class GestorBD {
 				alumno= new Alumno();
 				alumno.setId(rs.getInt("ID"));
 				alumno.setNombre(rs.getString("NOMBRE"));
-				alumno.setApellidos(rs.getString("NOMBRE"));
+				alumno.setApellidos(rs.getString("APELLIDO"));
 				alumno.setContraseña(rs.getString("CONTRASEÑA"));
 				alumno.setDireccion(rs.getString("DIRECCION"));
 				alumno.setEdad(rs.getInt("EDAD"));
@@ -267,7 +268,7 @@ public class GestorBD {
 			System.err.println(String.format("* Error al obtener datos de la BBDD: %s", ex.getMessage()));
 			ex.printStackTrace();						
 		}		
-		System.out.println(profesores);
+		//System.out.println(profesores);
 		return profesores;
 	}
 

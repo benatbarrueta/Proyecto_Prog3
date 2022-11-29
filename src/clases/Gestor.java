@@ -121,7 +121,7 @@ public class Gestor {
 				tareas.add(tarea);
 			}
 		
-			System.out.println(tareas);
+			//System.out.println(tareas);
 			
 			
 		}catch (Exception ex) {
@@ -134,7 +134,7 @@ public class Gestor {
 	public void guardarTareaCSV(String filename) {
 	 
 	try  {	 	  	   
-		System.out.println(filename);
+		//System.out.println(filename);
 	     PrintWriter pw = new PrintWriter(filename);
 	     pw.println("Compania" + ";" + "Fecha" +";" + "Estatus" +";"+ "calificacion");
 	     
@@ -211,7 +211,7 @@ public class Gestor {
 				usuario= new Usuarios(name,"apellidos",0,"direccion",username,username);
 			usuarios.add(usuario);
 			}
-			System.out.println(usuarios);
+			//System.out.println(usuarios);
 			return usuarios;
 			//System.out.println(asignaturas);
 		}
@@ -228,6 +228,7 @@ public class Gestor {
 		//CREAR BASE DE DATOS
 		
 		GestorBD gestorBD = new GestorBD();	
+//		gestorBD.borrarBBDDAlumno();
 		gestorBD.crearBBDDAlumno();
 		gestorBD.crearBBDDProfesor();
 		
@@ -243,14 +244,14 @@ public class Gestor {
 				gestor.profesor.add(profesor);
 			}
 		}
-		
+
 		if (alumnos.size() == 0) {
 			for (int i = 0; i < 5; i++) {
-				Alumno alumno= new Alumno("Alumno", "" + i, i*10, "", "Alumno"+i, "123456", "PRIMERO");
+				Alumno alumno= new Alumno("Alumno", "Juan", i*10, "", "Alumno"+i, "123456", "PRIMERO");
 				gestor.alumnos.add(alumno);
 			}
 		}
-		
+		System.out.println(gestor.alumnos);
 		//INSERTAS ALUMNOS Y PROFESORES EN LAS TABLAS DE DATOS 
 		gestorBD.insertarDatosAlumno(gestor.alumnos.toArray(new Alumno[gestor.alumnos.size()]));
 		gestorBD.insertarDatosProfesor(gestor.profesor.toArray(new Profesor[gestor.profesor.size()]));
