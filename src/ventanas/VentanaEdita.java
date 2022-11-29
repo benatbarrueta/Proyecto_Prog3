@@ -7,12 +7,8 @@ import java.awt.event.*;
 import clases.*;
 
 public class VentanaEdita extends JFrame {
-//	protected String nombre;
-//	protected String apellidos;
-//	protected String email;
-//	protected String direccion;
-//	protected String nombreUsuario;
-//	protected String contraseña;
+	
+	protected GestorBD gestorBD;
 	
 	protected JTextField nombre;
 	protected JLabel labelNombre;
@@ -36,6 +32,8 @@ public class VentanaEdita extends JFrame {
 		JPanel norte = new JPanel();
 		JPanel centro = new JPanel();
 		JPanel sur = new JPanel();
+		
+		gestorBD = new GestorBD();
 		
 		JTextField nombre = new JTextField();
 		JLabel labelNombre = new JLabel ("Nombre: ");
@@ -100,6 +98,23 @@ public class VentanaEdita extends JFrame {
 		
 		
 		sur.add(botonAceptar);
+		
+		botonAceptar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (tipo == "Alumno") {
+					Alumno alumno = (Alumno) objeto;
+					gestorBD.actualizarAlumno(alumno, nombre.getText(), apellido.getText(), email.getText(), direccion.getText(), nombreUsuario.getText(), contraseña.getText());
+					System.out.println("- Nombre: " + nombre.getText() + "\n- Apellido: " + apellido.getText() + "\n- Email: " + email.getText() + "\n- Dirección:" + direccion.getText() + "\n- Nombre de usuario : " + nombreUsuario.getText() + "\n- Contraseña: " + contraseña.getText());
+					
+				} else {
+					Profesor profesor = (Profesor) objeto;
+					gestorBD.actualizarProfesor(profesor, nombre.getText(), apellido.getText(), email.getText(), direccion.getText(), nombreUsuario.getText(), contraseña.getText());
+					System.out.println("Profesor editado: " + profesor);
+				}
+			}
+		});
 		
 		if (tipo == "Alumno") {
 			Alumno alumno = (Alumno) objeto;

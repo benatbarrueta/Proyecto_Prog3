@@ -9,7 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-
+import ventanas.VentanaEdita;
 
 import java.sql.*;
 public class GestorBD {
@@ -246,7 +246,7 @@ public class GestorBD {
 				profesor= new Profesor();
 				profesor.setId(rs.getInt("ID"));
 				profesor.setNombre(rs.getString("NOMBRE"));
-				profesor.setApellidos(rs.getString("NOMBRE"));
+				profesor.setApellidos(rs.getString("APELLIDO"));
 				profesor.setContraseña(rs.getString("CONTRASEÑA"));
 				profesor.setDireccion(rs.getString("DIRECCION"));
 				profesor.setEdad(rs.getInt("EDAD"));
@@ -319,6 +319,37 @@ public class GestorBD {
 			System.err.println(String.format("* Error actualizando datos de la BBDD: %s", ex.getMessage()));
 			ex.printStackTrace();						
 		}		
+	}
+	public void actualizarAlumno(Alumno alumno, String newNombre, String newApellido, String newEmail, String newDirection, String newNombreUsuario, String newContraseña) {
+		//Se abre la conexion y obtenemos el statement
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_ALUMNO);
+			 Statement stmt = con.createStatement()){
+			//Se ejecuta la sentencia de actualizar datos
+			String sql = "UPDATE ALUMNO SET NOMBRE = '%s', APELLIDO = '%s', EMAIL = '%s', DIRECCION = '%s', NOMBRE_USUARIO = '%s', CONTRASEÑA = '%s' WHERE ID = %d;";
+			int result = stmt.executeUpdate(String.format(sql, newNombre, newApellido, newEmail, newDirection, newNombreUsuario, newContraseña, alumno.getId()));
+			
+			System.out.println(String.format( "- Se han actualizado los datos de %s %s:", alumno.getNombre(), alumno.getApellidos()));
+			
+		} catch (Exception e) {
+			System.err.println(String.format("* Error actualizando datos de la BBDD: %s", e.getMessage()));
+			e.printStackTrace();
+		}
+	}
+	
+	public void actualizarProfesor(Profesor profesor, String newNombre, String newApellido, String newEmail, String newDirection, String newNombreUsuario, String newContraseña) {
+		//Se abre la conexion y obtenemos el statement
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_ALUMNO);
+			 Statement stmt = con.createStatement()){
+			//Se ejecuta la sentencia de actualizar datos
+			String sql = "UPDATE PROFESOR SET NOMBRE = '%s', APELLIDO = '%s', EMAIL = '%s', DIRECCION = '%s', NOMBRE_USUARIO = '%s', CONTRASEÑA = '%s' WHERE ID = %d;";
+			int result = stmt.executeUpdate(String.format(sql, newNombre, newApellido, newEmail, newDirection, newNombreUsuario, newContraseña, profesor.getId()));
+			
+			System.out.println(String.format( "- Se han actualizado los datos de %s %s:", profesor.getNombre(), profesor.getApellidos()));
+			
+		} catch (Exception e) {
+			System.err.println(String.format("* Error actualizando datos de la BBDD: %s", e.getMessage()));
+			e.printStackTrace();
+		}
 	}
 	public void borrarDatosProfesores() {
 		//Se abre la conexión y se obtiene el Statement
