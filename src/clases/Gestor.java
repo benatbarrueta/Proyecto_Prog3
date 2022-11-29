@@ -232,17 +232,24 @@ public class Gestor {
 		gestorBD.crearBBDDProfesor();
 		
 		
-		//CREAR PROFESORES Y ALUMNOS 
-		for (int i = 0; i < 5; i++) {
-			Profesor profesor = new Profesor();
-			profesor.setId(-1);
-			gestor.profesor.add(profesor);
-		}
-		for (int i = 0; i < 5; i++) {
-			Alumno alumno= new Alumno("Alumno", "" + i, i*10, "", "Alumno"+i, "123456", "PRIMERO");
-			gestor.alumnos.add(alumno);
+		//CREAR PROFESORES Y ALUMNOS
+		ArrayList<Profesor> profesores = gestorBD.obtenerDatosProfesor();
+		ArrayList<Alumno> alumnos = gestorBD.obtenerDatosAlumnos();
+		
+		if (profesores.size() == 0) {
+			for (int i = 0; i < 5; i++) {
+				Profesor profesor = new Profesor();
+				profesor.setId(-1);
+				gestor.profesor.add(profesor);
+			}
 		}
 		
+		if (alumnos.size() == 0) {
+			for (int i = 0; i < 5; i++) {
+				Alumno alumno= new Alumno("Alumno", "" + i, i*10, "", "Alumno"+i, "123456", "PRIMERO");
+				gestor.alumnos.add(alumno);
+			}
+		}
 		
 		//INSERTAS ALUMNOS Y PROFESORES EN LAS TABLAS DE DATOS 
 		gestorBD.insertarDatosAlumno(gestor.alumnos.toArray(new Alumno[gestor.alumnos.size()]));
