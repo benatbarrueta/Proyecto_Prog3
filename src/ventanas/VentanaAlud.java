@@ -32,16 +32,10 @@ public class VentanaAlud extends JFrame {
 		
 		edita = new JButton("EDITA");
 		
-	
-		this.setSize(600,400);
-		this.setVisible(true);
-		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		
 		if (tipo == "Alumno") {
 			Alumno alumno = (Alumno) objeto;
 			norte.add(new JLabel(alumno.getNombre()));
 			norte.add(new JLabel(alumno.getApellidos()));
-			this.setTitle(alumno.getNombre() + " " + alumno.getApellidos());
 			
 			for (Asignatura asig : gestor.getAsignatura()) {
 				if (asig.getAlumnos().contains(alumno)) {
@@ -53,7 +47,6 @@ public class VentanaAlud extends JFrame {
 		} else {
 			Profesor profesor = (Profesor) objeto;
 			JLabel prueba = new JLabel(profesor.getNombre());
-			this.setTitle(profesor.getNombre() + " " + profesor.getApellidos());
 			centro.add(prueba);
 		}
 		
@@ -62,6 +55,20 @@ public class VentanaAlud extends JFrame {
 		
 		centro.add(scrollAsignaturas);
 		
+		edita.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (tipo == "Alumno") {
+					Alumno alumno = (Alumno) objeto;
+					VentanaEdita v = new VentanaEdita(alumno, "Alumno", gestor);
+				} else {
+					Profesor profesor = (Profesor) objeto;
+					VentanaEdita v = new VentanaEdita(profesor, "Profesor", gestor);
+				}
+			}
+		});
+		
 		norte.add(new JLabel(""));
 		norte.add(new JLabel(""));
 		norte.add(new JLabel(""));
@@ -69,5 +76,16 @@ public class VentanaAlud extends JFrame {
 		norte.add(new JLabel(""));
 		norte.add(edita);
 		System.out.println(gestor.getAsignatura().get(0).getAlumnos());
+		
+		if (tipo == "Alumno") {
+			Alumno alumno = (Alumno) objeto;
+			this.setTitle(alumno.getNombre() + " " + alumno.getApellidos());
+		} else {
+			Profesor profesor = (Profesor) objeto;
+			this.setTitle(profesor.getNombre() + " " + profesor.getApellidos());
+		}
+		this.setSize(600, 400);
+		this.setVisible(true);
+		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 	}
 }

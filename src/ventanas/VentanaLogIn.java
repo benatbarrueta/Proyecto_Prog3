@@ -44,10 +44,12 @@ public class VentanaLogIn extends JFrame {
 				// TODO Auto-generated method stub
 				if (comboTipo.getSelectedItem() == Tipo.ALUMNO) {
 					for (Alumno alumno : gestorBD.obtenerDatosAlumnos()) {
-						if(textoUsuario.getText() .equals(alumno.getNombreUsuario())  && textoContrasena.getText() .equals(alumno.getContraseña())   ) {
+						if(textoUsuario.getText().equals(alumno.getNombreUsuario())  && textoContrasena.getText().equals(alumno.getContraseña())) {
 							VentanaAlud v = new VentanaAlud(alumno, "Alumno", gestor);
 						} else {
-							//JOptionPane.showInputDialog("Los datos introducidos son erroneos");
+//							JOptionPane.showMessageDialog(null, "Los datos introducidos son erroneos");
+//							textoUsuario.setText("");
+//							textoContrasena.setText("");
 						}
 					}
 					
@@ -56,9 +58,14 @@ public class VentanaLogIn extends JFrame {
 					for (Profesor profesor : gestorBD.obtenerDatosProfesor()) {
 						if(textoUsuario.getText() .equals(profesor.getNombreUsuario())  && textoContrasena.getText() .equals(profesor.getContraseña())) {
 							VentanaAlud v = new VentanaAlud(profesor, "Profesor", gestor);
+						} else {
+//							JOptionPane.showMessageDialog(null, "Los datos introducidos son erroneos");
+//							textoUsuario.setText("");
+//							textoContrasena.setText("");
 						}
 					}
 				}
+				
 			}
 		});
 		
