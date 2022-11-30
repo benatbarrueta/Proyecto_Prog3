@@ -12,7 +12,7 @@ import clases.Gestor;
 
 public class VentanaAsignatura extends JFrame{
 	public VentanaAsignatura(Object objeto, String tipo, Gestor gestor, Asignatura asignatura) {
-Container cp = this.getContentPane();
+		Container cp = this.getContentPane();
 		
 		cp.setLayout(new BorderLayout());
 		

@@ -237,7 +237,6 @@ public class Gestor {
 		ArrayList<Profesor> profesores = gestorBD.obtenerDatosProfesor();
 		ArrayList<Alumno> alumnos = gestorBD.obtenerDatosAlumnos();
 		gestor.asignaturas.get(0).getAlumnos().add(alumnos.get(0));
-		System.out.println(gestor.asignaturas.get(0).getAlumnos());
 		
 		if (profesores.size() == 0) {
 			for (int i = 0; i < 5; i++) {
