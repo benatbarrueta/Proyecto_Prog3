@@ -46,12 +46,13 @@ public class VentanaLogIn extends JFrame {
 					for (Alumno alumno : gestorBD.obtenerDatosAlumnos()) {
 						if(textoUsuario.getText().equals(alumno.getNombreUsuario())  && textoContrasena.getText().equals(alumno.getContraseña())) {
 							VentanaAlud v = new VentanaAlud(alumno, "Alumno", gestor);
-						} else {
-//							JOptionPane.showMessageDialog(null, "Los datos introducidos son erroneos");
-//							textoUsuario.setText("");
-//							textoContrasena.setText("");
 						}
+						
 					}
+					
+					JOptionPane.showMessageDialog(null, "Los datos introducidos son erroneos");
+					textoUsuario.setText("");
+					textoContrasena.setText("");
 					
 					
 				} else {

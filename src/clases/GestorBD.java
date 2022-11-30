@@ -382,7 +382,7 @@ public class GestorBD {
 			int result = stmt.executeUpdate(String.format(sql, newNombre, newApellido, newEmail, newDirection, newNombreUsuario, newContraseña, profesor.getId()));
 			
 		
-			log( Level.INFO,"Se ha actulizado datos del profesor",null);
+			log( Level.INFO,"Se ha actulizado datos de " + result + "profesor", null);
 		} catch (Exception e) {
 			log( Level.WARNING,"Error al actualizando datos de la  BBDD", e);
 			e.printStackTrace();
