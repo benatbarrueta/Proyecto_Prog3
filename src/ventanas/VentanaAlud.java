@@ -53,6 +53,25 @@ public class VentanaAlud extends JFrame {
 		asignaturas = new JList(modeloAsignaturas);
 		scrollAsignaturas = new JScrollPane(asignaturas);
 		
+		asignaturas.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if (tipo == "Alumno") {
+					for (Asignatura asig : gestor.getAsignatura()) {
+						if (asig.getNombre().equals("" + asignaturas.getSelectedValue())) {
+							VentanaAsignatura va = new VentanaAsignatura(objeto, "Alumno", gestor, asig);
+						}
+					}
+				} else {
+					for (Asignatura asig : gestor.getAsignatura()) {
+						if (asig.getNombre() == "" + asignaturas.getSelectedValue()) {
+							VentanaAsignatura va = new VentanaAsignatura(objeto, "Profesor", gestor, asig);
+						}
+					}
+				}
+			}
+		});
+		
 		centro.add(scrollAsignaturas);
 		
 		edita.addActionListener(new ActionListener() {
