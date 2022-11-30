@@ -8,6 +8,10 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 import ventanas.VentanaEdita;
 
@@ -20,12 +24,15 @@ public class GestorBD {
 	protected static final String CONNECTION_STRING_ALUMNO = "jdbc:sqlite:" + DATABASE_FILE_ALUMNO;
 	protected static final String CONNECTION_STRING_PROFESOR = "jdbc:sqlite:" + DATABASE_FILE_PROFESOR;
 	
+	private Logger logger = null;
+	
 	public GestorBD() {		
 		try {
 			//Cargar el diver SQLite
 			Class.forName("org.sqlite.JDBC");
 		} catch (ClassNotFoundException ex) {
-			System.err.println(String.format("* Error al cargar el driver de BBDD: %s", ex.getMessage()));
+			
+			log( Level.WARNING, "Error al cargar el driver de BBDD", ex);
 			ex.printStackTrace();
 		}
 	}
@@ -50,10 +57,12 @@ public class GestorBD {
 	   
 		
 	        if (!stmt.execute(sql)) {
-	        	System.out.println("- Se ha creado la tabla Alumno");
+	      
+	        	log( Level.INFO,"Se ha creado la tabla ALUMNO", null);
 	        }
 		} catch (Exception ex) {
-			System.err.println(String.format("* Error al crear la BBDD: %s", ex.getMessage()));
+		
+			log( Level.WARNING,"Error al crear la  BBDD", ex);
 			ex.printStackTrace();			
 		}
 	}
@@ -77,10 +86,14 @@ public class GestorBD {
 	   
 		
 	        if (!stmt.execute(sql)) {
-	        	System.out.println("- Se ha creado la tabla Profesor");
+	        
+	        	log( Level.INFO,"Se ha creado la tabla PROFESOR", null);
+				
 	        }
 		} catch (Exception ex) {
-			System.err.println(String.format("* Error al crear la BBDD: %s", ex.getMessage()));
+			
+			
+			log( Level.WARNING,"Error al crear la  BBDD", ex);
 			ex.printStackTrace();			
 		}
 	}
@@ -94,19 +107,23 @@ public class GestorBD {
 			
 	        //Se ejecuta la sentencia de creación de la tabla Estudiantes
 	        if (!stmt.execute(sql)) {
-	        	System.out.println("- Se ha borrado la tabla Alumno");
+	        
+	        	log( Level.INFO,"Se ha borrado la tabla ALUMNO", null);
 	        }
 		} catch (Exception ex) {
-			System.err.println(String.format("* Error al borrar la BBDD: %s", ex.getMessage()));
+			log( Level.WARNING,"Error al borrar la  BBDD", ex);
 			ex.printStackTrace();			
 		}
 		
 		try {
 			//Se borra el fichero de la BBDD
 			Files.delete(Paths.get(DATABASE_FILE_ALUMNO));
-			System.out.println("- Se ha borrado el fichero de la BBDD");
+			
+			log( Level.INFO,"Se ha borrado el fichero de la BD", null);
 		} catch (Exception ex) {
-			System.err.println(String.format("* Error al borrar el archivo de la BBDD: %s", ex.getMessage()));
+		
+			
+			log( Level.WARNING,"Error al borrar el archivo de la  BBDD", ex);
 			ex.printStackTrace();						
 		}
 	}
@@ -119,19 +136,23 @@ public class GestorBD {
 			
 	        //Se ejecuta la sentencia de creación de la tabla Estudiantes
 	        if (!stmt.execute(sql)) {
-	        	System.out.println("- Se ha borrado la tabla Profesor*");
+	        	
+				log( Level.INFO,"Se ha borrado la tabla profesor", null);
+	        
 	        }
 		} catch (Exception ex) {
-			System.err.println(String.format("* Error al borrar la BBDD: %s", ex.getMessage()));
+			log( Level.WARNING,"Error al borrar la  BBDD", ex);
 			ex.printStackTrace();			
 		}
 		
 		try {
 			//Se borra el fichero de la BBDD
 			Files.delete(Paths.get(DATABASE_FILE_PROFESOR));
-			System.out.println("- Se ha borrado el fichero de la BBDD");
+			log( Level.INFO,"Se ha borrado el fichero de la BBDD", null);
 		} catch (Exception ex) {
-			System.err.println(String.format("* Error al borrar el archivo de la BBDD: %s", ex.getMessage()));
+		
+			log( Level.WARNING,"Error al borrar el archivo de la  BBDD", ex);
+	
 			ex.printStackTrace();						
 		}
 	}
@@ -143,19 +164,23 @@ public class GestorBD {
 			//Se define la plantilla de la sentencia SQL
 			String sql = "INSERT INTO ALUMNO ( NOMBRE, APELLIDO, CONTRASEÑA, DIRECCION, EDAD, EMAIL, CURSO, NOMBRE_USUARIO) VALUES ( '%s', '%s', '%s', '%s', '%d','%s', '%s', '%s');";
 			
-			System.out.println("- Insertando alumnos...");
-			
+			log( Level.INFO,"Insertando alumnos...", null);
+
+		
 			//Se recorren los clientes y se insertan uno a uno
 			for (Alumno c : alumno) {
-				System.out.println(c.getApellidos());
+				
 				if (1 == stmt.executeUpdate(String.format(sql, c.getNombre(), c.getApellidos(), c.getContraseña(), c.getDireccion(),  c.getEdad(), c.getEmail(), c.getCurso(), c.getNombreUsuario()))) {					
-					System.out.println(String.format(" - Alumno insertado: %s", c.toString()));
+					
+					log( Level.INFO,"Alumno insertado", null);
 				} else {
-					System.out.println(String.format(" - No se ha insertado el alumno: %s", c.toString()));
+				
+					log( Level.INFO,"No se ha insertado el aluno", null);
 				}
 			}			
 		} catch (Exception ex) {
-			System.err.println(String.format("* Error al insertar datos de la BBDD: %s", ex.getMessage()));
+
+			log( Level.WARNING,"Error al insertar datos en la  BBDD", ex);
 			ex.printStackTrace();						
 		}				
 	}
@@ -167,18 +192,22 @@ public class GestorBD {
 			//Se define la plantilla de la sentencia SQL
 			String sql = "INSERT INTO PROFESOR ( NOMBRE, APELLIDO, CONTRASEÑA, DIRECCION, EDAD, EMAIL, SALARIO, NOMBRE_USUARIO) VALUES ('%s', '%s', '%s', '%s', '%d','%s', '%f', '%s');";
 			
-			System.out.println("- Insertando profesores...");
-			
+		
+			log( Level.INFO, "Insertando profesores...", null);
 			//Se recorren los clientes y se insertan uno a uno
 			for (Profesor c : profesor) {
 				if (1 == stmt.executeUpdate(String.format(sql, c.getNombre(), c.getApellidos(), c.getContraseña(), c.getDireccion(),  c.getEdad(), c.getEmail(), c.getSalario(), c.getNombreUsuario()))) {					
 					System.out.println(String.format(" - Profesor insertado: %s", c.toString()));
+
+					log( Level.INFO, "Profesor insertado "+c.toString(), null);
 				} else {
-					System.out.println(String.format(" - No se ha insertado el profesor: %s", c.toString()));
+					
+					log( Level.INFO, "No se ha insertado el profesor "+c.toString(), null);
 				}
 			}			
 		} catch (Exception ex) {
-			System.err.println(String.format("* Error al insertar datos de la BBDD: %s", ex.getMessage()));
+		
+			log( Level.WARNING,"Error al insertar datos en la  BBDD", ex);
 			ex.printStackTrace();						
 		}				
 	}
@@ -219,10 +248,11 @@ public class GestorBD {
 			
 			//Se cierra el ResultSet
 			rs.close();
-			
-			System.out.println(String.format("- Se han recuperado %d alumnos...", alumnos.size()));			
+		
+			log( Level.INFO,"Se han recuperado alunos", null);
 		} catch (Exception ex) {
-			System.err.println(String.format("* Error al obtener datos de la BBDD: %s", ex.getMessage()));
+		
+			log( Level.WARNING,"Error al obtener datos de la  BBDD", ex);
 			ex.printStackTrace();						
 		}		
 		
@@ -263,9 +293,13 @@ public class GestorBD {
 			//Se cierra el ResultSet
 			rs.close();
 			
-			System.out.println(String.format("- Se han recuperado %d profesores...", profesores.size()));			
+			
+			log( Level.INFO,"Se han recuperado profesores", null);;
+			
+			
 		} catch (Exception ex) {
-			System.err.println(String.format("* Error al obtener datos de la BBDD: %s", ex.getMessage()));
+			log( Level.WARNING,"Error al obtener datos de la  BBDD", ex);
+		
 			ex.printStackTrace();						
 		}		
 		//System.out.println(profesores);
@@ -281,9 +315,11 @@ public class GestorBD {
 			String sql = "DELETE FROM ALUMNO;";			
 			int result = stmt.executeUpdate(sql);
 			
-			System.out.println(String.format("- Se han borrado %d alumnos", result));
+			log( Level.INFO,"Se han borrado alumnos ", null);
 		} catch (Exception ex) {
-			System.err.println(String.format("* Error al borrar datos de la BBDD: %s", ex.getMessage()));
+		
+			log( Level.WARNING,"Error al borrar datos de la  BBDD", ex);
+			
 			ex.printStackTrace();						
 		}		
 	}	
@@ -296,12 +332,13 @@ public class GestorBD {
 	
 			
 			int result = stmt.executeUpdate(String.format(sql, newPassword, alumno.getId()));
-	
-			System.out.println(String.format("- Se ha actulizado %d alumnos", result));
+			log( Level.INFO,"Se han actualizado alumnos ", null);
+		
 			
 			//	System.out.println();
 		} catch (Exception ex) {
-			System.err.println(String.format("* Error actualizando datos de la BBDD: %s", ex.getMessage()));
+		
+			log( Level.WARNING,"Error al actualizando datos de la  BBDD", ex);
 			ex.printStackTrace();						
 		}		
 	}
@@ -314,9 +351,9 @@ public class GestorBD {
 			
 			int result = stmt.executeUpdate(String.format(sql, newPassword, profesor.getId()));
 			
-			System.out.println(String.format("- Se ha actulizado %d profesor", result));
+			log( Level.INFO,"Se ha actulizado la contraseña del profesor",null);
 		} catch (Exception ex) {
-			System.err.println(String.format("* Error actualizando datos de la BBDD: %s", ex.getMessage()));
+			log( Level.WARNING,"Error al actualizando datos de la  BBDD", ex);
 			ex.printStackTrace();						
 		}		
 	}
@@ -328,10 +365,10 @@ public class GestorBD {
 			String sql = "UPDATE ALUMNO SET NOMBRE = '%s', APELLIDO = '%s', EMAIL = '%s', DIRECCION = '%s', NOMBRE_USUARIO = '%s', CONTRASEÑA = '%s' WHERE ID = %d;";
 			int result = stmt.executeUpdate(String.format(sql, newNombre, newApellido, newEmail, newDirection, newNombreUsuario, newContraseña, alumno.getId()));
 			
-			System.out.println(String.format( "- Se han actualizado los datos de %s %s:", alumno.getNombre(), alumno.getApellidos()));
+			log( Level.INFO,"Se ha actulizado alumnos",null);
 			
 		} catch (Exception e) {
-			System.err.println(String.format("* Error actualizando datos de la BBDD: %s", e.getMessage()));
+			log( Level.WARNING,"Error al actualizando datos de la  BBDD", e);
 			e.printStackTrace();
 		}
 	}
@@ -344,10 +381,10 @@ public class GestorBD {
 			String sql = "UPDATE PROFESOR SET NOMBRE = '%s', APELLIDO = '%s', EMAIL = '%s', DIRECCION = '%s', NOMBRE_USUARIO = '%s', CONTRASEÑA = '%s' WHERE ID = %d;";
 			int result = stmt.executeUpdate(String.format(sql, newNombre, newApellido, newEmail, newDirection, newNombreUsuario, newContraseña, profesor.getId()));
 			
-			System.out.println(String.format( "- Se han actualizado los datos de %s %s:", profesor.getNombre(), profesor.getApellidos()));
-			
+		
+			log( Level.INFO,"Se ha actulizado datos del profesor",null);
 		} catch (Exception e) {
-			System.err.println(String.format("* Error actualizando datos de la BBDD: %s", e.getMessage()));
+			log( Level.WARNING,"Error al actualizando datos de la  BBDD", e);
 			e.printStackTrace();
 		}
 	}
@@ -359,10 +396,28 @@ public class GestorBD {
 			String sql = "DELETE FROM PROFESOR;";			
 			int result = stmt.executeUpdate(sql);
 			
-			System.out.println(String.format("- Se han borrado %d profesores", result));
+			log( Level.INFO,"Se ha borrado los profesores",null);
 		} catch (Exception ex) {
-			System.err.println(String.format("* Error al borrar datos de la BBDD: %s", ex.getMessage()));
+			log( Level.WARNING,"Error al actualizando datos de la  BBDD", ex);
 			ex.printStackTrace();						
 		}		
+	}
+	
+	private void log( Level level, String msg, Throwable excepcion ) {
+	
+		if (logger==null) {  // Logger por defecto local:
+		
+			logger = Logger.getLogger( "BD-local" );  // Nombre del logger
+			logger.setLevel( Level.ALL );  // Loguea todos los niveles
+			try {
+				logger.addHandler( new FileHandler( "log/bd.log.xml", true ) );  // Y saca el log a fichero xml
+			} catch (Exception e) {
+				logger.log( Level.SEVERE, "No se pudo crear fichero de log", e );
+			}
+		}	
+		if (excepcion==null)
+			logger.log( level, msg );
+		else
+			logger.log( level, msg, excepcion );
 	}
 }
