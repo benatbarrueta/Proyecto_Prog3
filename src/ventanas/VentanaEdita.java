@@ -1,6 +1,8 @@
 package ventanas;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableCellRenderer;
+
 import java.awt.*;
 import java.awt.event.*;
 
@@ -36,17 +38,17 @@ public class VentanaEdita extends JFrame {
 		gestorBD = new GestorBD();
 		
 		JTextField nombre = new JTextField();
-		JLabel labelNombre = new JLabel ("Nombre: ");
+		JLabel labelNombre = new JLabel ("Nombre*: ");
 		JTextField apellido = new JTextField();
-		JLabel labelApellido = new JLabel("Apellido(s): ");
+		JLabel labelApellido = new JLabel("Apellido(s)*: ");
 		JTextField email = new JTextField();
-		JLabel labelEmail = new JLabel("Email: ");
+		JLabel labelEmail = new JLabel("Email*: ");
 		JTextField direccion = new JTextField();
-		JLabel labelDireccion = new JLabel("Dirección: ");
+		JLabel labelDireccion = new JLabel("Dirección*: ");
 		JTextField nombreUsuario = new JTextField();
-		JLabel labelNombreUsuario = new JLabel("Nombre de usuario: ");
+		JLabel labelNombreUsuario = new JLabel("Nombre de usuario*: ");
 		JTextField contraseña = new JTextField();
-		JLabel labelContraseña = new JLabel("Contraseña: ");
+		JLabel labelContraseña = new JLabel("Contraseña*: ");
 		JButton botonAceptar = new JButton("Aceptar cambios");
 		
 		cp.setLayout(new BorderLayout());
@@ -105,13 +107,16 @@ public class VentanaEdita extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if (tipo == "Alumno") {
 					Alumno alumno = (Alumno) objeto;
-					gestorBD.actualizarAlumno(alumno, nombre.getText(), apellido.getText(), email.getText(), direccion.getText(), nombreUsuario.getText(), contraseña.getText());
-					System.out.println("- Nombre: " + nombre.getText() + "\n- Apellido: " + apellido.getText() + "\n- Email: " + email.getText() + "\n- Dirección:" + direccion.getText() + "\n- Nombre de usuario : " + nombreUsuario.getText() + "\n- Contraseña: " + contraseña.getText());
-					
+					if (nombre.getText() != null || apellido.getText() != null || email.getText() != null ||  nombreUsuario.getText() != null || contraseña.getText() != null) {
+						gestorBD.actualizarAlumno(alumno, nombre.getText(), apellido.getText(), email.getText(), direccion.getText(), nombreUsuario.getText(), contraseña.getText());
+						System.out.println("- Nombre: " + nombre.getText() + "\n- Apellido: " + apellido.getText() + "\n- Email: " + email.getText() + "\n- Dirección:" + direccion.getText() + "\n- Nombre de usuario : " + nombreUsuario.getText() + "\n- Contraseña: " + contraseña.getText());
+					}
 				} else {
 					Profesor profesor = (Profesor) objeto;
-					gestorBD.actualizarProfesor(profesor, nombre.getText(), apellido.getText(), email.getText(), direccion.getText(), nombreUsuario.getText(), contraseña.getText());
-					System.out.println("Profesor editado: " + profesor);
+					if (nombre.getText() != null || apellido.getText() != null || email.getText() != null ||  nombreUsuario.getText() != null || contraseña.getText() != null) {
+						gestorBD.actualizarProfesor(profesor, nombre.getText(), apellido.getText(), email.getText(), direccion.getText(), nombreUsuario.getText(), contraseña.getText());
+						System.out.println("- Nombre: " + nombre.getText() + "\n- Apellido: " + apellido.getText() + "\n- Email: " + email.getText() + "\n- Dirección:" + direccion.getText() + "\n- Nombre de usuario : " + nombreUsuario.getText() + "\n- Contraseña: " + contraseña.getText());
+					}
 				}
 			}
 		});
