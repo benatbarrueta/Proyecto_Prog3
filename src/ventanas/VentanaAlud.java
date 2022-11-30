@@ -38,7 +38,8 @@ public class VentanaAlud extends JFrame {
 			norte.add(new JLabel(alumno.getApellidos()));
 			
 			for (Asignatura asig : gestor.getAsignatura()) {
-				if (asig.getAlumnos().contains(alumno)) {
+				if (("" + asig.getAlumnos()).contains("" + alumno)) {
+					modeloAsignaturas.addElement(asig.getNombre());
 					System.out.println(asig.getNombre());
 				} else {
 					
@@ -75,7 +76,7 @@ public class VentanaAlud extends JFrame {
 		norte.add(new JLabel(""));
 		norte.add(new JLabel(""));
 		norte.add(edita);
-		System.out.println(gestor.getAsignatura().get(0).getAlumnos());
+//		System.out.println(gestor.getAsignatura().get(0).getAlumnos());
 		
 		if (tipo == "Alumno") {
 			Alumno alumno = (Alumno) objeto;
