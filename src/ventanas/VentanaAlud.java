@@ -35,11 +35,11 @@ public class VentanaAlud extends JFrame {
 		if (tipo == "Alumno") {
 			Alumno alumno = (Alumno) objeto;
 			norte.add(new JLabel(alumno.getNombre()));
-			norte.add(new JLabel(alumno.getApellidos()));
-			
+			norte.add(new JLabel(alumno.getApellidos()));	
 			for (Asignatura asig : gestor.getAsignatura()) {
-				if (asig.getAlumnos().contains(alumno)) {
+				if (("" + asig.getAlumnos()).contains("" + alumno)) {
 					System.out.println(asig.getNombre());
+					modeloAsignaturas.addElement(asig.getNombre());
 				} else {
 					
 				}
