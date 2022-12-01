@@ -14,7 +14,8 @@ public class VentanaAlud extends JFrame {
 	protected JButton edita;
 	protected JList asignaturas;
 	protected DefaultListModel modeloAsignaturas = new DefaultListModel();
-
+	
+	protected JButton cerrar_sesion;
 	public VentanaAlud (Object objeto, String tipo, Gestor gestor) {
 			
 		Container cp = this.getContentPane();
@@ -23,10 +24,10 @@ public class VentanaAlud extends JFrame {
 		
 		JPanel centro = new JPanel();
 		JPanel norte = new JPanel();
-		
+		JPanel sur = new JPanel();
 		cp.add(centro, BorderLayout.CENTER);
 		cp.add(norte, BorderLayout.NORTH);
-		
+		cp.add(sur, BorderLayout.SOUTH);
 		norte.setLayout(new GridLayout(1,8));
 		centro.setLayout(new GridLayout(1,1));
 		
@@ -103,6 +104,29 @@ public class VentanaAlud extends JFrame {
 			Profesor profesor = (Profesor) objeto;
 			this.setTitle(profesor.getNombre() + " " + profesor.getApellidos());
 		}
+		
+		
+		//SUR
+		sur.setLayout(new GridLayout(1,8));
+		
+		cerrar_sesion = new JButton("Cerrar Sesion");
+		
+		cerrar_sesion.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				VentanaLogIn v = new VentanaLogIn(gestor);
+				dispose();
+				
+			}
+		});
+		
+		sur.add(cerrar_sesion);
+		sur.add(new JLabel(""));
+		sur.add(new JLabel(""));
+	
+		//
+		
 		this.setSize(600, 400);
 		this.setVisible(true);
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);

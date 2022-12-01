@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.GridLayout;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -11,6 +12,7 @@ import clases.Asignatura;
 import clases.Gestor;
 
 public class VentanaAsignatura extends JFrame{
+	protected JButton cerrar_sesion;
 	public VentanaAsignatura(Object objeto, String tipo, Gestor gestor, Asignatura asignatura) {
 		Container cp = this.getContentPane();
 		
@@ -18,9 +20,10 @@ public class VentanaAsignatura extends JFrame{
 		
 		JPanel centro = new JPanel();
 		JPanel norte = new JPanel();
-		
+	
 		cp.add(centro, BorderLayout.CENTER);
 		cp.add(norte, BorderLayout.NORTH);
+		
 		
 		norte.setLayout(new GridLayout(1,1));
 		centro.setLayout(new GridLayout(1,1));

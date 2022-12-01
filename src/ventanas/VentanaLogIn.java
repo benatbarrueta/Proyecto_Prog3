@@ -42,7 +42,11 @@ public class VentanaLogIn extends JFrame {
 			@Override
 			public void keyReleased(KeyEvent e) {
 				// TODO Auto-generated method stub
-				if(e.getKeyCode()==8) {
+			
+				if(e.getKeyCode() == 10) {
+					botoncontinuar.doClick();
+				}
+				else if(e.getKeyCode()==8) {
 					contrasenaContenido= contrasenaContenido.substring(0,contrasenaContenido.length()-1);
 				}
 				else {
@@ -51,15 +55,23 @@ public class VentanaLogIn extends JFrame {
 				
 				
 				int tamano = textoContrasena.getText().length();
-				String texto = "";
+				 String texto = "";
 				textoContrasena.setText(texto);
 				for (int i = 0; i < tamano; i++) {
 					texto=texto + "*";
 				}
 				textoContrasena.setText(texto);
-				System.out.println(contrasenaContenido);
+			System.out.println(contrasenaContenido);
+				
 			}
-			
+//			public void keyPressed(KeyEvent e) {
+//				// TODO Auto-generated method stub
+//				if(e.getKeyCode() == 8) {
+//					textoContrasena.setText("");
+//					contrasenaContenido="";
+//				}
+//			}
+		
 	
 		});
 		
