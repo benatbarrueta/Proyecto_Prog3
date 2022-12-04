@@ -25,6 +25,7 @@ public class VentanaEdita extends JFrame {
 	protected JTextField contraseña;
 	protected JLabel labelContraseña;
 	protected JButton botonAceptar;
+	protected JButton botonAtras;
 	
 
 	public VentanaEdita(Object objeto, String tipo, Gestor gestor) {
@@ -50,6 +51,7 @@ public class VentanaEdita extends JFrame {
 		JTextField contraseña = new JTextField();
 		JLabel labelContraseña = new JLabel("Contraseña*: ");
 		JButton botonAceptar = new JButton("Aceptar cambios");
+		JButton botonAtras = new JButton("Atras");
 		
 		cp.setLayout(new BorderLayout());
 		cp.add(norte, BorderLayout.NORTH);
@@ -98,8 +100,22 @@ public class VentanaEdita extends JFrame {
 		
 		norte.add(new JLabel("Editando perfil..."));
 		
-		
+		sur.add(botonAtras);
 		sur.add(botonAceptar);
+		
+		botonAtras.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (tipo == "Alumno") {
+					Alumno alumno = (Alumno) objeto;
+					VentanaAlud v = new VentanaAlud(alumno, "Alumno", gestor);
+				} else {
+					Profesor profesor = (Profesor) objeto;
+					VentanaAlud v = new VentanaAlud(profesor, "Profesor", gestor);
+				}
+			}
+		});
 		
 		botonAceptar.addActionListener(new ActionListener() {
 			

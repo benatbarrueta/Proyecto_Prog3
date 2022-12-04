@@ -129,6 +129,6 @@ public class VentanaAlud extends JFrame {
 		
 		this.setSize(600, 400);
 		this.setVisible(true);
-		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 }
