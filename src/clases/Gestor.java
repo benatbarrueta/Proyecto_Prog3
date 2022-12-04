@@ -229,21 +229,33 @@ public class Gestor {
 		
 		GestorBD gestorBD = new GestorBD();	
 //		gestorBD.borrarBBDDAlumno();
+		gestorBD.borrarBBDDProfesor();
 		gestorBD.crearBBDDAlumno();
 		gestorBD.crearBBDDProfesor();
 		
 		
 		//CREAR PROFESORES Y ALUMNOS
 		ArrayList<Profesor> profesores = gestorBD.obtenerDatosProfesor();
+		System.out.println(profesores);
 		ArrayList<Alumno> alumnos = gestorBD.obtenerDatosAlumnos();
 		gestor.asignaturas.get(0).getAlumnos().add(alumnos.get(0));
 		
 		if (profesores.size() == 0) {
-			for (int i = 0; i < 5; i++) {
+			for (int i = 0; i < 2; i++) {
 				Profesor profesor = new Profesor();
-				profesor.setId(-1);
+				profesor.setContraseña(i+"");
+				profesor.setApellidos("Apellido"+i);
+				profesor.setDireccion("dir");
+				profesor.setEdad(i);
+				profesor.setNombre("nombre"+i);
+				profesor.setSalario(i);
+				profesor.setNombreUsuario("Profe");
 				gestor.profesor.add(profesor);
+				
 			}
+			Profesor profesor = new Profesor("Borja", "OM", 5, "DIR","NU",	"", 0);
+			gestor.profesor.add(profesor);
+			gestor.asignaturas.get(0).setProfesor(profesor);
 		}
 
 		if (alumnos.size() == 0) {

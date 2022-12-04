@@ -28,12 +28,13 @@ public class VentanaAlud extends JFrame {
 		cp.add(centro, BorderLayout.CENTER);
 		cp.add(norte, BorderLayout.NORTH);
 		cp.add(sur, BorderLayout.SOUTH);
-		norte.setLayout(new GridLayout(1,8));
-		centro.setLayout(new GridLayout(1,1));
+		
 		
 		edita = new JButton("EDITA");
 		
 		if (tipo == "Alumno") {
+			norte.setLayout(new GridLayout(1,8));
+			centro.setLayout(new GridLayout(1,1));
 			Alumno alumno = (Alumno) objeto;
 			norte.add(new JLabel(alumno.getNombre()));
 			norte.add(new JLabel(alumno.getApellidos()));	
@@ -41,14 +42,34 @@ public class VentanaAlud extends JFrame {
 				if (("" + asig.getAlumnos()).contains("" + alumno)) {
 					System.out.println(asig.getNombre());
 					modeloAsignaturas.addElement(asig.getNombre());
-				} else {
-					
+				} 
+			}
+			norte.add(new JLabel(""));
+			norte.add(new JLabel(""));
+			norte.add(new JLabel(""));
+			norte.add(new JLabel(""));
+			norte.add(new JLabel(""));
+		} else {
+			
+			norte.setLayout(new GridLayout(2,4));
+			centro.setLayout(new GridLayout(1,1));
+			Profesor profesor = (Profesor) objeto;
+			
+			norte.add(new JLabel(profesor.getNombre()));
+			norte.add(new JLabel(profesor.getApellidos()));
+			norte.add(new JLabel(""));
+			
+			norte.add(new JLabel("Asignaturas"));
+			norte.add(new JLabel(""));
+			System.out.println("v");
+			for (Asignatura asig : gestor.getAsignatura()) {
+				System.out.println(asig.getProfesor());
+				System.out.println("a");
+				if((asig.getProfesor()+"").equals(profesor+"")) {
+					System.out.println("b");
+					modeloAsignaturas.addElement(asig.getNombre());
 				}
 			}
-		} else {
-			Profesor profesor = (Profesor) objeto;
-			JLabel prueba = new JLabel(profesor.getNombre());
-			centro.add(prueba);
 		}
 		
 		asignaturas = new JList(modeloAsignaturas);
@@ -89,14 +110,10 @@ public class VentanaAlud extends JFrame {
 			}
 		});
 		
-		norte.add(new JLabel(""));
-		norte.add(new JLabel(""));
-		norte.add(new JLabel(""));
-		norte.add(new JLabel(""));
-		norte.add(new JLabel(""));
+	
 		norte.add(edita);
 		System.out.println(gestor.getAsignatura().get(0).getAlumnos());
-		
+		System.out.println(gestor.getAsignatura().get(0).getProfesor());
 		if (tipo == "Alumno") {
 			Alumno alumno = (Alumno) objeto;
 			this.setTitle(alumno.getNombre() + " " + alumno.getApellidos());

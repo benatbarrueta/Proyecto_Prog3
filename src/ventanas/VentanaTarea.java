@@ -14,11 +14,8 @@ import clases.Asignatura;
 import clases.Gestor;
 import clases.Tarea;
 
-public class VentanaAsignatura extends JFrame{
-	protected JButton cerrar_sesion;
-	
-	protected JButton tareaBoton;
-	public VentanaAsignatura(Object objeto, String tipo, Gestor gestor, Asignatura asignatura) {
+public class VentanaTarea extends JFrame {
+	public VentanaTarea(Tarea tarea) {
 		Container cp = this.getContentPane();
 		
 		cp.setLayout(new BorderLayout());
@@ -33,13 +30,12 @@ public class VentanaAsignatura extends JFrame{
 		norte.setLayout(new GridLayout(1,1));
 		centro.setLayout(new GridLayout(8,2));
 		
-	
-	
 		
 		
 		
 		
-		this.setTitle(asignatura.getNombre());
+		
+		this.setTitle(tarea.getNombre());
 		this.setSize(600, 400);
 		this.setVisible(true);
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
