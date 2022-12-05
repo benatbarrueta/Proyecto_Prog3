@@ -8,23 +8,35 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import clases.Asignatura;
-import clases.Gestor;
-import clases.Tarea;
+import clases.*;
 
 public class VentanaAsignatura extends JFrame{
 	protected JButton cerrar_sesion;
+	protected JLabel tareas;
+	protected JLabel nombreAsig;
 	
 	protected JButton tareaBoton;
 	public VentanaAsignatura(Object objeto, String tipo, Gestor gestor, Asignatura asignatura) {
 		Container cp = this.getContentPane();
 		
+		if (tipo == "Alumno") {
+			Alumno alumno = (Alumno) objeto;
+			
+		} else {
+			Profesor profesor = (Profesor) objeto;
+			
+		}
+		
 		cp.setLayout(new BorderLayout());
 		
 		JPanel centro = new JPanel();
 		JPanel norte = new JPanel();
+		tareas = new JLabel("Tareas");
+		nombreAsig = new JLabel("Asignatura:  " + asignatura.getNombre());
+		
 	
 		cp.add(centro, BorderLayout.CENTER);
 		cp.add(norte, BorderLayout.NORTH);
@@ -32,8 +44,12 @@ public class VentanaAsignatura extends JFrame{
 		
 		norte.setLayout(new GridLayout(1,1));
 		centro.setLayout(new GridLayout(8,2));
+		//NORTE
+		norte.add(nombreAsig);
 		
-	
+		
+		//CENTRO
+		centro.add(tareas);
 	
 		
 		
