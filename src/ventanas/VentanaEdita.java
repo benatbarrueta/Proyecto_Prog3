@@ -36,8 +36,7 @@ public class VentanaEdita extends JFrame {
 		JPanel centro = new JPanel();
 		JPanel sur = new JPanel();
 		
-		gestorBD = new GestorBD();
-		
+	
 		JTextField nombre = new JTextField();
 		JLabel labelNombre = new JLabel ("Nombre*: ");
 		JTextField apellido = new JTextField();
@@ -124,13 +123,14 @@ public class VentanaEdita extends JFrame {
 				if (tipo == "Alumno") {
 					Alumno alumno = (Alumno) objeto;
 					if (nombre.getText() != null || apellido.getText() != null || email.getText() != null ||  nombreUsuario.getText() != null || contraseña.getText() != null) {
-						gestorBD.actualizarAlumno(alumno, nombre.getText(), apellido.getText(), email.getText(), direccion.getText(), nombreUsuario.getText(), contraseña.getText());
+						GestorBD.gestorBD.actualizarAlumno(alumno, nombre.getText(), apellido.getText(), email.getText(), direccion.getText(), nombreUsuario.getText(), contraseña.getText());
 						System.out.println("- Nombre: " + nombre.getText() + "\n- Apellido: " + apellido.getText() + "\n- Email: " + email.getText() + "\n- Dirección:" + direccion.getText() + "\n- Nombre de usuario : " + nombreUsuario.getText() + "\n- Contraseña: " + contraseña.getText());
 					}
 				} else {
 					Profesor profesor = (Profesor) objeto;
+					
 					if (nombre.getText() != null || apellido.getText() != null || email.getText() != null ||  nombreUsuario.getText() != null || contraseña.getText() != null) {
-						gestorBD.actualizarProfesor(profesor, nombre.getText(), apellido.getText(), email.getText(), direccion.getText(), nombreUsuario.getText(), contraseña.getText());
+						GestorBD.gestorBD.actualizarProfesor(profesor, nombre.getText(), apellido.getText(), email.getText(), direccion.getText(), nombreUsuario.getText(), contraseña.getText());
 						System.out.println("- Nombre: " + nombre.getText() + "\n- Apellido: " + apellido.getText() + "\n- Email: " + email.getText() + "\n- Dirección:" + direccion.getText() + "\n- Nombre de usuario : " + nombreUsuario.getText() + "\n- Contraseña: " + contraseña.getText());
 					}
 				}

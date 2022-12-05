@@ -25,6 +25,8 @@ public class GestorBD {
 	protected static final String CONNECTION_STRING_PROFESOR = "jdbc:sqlite:" + DATABASE_FILE_PROFESOR;
 	
 	private Logger logger = null;
+	public static GestorBD gestorBD;	
+	
 	
 	public GestorBD() {		
 		try {
@@ -385,7 +387,7 @@ public class GestorBD {
 			log( Level.INFO,"Se ha actulizado datos de " + result + "profesor", null);
 		} catch (Exception e) {
 			log( Level.WARNING,"Error al actualizar datos de la  BBDD", e);
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
 	}
 	public void borrarDatosProfesores() {

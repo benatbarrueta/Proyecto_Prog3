@@ -81,13 +81,13 @@ public class VentanaAlud extends JFrame {
 				if (tipo == "Alumno") {
 					for (Asignatura asig : gestor.getAsignatura()) {
 						if (asig.getNombre().equals("" + asignaturas.getSelectedValue())) {
-							VentanaAsignatura va = new VentanaAsignatura(objeto, "Alumno", gestor, asig);
+							VentanaAsignatura v= new VentanaAsignatura(objeto, "Alumno", gestor, asig);
 						}
 					}
 				} else {
 					for (Asignatura asig : gestor.getAsignatura()) {
 						if (asig.getNombre() == "" + asignaturas.getSelectedValue()) {
-							VentanaAsignatura va = new VentanaAsignatura(objeto, "Profesor", gestor, asig);
+							VentanaAsignatura v = new VentanaAsignatura(objeto, "Profesor", gestor, asig);
 						}
 					}
 				}

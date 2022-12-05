@@ -19,7 +19,7 @@ import javax.swing.SwingUtilities;
 import ventanas.*;
 
 import java.util.Properties;
-
+import clases.GestorBD;
 
 public class Gestor {
 	protected ArrayList<Alumno> alumnos;
@@ -33,7 +33,6 @@ public class Gestor {
 	private static final String OUTPUT_KEY_TAREA = "guardarTarea";
 	private static final String KEY_ASIGNATURA = "guardarLeerAsgignatura";
 	
-
 	public Gestor(ArrayList<Alumno> alumnos, ArrayList<Profesor> profesor, ArrayList<Asignatura> asignaturas,
 			ArrayList<Tarea> tareas, ArrayList<Usuarios> usuarios) {
 		super();
@@ -227,17 +226,18 @@ public class Gestor {
 	
 		//CREAR BASE DE DATOS
 		
-		GestorBD gestorBD = new GestorBD();	
+		GestorBD.gestorBD = new GestorBD();	
 //		gestorBD.borrarBBDDAlumno();
-		gestorBD.borrarBBDDProfesor();
-		gestorBD.crearBBDDAlumno();
-		gestorBD.crearBBDDProfesor();
+//		gestorBD.borrarBBDDProfesor();
+		GestorBD.gestorBD.crearBBDDProfesor();
+		GestorBD.gestorBD.crearBBDDAlumno();
+	
 		
 		
 		//CREAR PROFESORES Y ALUMNOS
-		ArrayList<Profesor> profesores = gestorBD.obtenerDatosProfesor();
+		ArrayList<Profesor> profesores = GestorBD.gestorBD.obtenerDatosProfesor();
 		System.out.println(profesores);
-		ArrayList<Alumno> alumnos = gestorBD.obtenerDatosAlumnos();
+		ArrayList<Alumno> alumnos = GestorBD.gestorBD.obtenerDatosAlumnos();
 		gestor.asignaturas.get(0).getAlumnos().add(alumnos.get(0));
 		
 		if (profesores.size() == 0) {
@@ -268,12 +268,12 @@ public class Gestor {
 			}
 		}
 		//INSERTAS ALUMNOS Y PROFESORES EN LAS TABLAS DE DATOS 
-		gestorBD.insertarDatosAlumno(gestor.alumnos.toArray(new Alumno[gestor.alumnos.size()]));
-		gestorBD.insertarDatosProfesor(gestor.profesor.toArray(new Profesor[gestor.profesor.size()]));
+		GestorBD.gestorBD.insertarDatosAlumno(gestor.alumnos.toArray(new Alumno[gestor.alumnos.size()]));
+		GestorBD.gestorBD.insertarDatosProfesor(gestor.profesor.toArray(new Profesor[gestor.profesor.size()]));
 
 		// VENTANAS
 		
-		System.out.println(gestorBD.obtenerDatosProfesor());
+		System.out.println(GestorBD.gestorBD.obtenerDatosProfesor());
 		
 		VentanaLogIn v = new VentanaLogIn(gestor);
 		
