@@ -17,6 +17,7 @@ public class VentanaAsignatura extends JFrame{
 	protected JButton cerrar_sesion;
 	protected JLabel tareas;
 	protected JLabel nombreAsig;
+	protected JLabel apuntes;
 	
 	protected JButton tareaBoton;
 	public VentanaAsignatura(Object objeto, String tipo, Gestor gestor, Asignatura asignatura) {
@@ -36,6 +37,7 @@ public class VentanaAsignatura extends JFrame{
 		JPanel norte = new JPanel();
 		tareas = new JLabel("Tareas");
 		nombreAsig = new JLabel("Asignatura:  " + asignatura.getNombre());
+		apuntes = new JLabel("Apuntes");
 		
 	
 		cp.add(centro, BorderLayout.CENTER);
@@ -49,6 +51,7 @@ public class VentanaAsignatura extends JFrame{
 		
 		
 		//CENTRO
+		centro.add(apuntes);
 		centro.add(tareas);
 	
 		
