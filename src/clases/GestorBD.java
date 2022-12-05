@@ -365,10 +365,10 @@ public class GestorBD {
 			String sql = "UPDATE ALUMNO SET NOMBRE = '%s', APELLIDO = '%s', EMAIL = '%s', DIRECCION = '%s', NOMBRE_USUARIO = '%s', CONTRASEÑA = '%s' WHERE ID = %d;";
 			int result = stmt.executeUpdate(String.format(sql, newNombre, newApellido, newEmail, newDirection, newNombreUsuario, newContraseña, alumno.getId()));
 			
-			log( Level.INFO,"Se ha actulizado alumnos",null);
+			log( Level.INFO,"Se ha actulizado los datos de " + result + "alumno",null);
 			
 		} catch (Exception e) {
-			log( Level.WARNING,"Error al actualizando datos de la  BBDD", e);
+			log( Level.WARNING,"Error al actualizar datos de la  BBDD", e);
 			e.printStackTrace();
 		}
 	}
@@ -384,7 +384,7 @@ public class GestorBD {
 		
 			log( Level.INFO,"Se ha actulizado datos de " + result + "profesor", null);
 		} catch (Exception e) {
-			log( Level.WARNING,"Error al actualizando datos de la  BBDD", e);
+			log( Level.WARNING,"Error al actualizar datos de la  BBDD", e);
 			e.printStackTrace();
 		}
 	}
