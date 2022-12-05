@@ -101,14 +101,23 @@ public class VentanaLogIn extends JFrame {
 				} else {
 					for (Profesor profesor : gestorBD.obtenerDatosProfesor()) {
 						System.out.println(profesor);
-						if(textoUsuario.getText() .equals(profesor.getNombreUsuario())  && textoContrasena.getText() .equals(profesor.getContraseña())) {
+						if(textoUsuario.getText().equals(profesor.getNombreUsuario())  && textoContrasena.getText().equals(profesor.getContraseña())) {
 							VentanaAlud v = new VentanaAlud(profesor, "Profesor", gestor);
 							dispose();
 							break;
+						} else if (textoUsuario.getText().equals(profesor.getNombreUsuario()) && !textoContrasena.getText().equals(profesor.getContraseña())){
+							JOptionPane.showMessageDialog(null, "La contraseña introducida es incorrecta");
+							textoUsuario.setText(profesor.getNombreUsuario());
+							textoContrasena.setText("");
+							break;
+						} else if (!textoUsuario.getText().equals(profesor.getNombreUsuario()) && textoContrasena.getText().equals(profesor.getContraseña())){
+							JOptionPane.showMessageDialog(null, "El nombre de usuario introducido es incorrecta");
+							textoUsuario.setText("");
+							textoContrasena.setText(profesor.getContraseña());
 						} else {
-//							JOptionPane.showMessageDialog(null, "Los datos introducidos son erroneos");
-//							textoUsuario.setText("");
-//							textoContrasena.setText("");
+							JOptionPane.showMessageDialog(null, "Los datos introducidos son erroneos");
+							textoUsuario.setText("");
+							textoContrasena.setText("");
 						}
 					}
 				}

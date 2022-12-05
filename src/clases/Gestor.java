@@ -273,7 +273,7 @@ public class Gestor {
 
 		// VENTANAS
 		
-		
+		System.out.println(gestorBD.obtenerDatosProfesor());
 		
 		VentanaLogIn v = new VentanaLogIn(gestor);
 		
