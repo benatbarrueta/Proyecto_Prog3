@@ -387,7 +387,7 @@ public class GestorBD {
 			log( Level.INFO,"Se ha actulizado datos de " + result + "profesor", null);
 		} catch (Exception e) {
 			log( Level.WARNING,"Error al actualizar datos de la  BBDD", e);
-			//e.printStackTrace();
+			e.printStackTrace();
 		}
 	}
 	public void borrarDatosProfesores() {
