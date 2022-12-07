@@ -8,7 +8,7 @@ public class Tarea {
 	
 	public Tarea() {
 		super();
-		this.fecha_fin = "";
+		this.fecha_fin = "1";
 		this.calificacion = 0.0;
 		this.nombre = "";
 	}
