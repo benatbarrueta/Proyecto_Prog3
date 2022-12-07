@@ -44,14 +44,14 @@ public class VentanaAsignatura extends JFrame{
 		ArrayList<Tarea> listaTarea = gestor.getTarea();
 		JPanel centro = new JPanel();
 		JPanel norte = new JPanel();
+		Calendar calendario = new GregorianCalendar();
+		
 		tareas = new JLabel("Tareas");
 		nombreAsig = new JLabel("Asignatura:  " + asignatura.getNombre());
 		apuntes = new JLabel("Apuntes");
-		Calendar calendario = new GregorianCalendar();
-		modeloTareaLista = new DefaultTableModel(
-				new Object[] { "NOMBRE", "FECHA ENTREGA", "ESTATUS", "CALIFICACION", objeto}, 0);
+		modeloTareaLista = new DefaultTableModel(new Object[] { "NOMBRE", "FECHA ENTREGA", "ESTATUS", "CALIFICACION", objeto}, 0);
 		tareaLista = new JTable(modeloTareaLista);
-//		boolean ventana = true;
+
 		
 		
 		
@@ -74,35 +74,35 @@ public class VentanaAsignatura extends JFrame{
 				}
 		
 		
+				fecha = new JLabel("Fecha:  "+ hora + ":" + minutos+":" + segundos);
 		
 		
-		
-		Thread hilo = new Thread(new Runnable() {
-			
-			@Override
-			public void run() {
-				
-				while (true) {
-					hora = calendario.get(Calendar.HOUR_OF_DAY);
-					minutos = calendario.get(Calendar.MINUTE);
-					segundos = calendario.get(Calendar.SECOND);
-					fecha = new JLabel("Fecha:  "+ hora + ":" + minutos+":" + segundos);
-					try {
-						Thread.sleep(1000);
-						
-
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					
-				}
-				
-				
-			}
-			
-		});
-		hilo.start();
+//		Thread hilo = new Thread(new Runnable() {
+//			
+//			@Override
+//			public void run() {
+//				
+//				while (true) {
+//					hora = calendario.get(Calendar.HOUR_OF_DAY);
+//					minutos = calendario.get(Calendar.MINUTE);
+//					segundos = calendario.get(Calendar.SECOND);
+//					fecha = new JLabel("Fecha:  "+ hora + ":" + minutos+":" + segundos);
+//					try {
+//						Thread.sleep(1000); 
+//						
+//
+//					} catch (InterruptedException e) {
+//						// TODO Auto-generated catch block
+//						e.printStackTrace();
+//					}
+//					
+//				}
+//				
+//				
+//			}
+//			
+//		});
+//		hilo.start();
 		 
 		
 		
