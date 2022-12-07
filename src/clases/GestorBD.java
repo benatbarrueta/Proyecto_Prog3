@@ -377,7 +377,7 @@ public class GestorBD {
 	
 	public void actualizarProfesor(Profesor profesor, String newNombre, String newApellido, String newEmail, String newDirection, String newNombreUsuario, String newContraseña) {
 		//Se abre la conexion y obtenemos el statement
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_ALUMNO);
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_PROFESOR);
 			 Statement stmt = con.createStatement()){
 			//Se ejecuta la sentencia de actualizar datos
 			String sql = "UPDATE PROFESOR SET NOMBRE = '%s', APELLIDO = '%s', EMAIL = '%s', DIRECCION = '%s', NOMBRE_USUARIO = '%s', CONTRASEÑA = '%s' WHERE ID = %d;";

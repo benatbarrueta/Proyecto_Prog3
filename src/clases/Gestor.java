@@ -28,10 +28,10 @@ public class Gestor {
 	protected ArrayList<Tarea> tareas;
 	protected ArrayList<Usuarios> usuarios;
 	protected Properties properties;
-	private static final String PROPERTIES_FILE = "src/config/Properties";
-	private static final String INPUT_KEY_TAREA = "leerTarea";
-	private static final String OUTPUT_KEY_TAREA = "guardarTarea";
-	private static final String KEY_ASIGNATURA = "guardarLeerAsgignatura";
+	public static final String PROPERTIES_FILE = "src/config/Properties";
+	public static final String INPUT_KEY_TAREA = "leerTarea";
+	public static final String OUTPUT_KEY_TAREA = "guardarTarea";
+	public static final String KEY_ASIGNATURA = "guardarLeerAsgignatura";
 	
 	public Gestor(ArrayList<Alumno> alumnos, ArrayList<Profesor> profesor, ArrayList<Asignatura> asignaturas,
 			ArrayList<Tarea> tareas, ArrayList<Usuarios> usuarios) {
@@ -113,9 +113,8 @@ public class Gestor {
 			
 				tarea= new Tarea();	
 				tarea.setNombre(tokenizer.nextToken());		
-				tarea.setFecha_inicio(Integer.parseInt((tokenizer.nextToken())));			
 				tarea.setFecha_fin(Integer.parseInt((tokenizer.nextToken())));				
-				tarea.setCalificacion(tokenizer.nextToken());
+				tarea.setCalificacion(Double.parseDouble(tokenizer.nextToken()));
 			
 				tareas.add(tarea);
 			}
@@ -139,7 +138,7 @@ public class Gestor {
 	     
 	     for (Tarea tarea : tareas) {
 	    	 pw.println(
-	    			 tarea.getNombre() + ";" + tarea.getFecha_inicio() + ";" + tarea.getFecha_fin()+ ";" +tarea.getCalificacion() +";"
+	    			 tarea.getNombre() + ";" + tarea.getFecha_fin()+ ";" +tarea.getCalificacion() +";"
 	    			 );		
 		}
 	     
