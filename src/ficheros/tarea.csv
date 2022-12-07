@@ -1,3 +1,3 @@
 Compania;Fecha;Estatus;calificacion
-examen;25;25;Sin Calificar;
-entrega;25;30;5;
+examen;25;25.0;
+entrega;25;30.0;

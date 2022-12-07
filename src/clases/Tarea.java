@@ -2,21 +2,21 @@ package clases;
 
 public class Tarea {
 
-	protected Integer fecha_fin;
+	protected String fecha_fin;
 	protected Double calificacion;
 	protected String nombre;
 	
 	public Tarea() {
 		super();
-		this.fecha_fin = 0;
+		this.fecha_fin = "";
 		this.calificacion = 0.0;
 		this.nombre = "";
 	}
 	
-	public Integer getFecha_fin() {
+	public String getFecha_fin() {
 		return fecha_fin;
 	}
-	public void setFecha_fin(Integer fecha_fin) {
+	public void setFecha_fin(String fecha_fin) {
 		this.fecha_fin = fecha_fin;
 	}
 	public Double getCalificacion() {

@@ -113,7 +113,7 @@ public class Gestor {
 			
 				tarea= new Tarea();	
 				tarea.setNombre(tokenizer.nextToken());		
-				tarea.setFecha_fin(Integer.parseInt((tokenizer.nextToken())));				
+				tarea.setFecha_fin(tokenizer.nextToken());				
 				tarea.setCalificacion(Double.parseDouble(tokenizer.nextToken()));
 			
 				tareas.add(tarea);

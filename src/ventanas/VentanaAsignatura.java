@@ -110,8 +110,8 @@ public class VentanaAsignatura extends JFrame{
 		//CENTRO
 		centro.add(apuntes);
 		centro.add(tareas);
+		centro.add(tareaLista);
 	
-		
 		
 		
 		
