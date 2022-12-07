@@ -74,22 +74,35 @@ public class VentanaAsignatura extends JFrame{
 				}
 		
 		
-		hora = calendario.get(Calendar.HOUR_OF_DAY);
-		minutos = calendario.get(Calendar.MINUTE);
-		segundos = calendario.get(Calendar.SECOND);
-		fecha = new JLabel("Fecha:  "+ hora + ":" + minutos+":" + segundos);
 		
 		
-//		Thread hilo = new Thread(new Runnable() {
-//			
-//			@Override
-//			public void run() {
-//				fecha = new JLabel("Fecha:  "+ hora + ":" + minutos+":" + segundos);
-//				
-//			}
-//			
-//		});
-//		hilo.start();
+		
+		Thread hilo = new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				
+				while (true) {
+					hora = calendario.get(Calendar.HOUR_OF_DAY);
+					minutos = calendario.get(Calendar.MINUTE);
+					segundos = calendario.get(Calendar.SECOND);
+					fecha = new JLabel("Fecha:  "+ hora + ":" + minutos+":" + segundos);
+					try {
+						Thread.sleep(1000);
+						
+
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					
+				}
+				
+				
+			}
+			
+		});
+		hilo.start();
 		 
 		
 		
