@@ -226,8 +226,8 @@ public class Gestor {
 		//CREAR BASE DE DATOS
 		
 		GestorBD.gestorBD = new GestorBD();	
-		GestorBD.gestorBD.borrarBBDDAlumno();
-		GestorBD.gestorBD.borrarBBDDProfesor();
+		//GestorBD.gestorBD.borrarBBDDAlumno();
+		//GestorBD.gestorBD.borrarBBDDProfesor();
 		GestorBD.gestorBD.crearBBDDProfesor();
 		GestorBD.gestorBD.crearBBDDAlumno();
 	
@@ -238,11 +238,7 @@ public class Gestor {
 		
 		//System.out.println(profesores);
 		ArrayList<Alumno> alumnos = GestorBD.gestorBD.obtenerDatosAlumnos();
-//		gestor.asignaturas.get(0).getAlumnos().add(alumnos.get(0));
-//		gestor.asignaturas.get(1).getAlumnos().add(alumnos.get(0));
-//		gestor.asignaturas.get(2).getAlumnos().add(alumnos.get(0));
-//		gestor.asignaturas.get(3).getAlumnos().add(alumnos.get(0));
-//		gestor.asignaturas.get(4).getAlumnos().add(alumnos.get(0));
+
 		
 		if (profesores.size() == 0) {
 			for (int i = 0; i < 2; i++) {
@@ -262,7 +258,7 @@ public class Gestor {
 		}
 		if (alumnos.size() == 0) {
 			for (int i = 0; i < 5; i++) {
-				Alumno alumno= new Alumno("Alumno", "Juan", i*10, "", "Alumno"+i, "123456", "PRIMERO");
+				Alumno alumno= new Alumno("Alumno", "Juan", i*10, "", "Alumno"+i, "1", "PRIMERO");
 				
 				GestorBD.gestorBD.insertarDatosAlumno(alumno);
 				
@@ -282,6 +278,12 @@ public class Gestor {
         for (int i = 0; i < gestor.asignaturas.size(); i++) {
         	gestor.asignaturas.get(i).setProfesor(gestor.profesor.get(0));
 		}
+        
+		gestor.asignaturas.get(0).getAlumnos().add(alumnos.get(0));
+		gestor.asignaturas.get(1).getAlumnos().add(alumnos.get(0));
+		gestor.asignaturas.get(2).getAlumnos().add(alumnos.get(0));
+		gestor.asignaturas.get(3).getAlumnos().add(alumnos.get(0));
+		gestor.asignaturas.get(4).getAlumnos().add(alumnos.get(0));
         
 		VentanaLogIn v = new VentanaLogIn(gestor);
 		

@@ -1,6 +1,8 @@
 package ventanas;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Component;
 import java.awt.Container;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -11,6 +13,7 @@ import java.util.GregorianCalendar;
 import java.util.Iterator;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 import clases.*;
@@ -26,7 +29,6 @@ public class VentanaAsignatura extends JFrame{
 	protected int hora;
 	protected int minutos;
 	protected int segundos;
-	
 	
 	Calendar calendario = Calendar.getInstance();
 	
@@ -103,9 +105,6 @@ public class VentanaAsignatura extends JFrame{
 //			
 //		});
 //		hilo.start();
-		 
-		
-		
 		
 		//ADD
 		cp.add(centro, BorderLayout.CENTER);
@@ -132,5 +131,44 @@ public class VentanaAsignatura extends JFrame{
 		this.setSize(600, 400);
 		this.setVisible(true);
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		
+		DefaultTableCellRenderer renderSencillo = new DefaultTableCellRenderer() {
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+				JLabel label = new JLabel(value.toString());
+				
+				
+				//El label se alinea a la izquierda
+				if(column == 0 || column == 1) {
+					label.setHorizontalAlignment(JLabel.LEFT);
+				}else if(column == 2) {
+					label.setHorizontalAlignment(JLabel.CENTER);
+				}
+				label.setBackground(Color.WHITE);
+				
+				if(isSelected) {
+					label.setBackground(Color.CYAN);
+				}
+				if (listaTarea.get(row).getCalificacion() < 5) {
+					label.setForeground(Color.RED);
+				}
+				
+				//Es necesaria esta sentencia para pintar correctamente el color de fondo
+				label.setOpaque(true);
+				
+				return label;
+			}
+		};
+		
+		tareaLista.getColumnModel().getColumn(0).setCellRenderer(renderSencillo);
+		tareaLista.getColumnModel().getColumn(1).setCellRenderer(renderSencillo);
+		tareaLista.getColumnModel().getColumn(2).setCellRenderer(renderSencillo);
+		tareaLista.getColumnModel().getColumn(3).setCellRenderer(renderSencillo);
+		tareaLista.getColumnModel().getColumn(4).setCellRenderer(renderSencillo);
 	}
+	
+	
+	
 }

@@ -41,7 +41,7 @@ public class VentanaAlud extends JFrame {
 				if (("" + asig.getAlumnos()).contains("" + alumno)) {
 					 botonasig = new JButton(asig.getNombre());
 			            centro.add(botonasig);
-			            botonasig.setBackground(new Color((int)(Math.random()*255), (int) (Math.random()*255), (int) (Math.random()*255)));
+			            botonasig.setBackground(new Color((int)(Math.random()*155 + 100), (int) (Math.random()*155 + 100), (int) (Math.random()*155 + 100)));
 			            
 			            botonasig.addActionListener(new ActionListener() {
 							
@@ -76,7 +76,7 @@ public class VentanaAlud extends JFrame {
 				if (("" + asig.getProfesor()).contains("" + profesor)) {
 					 botonasig = new JButton(asig.getNombre());
 			            centro.add(botonasig);
-			            botonasig.setBackground(new Color((int)(Math.random()*255), (int) (Math.random()*255), (int) (Math.random()*255)));
+			            botonasig.setBackground(new Color((int)(Math.random()*155 + 100), (int) (Math.random()*155 + 100), (int) (Math.random()*155 + 100)));
 			            
 			            botonasig.addActionListener(new ActionListener() {
 							
@@ -91,28 +91,6 @@ public class VentanaAlud extends JFrame {
 			}
 		}
 		centro.setLayout(new GridLayout((int) contasig/2,contasig));
-		
-		
-//		.addMouseListener(new MouseAdapter() {
-//			@Override
-//			public void mouseClicked(MouseEvent e) {
-//				if (tipo == "Alumno") {
-//					for (Asignatura asig : gestor.getAsignatura()) {
-//						if (asig.getNombre().equals("" + asignaturas.getSelectedValue())) {
-//							VentanaAsignatura v= new VentanaAsignatura(objeto, "Alumno", gestor, asig);
-//						}
-//					}
-//				} else {
-//					for (Asignatura asig : gestor.getAsignatura()) {
-//						if (asig.getNombre() == "" + asignaturas.getSelectedValue()) {
-//							VentanaAsignatura v = new VentanaAsignatura(objeto, "Profesor", gestor, asig);
-//						}
-//					}
-//				}
-//			}
-//		});
-//		
-//		centro.add(scrollAsignaturas);
 		
 		edita.addActionListener(new ActionListener() {
 			
