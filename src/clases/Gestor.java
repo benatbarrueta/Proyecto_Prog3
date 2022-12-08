@@ -25,7 +25,6 @@ public class Gestor {
 	protected ArrayList<Alumno> alumnos;
 	protected ArrayList<Profesor> profesor;
 	protected ArrayList<Asignatura> asignaturas;
-	protected ArrayList<Tarea> tareas;
 	protected ArrayList<Usuarios> usuarios;
 	protected Properties properties;
 	public static final String PROPERTIES_FILE = "src/config/Properties";
@@ -34,12 +33,11 @@ public class Gestor {
 	public static final String KEY_ASIGNATURA = "guardarLeerAsgignatura";
 	
 	public Gestor(ArrayList<Alumno> alumnos, ArrayList<Profesor> profesor, ArrayList<Asignatura> asignaturas,
-			ArrayList<Tarea> tareas, ArrayList<Usuarios> usuarios) {
+			ArrayList<Usuarios> usuarios) {
 		super();
 		this.alumnos = alumnos;
 		this.profesor = profesor;
 		this.asignaturas = asignaturas;
-		this.tareas = tareas;
 		this.usuarios = usuarios;
 		
 	}
@@ -48,7 +46,6 @@ public class Gestor {
 		this.alumnos = new ArrayList<Alumno>();
 		this.profesor = new ArrayList<Profesor>();
 		this.asignaturas = new ArrayList<Asignatura>();
-		this.tareas = new ArrayList<Tarea>();
 		this.usuarios = new ArrayList<Usuarios>();
 		
 	}
@@ -69,12 +66,6 @@ public class Gestor {
 	}
 	public void setAsignatura(ArrayList<Asignatura> asignatura) {
 		this.asignaturas = asignatura;
-	}
-	public ArrayList<Tarea> getTarea() {
-		return tareas;
-	}
-	public void setTarea(ArrayList<Tarea> tarea) {
-		this.tareas = tarea;
 	}
 	public void leerUsuarios(String fichero){
 			
@@ -105,7 +96,6 @@ public class Gestor {
 			String linea;
 			StringTokenizer tokenizer;
 			Tarea tarea;
-			tareas= new ArrayList<>();
 			
 			in.readLine(); // Saltar linea cabezera
 			while((linea = in.readLine())!= null) {
@@ -115,10 +105,14 @@ public class Gestor {
 				tarea.setNombre(tokenizer.nextToken());		
 				tarea.setFecha_fin(tokenizer.nextToken());				
 				tarea.setCalificacion(Double.parseDouble(tokenizer.nextToken()));
-			
-				tareas.add(tarea);
+				String nomAsig = tokenizer.nextToken();
+				for (Asignatura a : asignaturas) {
+					
+					if (a.getNombre().equals(nomAsig)) {
+						a.getTareas().add(tarea);
+					}
+				}
 			}
-		
 			//System.out.println(tareas);
 			
 			
@@ -134,13 +128,16 @@ public class Gestor {
 	try  {	 	  	   
 		//System.out.println(filename);
 	     PrintWriter pw = new PrintWriter(filename);
-	     pw.println("Compania" + ";" + "Fecha" +";" + "Estatus" +";"+ "calificacion");
+	     pw.println("Nombre" + ";" + "Fecha" +";" + "Calificacion" + ";" + "Asignatura");
 	     
-	     for (Tarea tarea : tareas) {
+	     for (Asignatura a : asignaturas) {
+			for (Tarea tarea : a.getTareas()) {
 	    	 pw.println(
-	    			 tarea.getNombre() + ";" + tarea.getFecha_fin()+ ";" +tarea.getCalificacion() +";"
+	    			 tarea.getNombre() + ";" + tarea.getFecha_fin()+ ";" +tarea.getCalificacion() +";" + a.nombre + ";"
 	    			 );		
+			}
 		}
+	     
 	     
 	    pw.close(); 
 	     
@@ -215,12 +212,12 @@ public class Gestor {
 		}
 	public static void main(String[] args) {
 		
-		 Gestor gestor= new Gestor();
-		Properties properties = loadProperties(); 
-		gestor.leerTareasCSV(properties.getProperty(INPUT_KEY_TAREA ));
-		
-		gestor.guardarTareaCSV(properties.getProperty(OUTPUT_KEY_TAREA ));
+		Gestor gestor= new Gestor();
+		Properties properties = loadProperties();
 		gestor.CrearAsignaturas();
+		gestor.leerTareasCSV(properties.getProperty(INPUT_KEY_TAREA ));
+		gestor.guardarTareaCSV(properties.getProperty(OUTPUT_KEY_TAREA ));
+		
 		
 	
 		//CREAR BASE DE DATOS

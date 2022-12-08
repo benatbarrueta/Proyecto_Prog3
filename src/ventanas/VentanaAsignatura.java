@@ -43,7 +43,7 @@ public class VentanaAsignatura extends JFrame{
 		
 		// CREACIONES
 		cp.setLayout(new BorderLayout());
-		ArrayList<Tarea> listaTarea = gestor.getTarea();
+		ArrayList<Tarea> listaTarea = asignatura.getTareas();
 		JPanel centro = new JPanel();
 		JPanel norte = new JPanel();
 		Calendar calendario = new GregorianCalendar();
@@ -112,7 +112,7 @@ public class VentanaAsignatura extends JFrame{
 		
 		
 		norte.setLayout(new GridLayout(1,1));
-		centro.setLayout(new GridLayout(8,2));
+		centro.setLayout(new GridLayout(4,2));
 		
 		//NORTE
 		norte.add(nombreAsig);

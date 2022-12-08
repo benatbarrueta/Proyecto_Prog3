@@ -1,3 +1,16 @@
-Compania;Fecha;Estatus;calificacion
-Actividad 1;25;25.0;
-Ejercicios clase 1;25;30.0;
+Nombre;Fecha;Calificacion;Asignatura
+Actividad 1;25;3.0;asignatura0;
+Actividad 2;25;5.0;asignatura0;
+Actividad 3;25;3.0;asignatura0;
+Actividad 4;25;5.0;asignatura0;
+Actividad 5;25;9.0;asignatura0;
+Actividad 6;25;7.0;asignatura0;
+Actividad 7;25;8.0;asignatura0;
+Actividad 8;25;4.0;asignatura0;
+Actividad 9;25;2.0;asignatura0;
+Actividad 10;25;6.0;asignatura1;
+Actividad 11;25;8.0;asignatura1;
+Actividad 12;25;9.0;asignatura1;
+Actividad 13;25;4.0;asignatura2;
+Actividad 14;25;3.0;asignatura3;
+Actividad 15;25;2.0;asignatura4;
