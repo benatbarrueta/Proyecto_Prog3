@@ -64,7 +64,6 @@ public class VentanaAlud extends JFrame {
 		} else {
 			
 			norte.setLayout(new GridLayout(2,4));
-			System.out.println(objeto);
 			Profesor profesor = (Profesor) objeto;
 			
 			norte.add(new JLabel(profesor.getNombre()));
@@ -74,7 +73,7 @@ public class VentanaAlud extends JFrame {
 			norte.add(new JLabel("Asignaturas"));
 			norte.add(new JLabel(""));
 			for (Asignatura asig : gestor.getAsignatura()) {
-				//System.out.println(asig.getProfesor());
+				System.out.println(asig.getProfesor());
 				//System.out.println(profesor);
 				if (asig.getProfesor().equals(profesor)) {
 					 botonasig = new JButton(asig.getNombre());
@@ -133,8 +132,8 @@ public class VentanaAlud extends JFrame {
 		
 	
 		norte.add(edita);
-		System.out.println(gestor.getAsignatura().get(0).getAlumnos());
-		System.out.println(gestor.getAsignatura().get(0).getProfesor());
+		//System.out.println(gestor.getAsignatura().get(0).getAlumnos());
+		//System.out.println(gestor.getAsignatura().get(0).getProfesor());
 		if (tipo == "Alumno") {
 			Alumno alumno = (Alumno) objeto;
 			this.setTitle(alumno.getNombre() + " " + alumno.getApellidos());

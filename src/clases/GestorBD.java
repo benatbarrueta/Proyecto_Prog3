@@ -199,7 +199,7 @@ public class GestorBD {
 			//Se recorren los clientes y se insertan uno a uno
 			for (Profesor c : profesor) {
 				if (1 == stmt.executeUpdate(String.format(sql, c.getNombre(), c.getApellidos(), c.getContraseña(), c.getDireccion(),  c.getEdad(), c.getEmail(), c.getSalario(), c.getNombreUsuario()))) {					
-					System.out.println(String.format(" - Profesor insertado: %s", c.toString()));
+					//System.out.println(String.format(" - Profesor insertado: %s", c.toString()));
 
 					log( Level.INFO, "Profesor insertado "+c.toString(), null);
 				} else {

@@ -99,8 +99,8 @@ public class VentanaLogIn extends JFrame {
 					
 				} else {
 					for (Profesor profesor : GestorBD.gestorBD.obtenerDatosProfesor()) {
-						System.out.println(profesor);
-						if(textoUsuario.getText().equals(profesor.getNombreUsuario())  && textoContrasena.getText().equals(profesor.getContraseña())) {
+						//System.out.println(profesor);
+						if(textoUsuario.getText().equals(profesor.getNombreUsuario()) && textoContrasena.getText().equals(profesor.getContraseña())) {
 							VentanaAlud v = new VentanaAlud(profesor, "Profesor", gestor);
 							dispose();
 							break;
