@@ -238,6 +238,11 @@ public class Gestor {
 		System.out.println(profesores);
 		ArrayList<Alumno> alumnos = GestorBD.gestorBD.obtenerDatosAlumnos();
 		gestor.asignaturas.get(0).getAlumnos().add(alumnos.get(0));
+		gestor.asignaturas.get(1).getAlumnos().add(alumnos.get(0));
+		gestor.asignaturas.get(2).getAlumnos().add(alumnos.get(0));
+		gestor.asignaturas.get(3).getAlumnos().add(alumnos.get(0));
+		gestor.asignaturas.get(4).getAlumnos().add(alumnos.get(0));
+		
 		
 		if (profesores.size() == 0) {
 			for (int i = 0; i < 2; i++) {
@@ -250,11 +255,11 @@ public class Gestor {
 				profesor.setSalario(i);
 				profesor.setNombreUsuario("Profe");
 				gestor.profesor.add(profesor);
+				gestor.getAsignatura().get(i).setProfesor(profesor);
 				
 			}
-			Profesor profesor = new Profesor("Borja", "OM", 5, "DIR","NU",	"", 0);
+			Profesor profesor = new Profesor("Borja", "OM", 5, "DIR","NU","", 0);
 			gestor.profesor.add(profesor);
-			gestor.asignaturas.get(0).setProfesor(profesor);
 		}
 
 		if (alumnos.size() == 0) {

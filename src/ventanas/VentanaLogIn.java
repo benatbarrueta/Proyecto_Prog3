@@ -19,8 +19,7 @@ public class VentanaLogIn extends JFrame {
 	protected JButton botoncontinuar;
 	protected JButton botonregistrarse;
 	protected JComboBox comboTipo;
-	protected GestorBD gestorBD = new GestorBD();
-	
+
 	public VentanaLogIn (Gestor gestor) {
 		
 		Container cp = this.getContentPane();
@@ -69,7 +68,7 @@ public class VentanaLogIn extends JFrame {
 				
 				// TODO Auto-generated method stub
 				if (comboTipo.getSelectedItem() == Tipo.ALUMNO) {
-					for (Alumno alumno : gestorBD.obtenerDatosAlumnos()) {
+					for (Alumno alumno : GestorBD.gestorBD.obtenerDatosAlumnos()) {
 						if(textoUsuario.getText().equals(alumno.getNombreUsuario())  && textoContrasena.getText().equals(alumno.getContraseña())) {
 							VentanaAlud v = new VentanaAlud(alumno, "Alumno", gestor);
 							
@@ -99,7 +98,7 @@ public class VentanaLogIn extends JFrame {
 					
 					
 				} else {
-					for (Profesor profesor : gestorBD.obtenerDatosProfesor()) {
+					for (Profesor profesor : GestorBD.gestorBD.obtenerDatosProfesor()) {
 						System.out.println(profesor);
 						if(textoUsuario.getText().equals(profesor.getNombreUsuario())  && textoContrasena.getText().equals(profesor.getContraseña())) {
 							VentanaAlud v = new VentanaAlud(profesor, "Profesor", gestor);

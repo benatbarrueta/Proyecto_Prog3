@@ -10,10 +10,9 @@ import javax.swing.*;
 public class VentanaAlud extends JFrame {
 	
 	protected JLabel prueba;
-	protected JScrollPane scrollAsignaturas;
 	protected JButton edita;
-	protected JList asignaturas;
-	protected DefaultListModel modeloAsignaturas = new DefaultListModel();
+	protected JButton botonasig;
+	protected int contasig = 0;
 	
 	protected JButton cerrar_sesion;
 	public VentanaAlud (Object objeto, String tipo, Gestor gestor) {
@@ -40,10 +39,23 @@ public class VentanaAlud extends JFrame {
 			norte.add(new JLabel(alumno.getApellidos()));	
 			for (Asignatura asig : gestor.getAsignatura()) {
 				if (("" + asig.getAlumnos()).contains("" + alumno)) {
-					System.out.println(asig.getNombre());
-					modeloAsignaturas.addElement(asig.getNombre());
+					 botonasig = new JButton(asig.getNombre());
+			            centro.add(botonasig);
+			            botonasig.setBackground(new Color((int)(Math.random()*255), (int) (Math.random()*255), (int) (Math.random()*255)));
+			            
+			            botonasig.addActionListener(new ActionListener() {
+							
+							@Override
+							public void actionPerformed(ActionEvent e) {
+								// TODO Auto-generated method stub
+			        			VentanaAsignatura v= new VentanaAsignatura(objeto, "Alumno", gestor, asig);
+							}
+						});
+					contasig++;
 				} 
 			}
+			
+			
 			norte.add(new JLabel(""));
 			norte.add(new JLabel(""));
 			norte.add(new JLabel(""));
@@ -52,7 +64,7 @@ public class VentanaAlud extends JFrame {
 		} else {
 			
 			norte.setLayout(new GridLayout(2,4));
-			centro.setLayout(new GridLayout(1,1));
+			System.out.println(objeto);
 			Profesor profesor = (Profesor) objeto;
 			
 			norte.add(new JLabel(profesor.getNombre()));
@@ -61,40 +73,49 @@ public class VentanaAlud extends JFrame {
 			
 			norte.add(new JLabel("Asignaturas"));
 			norte.add(new JLabel(""));
-			System.out.println("v");
 			for (Asignatura asig : gestor.getAsignatura()) {
-				System.out.println(asig.getProfesor());
-				System.out.println("a");
-				if((asig.getProfesor()+"").equals(profesor+"")) {
-					System.out.println("b");
-					modeloAsignaturas.addElement(asig.getNombre());
-				}
+				//System.out.println(asig.getProfesor());
+				//System.out.println(profesor);
+				if (asig.getProfesor().equals(profesor)) {
+					 botonasig = new JButton(asig.getNombre());
+			            centro.add(botonasig);
+			            botonasig.setBackground(new Color((int)(Math.random()*255), (int) (Math.random()*255), (int) (Math.random()*255)));
+			            
+			            botonasig.addActionListener(new ActionListener() {
+							
+							@Override
+							public void actionPerformed(ActionEvent e) {
+								// TODO Auto-generated method stub
+			        			VentanaAsignatura v= new VentanaAsignatura(objeto, "Profesor", gestor, asig);
+							}
+						});
+					contasig++;
+				} 
 			}
 		}
+		centro.setLayout(new GridLayout((int) contasig/2,contasig));
 		
-		asignaturas = new JList(modeloAsignaturas);
-		scrollAsignaturas = new JScrollPane(asignaturas);
 		
-		asignaturas.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				if (tipo == "Alumno") {
-					for (Asignatura asig : gestor.getAsignatura()) {
-						if (asig.getNombre().equals("" + asignaturas.getSelectedValue())) {
-							VentanaAsignatura v= new VentanaAsignatura(objeto, "Alumno", gestor, asig);
-						}
-					}
-				} else {
-					for (Asignatura asig : gestor.getAsignatura()) {
-						if (asig.getNombre() == "" + asignaturas.getSelectedValue()) {
-							VentanaAsignatura v = new VentanaAsignatura(objeto, "Profesor", gestor, asig);
-						}
-					}
-				}
-			}
-		});
-		
-		centro.add(scrollAsignaturas);
+//		.addMouseListener(new MouseAdapter() {
+//			@Override
+//			public void mouseClicked(MouseEvent e) {
+//				if (tipo == "Alumno") {
+//					for (Asignatura asig : gestor.getAsignatura()) {
+//						if (asig.getNombre().equals("" + asignaturas.getSelectedValue())) {
+//							VentanaAsignatura v= new VentanaAsignatura(objeto, "Alumno", gestor, asig);
+//						}
+//					}
+//				} else {
+//					for (Asignatura asig : gestor.getAsignatura()) {
+//						if (asig.getNombre() == "" + asignaturas.getSelectedValue()) {
+//							VentanaAsignatura v = new VentanaAsignatura(objeto, "Profesor", gestor, asig);
+//						}
+//					}
+//				}
+//			}
+//		});
+//		
+//		centro.add(scrollAsignaturas);
 		
 		edita.addActionListener(new ActionListener() {
 			
