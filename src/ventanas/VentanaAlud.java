@@ -73,9 +73,7 @@ public class VentanaAlud extends JFrame {
 			norte.add(new JLabel("Asignaturas"));
 			norte.add(new JLabel(""));
 			for (Asignatura asig : gestor.getAsignatura()) {
-				System.out.println(asig.getProfesor());
-				//System.out.println(profesor);
-				if (asig.getProfesor().equals(profesor)) {
+				if (("" + asig.getProfesor()).contains("" + profesor)) {
 					 botonasig = new JButton(asig.getNombre());
 			            centro.add(botonasig);
 			            botonasig.setBackground(new Color((int)(Math.random()*255), (int) (Math.random()*255), (int) (Math.random()*255)));

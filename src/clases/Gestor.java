@@ -279,6 +279,10 @@ public class Gestor {
 		gestor.alumnos=GestorBD.gestorBD.obtenerDatosAlumnos();
         gestor.profesor= GestorBD.gestorBD.obtenerDatosProfesor();
         
+        for (int i = 0; i < gestor.asignaturas.size(); i++) {
+        	gestor.asignaturas.get(i).setProfesor(gestor.profesor.get(0));
+		}
+        
 		VentanaLogIn v = new VentanaLogIn(gestor);
 		
 
