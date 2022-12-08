@@ -51,7 +51,7 @@ public class VentanaAsignatura extends JFrame{
 		tareas = new JLabel("Tareas");
 		nombreAsig = new JLabel("Asignatura:  " + asignatura.getNombre());
 		apuntes = new JLabel("Apuntes");
-		modeloTareaLista = new DefaultTableModel(new Object[] { "NOMBRE", "FECHA ENTREGA", "ESTATUS", "CALIFICACION", objeto}, 0);
+		modeloTareaLista = new DefaultTableModel(new Object[] { "NOMBRE", "FECHA ENTREGA", "ESTATUS", "CALIFICACION"}, 0);
 		tareaLista = new JTable(modeloTareaLista);
 
 		
@@ -121,8 +121,10 @@ public class VentanaAsignatura extends JFrame{
 		
 		//CENTRO
 		centro.add(apuntes);
+		centro.add(new JLabel());
 		centro.add(tareas);
-		centro.add(tareaLista);
+		JScrollPane scrollDato = new JScrollPane(tareaLista);
+		centro.add(scrollDato);
 	
 		
 		
@@ -166,7 +168,6 @@ public class VentanaAsignatura extends JFrame{
 		tareaLista.getColumnModel().getColumn(1).setCellRenderer(renderSencillo);
 		tareaLista.getColumnModel().getColumn(2).setCellRenderer(renderSencillo);
 		tareaLista.getColumnModel().getColumn(3).setCellRenderer(renderSencillo);
-		tareaLista.getColumnModel().getColumn(4).setCellRenderer(renderSencillo);
 	}
 	
 	
