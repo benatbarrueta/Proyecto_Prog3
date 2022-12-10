@@ -19,7 +19,7 @@ public class VentanaLogIn extends JFrame {
 	protected JButton botoncontinuar;
 	protected JButton botonregistrarse;
 	protected JComboBox comboTipo;
-
+	protected boolean sesion=false;
 	public VentanaLogIn (Gestor gestor) {
 		
 		Container cp = this.getContentPane();
@@ -73,51 +73,56 @@ public class VentanaLogIn extends JFrame {
 							VentanaAlud v = new VentanaAlud(alumno, "Alumno", gestor);
 							
 							dispose();
-						
+						sesion=true;
 							break;
-						} else if (textoUsuario.getText().equals(alumno.getNombreUsuario()) && !textoContrasena.getText().equals(alumno.getContraseña())) {
-							JOptionPane.showMessageDialog(null, "La contraseña introducida es incorrecta");
-							textoUsuario.setText(alumno.getNombreUsuario());
-							textoContrasena.setText("");
-							break;
-						} else if (!textoUsuario.getText().equals(alumno.getNombreUsuario()) && textoContrasena.getText().equals(alumno.getContraseña())) { 
-							JOptionPane.showMessageDialog(null, "El nombre de usuario introducido es incorrecta");
-							textoUsuario.setText("");
-							textoContrasena.setText(alumno.getContraseña());
-							break;
-						} else {
-							JOptionPane.showMessageDialog(null, "Los datos introducidos son incorrectos");
-							textoUsuario.setText("");
-							textoContrasena.setText("");
-							break;
-						}
-						
+							
 					}
+//					}
+//					if (textoUsuario.getText().equals(alumno.getNombreUsuario()) && !textoContrasena.getText().equals(alumno.getContraseña())) {
+//						JOptionPane.showMessageDialog(null, "La contraseña introducida es incorrecta");
+//						textoUsuario.setText(alumno.getNombreUsuario());
+//						textoContrasena.setText("");
+//						
+//					}else if (!textoUsuario.getText().equals(alumno.getNombreUsuario()) && textoContrasena.getText().equals(alumno.getContraseña())) { 
+//							JOptionPane.showMessageDialog(null, "El nombre de usuario introducido es incorrecta");
+//							textoUsuario.setText("");
+//						textoContrasena.setText(alumno.getContraseña());
 					
-					
-					
-					
+							
+						
+							
+						}
+					if(!sesion==true) {
+					JOptionPane.showMessageDialog(null, "Los datos introducidos son incorrectos");
+					textoUsuario.setText("");
+					textoContrasena.setText("");
+					}
+
 				} else {
 					for (Profesor profesor : GestorBD.gestorBD.obtenerDatosProfesor()) {
 						//System.out.println(profesor);
 						if(textoUsuario.getText().equals(profesor.getNombreUsuario()) && textoContrasena.getText().equals(profesor.getContraseña())) {
 							VentanaAlud v = new VentanaAlud(profesor, "Profesor", gestor);
 							dispose();
+							sesion=true;
 							break;
-						} else if (textoUsuario.getText().equals(profesor.getNombreUsuario()) && !textoContrasena.getText().equals(profesor.getContraseña())){
-							JOptionPane.showMessageDialog(null, "La contraseña introducida es incorrecta");
-							textoUsuario.setText(profesor.getNombreUsuario());
-							textoContrasena.setText("");
-							break;
-						} else if (!textoUsuario.getText().equals(profesor.getNombreUsuario()) && textoContrasena.getText().equals(profesor.getContraseña())){
-							JOptionPane.showMessageDialog(null, "El nombre de usuario introducido es incorrecta");
-							textoUsuario.setText("");
-							textoContrasena.setText(profesor.getContraseña());
-						} else {
-							JOptionPane.showMessageDialog(null, "Los datos introducidos son erroneos");
-							textoUsuario.setText("");
-							textoContrasena.setText("");
 						}
+//						} else if (textoUsuario.getText().equals(profesor.getNombreUsuario()) && !textoContrasena.getText().equals(profesor.getContraseña())){
+//							JOptionPane.showMessageDialog(null, "La contraseña introducida es incorrecta");
+//							textoUsuario.setText(profesor.getNombreUsuario());
+//							textoContrasena.setText("");
+//							break;
+//						} else if (!textoUsuario.getText().equals(profesor.getNombreUsuario()) && textoContrasena.getText().equals(profesor.getContraseña())){
+//							JOptionPane.showMessageDialog(null, "El nombre de usuario introducido es incorrecta");
+//							textoUsuario.setText("");
+//							textoContrasena.setText(profesor.getContraseña());
+//						} else {
+							
+						}
+					if(!sesion==true) {
+					JOptionPane.showMessageDialog(null, "Los datos introducidos son erroneos");
+					textoUsuario.setText("");
+					textoContrasena.setText("");
 					}
 				}
 				
