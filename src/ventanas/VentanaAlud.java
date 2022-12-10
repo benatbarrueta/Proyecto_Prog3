@@ -90,7 +90,12 @@ public class VentanaAlud extends JFrame {
 				} 
 			}
 		}
-		centro.setLayout(new GridLayout((int) contasig/2,contasig));
+		if(contasig!=0) {
+			centro.setLayout(new GridLayout((int) contasig/2,contasig));
+		}else {
+			centro.setLayout(new GridLayout(0,0));
+		}
+		
 		
 		edita.addActionListener(new ActionListener() {
 			
