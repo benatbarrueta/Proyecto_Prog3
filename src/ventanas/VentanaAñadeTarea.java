@@ -1,5 +1,7 @@
 package ventanas;
 
+import static org.junit.Assert.assertThrows;
+
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.GridLayout;
@@ -19,7 +21,7 @@ import clases.Tarea;
 
 public class VentanaAñadeTarea extends JFrame {
 
-public VentanaAñadeTarea (Asignatura asignatura ,Gestor gestor) {
+public VentanaAñadeTarea (Asignatura asignatura ,Gestor gestor, Object object) {
 	Container cp = this.getContentPane();
 	
 	
@@ -66,8 +68,11 @@ public VentanaAñadeTarea (Asignatura asignatura ,Gestor gestor) {
 			tarea.setCalificacion(-1.0);
 			
 			//AÑADIR TAREA A GESTOR 
-			
-		
+		for (Asignatura asig: gestor.getAsignatura()) {
+			if(asig.equals(asignatura)) {
+				asig.getTareas().add(tarea);
+			}
+		}
 			
 			
 			
@@ -79,6 +84,7 @@ public VentanaAñadeTarea (Asignatura asignatura ,Gestor gestor) {
 			
 			//SE CIERRRA LA VENTANA
 			dispose();
+			VentanaAsignatura v = new VentanaAsignatura(object, "Profesor",gestor,asignatura);
 		}
 	});
 	
@@ -89,6 +95,7 @@ public VentanaAñadeTarea (Asignatura asignatura ,Gestor gestor) {
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
 			dispose();
+			VentanaAsignatura v = new VentanaAsignatura(object, "Profesor",gestor,asignatura);
 		}
 	});
 	centro.add(botonAtras);

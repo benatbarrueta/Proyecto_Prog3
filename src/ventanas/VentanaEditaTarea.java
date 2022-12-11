@@ -18,7 +18,7 @@ import clases.Gestor;
 import clases.Tarea;
 
 public class VentanaEditaTarea extends JFrame{
-	public VentanaEditaTarea (Asignatura asignatura, Gestor gestor , int numeroTarea) {
+	public VentanaEditaTarea (Asignatura asignatura, Gestor gestor , int numeroTarea, Object object) {
 		Container cp = this.getContentPane();
 		
 		
@@ -32,7 +32,7 @@ public class VentanaEditaTarea extends JFrame{
 		//CENTRO
 		JPanel centro = new JPanel();
 		cp.add(centro, BorderLayout.CENTER);
-		centro.setLayout(new GridLayout(3,2));
+		centro.setLayout(new GridLayout(4,2));
 		
 		
 		JTextField nombre = new JTextField();
@@ -48,7 +48,9 @@ public class VentanaEditaTarea extends JFrame{
 		centro.add(nombre);
 		centro.add(labefechaFin);
 		centro.add(fechaFin);
-
+		centro.add(labeCalificacion);
+		centro.add(calificacion);
+		
 		
 		
 		
@@ -69,22 +71,19 @@ public class VentanaEditaTarea extends JFrame{
 				for (Asignatura asig: gestor.getAsignatura()) {
 					if(asig.equals(asignatura)) {
 						asig.getTareas().get(numeroTarea).setCalificacion(Double.parseDouble(calificacion.getText()));
-					
-						asig.setNombre(nombre.getText());
+						asig.getTareas().get(numeroTarea).setNombre(nombre.getText());
+						asig.getTareas().get(numeroTarea).setCalificacion(Double.parseDouble(calificacion.getText()));
 					}
 				}
-// NO SE COMO HACER PARA SABER QUE ASIGNATURA ES 				
-//			gestor.getAsignatura().get(1).getTareas().get(numeroTarea).setCalificacion(null);
-//			gestor.getAsignatura().get(1).getTareas().get(numeroTarea).setFecha_fin(getName());	
-//			gestor.getAsignatura().get(1).getTareas().get(numeroTarea).setNombre(getName());
-				
+			
 				
 				
 				Properties properties = Gestor.loadProperties();
 				gestor.guardarTareaCSV(properties.getProperty("guardarTarea"));
-				//REFESCAR LA TABLA DE ASIGNATURAS
-				
+			
+			
 				//SE CIERRRA LA VENTANA
+				VentanaAsignatura v = new VentanaAsignatura(object, "Profesor",gestor,asignatura);
 				dispose();
 			}
 		});
@@ -95,6 +94,7 @@ public class VentanaEditaTarea extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
+				VentanaAsignatura v = new VentanaAsignatura(object, "Profesor",gestor,asignatura);
 				dispose();
 			}
 		});

@@ -38,6 +38,7 @@ public class VentanaAsignatura extends JFrame{
 	
 	protected JButton tareaBoton;
 	public VentanaAsignatura(Object objeto, String tipo, Gestor gestor, Asignatura asignatura) {
+		
 		Container cp = this.getContentPane();
 		
 		
@@ -83,13 +84,14 @@ public class VentanaAsignatura extends JFrame{
 					for (Tarea tarea : listaTarea) {
 						if (tarea.getCalificacion() >= 5) {
 							status = "APROBADO";
-						} else if(tarea.getCalificacion()==-1){
+						} else if(tarea.getCalificacion().equals(-1.0)){
 							status = "SIN CALIFICAR";
 						}else {
 							status = "SUSPENDIDO";
 						}
 						
-						modeloTareaLista.addRow(new Object[] {tarea.getNombre(), tarea.getFecha_fin(), status, tarea.getCalificacion(), profesor.getNombre()});
+						modeloTareaLista.addRow(new Object[] {"NOMBRE ALUMNO NO SE PONERLO",tarea.getNombre(), tarea.getFecha_fin(), status, tarea.getCalificacion()});
+						
 					}
 					//SUR
 					
@@ -106,7 +108,8 @@ public class VentanaAsignatura extends JFrame{
 						@Override
 						public void actionPerformed(ActionEvent e) {
 
-						VentanaAñadeTarea v =new VentanaAñadeTarea(asignatura, gestor);
+						VentanaAñadeTarea v =new VentanaAñadeTarea(asignatura, gestor, objeto);
+						dispose();
 						}
 					});
 					
@@ -117,7 +120,8 @@ public class VentanaAsignatura extends JFrame{
 							// TODO Auto-generated method stub
 							int	tareaInt = tareaLista.getSelectedRow();
 							
-							VentanaEditaTarea v= new VentanaEditaTarea(asignatura,gestor,tareaInt);
+							VentanaEditaTarea v= new VentanaEditaTarea(asignatura,gestor,tareaInt,objeto);
+							dispose();
 						}
 					});
 					
@@ -181,7 +185,6 @@ public class VentanaAsignatura extends JFrame{
 		this.setSize(600, 400);
 		this.setVisible(true);
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		
 		DefaultTableCellRenderer renderSencillo = new DefaultTableCellRenderer() {
 			private static final long serialVersionUID = 1L;
 
@@ -211,11 +214,16 @@ public class VentanaAsignatura extends JFrame{
 				return label;
 			}
 		};
+
 		
 		tareaLista.getColumnModel().getColumn(0).setCellRenderer(renderSencillo);
 		tareaLista.getColumnModel().getColumn(1).setCellRenderer(renderSencillo);
 		tareaLista.getColumnModel().getColumn(2).setCellRenderer(renderSencillo);
 		tareaLista.getColumnModel().getColumn(3).setCellRenderer(renderSencillo);
+		if(modeloTareaLista.getColumnCount()>4) {
+			tareaLista.getColumnModel().getColumn(4).setCellRenderer(renderSencillo);
+		}
+		
 	}
 	
 	
