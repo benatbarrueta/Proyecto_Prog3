@@ -29,7 +29,8 @@ public class VentanaAsignatura extends JFrame{
 	protected int hora;
 	protected int minutos;
 	protected int segundos;
-	
+	protected JButton editarTarea;
+	protected JButton añadirTarea;
 	Calendar calendario = Calendar.getInstance();
 	
 	
@@ -46,32 +47,79 @@ public class VentanaAsignatura extends JFrame{
 		ArrayList<Tarea> listaTarea = asignatura.getTareas();
 		JPanel centro = new JPanel();
 		JPanel norte = new JPanel();
+		JPanel south = new JPanel();
 		Calendar calendario = new GregorianCalendar();
 		
 		tareas = new JLabel("Tareas");
 		nombreAsig = new JLabel("Asignatura:  " + asignatura.getNombre());
 		apuntes = new JLabel("Apuntes");
-		modeloTareaLista = new DefaultTableModel(new Object[] { "NOMBRE", "FECHA ENTREGA", "ESTATUS", "CALIFICACION"}, 0);
-		tareaLista = new JTable(modeloTareaLista);
+		
 
 		
 		
 		
 		//DIFERENCIAR SI ENTRA UN ALUMNO O PROFESOR
 				if (tipo == "Alumno") {
+					modeloTareaLista = new DefaultTableModel(new Object[] { "NOMBRE", "FECHA ENTREGA", "ESTATUS", "CALIFICACION"}, 0);
+					tareaLista = new JTable(modeloTareaLista);
 					Alumno alumno = (Alumno) objeto;
 					String status = "";
 					for (Tarea tarea : listaTarea) {
 						if (tarea.getCalificacion() >= 5) {
 							status = "APROBADO";
-						} else {
+						} else if(tarea.getCalificacion()==-1){
+							status= "SIN CALIFICAR";
+						}else {
 							status = "SUSPENDIDO";
 						}
 						modeloTareaLista.addRow(new Object[] {tarea.getNombre(), tarea.getFecha_fin(), status, tarea.getCalificacion(), alumno.getNombre()});
 					}
 					
 				} else {
+					modeloTareaLista = new DefaultTableModel(new Object[] { "NOMBRE ALUMNO", "NOMBRE TAREA","FECHA ENTREGA", "ESTATUS", "CALIFICACION"}, 0);
+					tareaLista = new JTable(modeloTareaLista);
 					Profesor profesor = (Profesor) objeto;
+					String status = "";
+					for (Tarea tarea : listaTarea) {
+						if (tarea.getCalificacion() >= 5) {
+							status = "APROBADO";
+						} else if(tarea.getCalificacion()==-1){
+							status = "SIN CALIFICAR";
+						}else {
+							status = "SUSPENDIDO";
+						}
+						
+						modeloTareaLista.addRow(new Object[] {tarea.getNombre(), tarea.getFecha_fin(), status, tarea.getCalificacion(), profesor.getNombre()});
+					}
+					//SUR
+					
+					
+					añadirTarea = new JButton("Añadir Tarea");
+					editarTarea = new JButton("Editar Tarea");
+					
+					south.add(añadirTarea);
+					south.add(editarTarea);
+					
+					
+					añadirTarea.addActionListener(new ActionListener() {
+						
+						@Override
+						public void actionPerformed(ActionEvent e) {
+
+						VentanaAñadeTarea v =new VentanaAñadeTarea(asignatura, gestor);
+						}
+					});
+					
+					editarTarea.addActionListener(new ActionListener() {
+						
+						@Override
+						public void actionPerformed(ActionEvent e) {
+							// TODO Auto-generated method stub
+							int	tareaInt = tareaLista.getSelectedRow();
+							
+							VentanaEditaTarea v= new VentanaEditaTarea(asignatura,gestor,tareaInt);
+						}
+					});
 					
 				}
 		
@@ -109,11 +157,11 @@ public class VentanaAsignatura extends JFrame{
 		//ADD
 		cp.add(centro, BorderLayout.CENTER);
 		cp.add(norte, BorderLayout.NORTH);
-		
+		cp.add(south, BorderLayout.SOUTH);
 		
 		norte.setLayout(new GridLayout(1,1));
 		centro.setLayout(new GridLayout(4,2));
-		
+		south.setLayout(new GridLayout(1,4));
 		//NORTE
 		norte.add(nombreAsig);
 		norte.add(fecha);

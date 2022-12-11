@@ -72,7 +72,7 @@ public class Gestor {
 		
 	}
 	
-	private  static Properties loadProperties() {
+	public  static Properties loadProperties() {
 		Properties properties = new Properties();
 
 		try {
