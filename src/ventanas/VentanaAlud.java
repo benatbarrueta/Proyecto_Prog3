@@ -105,9 +105,11 @@ public class VentanaAlud extends JFrame {
 				if (tipo == "Alumno") {
 					Alumno alumno = (Alumno) objeto;
 					VentanaEdita v = new VentanaEdita(alumno, "Alumno", gestor);
+					dispose();
 				} else {
 					Profesor profesor = (Profesor) objeto;
 					VentanaEdita v = new VentanaEdita(profesor, "Profesor", gestor);
+					dispose();
 				}
 			}
 		});

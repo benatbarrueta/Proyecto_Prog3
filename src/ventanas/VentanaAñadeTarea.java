@@ -76,9 +76,7 @@ public VentanaAñadeTarea (Asignatura asignatura ,Gestor gestor, Object object) 
 					tarea.setEmailAlumno(alum.getEmail());
 					asig.getTareas().add(tarea);
 				}
-				
 			}
-			
 		}		
 			// GUARDAR TAREAS
 					Properties properties = Gestor.loadProperties();

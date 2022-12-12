@@ -19,7 +19,10 @@ public class VentanaLogIn extends JFrame {
 	protected JButton botoncontinuar;
 	protected JButton botonregistrarse;
 	protected JComboBox comboTipo;
+	protected String contrasenaContenido = "";
 	protected boolean sesion=false;
+	protected String texto = "";
+
 	public VentanaLogIn (Gestor gestor) {
 		
 		Container cp = this.getContentPane();
@@ -34,32 +37,39 @@ public class VentanaLogIn extends JFrame {
 		botoncontinuar = new  JButton("Continuar");
 		
 		
-		
-//		textoContrasena.addKeyListener(new KeyAdapter() {
-//			
-//			@Override
-//			public void keyReleased(KeyEvent e) {
-//				// TODO Auto-generated method stub
-//				if(e.getKeyCode()==8) {
-//					contrasenaContenido= contrasenaContenido.substring(0,contrasenaContenido.length()-1);
-//				}
-//				else {
-//					contrasenaContenido = contrasenaContenido + e.getKeyChar();
-//				}
-//				
-//				
-//				int tamano = textoContrasena.getText().length();
-//				String texto = "";
-//				textoContrasena.setText(texto);
-//				for (int i = 0; i < tamano; i++) {
-//					texto=texto + "*";
-//				}
-//				textoContrasena.setText(texto);
-//				System.out.println(contrasenaContenido);
-//			}
-//			
-//	
-//		});
+		textoContrasena.addKeyListener(new KeyAdapter() {
+			
+			@Override
+			public void keyReleased(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+				if (e.getKeyCode() == 8) {
+					contrasenaContenido = contrasenaContenido.substring(0,contrasenaContenido.length()-1);
+					
+					texto = texto.substring(0,contrasenaContenido.length());
+					textoContrasena.setText(texto);
+					
+				}
+				else if (e.getKeyCode() == 10) {
+					botoncontinuar.doClick();
+				}
+				else if ((e.getKeyCode() > 47 && e.getKeyCode() < 58) || (e.getKeyCode() > 64 && e.getKeyCode() < 91) || (e.getKeyCode() == 0)) {
+					contrasenaContenido = contrasenaContenido + e.getKeyChar();
+					
+					texto = texto + "*";
+					
+//					textoContrasena.setText(texto);
+//					for (int i = 0; i < tamano; i++) {
+//						texto= texto  + "*";
+//					}
+					textoContrasena.setText(texto);
+
+				}
+				else {
+					textoContrasena.setText(texto);
+				}
+			}
+		});
 		
 		botoncontinuar.addActionListener(new ActionListener() {
 		
@@ -69,7 +79,7 @@ public class VentanaLogIn extends JFrame {
 				// TODO Auto-generated method stub
 				if (comboTipo.getSelectedItem() == Tipo.ALUMNO) {
 					for (Alumno alumno : GestorBD.gestorBD.obtenerDatosAlumnos()) {
-						if(textoUsuario.getText().equals(alumno.getNombreUsuario())  && textoContrasena.getText().equals(alumno.getContraseña())) {
+						if(textoUsuario.getText().equals(alumno.getNombreUsuario())  && contrasenaContenido.equals(alumno.getContraseña())) {
 							VentanaAlud v = new VentanaAlud(alumno, "Alumno", gestor);
 							
 							dispose();
@@ -101,7 +111,7 @@ public class VentanaLogIn extends JFrame {
 				} else {
 					for (Profesor profesor : GestorBD.gestorBD.obtenerDatosProfesor()) {
 						//System.out.println(profesor);
-						if(textoUsuario.getText().equals(profesor.getNombreUsuario()) && textoContrasena.getText().equals(profesor.getContraseña())) {
+						if(textoUsuario.getText().equals(profesor.getNombreUsuario()) && contrasenaContenido.equals(profesor.getContraseña())) {
 							VentanaAlud v = new VentanaAlud(profesor, "Profesor", gestor);
 							dispose();
 							sesion=true;
