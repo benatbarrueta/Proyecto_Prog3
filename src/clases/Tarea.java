@@ -5,12 +5,14 @@ public class Tarea {
 	protected String fecha_fin;
 	protected Double calificacion;
 	protected String nombre;
+	protected String emailAlumno;
 	
 	public Tarea() {
 		super();
 		this.fecha_fin = "1";
 		this.calificacion = 0.0;
 		this.nombre = "";
+		this.emailAlumno = "";
 	}
 	
 	public String getFecha_fin() {
@@ -32,8 +34,16 @@ public class Tarea {
 		this.nombre = nombre;
 	}
 	
+	public String getEmailAlumno() {
+		return emailAlumno;
+	}
+
+	public void setEmailAlumno(String emailAlumno) {
+		this.emailAlumno = emailAlumno;
+	}
+
 	@Override
 	public String toString() {
-		return "Tarea: Nombre:" +nombre + ", Fecha fin:" + fecha_fin + ", Calificacion:" + calificacion ;
+		return "Tarea de " + emailAlumno + ": Nombre:" +nombre + ", Fecha fin:" + fecha_fin + ", Calificacion:" + calificacion ;
 	}
 }

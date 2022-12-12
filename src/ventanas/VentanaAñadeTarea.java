@@ -15,6 +15,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import clases.Alumno;
 import clases.Asignatura;
 import clases.Gestor;
 import clases.Tarea;
@@ -62,24 +63,27 @@ public VentanaAñadeTarea (Asignatura asignatura ,Gestor gestor, Object object) 
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-			Tarea tarea = new Tarea();
-			tarea.setNombre(nombre.getText());
-			tarea.setFecha_fin(fechaFin.getText());
-			tarea.setCalificacion(-1.0);
+			
 			
 			//AÑADIR TAREA A GESTOR 
 		for (Asignatura asig: gestor.getAsignatura()) {
-			if(asig.equals(asignatura)) {
-				asig.getTareas().add(tarea);
+			if(asig.equals(asignatura)) {	
+				for (Alumno alum : asig.getAlumnos()) {
+					Tarea tarea = new Tarea();
+					tarea.setNombre(nombre.getText());
+					tarea.setFecha_fin(fechaFin.getText());
+					tarea.setCalificacion(-1.0);
+					tarea.setEmailAlumno(alum.getEmail());
+					asig.getTareas().add(tarea);
+				}
+				
 			}
-		}
 			
-			
-			
-			
+		}		
 			// GUARDAR TAREAS
-			Properties properties = Gestor.loadProperties();
-			gestor.guardarTareaCSV(properties.getProperty("guardarTarea"));
+					Properties properties = Gestor.loadProperties();
+					gestor.guardarTareaCSV(properties.getProperty("guardarTarea"));
+					
 			//REFESCAR LA TABLA DE ASIGNATURAS
 			
 			//SE CIERRRA LA VENTANA

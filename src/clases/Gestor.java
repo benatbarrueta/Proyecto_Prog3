@@ -101,13 +101,13 @@ public class Gestor {
 			while((linea = in.readLine())!= null) {
 				tokenizer= new StringTokenizer(linea,";");
 			
-				tarea= new Tarea();	
+				tarea= new Tarea();
+				tarea.setEmailAlumno(tokenizer.nextToken());
 				tarea.setNombre(tokenizer.nextToken());		
 				tarea.setFecha_fin(tokenizer.nextToken());				
 				tarea.setCalificacion(Double.parseDouble(tokenizer.nextToken()));
 				String nomAsig = tokenizer.nextToken();
 				for (Asignatura a : asignaturas) {
-					
 					if (a.getNombre().equals(nomAsig)) {
 						a.getTareas().add(tarea);
 					}
@@ -128,12 +128,12 @@ public class Gestor {
 	try  {	 	  	   
 		//System.out.println(filename);
 	     PrintWriter pw = new PrintWriter(filename);
-	     pw.println("Nombre" + ";" + "Fecha" +";" + "Calificacion" + ";" + "Asignatura");
+	     pw.println("Email Alumno" + ";" +"Nombre" + ";" + "Fecha" +";" + "Calificacion" + ";" + "Asignatura");
 	     
 	     for (Asignatura a : asignaturas) {
 			for (Tarea tarea : a.getTareas()) {
 	    	 pw.println(
-	    			 tarea.getNombre() + ";" + tarea.getFecha_fin()+ ";" +tarea.getCalificacion() +";" + a.nombre + ";"
+	    			 tarea.getEmailAlumno() + ";" + tarea.getNombre() + ";" + tarea.getFecha_fin()+ ";" +tarea.getCalificacion() +";" + a.nombre + ";"
 	    			 );		
 			}
 		}
@@ -255,7 +255,7 @@ public class Gestor {
 		}
 		if (alumnos.size() == 0) {
 			for (int i = 0; i < 5; i++) {
-				Alumno alumno= new Alumno("Alumno", "Juan", i*10, "", "Alumno"+i, "1", "PRIMERO");
+				Alumno alumno= new Alumno("Alumno", "" + i, i*10, "", "Alumno"+i, "1", "PRIMERO");
 				
 				GestorBD.gestorBD.insertarDatosAlumno(alumno);
 				
@@ -281,6 +281,15 @@ public class Gestor {
 		gestor.asignaturas.get(2).getAlumnos().add(alumnos.get(0));
 		gestor.asignaturas.get(3).getAlumnos().add(alumnos.get(0));
 		gestor.asignaturas.get(4).getAlumnos().add(alumnos.get(0));
+		gestor.asignaturas.get(2).getAlumnos().add(alumnos.get(1));
+		gestor.asignaturas.get(3).getAlumnos().add(alumnos.get(1));
+		gestor.asignaturas.get(4).getAlumnos().add(alumnos.get(1));
+		gestor.asignaturas.get(1).getAlumnos().add(alumnos.get(2));
+		gestor.asignaturas.get(2).getAlumnos().add(alumnos.get(2));
+		gestor.asignaturas.get(5).getAlumnos().add(alumnos.get(2));
+		gestor.asignaturas.get(1).getAlumnos().add(alumnos.get(3));
+		gestor.asignaturas.get(6).getAlumnos().add(alumnos.get(3));
+		gestor.asignaturas.get(7).getAlumnos().add(alumnos.get(3));
         
 		VentanaLogIn v = new VentanaLogIn(gestor);
 		

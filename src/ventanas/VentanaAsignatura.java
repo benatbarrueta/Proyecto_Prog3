@@ -73,11 +73,13 @@ public class VentanaAsignatura extends JFrame{
 						}else {
 							status = "SUSPENDIDO";
 						}
-						modeloTareaLista.addRow(new Object[] {tarea.getNombre(), tarea.getFecha_fin(), status, tarea.getCalificacion(), alumno.getNombre()});
+						if (tarea.getEmailAlumno().equals(alumno.getEmail())) {
+							modeloTareaLista.addRow(new Object[] {tarea.getNombre(), tarea.getFecha_fin(), status, tarea.getCalificacion(), alumno.getNombre()});
+						}
 					}
 					
 				} else {
-					modeloTareaLista = new DefaultTableModel(new Object[] { "NOMBRE ALUMNO", "NOMBRE TAREA","FECHA ENTREGA", "ESTATUS", "CALIFICACION"}, 0);
+					modeloTareaLista = new DefaultTableModel(new Object[] { "EMAIL ALUMNO", "NOMBRE TAREA","FECHA ENTREGA", "ESTATUS", "CALIFICACION"}, 0);
 					tareaLista = new JTable(modeloTareaLista);
 					Profesor profesor = (Profesor) objeto;
 					String status = "";
@@ -90,7 +92,7 @@ public class VentanaAsignatura extends JFrame{
 							status = "SUSPENDIDO";
 						}
 						
-						modeloTareaLista.addRow(new Object[] {"NOMBRE ALUMNO NO SE PONERLO",tarea.getNombre(), tarea.getFecha_fin(), status, tarea.getCalificacion()});
+						modeloTareaLista.addRow(new Object[] {tarea.getEmailAlumno() ,tarea.getNombre(), tarea.getFecha_fin(), status, tarea.getCalificacion()});
 						
 					}
 					//SUR
@@ -204,8 +206,10 @@ public class VentanaAsignatura extends JFrame{
 				if(isSelected) {
 					label.setBackground(Color.CYAN);
 				}
-				if (listaTarea.get(row).getCalificacion() < 5) {
+				if (listaTarea.get(row).getCalificacion() < 5 && listaTarea.get(row).getCalificacion() > 0) {
 					label.setForeground(Color.RED);
+				} else if (listaTarea.get(row).getCalificacion() < 0) {
+					label.setForeground(Color.GRAY);
 				}
 				
 				//Es necesaria esta sentencia para pintar correctamente el color de fondo
