@@ -28,7 +28,6 @@ public class VentanaAsignatura extends JFrame{
 	protected DefaultTableModel modeloTareaLista;
 	protected int hora;
 	protected int minutos;
-	protected int segundos;
 	protected JButton editarTarea;
 	protected JButton añadirTarea;
 	Calendar calendario = Calendar.getInstance();
@@ -56,7 +55,9 @@ public class VentanaAsignatura extends JFrame{
 		apuntes = new JLabel("Apuntes");
 		
 
-		
+		hora = calendario.get(Calendar.HOUR_OF_DAY);
+ 		minutos = calendario.get(Calendar.MINUTE);
+ 		fecha = new JLabel("Ultima entrada:  "+ hora + ":" + minutos);
 		
 		
 		//DIFERENCIAR SI ENTRA UN ALUMNO O PROFESOR
@@ -68,7 +69,7 @@ public class VentanaAsignatura extends JFrame{
 					for (Tarea tarea : listaTarea) {
 						if (tarea.getCalificacion() >= 5) {
 							status = "APROBADO";
-						} else if(tarea.getCalificacion()==-1){
+						} else if(tarea.getCalificacion().equals(null)){
 							status= "SIN CALIFICAR";
 						}else {
 							status = "SUSPENDIDO";
@@ -86,7 +87,7 @@ public class VentanaAsignatura extends JFrame{
 					for (Tarea tarea : listaTarea) {
 						if (tarea.getCalificacion() >= 5) {
 							status = "APROBADO";
-						} else if(tarea.getCalificacion().equals(-1.0)){
+						} else if(tarea.getCalificacion().equals(null)){
 							status = "SIN CALIFICAR";
 						}else {
 							status = "SUSPENDIDO";
@@ -119,46 +120,19 @@ public class VentanaAsignatura extends JFrame{
 						
 						@Override
 						public void actionPerformed(ActionEvent e) {
-							// TODO Auto-generated method stub
-							int	tareaInt = tareaLista.getSelectedRow();
+							try {
+								int	tareaInt = tareaLista.getSelectedRow();
 							
-							VentanaEditaTarea v= new VentanaEditaTarea(asignatura,gestor,tareaInt,objeto);
-							dispose();
+								VentanaEditaTarea v= new VentanaEditaTarea(asignatura,gestor,tareaInt,objeto);
+								dispose();
+						
+							} catch (Exception e2) {
+								JOptionPane.showMessageDialog(null, "No hay ninguna tarea seleccionada");
+							}	
 						}
 					});
 					
 				}
-		
-		
-				fecha = new JLabel("Fecha:  "+ hora + ":" + minutos+":" + segundos);
-		
-		
-//		Thread hilo = new Thread(new Runnable() {
-//			
-//			@Override
-//			public void run() {
-//				
-//				while (true) {
-//					hora = calendario.get(Calendar.HOUR_OF_DAY);
-//					minutos = calendario.get(Calendar.MINUTE);
-//					segundos = calendario.get(Calendar.SECOND);
-//					fecha = new JLabel("Fecha:  "+ hora + ":" + minutos+":" + segundos);
-//					try {
-//						Thread.sleep(1000); 
-//						
-//
-//					} catch (InterruptedException e) {
-//						// TODO Auto-generated catch block
-//						e.printStackTrace();
-//					}
-//					
-//				}
-//				
-//				
-//			}
-//			
-//		});
-//		hilo.start();
 		
 		//ADD
 		cp.add(centro, BorderLayout.CENTER);

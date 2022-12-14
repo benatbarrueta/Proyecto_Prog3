@@ -34,6 +34,9 @@ public class VentanaEditaTarea extends JFrame{
 		cp.add(centro, BorderLayout.CENTER);
 		centro.setLayout(new GridLayout(4,2));
 		
+		JPanel sur = new JPanel();
+		cp.add(sur, BorderLayout.SOUTH);
+		
 		
 		JTextField nombre = new JTextField();
 		JLabel labelNombre = new JLabel ("Nombre*: ");
@@ -51,7 +54,9 @@ public class VentanaEditaTarea extends JFrame{
 		centro.add(labeCalificacion);
 		centro.add(calificacion);
 		
-		
+		nombre.setText(asignatura.getTareas().get(numeroTarea).getNombre());
+		fechaFin.setText(asignatura.getTareas().get(numeroTarea).getFecha_fin());
+		calificacion.setText("" + asignatura.getTareas().get(numeroTarea).getCalificacion());
 		
 		
 		JButton botonAceptar = new JButton("Edita Tarea");
@@ -65,7 +70,12 @@ public class VentanaEditaTarea extends JFrame{
 				Tarea tarea = new Tarea();
 				tarea.setNombre(nombre.getText());
 				tarea.setFecha_fin(fechaFin.getText());
-				tarea.setCalificacion(-1.0);
+				if (calificacion.getText().equals("")) {
+					tarea.setCalificacion(null);
+				} else {
+					tarea.setCalificacion(Double.parseDouble(calificacion.getText()));
+				}
+				
 				
 				//EDITAR TAREA A GESTOR 
 				for (Asignatura asig: gestor.getAsignatura()) {
@@ -98,12 +108,12 @@ public class VentanaEditaTarea extends JFrame{
 				dispose();
 			}
 		});
-		centro.add(botonAtras);
-		centro.add(botonAceptar);
+		sur.add(botonAtras);
+		sur.add(botonAceptar);
 		
 		this.setTitle("Editar Tarea");
 		
-		this.setSize(600, 400);
+		this.pack();
 		this.setVisible(true);
 	}
 }
