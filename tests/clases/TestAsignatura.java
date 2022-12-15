@@ -14,10 +14,12 @@ public class TestAsignatura {
 	protected ArrayList<Alumno> alumnos =new ArrayList<Alumno>();
 	protected ArrayList<Tarea> tareas= new ArrayList<Tarea>();
 	protected double calificacion =0;
+	protected int id = -1;
 	
 	@Before
 	public void SetUp() {
 		asignatura = new Asignatura(nombre,profesor,alumnos,tareas,calificacion);
+		asignatura.setId(id);
 	}
 	@Test
 	public void testAsignaturaStringProfesorArrayListOfAlumnoArrayListOfTareaDouble() {
@@ -111,6 +113,19 @@ public class TestAsignatura {
 		assertEquals(asignatura.getCalificacion(), 0,0);
 		asignatura.setCalificacion(newCalificacion);
 		assertEquals(asignatura.getCalificacion(), 8,0);
+	}
+	
+	@Test
+	public void testGetId() {
+		assertEquals(asignatura.getId(), -1);
+	}
+	
+	@Test
+	public void testSetId() {
+		int newId = 0;
+		assertEquals(asignatura.getId(), id);
+		asignatura.setId(newId);
+		assertEquals(asignatura.getId(), newId);
 	}
 
 	@Test
