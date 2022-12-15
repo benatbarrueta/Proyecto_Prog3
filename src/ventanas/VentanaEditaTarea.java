@@ -71,7 +71,7 @@ public class VentanaEditaTarea extends JFrame{
 				tarea.setNombre(nombre.getText());
 				tarea.setFecha_fin(fechaFin.getText());
 				if (calificacion.getText().equals("")) {
-					tarea.setCalificacion(null);
+					tarea.setCalificacion(-1.0);
 				} else {
 					tarea.setCalificacion(Double.parseDouble(calificacion.getText()));
 				}
@@ -80,9 +80,14 @@ public class VentanaEditaTarea extends JFrame{
 				//EDITAR TAREA A GESTOR 
 				for (Asignatura asig: gestor.getAsignatura()) {
 					if(asig.equals(asignatura)) {
-						asig.getTareas().get(numeroTarea).setCalificacion(Double.parseDouble(calificacion.getText()));
 						asig.getTareas().get(numeroTarea).setNombre(nombre.getText());
-						asig.getTareas().get(numeroTarea).setCalificacion(Double.parseDouble(calificacion.getText()));
+						asig.getTareas().get(numeroTarea).setFecha_fin(fechaFin.getText());
+						if (calificacion.getText().equals("")) {
+							asig.getTareas().get(numeroTarea).setCalificacion(-1.0);
+						} else {
+							asig.getTareas().get(numeroTarea).setCalificacion(Double.parseDouble(calificacion.getText()));
+						}
+						
 					}
 				}
 			

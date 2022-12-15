@@ -34,7 +34,7 @@ public class GestorBD {
 			Class.forName("org.sqlite.JDBC");
 		} catch (ClassNotFoundException ex) {
 			
-			log( Level.WARNING, "Error al cargar el driver de BBDD", ex);
+			log( Level.SEVERE, "Error al cargar el driver de BBDD", ex);
 			ex.printStackTrace();
 		}
 	}
@@ -64,7 +64,7 @@ public class GestorBD {
 	        }
 		} catch (Exception ex) {
 		
-			log( Level.WARNING,"Error al crear la  BBDD", ex);
+			log( Level.SEVERE,"Error al crear la  BBDD", ex);
 			ex.printStackTrace();			
 		}
 	}
@@ -95,7 +95,58 @@ public class GestorBD {
 		} catch (Exception ex) {
 			
 			
-			log( Level.WARNING,"Error al crear la  BBDD", ex);
+			log( Level.SEVERE,"Error al crear la  BBDD", ex);
+			ex.printStackTrace();			
+		}
+	}
+	
+	public void crearBBDDTarea() {
+		//Se abre la conexión y se obtiene el Statement
+		//Al abrir la conexión, si no existía el fichero, se crea la base de datos
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_ALUMNO);
+		     Statement stmt = con.createStatement()) {
+			
+	        String sql = "CREATE TABLE IF NOT EXISTS TAREA(\n"
+	        		   + " ID INTEGER PRIMARY KEY AUTOINCREMENT,\n"
+	                   + " NOMBRE TEXT NOT NULL,\n"
+	                   + " EMAIL TEXT NOT NULL,\n"
+	                   + " FECHA_FIN TEXT NOT NULL,\n"
+	                   + " CALIFICACION DOUBLE NOT NULL,\n"
+	                   + ");";
+		
+	        if (!stmt.execute(sql)) {
+	      
+	        	log( Level.INFO,"Se ha creado la tabla TAREA", null);
+	        }
+		} catch (Exception ex) {
+		
+			log( Level.SEVERE,"Error al crear la  BBDD", ex);
+			ex.printStackTrace();			
+		}
+	}
+	
+	public void crearBBDDAsignatura() {
+		//Se abre la conexión y se obtiene el Statement
+		//Al abrir la conexión, si no existía el fichero, se crea la base de datos
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_ALUMNO);
+		     Statement stmt = con.createStatement()) {
+			
+	        String sql = "CREATE TABLE IF NOT EXISTS ASIGNATURA(\n"
+	        		   + " ID INTEGER PRIMARY KEY AUTOINCREMENT,\n"
+	                   + " NOMBRE TEXT NOT NULL,\n"
+	                   + " PROFESOR TEXT NOT NULL,\n"
+	                   + " ALUMNOS TEXT NOT NULL,\n"
+	                   + " TAREAS TEXT NOT NULL,\n"
+	                   + " CALIFICACION DOUBLE, \n"
+	                   + ");";
+		
+	        if (!stmt.execute(sql)) {
+	      
+	        	log( Level.INFO,"Se ha creado la tabla ASIGNATURA", null);
+	        }
+		} catch (Exception ex) {
+		
+			log( Level.SEVERE,"Error al crear la  BBDD", ex);
 			ex.printStackTrace();			
 		}
 	}
@@ -113,7 +164,7 @@ public class GestorBD {
 	        	log( Level.INFO,"Se ha borrado la tabla ALUMNO", null);
 	        }
 		} catch (Exception ex) {
-			log( Level.WARNING,"Error al borrar la  BBDD", ex);
+			log( Level.SEVERE,"Error al borrar la  BBDD", ex);
 			ex.printStackTrace();			
 		}
 		
@@ -125,7 +176,7 @@ public class GestorBD {
 		} catch (Exception ex) {
 		
 			
-			log( Level.WARNING,"Error al borrar el archivo de la  BBDD", ex);
+			log( Level.SEVERE,"Error al borrar el archivo de la  BBDD", ex);
 			ex.printStackTrace();						
 		}
 	}
@@ -143,7 +194,7 @@ public class GestorBD {
 	        
 	        }
 		} catch (Exception ex) {
-			log( Level.WARNING,"Error al borrar la  BBDD", ex);
+			log( Level.SEVERE,"Error al borrar la  BBDD", ex);
 			ex.printStackTrace();			
 		}
 		
@@ -153,7 +204,7 @@ public class GestorBD {
 			log( Level.INFO,"Se ha borrado el fichero de la BBDD", null);
 		} catch (Exception ex) {
 		
-			log( Level.WARNING,"Error al borrar el archivo de la  BBDD", ex);
+			log( Level.SEVERE,"Error al borrar el archivo de la  BBDD", ex);
 	
 			ex.printStackTrace();						
 		}
@@ -182,7 +233,7 @@ public class GestorBD {
 			}			
 		} catch (Exception ex) {
 
-			log( Level.WARNING,"Error al insertar datos en la  BBDD", ex);
+			log( Level.SEVERE,"Error al insertar datos en la  BBDD", ex);
 			ex.printStackTrace();						
 		}				
 	}
@@ -209,7 +260,7 @@ public class GestorBD {
 			}			
 		} catch (Exception ex) {
 		
-			log( Level.WARNING,"Error al insertar datos en la  BBDD", ex);
+			log( Level.SEVERE,"Error al insertar datos en la  BBDD", ex);
 			ex.printStackTrace();						
 		}				
 	}
@@ -254,7 +305,7 @@ public class GestorBD {
 			log( Level.INFO,"Se han recuperado alunos", null);
 		} catch (Exception ex) {
 		
-			log( Level.WARNING,"Error al obtener datos de la  BBDD", ex);
+			log( Level.SEVERE,"Error al obtener datos de la  BBDD", ex);
 			ex.printStackTrace();						
 		}		
 		
@@ -300,7 +351,7 @@ public class GestorBD {
 			
 			
 		} catch (Exception ex) {
-			log( Level.WARNING,"Error al obtener datos de la  BBDD", ex);
+			log( Level.SEVERE,"Error al obtener datos de la  BBDD", ex);
 		
 			ex.printStackTrace();						
 		}		
@@ -320,7 +371,7 @@ public class GestorBD {
 			log( Level.INFO,"Se han borrado alumnos ", null);
 		} catch (Exception ex) {
 		
-			log( Level.WARNING,"Error al borrar datos de la  BBDD", ex);
+			log( Level.SEVERE,"Error al borrar datos de la  BBDD", ex);
 			
 			ex.printStackTrace();						
 		}		
@@ -340,7 +391,7 @@ public class GestorBD {
 			//	System.out.println();
 		} catch (Exception ex) {
 		
-			log( Level.WARNING,"Error al actualizando datos de la  BBDD", ex);
+			log( Level.SEVERE,"Error al actualizando datos de la  BBDD", ex);
 			ex.printStackTrace();						
 		}		
 	}
@@ -355,7 +406,7 @@ public class GestorBD {
 			
 			log( Level.INFO,"Se ha actulizado la contraseña del profesor",null);
 		} catch (Exception ex) {
-			log( Level.WARNING,"Error al actualizando datos de la  BBDD", ex);
+			log( Level.SEVERE,"Error al actualizando datos de la  BBDD", ex);
 			ex.printStackTrace();						
 		}		
 	}
@@ -370,7 +421,7 @@ public class GestorBD {
 			log( Level.INFO,"Se ha actulizado los datos de " + result + "alumno",null);
 			
 		} catch (Exception e) {
-			log( Level.WARNING,"Error al actualizar datos de la  BBDD", e);
+			log( Level.SEVERE,"Error al actualizar datos de la  BBDD", e);
 			e.printStackTrace();
 		}
 	}
@@ -386,7 +437,7 @@ public class GestorBD {
 		
 			log( Level.INFO,"Se ha actulizado datos de " + result + "profesor", null);
 		} catch (Exception e) {
-			log( Level.WARNING,"Error al actualizar datos de la  BBDD", e);
+			log( Level.SEVERE,"Error al actualizar datos de la  BBDD", e);
 			e.printStackTrace();
 		}
 	}
@@ -400,7 +451,7 @@ public class GestorBD {
 			
 			log( Level.INFO,"Se ha borrado los profesores",null);
 		} catch (Exception ex) {
-			log( Level.WARNING,"Error al actualizando datos de la  BBDD", ex);
+			log( Level.SEVERE,"Error al actualizando datos de la  BBDD", ex);
 			ex.printStackTrace();						
 		}		
 	}

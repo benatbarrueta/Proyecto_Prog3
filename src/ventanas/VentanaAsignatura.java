@@ -66,16 +66,21 @@ public class VentanaAsignatura extends JFrame{
 					tareaLista = new JTable(modeloTareaLista);
 					Alumno alumno = (Alumno) objeto;
 					String status = "";
+					String calificacion = "";
 					for (Tarea tarea : listaTarea) {
 						if (tarea.getCalificacion() >= 5) {
 							status = "APROBADO";
-						} else if(tarea.getCalificacion().equals(null)){
-							status= "SIN CALIFICAR";
-						}else {
+							calificacion = "" + tarea.getCalificacion();
+						} else if(tarea.getCalificacion() == -1) {
+							status = "SIN CALIFICAR";
+							calificacion = "";
+						} else {
 							status = "SUSPENDIDO";
+							calificacion = "" + tarea.getCalificacion();
 						}
+						
 						if (tarea.getEmailAlumno().equals(alumno.getEmail())) {
-							modeloTareaLista.addRow(new Object[] {tarea.getNombre(), tarea.getFecha_fin(), status, tarea.getCalificacion(), alumno.getNombre()});
+							modeloTareaLista.addRow(new Object[] {tarea.getNombre(), tarea.getFecha_fin(), status, calificacion, alumno.getNombre()});
 						}
 					}
 					
@@ -84,16 +89,22 @@ public class VentanaAsignatura extends JFrame{
 					tareaLista = new JTable(modeloTareaLista);
 					Profesor profesor = (Profesor) objeto;
 					String status = "";
+					String calificacion = "";
 					for (Tarea tarea : listaTarea) {
 						if (tarea.getCalificacion() >= 5) {
 							status = "APROBADO";
-						} else if(tarea.getCalificacion().equals(null)){
+							calificacion = "" + tarea.getCalificacion();
+						} else if(tarea.getCalificacion() == -1) {
 							status = "SIN CALIFICAR";
-						}else {
+							calificacion = "";
+						} else {
 							status = "SUSPENDIDO";
+							calificacion = "" + tarea.getCalificacion();
 						}
 						
-						modeloTareaLista.addRow(new Object[] {tarea.getEmailAlumno() ,tarea.getNombre(), tarea.getFecha_fin(), status, tarea.getCalificacion()});
+						
+						
+						modeloTareaLista.addRow(new Object[] {tarea.getEmailAlumno() ,tarea.getNombre(), tarea.getFecha_fin(), status, calificacion});
 						
 					}
 					//SUR
