@@ -112,6 +112,8 @@ public class Gestor {
 						a.getTareas().add(tarea);
 					}
 				}
+				
+				
 			}
 			//System.out.println(tareas);
 			
@@ -227,14 +229,16 @@ public class Gestor {
 		//GestorBD.gestorBD.borrarBBDDProfesor();
 		GestorBD.gestorBD.crearBBDDProfesor();
 		GestorBD.gestorBD.crearBBDDAlumno();
-	
+		GestorBD.gestorBD.crearBBDDTarea();
+		GestorBD.gestorBD.crearBBDDAsignatura();
 		
 		
-		//CREAR PROFESORES Y ALUMNOS
+		//CREAR PROFESORES, ALUMNOS, TAREAS Y ASIGNATURAS
 		ArrayList<Profesor> profesores = GestorBD.gestorBD.obtenerDatosProfesor();
-		
-		//System.out.println(profesores);
 		ArrayList<Alumno> alumnos = GestorBD.gestorBD.obtenerDatosAlumnos();
+		//ArrayList<Tarea> tareas = GestorBD.gestorBD.obtenerDatosTareas();
+		//ArrayList<Asignatura> asignaturas = GestorBD.gestorBD.obtenerDatosAsignaturas();
+		
 
 		
 		if (profesores.size() == 0) {

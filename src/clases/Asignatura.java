@@ -10,6 +10,7 @@ public class Asignatura {
 	protected ArrayList<Alumno> alumnos;
 	protected ArrayList<Tarea> tareas;
 	protected double calificacion;
+	protected int id = -1;
 	
 	public Asignatura(String nombre, Profesor profesor, ArrayList<Alumno> alumnos, ArrayList<Tarea> tareas,
 			double calificacion) {
@@ -68,6 +69,14 @@ public class Asignatura {
 
 	public void setCalificacion(double calificacion) {
 		this.calificacion = calificacion;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	@Override

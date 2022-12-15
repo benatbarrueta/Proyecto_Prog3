@@ -22437,3 +22437,1317 @@
   <message>Se han recuperado profesores</message>
 </record>
 </log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-15T17:53:09.548346500Z</date>
+  <millis>1671126789548</millis>
+  <nanos>346500</nanos>
+  <sequence>0</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se ha creado la tabla PROFESOR</message>
+</record>
+<record>
+  <date>2022-12-15T17:53:09.598344500Z</date>
+  <millis>1671126789598</millis>
+  <nanos>344500</nanos>
+  <sequence>1</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se ha creado la tabla ALUMNO</message>
+</record>
+<record>
+  <date>2022-12-15T17:53:09.607353100Z</date>
+  <millis>1671126789607</millis>
+  <nanos>353100</nanos>
+  <sequence>2</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado profesores</message>
+</record>
+<record>
+  <date>2022-12-15T17:53:09.609347400Z</date>
+  <millis>1671126789609</millis>
+  <nanos>347400</nanos>
+  <sequence>3</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado alunos</message>
+</record>
+<record>
+  <date>2022-12-15T17:53:09.611344500Z</date>
+  <millis>1671126789611</millis>
+  <nanos>344500</nanos>
+  <sequence>4</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Insertando alumnos...</message>
+</record>
+<record>
+  <date>2022-12-15T17:53:09.613347900Z</date>
+  <millis>1671126789613</millis>
+  <nanos>347900</nanos>
+  <sequence>5</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Insertando profesores...</message>
+</record>
+<record>
+  <date>2022-12-15T17:53:09.616347300Z</date>
+  <millis>1671126789616</millis>
+  <nanos>347300</nanos>
+  <sequence>6</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado alunos</message>
+</record>
+<record>
+  <date>2022-12-15T17:53:09.618344900Z</date>
+  <millis>1671126789618</millis>
+  <nanos>344900</nanos>
+  <sequence>7</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado profesores</message>
+</record>
+<record>
+  <date>2022-12-15T17:53:23.485938Z</date>
+  <millis>1671126803485</millis>
+  <nanos>938000</nanos>
+  <sequence>8</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado alunos</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-15T17:57:23.907118200Z</date>
+  <millis>1671127043907</millis>
+  <nanos>118200</nanos>
+  <sequence>0</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se ha creado la tabla PROFESOR</message>
+</record>
+<record>
+  <date>2022-12-15T17:57:23.947115300Z</date>
+  <millis>1671127043947</millis>
+  <nanos>115300</nanos>
+  <sequence>1</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se ha creado la tabla ALUMNO</message>
+</record>
+<record>
+  <date>2022-12-15T17:57:23.951116200Z</date>
+  <millis>1671127043951</millis>
+  <nanos>116200</nanos>
+  <sequence>2</sequence>
+  <logger>BD-local</logger>
+  <level>SEVERE</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Error al crear la  BBDD</message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (near ")": syntax error)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1135</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1146</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1106</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare</method>
+      <line>122</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>prepare</method>
+      <line>264</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>lambda$execute$0</method>
+      <line>48</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>withConnectionTimeout</method>
+      <line>429</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>execute</method>
+      <line>37</line>
+    </frame>
+    <frame>
+      <class>clases.GestorBD</class>
+      <method>crearBBDDTarea</method>
+      <line>123</line>
+    </frame>
+    <frame>
+      <class>clases.Gestor</class>
+      <method>main</method>
+      <line>232</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-12-15T17:57:23.954115100Z</date>
+  <millis>1671127043954</millis>
+  <nanos>115100</nanos>
+  <sequence>3</sequence>
+  <logger>BD-local</logger>
+  <level>SEVERE</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Error al crear la  BBDD</message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (near ")": syntax error)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1135</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1146</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1106</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare</method>
+      <line>122</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>prepare</method>
+      <line>264</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>lambda$execute$0</method>
+      <line>48</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>withConnectionTimeout</method>
+      <line>429</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>execute</method>
+      <line>37</line>
+    </frame>
+    <frame>
+      <class>clases.GestorBD</class>
+      <method>crearBBDDAsignatura</method>
+      <line>149</line>
+    </frame>
+    <frame>
+      <class>clases.Gestor</class>
+      <method>main</method>
+      <line>233</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-12-15T17:57:23.962118Z</date>
+  <millis>1671127043962</millis>
+  <nanos>118000</nanos>
+  <sequence>4</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado profesores</message>
+</record>
+<record>
+  <date>2022-12-15T17:57:23.965115500Z</date>
+  <millis>1671127043965</millis>
+  <nanos>115500</nanos>
+  <sequence>5</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado alunos</message>
+</record>
+<record>
+  <date>2022-12-15T17:57:23.966118300Z</date>
+  <millis>1671127043966</millis>
+  <nanos>118300</nanos>
+  <sequence>6</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Insertando alumnos...</message>
+</record>
+<record>
+  <date>2022-12-15T17:57:23.967118900Z</date>
+  <millis>1671127043967</millis>
+  <nanos>118900</nanos>
+  <sequence>7</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Insertando profesores...</message>
+</record>
+<record>
+  <date>2022-12-15T17:57:23.969117700Z</date>
+  <millis>1671127043969</millis>
+  <nanos>117700</nanos>
+  <sequence>8</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado alunos</message>
+</record>
+<record>
+  <date>2022-12-15T17:57:23.972114800Z</date>
+  <millis>1671127043972</millis>
+  <nanos>114800</nanos>
+  <sequence>9</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado profesores</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-15T19:08:47.571512200Z</date>
+  <millis>1671131327571</millis>
+  <nanos>512200</nanos>
+  <sequence>0</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se ha creado la tabla PROFESOR</message>
+</record>
+<record>
+  <date>2022-12-15T19:08:47.614507300Z</date>
+  <millis>1671131327614</millis>
+  <nanos>507300</nanos>
+  <sequence>1</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se ha creado la tabla ALUMNO</message>
+</record>
+<record>
+  <date>2022-12-15T19:08:47.619511800Z</date>
+  <millis>1671131327619</millis>
+  <nanos>511800</nanos>
+  <sequence>2</sequence>
+  <logger>BD-local</logger>
+  <level>SEVERE</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Error al crear la  BBDD</message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (near ")": syntax error)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1135</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1146</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1106</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare</method>
+      <line>122</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>prepare</method>
+      <line>264</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>lambda$execute$0</method>
+      <line>48</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>withConnectionTimeout</method>
+      <line>429</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>execute</method>
+      <line>37</line>
+    </frame>
+    <frame>
+      <class>clases.GestorBD</class>
+      <method>crearBBDDTarea</method>
+      <line>123</line>
+    </frame>
+    <frame>
+      <class>clases.Gestor</class>
+      <method>main</method>
+      <line>232</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-12-15T19:08:47.623508600Z</date>
+  <millis>1671131327623</millis>
+  <nanos>508600</nanos>
+  <sequence>3</sequence>
+  <logger>BD-local</logger>
+  <level>SEVERE</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Error al crear la  BBDD</message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (near ")": syntax error)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1135</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1146</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1106</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare</method>
+      <line>122</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>prepare</method>
+      <line>264</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>lambda$execute$0</method>
+      <line>48</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>withConnectionTimeout</method>
+      <line>429</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>execute</method>
+      <line>37</line>
+    </frame>
+    <frame>
+      <class>clases.GestorBD</class>
+      <method>crearBBDDAsignatura</method>
+      <line>149</line>
+    </frame>
+    <frame>
+      <class>clases.Gestor</class>
+      <method>main</method>
+      <line>233</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-12-15T19:08:47.631507600Z</date>
+  <millis>1671131327631</millis>
+  <nanos>507600</nanos>
+  <sequence>4</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado profesores</message>
+</record>
+<record>
+  <date>2022-12-15T19:08:47.636117300Z</date>
+  <millis>1671131327636</millis>
+  <nanos>117300</nanos>
+  <sequence>5</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado alunos</message>
+</record>
+<record>
+  <date>2022-12-15T19:08:47.638391800Z</date>
+  <millis>1671131327638</millis>
+  <nanos>391800</nanos>
+  <sequence>6</sequence>
+  <logger>BD-local</logger>
+  <level>SEVERE</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Error al obtener datos de la  BBDD</message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such table: TAREA)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1135</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1146</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1106</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare</method>
+      <line>122</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>prepare</method>
+      <line>264</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>lambda$executeQuery$1</method>
+      <line>75</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>withConnectionTimeout</method>
+      <line>429</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeQuery</method>
+      <line>73</line>
+    </frame>
+    <frame>
+      <class>clases.GestorBD</class>
+      <method>obtenerDatosTareas</method>
+      <line>497</line>
+    </frame>
+    <frame>
+      <class>clases.Gestor</class>
+      <method>main</method>
+      <line>239</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-12-15T19:08:47.642176500Z</date>
+  <millis>1671131327642</millis>
+  <nanos>176500</nanos>
+  <sequence>7</sequence>
+  <logger>BD-local</logger>
+  <level>SEVERE</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Error al obtener datos de la  BBDD</message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such table: ASIGNATURA)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1135</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1146</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1106</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare</method>
+      <line>122</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>prepare</method>
+      <line>264</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>lambda$executeQuery$1</method>
+      <line>75</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>withConnectionTimeout</method>
+      <line>429</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeQuery</method>
+      <line>73</line>
+    </frame>
+    <frame>
+      <class>clases.GestorBD</class>
+      <method>obtenerDatosAsignaturas</method>
+      <line>539</line>
+    </frame>
+    <frame>
+      <class>clases.Gestor</class>
+      <method>main</method>
+      <line>240</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-12-15T19:08:47.646696100Z</date>
+  <millis>1671131327646</millis>
+  <nanos>696100</nanos>
+  <sequence>8</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Insertando alumnos...</message>
+</record>
+<record>
+  <date>2022-12-15T19:08:47.648697600Z</date>
+  <millis>1671131327648</millis>
+  <nanos>697600</nanos>
+  <sequence>9</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Insertando profesores...</message>
+</record>
+<record>
+  <date>2022-12-15T19:08:47.652127700Z</date>
+  <millis>1671131327652</millis>
+  <nanos>127700</nanos>
+  <sequence>10</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado alunos</message>
+</record>
+<record>
+  <date>2022-12-15T19:08:47.655136Z</date>
+  <millis>1671131327655</millis>
+  <nanos>136000</nanos>
+  <sequence>11</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado profesores</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-15T19:14:23.132413900Z</date>
+  <millis>1671131663132</millis>
+  <nanos>413900</nanos>
+  <sequence>0</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se ha creado la tabla profesor</message>
+</record>
+<record>
+  <date>2022-12-15T19:14:23.173377300Z</date>
+  <millis>1671131663173</millis>
+  <nanos>377300</nanos>
+  <sequence>1</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se ha creado la tabla alumno</message>
+</record>
+<record>
+  <date>2022-12-15T19:14:23.180375700Z</date>
+  <millis>1671131663180</millis>
+  <nanos>375700</nanos>
+  <sequence>2</sequence>
+  <logger>BD-local</logger>
+  <level>SEVERE</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Error al crear la  BBDD asignatura</message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (near ")": syntax error)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1135</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1146</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1106</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare</method>
+      <line>122</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>prepare</method>
+      <line>264</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>lambda$execute$0</method>
+      <line>48</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>withConnectionTimeout</method>
+      <line>429</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>execute</method>
+      <line>37</line>
+    </frame>
+    <frame>
+      <class>clases.GestorBD</class>
+      <method>crearBBDDAsignatura</method>
+      <line>145</line>
+    </frame>
+    <frame>
+      <class>clases.Gestor</class>
+      <method>main</method>
+      <line>233</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-12-15T19:14:23.191374700Z</date>
+  <millis>1671131663191</millis>
+  <nanos>374700</nanos>
+  <sequence>3</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado profesores</message>
+</record>
+<record>
+  <date>2022-12-15T19:14:23.194375200Z</date>
+  <millis>1671131663194</millis>
+  <nanos>375200</nanos>
+  <sequence>4</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado alunos</message>
+</record>
+<record>
+  <date>2022-12-15T19:14:23.196376100Z</date>
+  <millis>1671131663196</millis>
+  <nanos>376100</nanos>
+  <sequence>5</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Insertando alumnos...</message>
+</record>
+<record>
+  <date>2022-12-15T19:14:23.197375300Z</date>
+  <millis>1671131663197</millis>
+  <nanos>375300</nanos>
+  <sequence>6</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Insertando profesores...</message>
+</record>
+<record>
+  <date>2022-12-15T19:14:23.199373900Z</date>
+  <millis>1671131663199</millis>
+  <nanos>373900</nanos>
+  <sequence>7</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado alunos</message>
+</record>
+<record>
+  <date>2022-12-15T19:14:23.200374500Z</date>
+  <millis>1671131663200</millis>
+  <nanos>374500</nanos>
+  <sequence>8</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado profesores</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-15T19:14:39.407200100Z</date>
+  <millis>1671131679407</millis>
+  <nanos>200100</nanos>
+  <sequence>0</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se ha creado la tabla profesor</message>
+</record>
+<record>
+  <date>2022-12-15T19:14:39.489203700Z</date>
+  <millis>1671131679489</millis>
+  <nanos>203700</nanos>
+  <sequence>1</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se ha creado la tabla alumno</message>
+</record>
+<record>
+  <date>2022-12-15T19:14:39.491201100Z</date>
+  <millis>1671131679491</millis>
+  <nanos>201100</nanos>
+  <sequence>2</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se ha creado la tabla tarea</message>
+</record>
+<record>
+  <date>2022-12-15T19:14:39.499199100Z</date>
+  <millis>1671131679499</millis>
+  <nanos>199100</nanos>
+  <sequence>3</sequence>
+  <logger>BD-local</logger>
+  <level>SEVERE</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Error al crear la  BBDD asignatura</message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (near ")": syntax error)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1135</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1146</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1106</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare</method>
+      <line>122</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>prepare</method>
+      <line>264</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>lambda$execute$0</method>
+      <line>48</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>withConnectionTimeout</method>
+      <line>429</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>execute</method>
+      <line>37</line>
+    </frame>
+    <frame>
+      <class>clases.GestorBD</class>
+      <method>crearBBDDAsignatura</method>
+      <line>145</line>
+    </frame>
+    <frame>
+      <class>clases.Gestor</class>
+      <method>main</method>
+      <line>233</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-12-15T19:14:39.514201300Z</date>
+  <millis>1671131679514</millis>
+  <nanos>201300</nanos>
+  <sequence>4</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado profesores</message>
+</record>
+<record>
+  <date>2022-12-15T19:14:39.518201200Z</date>
+  <millis>1671131679518</millis>
+  <nanos>201200</nanos>
+  <sequence>5</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado alunos</message>
+</record>
+<record>
+  <date>2022-12-15T19:14:39.521200800Z</date>
+  <millis>1671131679521</millis>
+  <nanos>200800</nanos>
+  <sequence>6</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Insertando alumnos...</message>
+</record>
+<record>
+  <date>2022-12-15T19:14:39.523200900Z</date>
+  <millis>1671131679523</millis>
+  <nanos>200900</nanos>
+  <sequence>7</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Insertando profesores...</message>
+</record>
+<record>
+  <date>2022-12-15T19:14:39.527199300Z</date>
+  <millis>1671131679527</millis>
+  <nanos>199300</nanos>
+  <sequence>8</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado alunos</message>
+</record>
+<record>
+  <date>2022-12-15T19:14:39.530199600Z</date>
+  <millis>1671131679530</millis>
+  <nanos>199600</nanos>
+  <sequence>9</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado profesores</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-15T19:15:07.173592600Z</date>
+  <millis>1671131707173</millis>
+  <nanos>592600</nanos>
+  <sequence>0</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se ha creado la tabla profesor</message>
+</record>
+<record>
+  <date>2022-12-15T19:15:07.224597200Z</date>
+  <millis>1671131707224</millis>
+  <nanos>597200</nanos>
+  <sequence>1</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se ha creado la tabla alumno</message>
+</record>
+<record>
+  <date>2022-12-15T19:15:07.229594100Z</date>
+  <millis>1671131707229</millis>
+  <nanos>594100</nanos>
+  <sequence>2</sequence>
+  <logger>BD-local</logger>
+  <level>SEVERE</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Error al crear la  BBDD tarea</message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (near ")": syntax error)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1135</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1146</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1106</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare</method>
+      <line>122</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>prepare</method>
+      <line>264</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>lambda$execute$0</method>
+      <line>48</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>withConnectionTimeout</method>
+      <line>429</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>execute</method>
+      <line>37</line>
+    </frame>
+    <frame>
+      <class>clases.GestorBD</class>
+      <method>crearBBDDTarea</method>
+      <line>120</line>
+    </frame>
+    <frame>
+      <class>clases.Gestor</class>
+      <method>main</method>
+      <line>232</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-12-15T19:15:07.233591700Z</date>
+  <millis>1671131707233</millis>
+  <nanos>591700</nanos>
+  <sequence>3</sequence>
+  <logger>BD-local</logger>
+  <level>SEVERE</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Error al crear la  BBDD asignatura</message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (near ")": syntax error)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1135</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1146</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1106</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare</method>
+      <line>122</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>prepare</method>
+      <line>264</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>lambda$execute$0</method>
+      <line>48</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>withConnectionTimeout</method>
+      <line>429</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>execute</method>
+      <line>37</line>
+    </frame>
+    <frame>
+      <class>clases.GestorBD</class>
+      <method>crearBBDDAsignatura</method>
+      <line>145</line>
+    </frame>
+    <frame>
+      <class>clases.Gestor</class>
+      <method>main</method>
+      <line>233</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-12-15T19:15:07.241593Z</date>
+  <millis>1671131707241</millis>
+  <nanos>593000</nanos>
+  <sequence>4</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado profesores</message>
+</record>
+<record>
+  <date>2022-12-15T19:15:07.245591900Z</date>
+  <millis>1671131707245</millis>
+  <nanos>591900</nanos>
+  <sequence>5</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado alunos</message>
+</record>
+<record>
+  <date>2022-12-15T19:15:07.246591700Z</date>
+  <millis>1671131707246</millis>
+  <nanos>591700</nanos>
+  <sequence>6</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Insertando alumnos...</message>
+</record>
+<record>
+  <date>2022-12-15T19:15:07.247592200Z</date>
+  <millis>1671131707247</millis>
+  <nanos>592200</nanos>
+  <sequence>7</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Insertando profesores...</message>
+</record>
+<record>
+  <date>2022-12-15T19:15:07.250591700Z</date>
+  <millis>1671131707250</millis>
+  <nanos>591700</nanos>
+  <sequence>8</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado alunos</message>
+</record>
+<record>
+  <date>2022-12-15T19:15:07.252594200Z</date>
+  <millis>1671131707252</millis>
+  <nanos>594200</nanos>
+  <sequence>9</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado profesores</message>
+</record>
+</log>

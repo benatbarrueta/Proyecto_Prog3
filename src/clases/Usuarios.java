@@ -120,13 +120,4 @@ public class Usuarios {
 		return "Usuario: " + nombre + apellidos + ", " + edad + " años";
 	}
 
-	
-	
-
-
-
-	
-	
-	
-	
 }

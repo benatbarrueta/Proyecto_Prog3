@@ -6,6 +6,7 @@ public class Tarea {
 	protected Double calificacion;
 	protected String nombre;
 	protected String emailAlumno;
+	protected int id = -1;
 	
 	public Tarea() {
 		super();
@@ -40,6 +41,14 @@ public class Tarea {
 
 	public void setEmailAlumno(String emailAlumno) {
 		this.emailAlumno = emailAlumno;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	@Override
