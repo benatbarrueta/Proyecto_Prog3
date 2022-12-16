@@ -1,5 +1,7 @@
 package clases;
 
+import java.awt.Point;
+
 public class Tarea {
 
 	protected String fecha_fin;
