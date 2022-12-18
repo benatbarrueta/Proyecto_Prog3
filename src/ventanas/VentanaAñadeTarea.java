@@ -36,24 +36,24 @@ public VentanaAñadeTarea (Asignatura asignatura ,Gestor gestor, Object object) 
 	//CENTRO
 	JPanel centro = new JPanel();
 	cp.add(centro, BorderLayout.CENTER);
-	centro.setLayout(new GridLayout(3,2));
+	centro.setLayout(new GridLayout(3, 2));
 	
+	//SUR
+	JPanel sur = new JPanel();
+	cp.add(sur, BorderLayout.SOUTH);
+	
+	
+	// CENTRO
 	
 	JTextField nombre = new JTextField();
 	JLabel labelNombre = new JLabel ("Nombre*: ");
 	JTextField fechaFin = new JTextField();
-	JLabel labefechaFin = new JLabel("Fecha finalizar tarea: ");
-	
-	
-	
+	JLabel labelFechaFin = new JLabel("Fecha finalizar tarea: ");
 	
 	centro.add(labelNombre);
 	centro.add(nombre);
-	centro.add(labefechaFin);
+	centro.add(labelFechaFin);
 	centro.add(fechaFin);
-
-	
-	
 	
 	JButton botonAceptar = new JButton("Añade Tarea");
 	JButton botonAtras = new JButton("Atras");
@@ -100,12 +100,13 @@ public VentanaAñadeTarea (Asignatura asignatura ,Gestor gestor, Object object) 
 			VentanaAsignatura v = new VentanaAsignatura(object, "Profesor",gestor,asignatura);
 		}
 	});
-	centro.add(botonAtras);
-	centro.add(botonAceptar);
+	
+	sur.add(botonAtras);
+	sur.add(botonAceptar);
 	
 	this.setTitle("Añadir Tarea");
 	
-	this.setSize(600, 400);
+	this.pack();
 	this.setVisible(true);
 	
 	}
