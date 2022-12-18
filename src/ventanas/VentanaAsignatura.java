@@ -7,9 +7,13 @@ import java.awt.Container;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.HashMap;
 import java.util.Iterator;
 
 import javax.swing.*;
@@ -83,6 +87,7 @@ public class VentanaAsignatura extends JFrame{
 					label.setBackground(Color.CYAN);
 				}
 				
+
 				if (listaTarea.get(row).getCalificacion() < 5 && listaTarea.get(row).getCalificacion() > 0) {
 					label.setForeground(Color.RED);
 				} else if (listaTarea.get(row).getCalificacion() < 0) {
@@ -151,7 +156,9 @@ public class VentanaAsignatura extends JFrame{
 						if (!nombreTareas.contains(tarea.getNombre())) {
 							nombreTareas.add(tarea.getNombre());
 						}
+						
 					}
+					
 					
 					comboTareas = new JComboBox();
 					for (String s : nombreTareas) {
@@ -187,11 +194,12 @@ public class VentanaAsignatura extends JFrame{
 										status = "SUSPENDIDO";
 										calificacion = "" + tarea.getCalificacion();
 									}
-									modeloTareaLista.addRow(new Object[] {asignatura.getTareas().get(0).getEmailAlumno(), asignatura.getTareas().get(0).getFecha_fin(), status, calificacion});
+									modeloTareaLista.addRow(new Object[] {tarea.getEmailAlumno(), tarea.getFecha_fin(), status, calificacion});
 
 								}
+								tareaLista.repaint();
 							}
-							tareaLista.repaint();
+							
 						}
 					});
 					
@@ -260,14 +268,20 @@ public class VentanaAsignatura extends JFrame{
 		this.setVisible(true);
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
-		
-		tareaLista.getColumnModel().getColumn(0).setCellRenderer(renderSencillo);
-		tareaLista.getColumnModel().getColumn(1).setCellRenderer(renderSencillo);
-		tareaLista.getColumnModel().getColumn(2).setCellRenderer(renderSencillo);
-		tareaLista.getColumnModel().getColumn(3).setCellRenderer(renderSencillo);
-		if(modeloTareaLista.getColumnCount()>4) {
-			tareaLista.getColumnModel().getColumn(4).setCellRenderer(renderSencillo);
-		}
+		this.addWindowListener(new WindowAdapter() {
+			
+			@Override
+			public void windowOpened(WindowEvent e) {
+				tareaLista.getColumnModel().getColumn(0).setCellRenderer(renderSencillo);
+				tareaLista.getColumnModel().getColumn(1).setCellRenderer(renderSencillo);
+				tareaLista.getColumnModel().getColumn(2).setCellRenderer(renderSencillo);
+				tareaLista.getColumnModel().getColumn(3).setCellRenderer(renderSencillo);
+				if (modeloTareaLista.getColumnCount()>4) {
+					tareaLista.getColumnModel().getColumn(4).setCellRenderer(renderSencillo);
+				}
+			}
+			
+		});
 		
 	}
 	
