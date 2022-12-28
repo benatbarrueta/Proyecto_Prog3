@@ -19,15 +19,9 @@ import java.sql.*;
 public class GestorBD {
 
 	protected static final String DRIVER_NAME = "lib/sqlite-jdbc";
-	protected static final String DATABASE_FILE_ALUMNO = "db/databaseprofesor.db";
-	protected static final String DATABASE_FILE_PROFESOR = "db/databasealumno.db";
-	protected static final String DATABASE_FILE_TAREA = "db/databasetarea.db";
-	protected static final String DATABASE_FILE_ASIGNATURA = "db/databaseasignatura.db";
-	protected static final String CONNECTION_STRING_ALUMNO = "jdbc:sqlite:" + DATABASE_FILE_ALUMNO;
-	protected static final String CONNECTION_STRING_PROFESOR = "jdbc:sqlite:" + DATABASE_FILE_PROFESOR;
-	protected static final String CONNECTION_STRING_TAREA = "jdbc:sqlite:" + DATABASE_FILE_TAREA;
-	protected static final String CONNECTION_STRING_ASIGNATURA = "jdbc:sqlite:" + DATABASE_FILE_ASIGNATURA;
-	
+	protected static final String DATABASE_FILE = "db/database.db";
+	protected static final String CONNECTION_STRING= "jdbc:sqlite:" + DATABASE_FILE;
+
 	private Logger logger = null;
 	public static GestorBD gestorBD;	
 	
@@ -48,7 +42,7 @@ public class GestorBD {
 	public void crearBBDDAlumno() {
 		//Se abre la conexión y se obtiene el Statement
 		//Al abrir la conexión, si no existía el fichero, se crea la base de datos
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_ALUMNO);
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement stmt = con.createStatement()) {
 			
 	        String sql = "CREATE TABLE IF NOT EXISTS ALUMNO(\n"
@@ -76,7 +70,7 @@ public class GestorBD {
 	public void crearBBDDProfesor() {
 		//Se abre la conexión y se obtiene el Statement
 		//Al abrir la conexión, si no existía el fichero, se crea la base de datos
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_PROFESOR);
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement stmt = con.createStatement()) {
 			
 	        String sql = "CREATE TABLE IF NOT EXISTS PROFESOR(\n"
@@ -106,7 +100,7 @@ public class GestorBD {
 	public void crearBBDDTarea() {
 		//Se abre la conexión y se obtiene el Statement
 		//Al abrir la conexión, si no existía el fichero, se crea la base de datos
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_TAREA);
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement stmt = con.createStatement()) {
 			
 	        String sql = " CREATE TABLE IF NOT EXISTS TAREA(\n"
@@ -130,7 +124,7 @@ public class GestorBD {
 	public void crearBBDDAsignatura() {
 		//Se abre la conexión y se obtiene el Statement
 		//Al abrir la conexión, si no existía el fichero, se crea la base de datos
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_ASIGNATURA);
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement stmt = con.createStatement()) {
 			
 	        String sql = "CREATE TABLE IF NOT EXISTS ASIGNATURA(\n"
@@ -156,7 +150,7 @@ public class GestorBD {
 	
 	public void borrarBBDDAlumno() {
 		//Se abre la conexión y se obtiene el Statement
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_ALUMNO);
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement stmt = con.createStatement()) {
 			
 	        String sql = "DROP TABLE IF EXISTS ALUMNO";
@@ -173,7 +167,7 @@ public class GestorBD {
 		
 		try {
 			//Se borra el fichero de la BBDD
-			Files.delete(Paths.get(DATABASE_FILE_ALUMNO));
+			Files.delete(Paths.get(DATABASE_FILE));
 			
 			log( Level.INFO,"Se ha borrado el fichero de la BD", null);
 		} catch (Exception ex) {
@@ -186,7 +180,7 @@ public class GestorBD {
 	
 	public void borrarBBDDProfesor() {
 		//Se abre la conexión y se obtiene el Statement
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_PROFESOR);
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement stmt = con.createStatement()) {
 			
 	        String sql = "DROP TABLE IF EXISTS PROFESOR";
@@ -204,7 +198,7 @@ public class GestorBD {
 		
 		try {
 			//Se borra el fichero de la BBDD
-			Files.delete(Paths.get(DATABASE_FILE_PROFESOR));
+			Files.delete(Paths.get(DATABASE_FILE));
 			log( Level.INFO,"Se ha borrado el fichero de la BBDD", null);
 		} catch (Exception ex) {
 		
@@ -216,7 +210,7 @@ public class GestorBD {
 	
 	public void borrarBBDDTarea() {
 		//Se abre la conexión y se obtiene el Statement
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_TAREA);
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement stmt = con.createStatement()) {
 			
 	        String sql = "DROP TABLE IF EXISTS TAREA";
@@ -234,7 +228,7 @@ public class GestorBD {
 		
 		try {
 			//Se borra el fichero de la BBDD
-			Files.delete(Paths.get(DATABASE_FILE_TAREA));
+			Files.delete(Paths.get(DATABASE_FILE));
 			log( Level.INFO,"Se ha borrado el fichero de la BBDD", null);
 		} catch (Exception ex) {
 		
@@ -246,7 +240,7 @@ public class GestorBD {
 	
 	public void borrarBBDDAsignatura() {
 		//Se abre la conexión y se obtiene el Statement
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_ASIGNATURA);
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement stmt = con.createStatement()) {
 			
 	        String sql = "DROP TABLE IF EXISTS ASIGNATURA";
@@ -264,7 +258,7 @@ public class GestorBD {
 		
 		try {
 			//Se borra el fichero de la BBDD
-			Files.delete(Paths.get(DATABASE_FILE_ASIGNATURA));
+			Files.delete(Paths.get(DATABASE_FILE));
 			log( Level.INFO,"Se ha borrado el fichero de la BBDD", null);
 		} catch (Exception ex) {
 		
@@ -278,7 +272,7 @@ public class GestorBD {
 	
 	public void insertarDatosAlumno(Alumno... alumno) {
 		//Se abre la conexión y se obtiene el Statement
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_ALUMNO);
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement stmt = con.createStatement()) {
 			//Se define la plantilla de la sentencia SQL
 			String sql = "INSERT INTO ALUMNO ( NOMBRE, APELLIDO, CONTRASEÑA, DIRECCION, EDAD, EMAIL, CURSO, NOMBRE_USUARIO) VALUES ( '%s', '%s', '%s', '%s', '%d','%s', '%s', '%s');";
@@ -306,7 +300,7 @@ public class GestorBD {
 	
 	public void insertarDatosProfesor(Profesor... profesor) {
 		//Se abre la conexión y se obtiene el Statement
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_PROFESOR);
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement stmt = con.createStatement()) {
 			//Se define la plantilla de la sentencia SQL
 			String sql = "INSERT INTO PROFESOR ( NOMBRE, APELLIDO, CONTRASEÑA, DIRECCION, EDAD, EMAIL, SALARIO, NOMBRE_USUARIO) VALUES ('%s', '%s', '%s', '%s', '%d','%s', '%f', '%s');";
@@ -333,7 +327,7 @@ public class GestorBD {
 	
 	public void insertarDatosTarea(Tarea... tarea) {
 		//Se abre la conexión y se obtiene el Statement
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_TAREA);
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement stmt = con.createStatement()) {
 			//Se define la plantilla de la sentencia SQL
 			String sql = "INSERT INTO TAREA ( NOMBRE, EMAIL, FECHA_FIN, CALIFICACION) VALUES ('%s', '%s', '%s'. '%d');";
@@ -359,7 +353,7 @@ public class GestorBD {
 	
 	public void insertarDatosAsignatura(Tarea... tarea) {
 		//Se abre la conexión y se obtiene el Statement
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_ASIGNATURA);
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement stmt = con.createStatement()) {
 			//Se define la plantilla de la sentencia SQL
 			String sql = "INSERT INTO ASIGNATURA ( NOMBRE, PROFESOR, ALUMNOS, TAREAS, CALIFICACION ) VALUES ('%s', '%s', '%s'. '%d');";
@@ -389,7 +383,7 @@ public class GestorBD {
 		ArrayList<Alumno> alumnos = new ArrayList<>();
 		
 		//Se abre la conexión y se obtiene el Statement
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_ALUMNO);
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement stmt = con.createStatement()) {
 			String sql = "SELECT * FROM ALUMNO WHERE ID >= 0";
 	//		System.out.println(sql);
@@ -435,7 +429,7 @@ public class GestorBD {
 		ArrayList<Profesor> profesores = new ArrayList<>();
 		
 		//Se abre la conexión y se obtiene el Statement
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_PROFESOR);
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement stmt = con.createStatement()) {
 			String sql = "SELECT * FROM PROFESOR WHERE ID >= 0";
 			
@@ -483,7 +477,7 @@ public class GestorBD {
 		ArrayList<Tarea> tareas = new ArrayList<>();
 		
 		//Se abre la conexión y se obtiene el Statement
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_PROFESOR);
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		    Statement stmt = con.createStatement()) {
 			String sql = "SELECT * FROM TAREA WHERE ID >= 0";
 			
@@ -525,7 +519,7 @@ public class GestorBD {
 		ArrayList<Asignatura> asignaturas = new ArrayList<>();
 		
 		//Se abre la conexión y se obtiene el Statement
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_ASIGNATURA);
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		    Statement stmt = con.createStatement()) {
 			String sql = "SELECT * FROM ASIGNATURA WHERE ID >= 0";
 			
@@ -565,7 +559,7 @@ public class GestorBD {
 
 	public void borrarDatosAlumnos() {
 		//Se abre la conexión y se obtiene el Statement
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_ALUMNO);
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement stmt = con.createStatement()) {
 			//Se ejecuta la sentencia de borrado de datos
 			String sql = "DELETE FROM ALUMNO;";			
@@ -584,7 +578,7 @@ public class GestorBD {
 	
 	public void actualizarPasswordAlumno(Alumno alumno, String newPassword) {
 		//Se abre la conexiÃ³n y se obtiene el Statement
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_ALUMNO);
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement stmt = con.createStatement()) {
 			//Se ejecuta la sentencia de borrado de datos
 			String sql = "UPDATE ALUMNO SET CONTRASEÑA = '%s' WHERE ID = %d;";
@@ -603,7 +597,7 @@ public class GestorBD {
 	}
 	public void actualizarPaswordProfesor(Profesor profesor, String newPassword) {
 		//Se abre la conexiÃ³n y se obtiene el Statement
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_PROFESOR);
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement stmt = con.createStatement()) {
 			//Se ejecuta la sentencia de borrado de datos
 			String sql = "UPDATE PROFESOR SET CONTRASEÑA = '%s' WHERE ID = %d;";
@@ -621,7 +615,7 @@ public class GestorBD {
 	
 	public void actualizarAlumno(Alumno alumno, String newNombre, String newApellido, String newEmail, String newDirection, String newNombreUsuario, String newContraseña) {
 		//Se abre la conexion y obtenemos el statement
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_ALUMNO);
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 			 Statement stmt = con.createStatement()){
 			//Se ejecuta la sentencia de actualizar datos
 			String sql = "UPDATE ALUMNO SET NOMBRE = '%s', APELLIDO = '%s', EMAIL = '%s', DIRECCION = '%s', NOMBRE_USUARIO = '%s', CONTRASEÑA = '%s' WHERE ID = %d;";
@@ -637,7 +631,7 @@ public class GestorBD {
 	
 	public void actualizarProfesor(Profesor profesor, String newNombre, String newApellido, String newEmail, String newDirection, String newNombreUsuario, String newContraseña) {
 		//Se abre la conexion y obtenemos el statement
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_PROFESOR);
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 			 Statement stmt = con.createStatement()){
 			//Se ejecuta la sentencia de actualizar datos
 			String sql = "UPDATE PROFESOR SET NOMBRE = '%s', APELLIDO = '%s', EMAIL = '%s', DIRECCION = '%s', NOMBRE_USUARIO = '%s', CONTRASEÑA = '%s' WHERE ID = %d;";
@@ -652,7 +646,7 @@ public class GestorBD {
 	}
 	public void borrarDatosProfesores() {
 		//Se abre la conexión y se obtiene el Statement
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING_PROFESOR);
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement stmt = con.createStatement()) {
 			//Se ejecuta la sentencia de borrado de datos
 			String sql = "DELETE FROM PROFESOR;";			
