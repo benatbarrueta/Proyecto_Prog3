@@ -430,3 +430,275 @@
   <message>Se ha actulizado los datos de 1alumno</message>
 </record>
 </log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-28T18:36:16.214774100Z</date>
+  <millis>1672252576214</millis>
+  <nanos>774100</nanos>
+  <sequence>0</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se ha creado la tabla profesor</message>
+</record>
+<record>
+  <date>2022-12-28T18:36:16.236651700Z</date>
+  <millis>1672252576236</millis>
+  <nanos>651700</nanos>
+  <sequence>1</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se ha creado la tabla alumno</message>
+</record>
+<record>
+  <date>2022-12-28T18:36:16.238647200Z</date>
+  <millis>1672252576238</millis>
+  <nanos>647200</nanos>
+  <sequence>2</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se ha creado la tabla tarea</message>
+</record>
+<record>
+  <date>2022-12-28T18:36:16.239643600Z</date>
+  <millis>1672252576239</millis>
+  <nanos>643600</nanos>
+  <sequence>3</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se ha creado la tabla asignatura</message>
+</record>
+<record>
+  <date>2022-12-28T18:36:16.246624Z</date>
+  <millis>1672252576246</millis>
+  <nanos>624000</nanos>
+  <sequence>4</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado profesores</message>
+</record>
+<record>
+  <date>2022-12-28T18:36:16.249616400Z</date>
+  <millis>1672252576249</millis>
+  <nanos>616400</nanos>
+  <sequence>5</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado alunos</message>
+</record>
+<record>
+  <date>2022-12-28T18:36:16.251647400Z</date>
+  <millis>1672252576251</millis>
+  <nanos>647400</nanos>
+  <sequence>6</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Insertando alumnos...</message>
+</record>
+<record>
+  <date>2022-12-28T18:36:16.253606700Z</date>
+  <millis>1672252576253</millis>
+  <nanos>606700</nanos>
+  <sequence>7</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Insertando profesores...</message>
+</record>
+<record>
+  <date>2022-12-28T18:36:16.256597800Z</date>
+  <millis>1672252576256</millis>
+  <nanos>597800</nanos>
+  <sequence>8</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado alunos</message>
+</record>
+<record>
+  <date>2022-12-28T18:36:16.258627900Z</date>
+  <millis>1672252576258</millis>
+  <nanos>627900</nanos>
+  <sequence>9</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado profesores</message>
+</record>
+<record>
+  <date>2022-12-28T18:36:19.166036600Z</date>
+  <millis>1672252579166</millis>
+  <nanos>36600</nanos>
+  <sequence>10</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Se han recuperado alunos</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-28T18:36:33.026880600Z</date>
+  <millis>1672252593026</millis>
+  <nanos>880600</nanos>
+  <sequence>0</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se ha creado la tabla profesor</message>
+</record>
+<record>
+  <date>2022-12-28T18:36:33.047957900Z</date>
+  <millis>1672252593047</millis>
+  <nanos>957900</nanos>
+  <sequence>1</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se ha creado la tabla alumno</message>
+</record>
+<record>
+  <date>2022-12-28T18:36:33.049973700Z</date>
+  <millis>1672252593049</millis>
+  <nanos>973700</nanos>
+  <sequence>2</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se ha creado la tabla tarea</message>
+</record>
+<record>
+  <date>2022-12-28T18:36:33.051972500Z</date>
+  <millis>1672252593051</millis>
+  <nanos>972500</nanos>
+  <sequence>3</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se ha creado la tabla asignatura</message>
+</record>
+<record>
+  <date>2022-12-28T18:36:33.058930900Z</date>
+  <millis>1672252593058</millis>
+  <nanos>930900</nanos>
+  <sequence>4</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado profesores</message>
+</record>
+<record>
+  <date>2022-12-28T18:36:33.060923800Z</date>
+  <millis>1672252593060</millis>
+  <nanos>923800</nanos>
+  <sequence>5</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado alunos</message>
+</record>
+<record>
+  <date>2022-12-28T18:36:33.062917900Z</date>
+  <millis>1672252593062</millis>
+  <nanos>917900</nanos>
+  <sequence>6</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Insertando alumnos...</message>
+</record>
+<record>
+  <date>2022-12-28T18:36:33.063916Z</date>
+  <millis>1672252593063</millis>
+  <nanos>916000</nanos>
+  <sequence>7</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Insertando profesores...</message>
+</record>
+<record>
+  <date>2022-12-28T18:36:33.066940800Z</date>
+  <millis>1672252593066</millis>
+  <nanos>940800</nanos>
+  <sequence>8</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado alunos</message>
+</record>
+<record>
+  <date>2022-12-28T18:36:33.068901800Z</date>
+  <millis>1672252593068</millis>
+  <nanos>901800</nanos>
+  <sequence>9</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado profesores</message>
+</record>
+<record>
+  <date>2022-12-28T18:36:35.669326800Z</date>
+  <millis>1672252595669</millis>
+  <nanos>326800</nanos>
+  <sequence>10</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Se han recuperado alunos</message>
+</record>
+</log>

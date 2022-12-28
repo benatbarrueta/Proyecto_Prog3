@@ -91,17 +91,19 @@ public class VentanaAsignatura extends JFrame{
 				}
 				label.setBackground(Color.WHITE);
 				
-				if(isSelected) {
+				if(isSelected) { 
 					label.setBackground(Color.CYAN);
 				}
 				
+			
+	if (column==2) {
 
-				if (listaTarea.get(row).getCalificacion() < 5 && listaTarea.get(row).getCalificacion() > 0) {
+				if (value.toString().equals("SUSPENDIDO")) {
 					label.setForeground(Color.RED);
-				} else if (listaTarea.get(row).getCalificacion() < 0) {
+				} else if (value.toString().equals("SIN CALIFICAR")) {
 					label.setForeground(Color.GRAY);
 				}
-				
+	}
 				//Es necesaria esta sentencia para pintar correctamente el color de fondo
 				label.setOpaque(true);
 				
@@ -267,8 +269,11 @@ public class VentanaAsignatura extends JFrame{
 		
 		this.setTitle(asignatura.getNombre());
 		this.setSize(600, 400);
-		this.setVisible(true);
+		this.setVisible(true); 
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+
+		
+		
 
 		this.addWindowListener(new WindowAdapter() {
 			
