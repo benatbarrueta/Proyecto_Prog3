@@ -11,17 +11,17 @@ import clases.*;
 
 
 public class VentanaLogIn extends JFrame {
-
+	protected JPasswordField textoContrasena;
 	protected JTextField textoUsuario;
-	protected JTextField textoContrasena;
+
 	protected JLabel usuario;
 	protected JLabel contrasena;
 	protected JButton botoncontinuar;
 	protected JButton botonregistrarse;
 	protected JComboBox comboTipo;
-	protected String contrasenaContenido = "";
+
 	protected boolean sesion=false;
-	protected String texto = "";
+
 
 	public VentanaLogIn (Gestor gestor) {
 		
@@ -31,7 +31,7 @@ public class VentanaLogIn extends JFrame {
 		center.setLayout(new GridLayout(3,1));
 		usuario=new JLabel("Usuario");
 		contrasena= new JLabel("Contraseña");
-		textoContrasena = new JTextField();
+		textoContrasena = new JPasswordField();
 		textoUsuario = new JTextField();
 		comboTipo = new JComboBox(Tipo.values());
 		botoncontinuar = new  JButton("Continuar");
@@ -41,33 +41,11 @@ public class VentanaLogIn extends JFrame {
 			
 			@Override
 			public void keyReleased(KeyEvent e) {
-				// TODO Auto-generated method stub
-				
-				if (e.getKeyCode() == 8) {
-					contrasenaContenido = contrasenaContenido.substring(0,contrasenaContenido.length()-1);
-					
-					texto = texto.substring(0,contrasenaContenido.length());
-					textoContrasena.setText(texto);
-					
-				}
-				else if (e.getKeyCode() == 10) {
+
+			 if (e.getKeyCode() == 10) {
 					botoncontinuar.doClick();
 				}
-				else if ((e.getKeyCode() > 47 && e.getKeyCode() < 58) || (e.getKeyCode() > 64 && e.getKeyCode() < 91) || (e.getKeyCode() == 0)) {
-					contrasenaContenido = contrasenaContenido + e.getKeyChar();
-					
-					texto = texto + "*";
-					
-//					textoContrasena.setText(texto);
-//					for (int i = 0; i < tamano; i++) {
-//						texto= texto  + "*";
-//					}
-					textoContrasena.setText(texto);
-
-				}
-				else {
-					textoContrasena.setText(texto);
-				}
+		
 			}
 		});
 		
@@ -78,18 +56,19 @@ public class VentanaLogIn extends JFrame {
 				
 				// TODO Auto-generated method stub
 				if (comboTipo.getSelectedItem() == Tipo.ALUMNO) {
+				
 					for (Alumno alumno : GestorBD.gestorBD.obtenerDatosAlumnos()) {
-						if(textoUsuario.getText().equals(alumno.getNombreUsuario())  && contrasenaContenido.equals(alumno.getContraseña())) {
+						if(textoUsuario.getText().equals(alumno.getNombreUsuario())  && textoContrasena.getText().equals(alumno.getContraseña())) {
 							VentanaAlud v = new VentanaAlud(alumno, "Alumno", gestor);
-							
+
 							dispose();
 						sesion=true;
 							break;
 							
 					}
-//					}
-//					if (textoUsuario.getText().equals(alumno.getNombreUsuario()) && !textoContrasena.getText().equals(alumno.getContraseña())) {
-//						JOptionPane.showMessageDialog(null, "La contraseña introducida es incorrecta");
+					
+//					else if (textoUsuario.getText().equals(alumno.getNombreUsuario()) && !textoContrasena.getText().equals(alumno.getContraseña())) {
+//					JOptionPane.showMessageDialog(null, "La contraseña introducida es incorrecta");
 //						textoUsuario.setText(alumno.getNombreUsuario());
 //						textoContrasena.setText("");
 //						
@@ -97,27 +76,29 @@ public class VentanaLogIn extends JFrame {
 //							JOptionPane.showMessageDialog(null, "El nombre de usuario introducido es incorrecta");
 //							textoUsuario.setText("");
 //						textoContrasena.setText(alumno.getContraseña());
-					
-							
-						
-							
-						}
-					if(!sesion==true) {
-					JOptionPane.showMessageDialog(null, "Los datos introducidos son incorrectos");
-					textoUsuario.setText("");
-					textoContrasena.setText("");
+//					
+//							
+//						
+//							
+//						}
+				
 					}
+					if(!sesion==true) {
+						JOptionPane.showMessageDialog(null, "Los datos introducidos son incorrectos");
+						textoUsuario.setText("");
+						textoContrasena.setText("");
+						}
 
 				} else {
 					for (Profesor profesor : GestorBD.gestorBD.obtenerDatosProfesor()) {
 						//System.out.println(profesor);
-						if(textoUsuario.getText().equals(profesor.getNombreUsuario()) && contrasenaContenido.equals(profesor.getContraseña())) {
+						if(textoUsuario.getText().equals(profesor.getNombreUsuario()) && textoContrasena.getText().equals(profesor.getContraseña())) {
 							VentanaAlud v = new VentanaAlud(profesor, "Profesor", gestor);
 							dispose();
 							sesion=true;
 							break;
 						}
-//						} else if (textoUsuario.getText().equals(profesor.getNombreUsuario()) && !textoContrasena.getText().equals(profesor.getContraseña())){
+//						 else if (textoUsuario.getText().equals(profesor.getNombreUsuario()) && !textoContrasena.getText().equals(profesor.getContraseña())){
 //							JOptionPane.showMessageDialog(null, "La contraseña introducida es incorrecta");
 //							textoUsuario.setText(profesor.getNombreUsuario());
 //							textoContrasena.setText("");
@@ -126,17 +107,15 @@ public class VentanaLogIn extends JFrame {
 //							JOptionPane.showMessageDialog(null, "El nombre de usuario introducido es incorrecta");
 //							textoUsuario.setText("");
 //							textoContrasena.setText(profesor.getContraseña());
-//						} else {
-							
-						}
-					if(!sesion==true) {
-					JOptionPane.showMessageDialog(null, "Los datos introducidos son erroneos");
-					textoUsuario.setText("");
-					textoContrasena.setText("");
-					}
-				}
+//						}
 				
-			}
+				}
+					if(!sesion==true) {
+						JOptionPane.showMessageDialog(null, "Los datos introducidos son erroneos");
+						textoUsuario.setText("");
+						textoContrasena.setText("");
+						}
+				}}
 		});
 	
 		center.add(usuario);
@@ -145,7 +124,7 @@ public class VentanaLogIn extends JFrame {
 		center.add(textoContrasena);
 		center.add(comboTipo);
 		center.add(botoncontinuar);
-		//center.add(botonregistrarse);
+	
 		
 		cp.add(center, BorderLayout.CENTER);
 	
