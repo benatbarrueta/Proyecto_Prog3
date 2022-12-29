@@ -26,6 +26,7 @@ public class Gestor {
 	protected ArrayList<Profesor> profesor;
 	protected ArrayList<Asignatura> asignaturas;
 	protected ArrayList<Usuarios> usuarios;
+	protected static ArrayList<Tarea> tareas;
 	protected Properties properties;
 	public static final String PROPERTIES_FILE = "src/config/Properties";
 	public static final String INPUT_KEY_TAREA = "leerTarea";
@@ -33,12 +34,13 @@ public class Gestor {
 	public static final String KEY_ASIGNATURA = "guardarLeerAsgignatura";
 	
 	public Gestor(ArrayList<Alumno> alumnos, ArrayList<Profesor> profesor, ArrayList<Asignatura> asignaturas,
-			ArrayList<Usuarios> usuarios) {
+			ArrayList<Usuarios> usuarios, ArrayList<Tarea> tareas) {
 		super();
 		this.alumnos = alumnos;
 		this.profesor = profesor;
 		this.asignaturas = asignaturas;
 		this.usuarios = usuarios;
+		this.tareas = tareas;
 		
 	}
 	public Gestor() {
@@ -47,6 +49,7 @@ public class Gestor {
 		this.profesor = new ArrayList<Profesor>();
 		this.asignaturas = new ArrayList<Asignatura>();
 		this.usuarios = new ArrayList<Usuarios>();
+		this.tareas = new ArrayList<Tarea>();
 		
 	}
 	public ArrayList<Alumno> getAlumnos() {
@@ -58,18 +61,20 @@ public class Gestor {
 	public ArrayList<Profesor> getProfesor() {
 		return profesor;
 	}
-	public ArrayList<Asignatura> getAsignatura() { 
-		return asignaturas;
-	}
 	public void setProfesor(ArrayList<Profesor> profesor) {
 		this.profesor = profesor;
+	}
+	public ArrayList<Asignatura> getAsignatura() { 
+		return asignaturas;
 	}
 	public void setAsignatura(ArrayList<Asignatura> asignatura) {
 		this.asignaturas = asignatura;
 	}
-	public void leerUsuarios(String fichero){
-			
-		
+	public ArrayList<Tarea> getTareas() {
+		return tareas;
+	}
+	public void setTareas(ArrayList<Tarea> tareas) {
+		this.tareas = tareas;
 	}
 	
 	public  static Properties loadProperties() {
@@ -85,7 +90,7 @@ public class Gestor {
 		}
 
 		return properties;
-		}
+	}
 	
 	
 	public void leerTareasCSV(String filename) {
@@ -99,7 +104,7 @@ public class Gestor {
 			
 			in.readLine(); // Saltar linea cabezera
 			while((linea = in.readLine())!= null) {
-				tokenizer= new StringTokenizer(linea,";");
+				tokenizer= new StringTokenizer(linea,"/n");
 			
 				tarea= new Tarea();
 				tarea.setEmailAlumno(tokenizer.nextToken());
@@ -112,7 +117,10 @@ public class Gestor {
 						a.getTareas().add(tarea);
 					}
 				}
-				
+				tareas = new ArrayList<Tarea>();
+				if (!tareas.contains(tarea) && tareas != null) {
+					tareas.add(tarea);
+				}
 				
 			}
 			//System.out.println(tareas);
@@ -125,6 +133,7 @@ public class Gestor {
 		}
 
 	}
+	
 	public void guardarTareaCSV(String filename) {
 	 
 	try  {	 	  	   
@@ -167,10 +176,6 @@ public class Gestor {
 		}
 	}
 
-	
-	
-
-		
 		
 	public void leerAsignaturasBinario(String filename) {
 		try {
@@ -266,10 +271,12 @@ public class Gestor {
 				gestor.alumnos.add(alumno);
 			}
 		}
-		//INSERTAS ALUMNOS Y PROFESORES EN LAS TABLAS DE DATOS 
+		//INSERTAS DATOS EN LAS TABLAS
 		GestorBD.gestorBD.insertarDatosAlumno(gestor.alumnos.toArray(new Alumno[gestor.alumnos.size()]));
 		GestorBD.gestorBD.insertarDatosProfesor(gestor.profesor.toArray(new Profesor[gestor.profesor.size()]));
-
+		//GestorBD.gestorBD.insertarDatosTarea(gestor.tareas.toArray(new Tarea[gestor.tareas.size()]));
+		System.out.println(tareas);
+		
 		// VENTANAS
 		
 		//System.out.println(GestorBD.gestorBD.obtenerDatosProfesor());

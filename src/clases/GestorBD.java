@@ -330,13 +330,13 @@ public class GestorBD {
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement stmt = con.createStatement()) {
 			//Se define la plantilla de la sentencia SQL
-			String sql = "INSERT INTO TAREA ( NOMBRE, EMAIL, FECHA_FIN, CALIFICACION) VALUES ('%s', '%s', '%s'. '%d');";
+			String sql = "INSERT INTO TAREA ( NOMBRE, EMAIL, FECHA_FIN, CALIFICACION) VALUES ('%s', '%s', '%s', '%s');";
 			
 		
 			log( Level.INFO, "Insertando tareas...", null);
 			//Se recorren las tareas y se insertan uno a uno
 			for (Tarea t : tarea) {
-				if (1 == stmt.executeUpdate(String.format(sql, t.getNombre(), t.getEmailAlumno(), t.getFecha_fin(), t.getCalificacion()))) {					
+				if (1 == stmt.executeUpdate(String.format(sql, t.getNombre(), t.getEmailAlumno(), t.getFecha_fin(), "" + t.getCalificacion()))) {					
 
 					log( Level.INFO, "Tarea insertada "+ t.toString(), null);
 				} else {
@@ -356,18 +356,18 @@ public class GestorBD {
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement stmt = con.createStatement()) {
 			//Se define la plantilla de la sentencia SQL
-			String sql = "INSERT INTO ASIGNATURA ( NOMBRE, PROFESOR, ALUMNOS, TAREAS, CALIFICACION ) VALUES ('%s', '%s', '%s'. '%d');";
+			String sql = "INSERT INTO ASIGNATURA ( NOMBRE, PROFESOR, ALUMNO, TAREA, CALIFICACION ) VALUES ('%s', '%s', '%s'. '%d');";
 			
 		
 			log( Level.INFO, "Insertando asignaturas...", null);
-			//Se recorren las tareas y se insertan uno a uno
+			//Se recorren las asignaturas y se insertan uno a uno
 			for (Tarea t : tarea) {
 				if (1 == stmt.executeUpdate(String.format(sql, t.getNombre(), t.getEmailAlumno(), t.getFecha_fin(), t.getCalificacion()))) {					
 
 					log( Level.INFO, "Asignatura insertada "+ t.toString(), null);
 				} else {
 					
-					log( Level.INFO, "No se ha insertado el profesor "+t.toString(), null);
+					log( Level.INFO, "No se ha insertado el profesor " + t.toString(), null);
 				}
 			}			
 		} catch (Exception ex) {
