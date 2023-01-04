@@ -2,6 +2,8 @@ package ventanas;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 import clases.*;
 
@@ -15,6 +17,9 @@ public class VentanaAlud extends JFrame {
 	protected int contasig = 0;
 	
 	protected JButton cerrar_sesion;
+	
+	protected JButton mostrar_tareas;
+	
 	public VentanaAlud (Object objeto, String tipo, Gestor gestor) {
 			
 		Container cp = this.getContentPane();
@@ -141,11 +146,33 @@ public class VentanaAlud extends JFrame {
 				
 			}
 		});
-		
+	
 		sur.add(cerrar_sesion);
 		sur.add(new JLabel(""));
-		sur.add(new JLabel(""));
+		
+	mostrar_tareas = new JButton("Mostrar Tareas");
+		
 	
+	if (tipo == "Alumno") {
+		
+		Alumno alumno = (Alumno) objeto;
+		mostrar_tareas.addActionListener(new ActionListener() {
+			public HashMap<String, ArrayList<Tarea>> todas_tareas = new HashMap<>();
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				for (Asignatura asig : gestor.getAsignatura()) {
+					if (("" + asig.getAlumnos()).contains("" + alumno)) {
+						
+						
+					}
+				}
+				
+			}
+		});
+		sur.add(mostrar_tareas);
+	}else {
+		sur.add(new JLabel(""));
+	}
 		//
 		
 		this.setSize(600, 400);

@@ -271,7 +271,10 @@ public class VentanaAsignatura extends JFrame{
 		this.setSize(600, 400);
 		this.setVisible(true); 
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-
+		tareaLista.getColumnModel().getColumn(0).setCellRenderer(renderSencillo);
+		tareaLista.getColumnModel().getColumn(1).setCellRenderer(renderSencillo);
+		tareaLista.getColumnModel().getColumn(2).setCellRenderer(renderSencillo);
+		tareaLista.getColumnModel().getColumn(3).setCellRenderer(renderSencillo);
 		
 		
 
@@ -279,10 +282,7 @@ public class VentanaAsignatura extends JFrame{
 			
 			@Override
 			public void windowOpened(WindowEvent e) {
-				tareaLista.getColumnModel().getColumn(0).setCellRenderer(renderSencillo);
-				tareaLista.getColumnModel().getColumn(1).setCellRenderer(renderSencillo);
-				tareaLista.getColumnModel().getColumn(2).setCellRenderer(renderSencillo);
-				tareaLista.getColumnModel().getColumn(3).setCellRenderer(renderSencillo);
+				
 				if (modeloTareaLista.getColumnCount()>4) {
 					tareaLista.getColumnModel().getColumn(4).setCellRenderer(renderSencillo);
 				}
