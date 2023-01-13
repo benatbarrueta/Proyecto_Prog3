@@ -96,7 +96,7 @@ public class Gestor {
 	
 	public void leerTareasCSV(String filename) {
 
-	
+	/*
 		try (BufferedReader in = new BufferedReader(new FileReader(filename))){
 		
 			String linea;
@@ -133,25 +133,25 @@ public class Gestor {
 			ex.printStackTrace();
 		}
 
-	}
+	}*/
 	
 	public void guardarTareaCSV(String filename) {
 	 
-	try  {	 	  	   
+/*	try  {	 	  	   
 		//System.out.println(filename);
 	     PrintWriter pw = new PrintWriter(filename);
 	     pw.println("Email Alumno" + ";" +"Nombre" + ";" + "Fecha" +";" + "Calificacion" + ";" + "Asignatura");
 	     
-	     for (Asignatura a : asignaturas) {
-			for (Tarea tarea : a.getTareas()) {
-	    	 pw.println(
-	    			 tarea.getEmailAlumno() + ";" + tarea.getNombre() + ";" + tarea.getFecha_fin()+ ";" +tarea.getCalificacion() +";" + a.nombre + ";"
-	    			 );		
-			}
+//	     for (Asignatura a : asignaturas) {
+//			for (Tarea tarea : a.getTareas()) {
+	//    	 pw.println(
+	//    			 tarea.getEmailAlumno() + ";" + tarea.getNombre() + ";" + tarea.getFecha_fin()+ ";" +tarea.getCalificacion() +";" + a.nombre + ";"
+	//    			 );		
+	//		}
 		}
 	     
 	     
-	    pw.close(); 
+	 //   pw.close(); 
 	     
 	} catch (Exception e) {
 		System.err.println(String.format("Error en el main: %s", e.getMessage()));
@@ -200,11 +200,11 @@ public class Gestor {
 	Asignatura	asignatura;
 		for (int i = 0; i < 10; i++) {
 			String name = "asignatura" +i;
-			asignatura=new Asignatura(name,new Profesor(),new ArrayList<Alumno>(),new ArrayList<Tarea>(),i);
-			asignaturas.add(asignatura);
+/*			asignatura=new Asignatura(name,new Profesor(),new ArrayList<Alumno>(),new ArrayList<Tarea>(),i);*/
+	//		asignaturas.add(asignatura);
 		}
 		//System.out.println(asignaturas);
-	}
+	//}
 	public ArrayList<Usuarios> initUsuarios() {
 		Usuarios	usuario;
 			for (int i = 0; i < 10; i++) {
@@ -222,7 +222,7 @@ public class Gestor {
 		
 		Gestor gestor= new Gestor();
 		Properties properties = loadProperties();
-		gestor.CrearAsignaturas();
+	//	gestor.CrearAsignaturas();
 		gestor.leerTareasCSV(properties.getProperty(INPUT_KEY_TAREA ));
 		gestor.guardarTareaCSV(properties.getProperty(OUTPUT_KEY_TAREA ));
 		
@@ -263,7 +263,7 @@ public class Gestor {
 			
 			Profesor profesor = new Profesor("Borja", "OM", 5, "DIR","NU","", 0);
 			gestor.profesor.add(profesor);
-		}
+	/*	}
 		if (alumnos.size() == 0) {
 			for (int i = 0; i < 5; i++) {
 				Alumno alumno= new Alumno("Alumno", "" + i, i*10, "", "Alumno"+i, "1", "PRIMERO");
@@ -272,7 +272,7 @@ public class Gestor {
 				
 				gestor.alumnos.add(alumno);
 			}
-		}
+		}*/
 		//INSERTAS DATOS EN LAS TABLAS
 		GestorBD.gestorBD.insertarDatosAlumno(gestor.alumnos.toArray(new Alumno[gestor.alumnos.size()]));
 		GestorBD.gestorBD.insertarDatosProfesor(gestor.profesor.toArray(new Profesor[gestor.profesor.size()]));
@@ -285,9 +285,9 @@ public class Gestor {
 		gestor.alumnos=GestorBD.gestorBD.obtenerDatosAlumnos();
         gestor.profesor= GestorBD.gestorBD.obtenerDatosProfesor();
         
-        for (int i = 0; i < gestor.asignaturas.size(); i++) {
+ /*       for (int i = 0; i < gestor.asignaturas.size(); i++) {
         	gestor.asignaturas.get(i).setProfesor(gestor.profesor.get(0));
-		}
+		}*/
         
 /*		gestor.asignaturas.get(0).getAlumnos().add(alumnos.get(0));
 		gestor.asignaturas.get(1).getAlumnos().add(alumnos.get(0));
@@ -313,3 +313,5 @@ public class Gestor {
 
 	
 }
+	
+	}
