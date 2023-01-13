@@ -38,7 +38,7 @@ public class GestorBD {
 	}
 		
 	// CREACION TABLAS
-	
+	/*
 	public void crearBBDDAlumno() {
 		//Se abre la conexión y se obtiene el Statement
 		//Al abrir la conexión, si no existía el fichero, se crea la base de datos
@@ -145,7 +145,7 @@ public class GestorBD {
 			ex.printStackTrace();			
 		}
 	}
-	
+	*/
 	// FUNCIONES BORRADO
 	
 	public void borrarBBDDAlumno() {
