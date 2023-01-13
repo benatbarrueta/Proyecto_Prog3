@@ -303,13 +303,13 @@ public class GestorBD {
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement stmt = con.createStatement()) {
 			//Se define la plantilla de la sentencia SQL
-			String sql = "INSERT INTO PROFESOR ( NOMBRE, APELLIDO, CONTRASEÑA, DIRECCION, EDAD, EMAIL, SALARIO, NOMBRE_USUARIO) VALUES ('%s', '%s', '%s', '%s', '%d','%s', '%f', '%s');";
+			String sql = "INSERT INTO PROFESOR ( ID, NOMBRE, APELLIDO, CONTRASEÑA, DIRECCION, EDAD, EMAIL, SALARIO, NOMBRE_USUARIO) VALUES ('%d','%s', '%s', '%s', '%s', '%d','%s', '%d', '%s');";
 			
 		
 			log( Level.INFO, "Insertando profesores...", null);
 			//Se recorren los profesores y se insertan uno a uno
 			for (Profesor c : profesor) {
-				if (1 == stmt.executeUpdate(String.format(sql, c.getNombre(), c.getApellidos(), c.getContraseña(), c.getDireccion(),  c.getEdad(), c.getEmail(), c.getSalario(), c.getNombreUsuario()))) {					
+				if (1 == stmt.executeUpdate(String.format(sql,c.getId(), c.getNombre(), c.getApellidos(), c.getContraseña(), c.getDireccion(),  c.getEdad(), c.getEmail(), c.getSalario(), c.getNombreUsuario()))) {					
 					//System.out.println(String.format(" - Profesor insertado: %s", c.toString()));
 
 					log( Level.INFO, "Profesor insertado "+c.toString(), null);
