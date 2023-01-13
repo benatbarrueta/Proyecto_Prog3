@@ -351,23 +351,23 @@ public class GestorBD {
 		}				
 	}
 	
-	public void insertarDatosAsignatura(Tarea... tarea) {
+	public void insertarDatosAsignatura(Asignatura... asignatura) {
 		//Se abre la conexión y se obtiene el Statement
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement stmt = con.createStatement()) {
 			//Se define la plantilla de la sentencia SQL
-			String sql = "INSERT INTO ASIGNATURA ( ID, NOMBRE, FECHA_INI , CALIFICACION, ID_ASIGNATURA, ID_ALUMNO ) VALUES ('%s', '%s', '%s'. '%d');";
+			String sql = "INSERT INTO ASIGNATURA ( ID, NOMBRE, ID_PROFESOR) VALUES ('%d', '%s', '%d');";
 			
 		
 			log( Level.INFO, "Insertando asignaturas...", null);
 			//Se recorren las asignaturas y se insertan uno a uno
-			for (Tarea t : tarea) {
-				if (1 == stmt.executeUpdate(String.format(sql, t.getNombre(), t.getEmailAlumno(), t.getFecha_fin(), t.getCalificacion()))) {					
+			for (Asignatura a : asignatura) {
+				if (1 == stmt.executeUpdate(String.format(sql, a.getId(), a.getNombre(), a.getId_profesor()))) {					
 
-					log( Level.INFO, "Asignatura insertada "+ t.toString(), null);
+					log( Level.INFO, "Asignatura insertada ", null);
 				} else {
 					
-					log( Level.INFO, "No se ha insertado el profesor " + t.toString(), null);
+					log( Level.INFO, "No se ha insertado el profesor ", null);
 				}
 			}			
 		} catch (Exception ex) {
