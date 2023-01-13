@@ -19,7 +19,7 @@ import java.sql.*;
 public class GestorBD {
 
 	protected static final String DRIVER_NAME = "lib/sqlite-jdbc";
-	protected static final String DATABASE_FILE = "db/bd.db.sql";
+	protected static final String DATABASE_FILE = "db/database.db";
 	protected static final String CONNECTION_STRING= "jdbc:sqlite:" + DATABASE_FILE;
 
 	private Logger logger = null;
