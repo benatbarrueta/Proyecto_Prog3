@@ -97,7 +97,7 @@ public class Gestor {
 	
 	public ArrayList<Tarea> leerTareasCSV(String filename) {
 		
-		try (BufferedReader in = new BufferedReader(new FileReader("usuarios.csv"))){
+		try (BufferedReader in = new BufferedReader(new FileReader("tareas.csv"))){
 			String linea;
 			StringTokenizer tokenizer;
 			Tarea tarea;
@@ -128,7 +128,7 @@ public class Gestor {
 	}
 	public void guardarTareaCSV(ArrayList<Tarea> tareas) throws FileNotFoundException {
 		
-	PrintWriter pw = new PrintWriter("equipos.csv");
+	PrintWriter pw = new PrintWriter("tareas.csv");
 		
 	pw.println("ID;NOMBRE;FECHA_FIN;CONTRASEÑA;CALIFICACION;ID_ASIGNATURA;ID_ALUMNO");
 		
@@ -147,7 +147,7 @@ public class Gestor {
 	}
 	}
 	public ArrayList<Alumno> leerAlumnosCSV(String filename) {
-		try (BufferedReader in = new BufferedReader(new FileReader("usuarios.csv"))){
+		try (BufferedReader in = new BufferedReader(new FileReader("alumnos.csv"))){
 			String linea;
 			StringTokenizer tokenizer;
 			Alumno alumno;
@@ -180,7 +180,7 @@ public class Gestor {
 		return alumnos;
 	}
 	public void guardarAlumnosCSV(ArrayList<Alumno> alumnos) throws FileNotFoundException {
-		PrintWriter pw = new PrintWriter("equipos.csv");
+		PrintWriter pw = new PrintWriter("alumnos.csv");
 		
 		pw.println("ID;NOMBRE;APELLIDO;CONTRASEÑA;DIRECCION;EDAD;EMAIL;CURSO;NOMBRE_USUARIO");
 			
@@ -203,7 +203,7 @@ public class Gestor {
 	}
 	public ArrayList<Estudia> leerEstudiaCSV(String filename) {
 		ArrayList<Estudia> estudias = null;
-		try (BufferedReader in = new BufferedReader(new FileReader("usuarios.csv"))){
+		try (BufferedReader in = new BufferedReader(new FileReader("estudia.csv"))){
 			String linea;
 			StringTokenizer tokenizer;
 			Estudia estudia;
@@ -232,7 +232,7 @@ public class Gestor {
 		return estudias;
 	}
 	public void guardarEstudiaCSV(ArrayList<Estudia> estudias) throws FileNotFoundException {
-	PrintWriter pw = new PrintWriter("equipos.csv");
+	PrintWriter pw = new PrintWriter("estudia.csv");
 		
 		pw.println("ID_ALUMNO;ID_ASIGNATURA");
 			
@@ -248,7 +248,7 @@ public class Gestor {
 	}
 	public ArrayList<Profesor> leerProfesorCSV(String filename) {
 		ArrayList<Profesor> profesores = null;
-		try (BufferedReader in = new BufferedReader(new FileReader("usuarios.csv"))){
+		try (BufferedReader in = new BufferedReader(new FileReader("profesores.csv"))){
 			String linea;
 			StringTokenizer tokenizer;
 			Profesor profesor;
@@ -281,7 +281,7 @@ public class Gestor {
 		return profesores;
 	}
 	public void guardarProfesorCSV(ArrayList<Profesor> profesores) throws FileNotFoundException {
-	PrintWriter pw = new PrintWriter("equipos.csv");
+	PrintWriter pw = new PrintWriter("profesores.csv");
 		
 		pw.println("ID;NOMBRE;APELLIDO;CONTRASEÑA;DIRECCION;EDAD;EMAIL;SALARIO;NOMBRE_USUARIO");
 			
@@ -305,7 +305,7 @@ public class Gestor {
 	}
 	public ArrayList<Asignatura> leerAsignaturaCSV(String filename) {
 		ArrayList<Asignatura> asignaturas = null;
-		try (BufferedReader in = new BufferedReader(new FileReader("usuarios.csv"))){
+		try (BufferedReader in = new BufferedReader(new FileReader("asignaturas.csv"))){
 			String linea;
 			StringTokenizer tokenizer;
 			Asignatura asignatura;
@@ -332,7 +332,7 @@ public class Gestor {
 		return asignaturas;
 	}
 	public void guardarAsignaturaCSV(ArrayList<Asignatura> asignaturas) throws FileNotFoundException {
-PrintWriter pw = new PrintWriter("equipos.csv");
+PrintWriter pw = new PrintWriter("asignaturas.csv");
 		
 		pw.println("ID;NOMBRE;ID_PROFESOR");
 			
