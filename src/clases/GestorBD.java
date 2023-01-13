@@ -473,7 +473,7 @@ public class GestorBD {
 		return profesores;
 	}
 
-	public ArrayList<Tarea> obtenerDatosTareas() {
+	public ArrayList<Tarea> obtenerDatosTareas() { //DEBERIA FUNCIONAR
 		ArrayList<Tarea> tareas = new ArrayList<>();
 		
 		//Se abre la conexión y se obtiene el Statement
@@ -489,12 +489,12 @@ public class GestorBD {
 			//Se recorre el ResultSet y se crean objetos Cliente
 			while (rs.next()) {
 				tarea= new Tarea();
-				tarea.setId(Integer.parseInt(rs.getString("ID")));
+				tarea.setId(rs.getInt("ID"));
 				tarea.setNombre(rs.getString("NOMBRE"));
 				tarea.setFecha_fin(rs.getString("FECHA_FIN"));
-				tarea.setCalificacion(Integer.parseInt(rs.getString("CALIFICACION")));
-				tarea.setId_asignatura(Integer.parseInt(rs.getString("ID_ASIGNATURA")));
-				tarea.setId_alumna(Integer.parseInt(rs.getString("ID_ALUMNO")));
+				tarea.setCalificacion(rs.getInt("CALIFICACION"));
+				tarea.setId_asignatura(rs.getInt("ID_ASIGNATURA"));
+				tarea.setId_alumna(rs.getInt("ID_ALUMNO"));
 				//Se inserta cada nuevo cliente en la lista de clientes
 				tareas.add(tarea);
 			}
@@ -533,9 +533,7 @@ public class GestorBD {
 				asignatura = new Asignatura();
 				asignatura.setId(rs.getInt("ID"));
 				asignatura.setNombre(rs.getString("NOMBRE"));
-				asignatura.setAlumnos((ArrayList<Alumno>) rs.getArray("TAREAS"));
-				asignatura.setTareas((ArrayList<Tarea>) rs.getArray("TAREAS"));
-				asignatura.setCalificacion(rs.getDouble("CALIFICACION"));
+				asignatura.setNombre(rs.getString("ID_PROFESOR"));
 				
 				//Se inserta cada nuevo cliente en la lista de clientes
 				asignaturas.add(asignatura);
@@ -573,7 +571,7 @@ public class GestorBD {
 			ex.printStackTrace();						
 		}		
 	}	
-	
+	//ACTUALIZACIONES HAY QUE CAMBIAR TODAS
 	// ACTUALIZACION DE CONTRASEÑAS
 	
 	public void actualizarPasswordAlumno(Alumno alumno, String newPassword) {

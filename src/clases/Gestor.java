@@ -289,7 +289,7 @@ public class Gestor {
         	gestor.asignaturas.get(i).setProfesor(gestor.profesor.get(0));
 		}
         
-		gestor.asignaturas.get(0).getAlumnos().add(alumnos.get(0));
+/*		gestor.asignaturas.get(0).getAlumnos().add(alumnos.get(0));
 		gestor.asignaturas.get(1).getAlumnos().add(alumnos.get(0));
 		gestor.asignaturas.get(2).getAlumnos().add(alumnos.get(0));
 		gestor.asignaturas.get(3).getAlumnos().add(alumnos.get(0));
@@ -302,7 +302,7 @@ public class Gestor {
 		gestor.asignaturas.get(5).getAlumnos().add(alumnos.get(2));
 		gestor.asignaturas.get(1).getAlumnos().add(alumnos.get(3));
 		gestor.asignaturas.get(6).getAlumnos().add(alumnos.get(3));
-		gestor.asignaturas.get(7).getAlumnos().add(alumnos.get(3));
+		gestor.asignaturas.get(7).getAlumnos().add(alumnos.get(3));*/
         
 		VentanaLogIn v = new VentanaLogIn(gestor);
 		

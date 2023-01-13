@@ -5,85 +5,65 @@ import java.util.ArrayList;
 public class Asignatura {
 	// protected final String apuntes;
 	
+	protected int id;
 	protected String nombre;
-	protected Profesor profesor;
-	protected ArrayList<Alumno> alumnos;
-	protected ArrayList<Tarea> tareas;
-	protected double calificacion;
-	protected int id = -1;
+	protected int id_profesor;
+
 	
-	public Asignatura(String nombre, Profesor profesor, ArrayList<Alumno> alumnos, ArrayList<Tarea> tareas,
-			double calificacion) {
-		super();
-		this.nombre = nombre;
-		this.profesor = profesor;
-		this.alumnos = alumnos;
-		this.tareas = tareas;
-		this.calificacion = calificacion;
-	}
 	
 	public Asignatura() {
 		super();
+		this.id = 0;
 		this.nombre = "";
-		this.profesor = new Profesor();
-		this.alumnos = new ArrayList<Alumno>();
-		this.tareas = new ArrayList<Tarea>();
-		this.calificacion = 0;
+		this.id_profesor = 0;
 	}
+
+
+
+	public int getId() {
+		return id;
+	}
+
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
 
 	public String getNombre() {
 		return nombre;
 	}
 
+
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
-	public Profesor getProfesor() {
-		return profesor;
+
+
+	public int getId_profesor() {
+		return id_profesor;
 	}
 
-	public void setProfesor(Profesor profesor) {
-		this.profesor = profesor;
+
+
+	public void setId_profesor(int id_profesor) {
+		this.id_profesor = id_profesor;
 	}
 
-	public ArrayList<Alumno> getAlumnos() {
-		return alumnos;
-	}
 
-	public void setAlumnos(ArrayList<Alumno> alumnos) {
-		this.alumnos = alumnos;
-	}
-
-	public ArrayList<Tarea> getTareas() {
-		return tareas;
-	}
-
-	public void setTareas(ArrayList<Tarea> tareas) {
-		this.tareas = tareas;
-	}
-
-	public double getCalificacion() {
-		return calificacion;
-	}
-
-	public void setCalificacion(double calificacion) {
-		this.calificacion = calificacion;
-	}
-	
-	public int getId() {
-		return id;
-	}
-	
-	public void setId(int id) {
-		this.id = id;
-	}
 
 	@Override
 	public String toString() {
-		return "Nombre: " + nombre + ", profesor=" + profesor + ", alumnos=" + alumnos + ", tareas=" + tareas
-				+ ", calificacion=" + calificacion + "]";
+		return "Asignatura [id=" + id + ", nombre=" + nombre + ", id_profesor=" + id_profesor + "]";
 	}
+
+
+
+	
 	
 	
 	
