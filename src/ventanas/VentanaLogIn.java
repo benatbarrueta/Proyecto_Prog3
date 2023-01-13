@@ -23,7 +23,7 @@ public class VentanaLogIn extends JFrame {
 	protected boolean sesion=false;
 
 
-	public VentanaLogIn (Gestor gestor) {
+	public VentanaLogIn () {
 		
 		Container cp = this.getContentPane();
 	

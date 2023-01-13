@@ -19,7 +19,7 @@ import java.sql.*;
 public class GestorBD {
 
 	protected static final String DRIVER_NAME = "lib/sqlite-jdbc";
-	protected static final String DATABASE_FILE = "db/database.db";
+	protected static final String DATABASE_FILE = "db/s.db";
 	protected static final String CONNECTION_STRING= "jdbc:sqlite:" + DATABASE_FILE;
 
 	private Logger logger = null;
@@ -319,7 +319,7 @@ public class GestorBD {
 				}
 			}			
 		} catch (Exception ex) {
-		
+			System.out.println(ex);
 			log( Level.SEVERE,"Error al insertar datos en la  BBDD", ex);
 			ex.printStackTrace();						
 		}				
@@ -489,6 +489,7 @@ public class GestorBD {
 			
 			
 		} catch (Exception ex) {
+		
 			log( Level.SEVERE,"Error al obtener datos de la  BBDD", ex);
 		
 			ex.printStackTrace();						

@@ -366,8 +366,9 @@ PrintWriter pw = new PrintWriter("asignaturas.csv");
 		}
 	public static void main(String[] args) {
 		
-		Gestor gestor= new Gestor();
 		Properties properties = loadProperties();
+		GestorBD.gestorBD = new GestorBD();	
+	ArrayList<Estudia> a = GestorBD.gestorBD.obtenerDatosEstudia();
 	//	gestor.CrearAsignaturas();
 	//	gestor.leerTareasCSV(properties.getProperty(INPUT_KEY_TAREA ));
 	//	gestor.guardarTareaCSV(properties.getProperty(OUTPUT_KEY_TAREA ));
@@ -376,7 +377,7 @@ PrintWriter pw = new PrintWriter("asignaturas.csv");
 	
 		//CREAR BASE DE DATOS
 		
-		GestorBD.gestorBD = new GestorBD();	
+
 		//GestorBD.gestorBD.borrarBBDDAlumno();
 		//GestorBD.gestorBD.borrarBBDDProfesor();
 		/*
@@ -388,7 +389,7 @@ PrintWriter pw = new PrintWriter("asignaturas.csv");
 		
 		//CREAR PROFESORES, ALUMNOS, TAREAS Y ASIGNATURAS
 	//	ArrayList<Profesor> profesores = GestorBD.gestorBD.obtenerDatosProfesor();
-		ArrayList<Alumno> alumnos = GestorBD.gestorBD.obtenerDatosAlumnos();
+	
 		//ArrayList<Tarea> tareas = GestorBD.gestorBD.obtenerDatosTareas();
 		//ArrayList<Asignatura> asignaturas = GestorBD.gestorBD.obtenerDatosAsignaturas();
 		
@@ -420,7 +421,7 @@ PrintWriter pw = new PrintWriter("asignaturas.csv");
 			}
 		}*/
 		//INSERTAS DATOS EN LAS TABLAS
-		GestorBD.gestorBD.insertarDatosAlumno(gestor.alumnos.toArray(new Alumno[gestor.alumnos.size()]));
+	/*	GestorBD.gestorBD.insertarDatosAlumno(gestor.alumnos.toArray(new Alumno[gestor.alumnos.size()]));
 		GestorBD.gestorBD.insertarDatosProfesor(gestor.profesor.toArray(new Profesor[gestor.profesor.size()]));
 		//GestorBD.gestorBD.insertarDatosTarea(gestor.tareas.toArray(new Tarea[gestor.tareas.size()]));
 		System.out.println(tareas);
@@ -450,7 +451,7 @@ PrintWriter pw = new PrintWriter("asignaturas.csv");
 		gestor.asignaturas.get(6).getAlumnos().add(alumnos.get(3));
 		gestor.asignaturas.get(7).getAlumnos().add(alumnos.get(3));*/
         
-		VentanaLogIn v = new VentanaLogIn(gestor);
+		VentanaLogIn v = new VentanaLogIn();
 		
 
 
