@@ -100,4 +100,7 @@ public class Tarea {
 	public String toString() {
 		return "Tarea de " +id_alumna+ ": Nombre:" +nombre + ", Fecha fin:" + fecha_fin + ", Calificacion:" + calificacion ;
 	}
+
+
+
 }

@@ -356,7 +356,7 @@ public class GestorBD {
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement stmt = con.createStatement()) {
 			//Se define la plantilla de la sentencia SQL
-			String sql = "INSERT INTO ASIGNATURA ( NOMBRE, PROFESOR, ALUMNO, TAREA, CALIFICACION ) VALUES ('%s', '%s', '%s'. '%d');";
+			String sql = "INSERT INTO ASIGNATURA ( ID, NOMBRE, FECHA_INI , CALIFICACION, ID_ASIGNATURA, ID_ALUMNO ) VALUES ('%s', '%s', '%s'. '%d');";
 			
 		
 			log( Level.INFO, "Insertando asignaturas...", null);
