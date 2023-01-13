@@ -2,23 +2,25 @@ package clases;
 
 public class Alumno extends Usuarios {
 
-	protected String curso;
+	protected int curso;
 
-	public Alumno(String nombre, String apellidos, int edad, String direccion, String nombreUsuario, String contraseña, String curso) {
+	public Alumno(String nombre, String apellidos, int edad, String direccion, String nombreUsuario, String contraseña, int curso) {
 		super(nombre, apellidos, edad, direccion, nombreUsuario, contraseña);
 		this.curso = curso;
 	}
 
 	public Alumno() {
 		super();
-		this.curso = "Primero";
+		this.curso = 1;
 	}
 
-	public String getCurso() {
+	
+
+	public int getCurso() {
 		return curso;
 	}
 
-	public void setCurso(String curso) {
+	public void setCurso(int curso) {
 		this.curso = curso;
 	}
 

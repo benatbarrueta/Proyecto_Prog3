@@ -19,7 +19,7 @@ import java.sql.*;
 public class GestorBD {
 
 	protected static final String DRIVER_NAME = "lib/sqlite-jdbc";
-	protected static final String DATABASE_FILE = "db/database.db";
+	protected static final String DATABASE_FILE = "db/bd.db";
 	protected static final String CONNECTION_STRING= "jdbc:sqlite:" + DATABASE_FILE;
 
 	private Logger logger = null;
@@ -400,11 +400,11 @@ public class GestorBD {
 				alumno.setId(rs.getInt("ID"));
 				alumno.setNombre(rs.getString("NOMBRE"));
 				alumno.setApellidos(rs.getString("APELLIDO"));
-				alumno.setContraseña(rs.getInt("CONTRASEÑA"));
+				alumno.setContraseña(rs.getString("CONTRASEÑA"));
 				alumno.setDireccion(rs.getString("DIRECCION"));
 				alumno.setEdad(rs.getInt("EDAD"));
 				alumno.setEmail(rs.getString("EMAIL"));
-				alumno.setCurso(rs.getString("CURSO"));
+				alumno.setCurso(rs.getInt("CURSO"));
 				alumno.setNombreUsuario(rs.getString("NOMBRE_USUARIO"));
 			
 				
