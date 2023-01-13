@@ -233,11 +233,12 @@ public class Gestor {
 		GestorBD.gestorBD = new GestorBD();	
 		//GestorBD.gestorBD.borrarBBDDAlumno();
 		//GestorBD.gestorBD.borrarBBDDProfesor();
+		/*
 		GestorBD.gestorBD.crearBBDDProfesor();
 		GestorBD.gestorBD.crearBBDDAlumno();
 		GestorBD.gestorBD.crearBBDDTarea();
 		GestorBD.gestorBD.crearBBDDAsignatura();
-		
+		*/
 		
 		//CREAR PROFESORES, ALUMNOS, TAREAS Y ASIGNATURAS
 		ArrayList<Profesor> profesores = GestorBD.gestorBD.obtenerDatosProfesor();
