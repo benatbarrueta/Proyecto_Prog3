@@ -103,7 +103,7 @@ public class Gestor {
 			List<Tarea> tareas= new ArrayList<>();
 			in.readLine(); // Saltar linea cabezera
 			while((linea = in.readLine())!= null) {
-				tokenizer= new StringTokenizer(linea,",");
+				tokenizer= new StringTokenizer(linea,";");
 				tarea = new Tarea();
 				tarea.setId(Integer.parseInt(tokenizer.nextToken()));
 				tarea.setNombre(tokenizer.nextToken());
@@ -125,7 +125,34 @@ public class Gestor {
 		}
 		return tareas;
 	}
-	public void guardarTareaCSV(String filename) {}
+	public void guardarTareaCSV(ArrayList<Tarea> tareas) {
+		
+	PrintWriter pw = new PrintWriter("equipos.csv");
+		
+	pw.println("ID;NOMBRE;APELLIDO;CONTRASEÑA;DIRECCION;EDAD;EMAIL;SALARIO;NOMBRE_USUARIO");
+		
+		for (Tarea t : tareas) {
+
+			
+			pw.println(equipo.getNombre()
+					+";"+equipo.getPilotos().get(0).getNombrePiloto()
+					+";"+equipo.getPilotos().get(0).getMundialesGanados()
+					+";"+equipo.getPilotos().get(0).getPuntos()
+					+";"+equipo.getPilotos().get(0).getEdad()
+					+";"+equipo.getPilotos().get(1).getNombrePiloto()
+					+";"+equipo.getPilotos().get(1).getMundialesGanados()
+					+";"+equipo.getPilotos().get(1).getPuntos()
+					+";"+equipo.getPilotos().get(1).getEdad()
+					
+					
+					+";");
+						
+		
+		
+		pw.close();
+		
+	}
+	}
 	public ArrayList<Alumno> leerAlumnosCSV(String filename) {
 		try (BufferedReader in = new BufferedReader(new FileReader("usuarios.csv"))){
 			String linea;
@@ -134,7 +161,7 @@ public class Gestor {
 			List<Alumno> alumnos= new ArrayList<>();
 			in.readLine(); // Saltar linea cabezera
 			while((linea = in.readLine())!= null) {
-				tokenizer= new StringTokenizer(linea,",");
+				tokenizer= new StringTokenizer(linea,";");
 				alumno = new Alumno();
 				alumno.setId(Integer.parseInt(tokenizer.nextToken()));
 				alumno.setNombre(tokenizer.nextToken());
@@ -169,7 +196,7 @@ public class Gestor {
 			estudias= new ArrayList<Estudia>();
 			in.readLine(); // Saltar linea cabezera
 			while((linea = in.readLine())!= null) {
-				tokenizer= new StringTokenizer(linea,",");
+				tokenizer= new StringTokenizer(linea,";");
 				estudia = new Estudia();
 				estudia.setId_alumno(Integer.parseInt(tokenizer.nextToken()));
 				estudia.setId_asignatura(Integer.parseInt(tokenizer.nextToken()));
@@ -200,7 +227,7 @@ public class Gestor {
 			profesores= new ArrayList<>();
 			in.readLine(); // Saltar linea cabezera
 			while((linea = in.readLine())!= null) {
-				tokenizer= new StringTokenizer(linea,",");
+				tokenizer= new StringTokenizer(linea,";");
 				profesor = new Profesor();
 				profesor.setId(Integer.parseInt(tokenizer.nextToken()));
 				profesor.setNombre(tokenizer.nextToken());
@@ -235,7 +262,7 @@ public class Gestor {
 			asignaturas= new ArrayList<>();
 			in.readLine(); // Saltar linea cabezera
 			while((linea = in.readLine())!= null) {
-				tokenizer= new StringTokenizer(linea,",");
+				tokenizer= new StringTokenizer(linea,";");
 				 asignatura = new Asignatura();
 				 asignatura.setId(Integer.parseInt(tokenizer.nextToken()));
 				 asignatura.setNombre(tokenizer.nextToken());
