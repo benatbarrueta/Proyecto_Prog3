@@ -161,11 +161,12 @@ public class Gestor {
 	}
 	public void guardarAlumnosCSV(String filename) {}
 	public ArrayList<Estudia> leerEstudiaCSV(String filename) {
+		ArrayList<Estudia> estudias = null;
 		try (BufferedReader in = new BufferedReader(new FileReader("usuarios.csv"))){
 			String linea;
 			StringTokenizer tokenizer;
 			Estudia estudia;
-			List<Estudia> estudias= new ArrayList<>();
+			estudias= new ArrayList<Estudia>();
 			in.readLine(); // Saltar linea cabezera
 			while((linea = in.readLine())!= null) {
 				tokenizer= new StringTokenizer(linea,",");
@@ -185,12 +186,74 @@ public class Gestor {
 			System.err.println("Error en el main: " +ex);
 			ex.printStackTrace();
 		}
+
+
 		return estudias;
 	}
 	public void guardarEstudiaCSV(String filename) {}
-	public void leerProfesorCSV(String filename) {}
+	public ArrayList<Profesor> leerProfesorCSV(String filename) {
+		ArrayList<Profesor> profesores = null;
+		try (BufferedReader in = new BufferedReader(new FileReader("usuarios.csv"))){
+			String linea;
+			StringTokenizer tokenizer;
+			Profesor profesor;
+			profesores= new ArrayList<>();
+			in.readLine(); // Saltar linea cabezera
+			while((linea = in.readLine())!= null) {
+				tokenizer= new StringTokenizer(linea,",");
+				profesor = new Profesor();
+				profesor.setId(Integer.parseInt(tokenizer.nextToken()));
+				profesor.setNombre(tokenizer.nextToken());
+				profesor.setApellidos(tokenizer.nextToken());
+				profesor.setContraseña(tokenizer.nextToken());
+				profesor.setDireccion(tokenizer.nextToken());
+				profesor.setEdad(Integer.parseInt(tokenizer.nextToken()));
+				profesor.setEmail(tokenizer.nextToken());
+				profesor.setSalario(Integer.parseInt(tokenizer.nextToken()));
+				profesor.setNombreUsuario(tokenizer.nextToken());
+				
+				profesores.add(profesor);
+			}
+			
+			
+			
+			
+		}catch (Exception ex) {
+			// TODO: handle exception
+			System.err.println("Error en el main: " +ex);
+			ex.printStackTrace();
+		}
+		return profesores;
+	}
 	public void guardarProfesorCSV(String filename) {}
-	public void leerAsignaturaCSV(String filename) {}
+	public ArrayList<Asignatura> leerAsignaturaCSV(String filename) {
+		ArrayList<Asignatura> asignaturas = null;
+		try (BufferedReader in = new BufferedReader(new FileReader("usuarios.csv"))){
+			String linea;
+			StringTokenizer tokenizer;
+			Asignatura asignatura;
+			asignaturas= new ArrayList<>();
+			in.readLine(); // Saltar linea cabezera
+			while((linea = in.readLine())!= null) {
+				tokenizer= new StringTokenizer(linea,",");
+				 asignatura = new Asignatura();
+				 asignatura.setId(Integer.parseInt(tokenizer.nextToken()));
+				 asignatura.setNombre(tokenizer.nextToken());
+				 asignatura.setId_profesor(Integer.parseInt(tokenizer.nextToken()));
+				
+				asignaturas.add(asignatura);
+			}
+			
+			
+			
+			
+		}catch (Exception ex) {
+			// TODO: handle exception
+			System.err.println("Error en el main: " +ex);
+			ex.printStackTrace();
+		}
+		return asignaturas;
+	}
 	public void guardarAsignaturaCSV(String filename) {}
 	
 	 
