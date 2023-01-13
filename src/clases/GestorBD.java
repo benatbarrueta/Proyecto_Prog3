@@ -330,7 +330,7 @@ public class GestorBD {
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement stmt = con.createStatement()) {
 			//Se define la plantilla de la sentencia SQL
-			String sql = "INSERT INTO TAREA ( NOMBRE, EMAIL, FECHA_FIN, CALIFICACION) VALUES ('%s', '%s', '%s', '%s');";
+			String sql = "INSERT INTO TAREA ( ID, NOMBRE,  FECHA_FIN, CALIFICACION, ID_ASIGNATURA, ID_ALUMNO) VALUES ('%d','%s', '%s', '%d', '%d', '%d');";
 			
 		
 			log( Level.INFO, "Insertando tareas...", null);
