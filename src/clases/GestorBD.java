@@ -147,7 +147,7 @@ public class GestorBD {
 	}
 	*/
 	// FUNCIONES BORRADO
-	
+/*	
 	public void borrarBBDDAlumno() {
 		//Se abre la conexión y se obtiene el Statement
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
@@ -267,7 +267,7 @@ public class GestorBD {
 			ex.printStackTrace();						
 		}
 	}
-	
+	*/
 	// FUNCIONES DE INSERCION
 	
 	public void insertarDatosAlumno(Alumno... alumno) {
@@ -415,7 +415,7 @@ public class GestorBD {
 			//Se cierra el ResultSet
 			rs.close();
 		
-			log( Level.INFO,"Se han recuperado alunos", null);
+			log( Level.INFO,"Se han recuperado alumnos", null);
 		} catch (Exception ex) {
 		
 			log( Level.SEVERE,"Error al obtener datos de la  BBDD", ex);
@@ -489,12 +489,13 @@ public class GestorBD {
 			//Se recorre el ResultSet y se crean objetos Cliente
 			while (rs.next()) {
 				tarea= new Tarea();
-				tarea.setId(rs.getInt("ID"));
+			
 				tarea.setNombre(rs.getString("NOMBRE"));
 				tarea.setEmailAlumno(rs.getString("EMAIL"));
 				tarea.setFecha_fin(rs.getString("FECHA_FIN"));
 				tarea.setCalificacion(rs.getDouble("CALIFICACION"));
-				
+				tarea.setFecha_fin(rs.getString("ID_ASIGNATURA"));
+				tarea.setCalificacion(rs.getDouble("ID_ALUMNO"));
 				//Se inserta cada nuevo cliente en la lista de clientes
 				tareas.add(tarea);
 			}
