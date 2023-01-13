@@ -376,7 +376,31 @@ public class GestorBD {
 			ex.printStackTrace();						
 		}				
 	}
-	
+	public void insertarDatosEstudia(Estudia... estudia) {
+		//Se abre la conexión y se obtiene el Statement
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+		     Statement stmt = con.createStatement()) {
+			//Se define la plantilla de la sentencia SQL
+			String sql = "INSERT INTO ESTUDIA ( ID_ALUMNO, ID_ASIGNATURA) VALUES ('%d', '%d');";
+			
+		
+			log( Level.INFO, "Insertando asignaturas...", null);
+			//Se recorren las asignaturas y se insertan uno a uno
+			for (Estudia a : estudia) {
+				if (1 == stmt.executeUpdate(String.format(sql, a.getId_alumno(), a.getId_asignatura()))) {					
+
+					log( Level.INFO, "Asignatura insertada ", null);
+				} else {
+					
+					log( Level.INFO, "No se ha insertado el profesor ", null);
+				}
+			}			
+		} catch (Exception ex) {
+		
+			log( Level.SEVERE,"Error al insertar datos en la  BBDD", ex);
+			ex.printStackTrace();						
+		}				
+	}
 	// OBTENCION DE DATOS
 	
 	public ArrayList<Alumno> obtenerDatosAlumnos() {
