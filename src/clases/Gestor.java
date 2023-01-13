@@ -94,8 +94,106 @@ public class Gestor {
 	}
 	
 	
-	public void leerTareasCSV(String filename) {
-
+	public ArrayList<Tarea> leerTareasCSV(String filename) {
+		
+		try (BufferedReader in = new BufferedReader(new FileReader("usuarios.csv"))){
+			String linea;
+			StringTokenizer tokenizer;
+			Tarea tarea;
+			List<Tarea> tareas= new ArrayList<>();
+			in.readLine(); // Saltar linea cabezera
+			while((linea = in.readLine())!= null) {
+				tokenizer= new StringTokenizer(linea,",");
+				tarea = new Tarea();
+				tarea.setId(Integer.parseInt(tokenizer.nextToken()));
+				tarea.setNombre(tokenizer.nextToken());
+				tarea.setFecha_fin(tokenizer.nextToken());
+				tarea.setCalificacion(Integer.parseInt(tokenizer.nextToken()));
+				tarea.setId_asignatura(Integer.parseInt(tokenizer.nextToken()));
+				tarea.setId_alumna(Integer.parseInt(tokenizer.nextToken()));
+				
+				tareas.add(tarea);
+			}
+			
+			
+			
+			
+		}catch (Exception ex) {
+			// TODO: handle exception
+			System.err.println("Error en el main: " +ex);
+			ex.printStackTrace();
+		}
+		return tareas;
+	}
+	public void guardarTareaCSV(String filename) {}
+	public ArrayList<Alumno> leerAlumnosCSV(String filename) {
+		try (BufferedReader in = new BufferedReader(new FileReader("usuarios.csv"))){
+			String linea;
+			StringTokenizer tokenizer;
+			Alumno alumno;
+			List<Alumno> alumnos= new ArrayList<>();
+			in.readLine(); // Saltar linea cabezera
+			while((linea = in.readLine())!= null) {
+				tokenizer= new StringTokenizer(linea,",");
+				alumno = new Alumno();
+				alumno.setId(Integer.parseInt(tokenizer.nextToken()));
+				alumno.setNombre(tokenizer.nextToken());
+				alumno.setApellidos(tokenizer.nextToken());
+				alumno.setContraseña(tokenizer.nextToken());
+				alumno.setDireccion(tokenizer.nextToken());
+				alumno.setEdad(Integer.parseInt(tokenizer.nextToken()));
+				alumno.setEmail(tokenizer.nextToken());
+				alumno.setCurso(Integer.parseInt(tokenizer.nextToken()));
+				alumno.setNombreUsuario(tokenizer.nextToken());
+				
+				alumnos.add(alumno);
+			}
+			
+			
+			
+			
+		}catch (Exception ex) {
+			// TODO: handle exception
+			System.err.println("Error en el main: " +ex);
+			ex.printStackTrace();
+		}
+		return alumnos;
+	}
+	public void guardarAlumnosCSV(String filename) {}
+	public ArrayList<Estudia> leerEstudiaCSV(String filename) {
+		try (BufferedReader in = new BufferedReader(new FileReader("usuarios.csv"))){
+			String linea;
+			StringTokenizer tokenizer;
+			Estudia estudia;
+			List<Estudia> estudias= new ArrayList<>();
+			in.readLine(); // Saltar linea cabezera
+			while((linea = in.readLine())!= null) {
+				tokenizer= new StringTokenizer(linea,",");
+				estudia = new Estudia();
+				estudia.setId_alumno(Integer.parseInt(tokenizer.nextToken()));
+				estudia.setId_asignatura(Integer.parseInt(tokenizer.nextToken()));
+			
+				
+				estudias.add(estudia);
+			}
+			
+			
+			
+			
+		}catch (Exception ex) {
+			// TODO: handle exception
+			System.err.println("Error en el main: " +ex);
+			ex.printStackTrace();
+		}
+		return estudias;
+	}
+	public void guardarEstudiaCSV(String filename) {}
+	public void leerProfesorCSV(String filename) {}
+	public void guardarProfesorCSV(String filename) {}
+	public void leerAsignaturaCSV(String filename) {}
+	public void guardarAsignaturaCSV(String filename) {}
+	
+	 
 	/*
 		try (BufferedReader in = new BufferedReader(new FileReader(filename))){
 		
@@ -135,8 +233,7 @@ public class Gestor {
 
 	}*/
 	
-	public void guardarTareaCSV(String filename) {
-	 
+	
 /*	try  {	 	  	   
 		//System.out.println(filename);
 	     PrintWriter pw = new PrintWriter(filename);
@@ -202,7 +299,7 @@ public class Gestor {
 			String name = "asignatura" +i;
 /*			asignatura=new Asignatura(name,new Profesor(),new ArrayList<Alumno>(),new ArrayList<Tarea>(),i);*/
 	//		asignaturas.add(asignatura);
-		}
+	
 		//System.out.println(asignaturas);
 	//}
 	public ArrayList<Usuarios> initUsuarios() {
@@ -223,8 +320,8 @@ public class Gestor {
 		Gestor gestor= new Gestor();
 		Properties properties = loadProperties();
 	//	gestor.CrearAsignaturas();
-		gestor.leerTareasCSV(properties.getProperty(INPUT_KEY_TAREA ));
-		gestor.guardarTareaCSV(properties.getProperty(OUTPUT_KEY_TAREA ));
+	//	gestor.leerTareasCSV(properties.getProperty(INPUT_KEY_TAREA ));
+	//	gestor.guardarTareaCSV(properties.getProperty(OUTPUT_KEY_TAREA ));
 		
 		
 	
