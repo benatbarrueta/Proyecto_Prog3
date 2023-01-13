@@ -336,7 +336,7 @@ public class GestorBD {
 			log( Level.INFO, "Insertando tareas...", null);
 			//Se recorren las tareas y se insertan uno a uno
 			for (Tarea t : tarea) {
-				if (1 == stmt.executeUpdate(String.format(sql, t.getNombre(), t.getEmailAlumno(), t.getFecha_fin(), "" + t.getCalificacion()))) {					
+				if (1 == stmt.executeUpdate(String.format(sql,t.getId(), t.getNombre(), t.getFecha_fin(), t.getCalificacion(), t.getId_asignatura(),t.getId_alumna()))) {					
 
 					log( Level.INFO, "Tarea insertada "+ t.toString(), null);
 				} else {
