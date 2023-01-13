@@ -400,7 +400,7 @@ public class GestorBD {
 				alumno.setId(rs.getInt("ID"));
 				alumno.setNombre(rs.getString("NOMBRE"));
 				alumno.setApellidos(rs.getString("APELLIDO"));
-				alumno.setContraseña(rs.getString("CONTRASEÑA"));
+				alumno.setContraseña(rs.getInt("CONTRASEÑA"));
 				alumno.setDireccion(rs.getString("DIRECCION"));
 				alumno.setEdad(rs.getInt("EDAD"));
 				alumno.setEmail(rs.getString("EMAIL"));
@@ -425,7 +425,7 @@ public class GestorBD {
 		return alumnos;
 	}
 	
-	public ArrayList<Profesor> obtenerDatosProfesor() {
+	public ArrayList<Profesor> obtenerDatosProfesor() { // DEBERIA FUNCIONAR
 		ArrayList<Profesor> profesores = new ArrayList<>();
 		
 		//Se abre la conexión y se obtiene el Statement
@@ -472,6 +472,48 @@ public class GestorBD {
 		//System.out.println(profesores);
 		return profesores;
 	}
+	public ArrayList<Estudia> obtenerDatosEstudia() { // DEBERIA FUNCIONAR
+		ArrayList<Estudia> estudiar = new ArrayList<>();
+		
+		//Se abre la conexión y se obtiene el Statement
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+		     Statement stmt = con.createStatement()) {
+			String sql = "SELECT * FROM ESTUDIA";
+			
+			
+			//Se ejecuta la sentencia y se obtiene el ResultSet con los resutlados
+			ResultSet rs = stmt.executeQuery(sql);			
+			Estudia estudai;
+			
+			//Se recorre el ResultSet y se crean objetos Cliente
+			while (rs.next()) {
+				Estudia estudia= new Estudia ();
+				estudia.setId_alumno(rs.getInt("ID_ALUMNO"));
+				estudia.setId_asignatura(rs.getInt("ID_ASIGNATURA"));
+			
+			
+			
+				
+				//Se inserta cada nuevo cliente en la lista de clientes
+				estudiar.add(estudia);
+			}
+			
+			//Se cierra el ResultSet
+			rs.close();
+			
+			
+			log( Level.INFO,"Se han recuperado profesores", null);;
+			
+			
+		} catch (Exception ex) {
+			log( Level.SEVERE,"Error al obtener datos de la  BBDD", ex);
+		
+			ex.printStackTrace();						
+		}		
+		//System.out.println(profesores);
+		return estudiar;
+	}
+
 
 	public ArrayList<Tarea> obtenerDatosTareas() { //DEBERIA FUNCIONAR
 		ArrayList<Tarea> tareas = new ArrayList<>();
