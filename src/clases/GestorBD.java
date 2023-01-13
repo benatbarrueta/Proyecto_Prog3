@@ -489,13 +489,12 @@ public class GestorBD {
 			//Se recorre el ResultSet y se crean objetos Cliente
 			while (rs.next()) {
 				tarea= new Tarea();
-			
+				tarea.setId(Integer.parseInt(rs.getString("ID")));
 				tarea.setNombre(rs.getString("NOMBRE"));
-				tarea.setEmailAlumno(rs.getString("EMAIL"));
 				tarea.setFecha_fin(rs.getString("FECHA_FIN"));
-				tarea.setCalificacion(rs.getDouble("CALIFICACION"));
-				tarea.setFecha_fin(rs.getString("ID_ASIGNATURA"));
-				tarea.setCalificacion(rs.getDouble("ID_ALUMNO"));
+				tarea.setCalificacion(Integer.parseInt(rs.getString("CALIFICACION")));
+				tarea.setId_asignatura(Integer.parseInt(rs.getString("ID_ASIGNATURA")));
+				tarea.setId_alumna(Integer.parseInt(rs.getString("ID_ALUMNO")));
 				//Se inserta cada nuevo cliente en la lista de clientes
 				tareas.add(tarea);
 			}
