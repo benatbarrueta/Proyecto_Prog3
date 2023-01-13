@@ -3,6 +3,7 @@ package clases;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
@@ -125,30 +126,22 @@ public class Gestor {
 		}
 		return tareas;
 	}
-	public void guardarTareaCSV(ArrayList<Tarea> tareas) {
+	public void guardarTareaCSV(ArrayList<Tarea> tareas) throws FileNotFoundException {
 		
 	PrintWriter pw = new PrintWriter("equipos.csv");
 		
-	pw.println("ID;NOMBRE;APELLIDO;CONTRASEÑA;DIRECCION;EDAD;EMAIL;SALARIO;NOMBRE_USUARIO");
+	pw.println("ID;NOMBRE;FECHA_FIN;CONTRASEÑA;CALIFICACION;ID_ASIGNATURA;ID_ALUMNO");
 		
 		for (Tarea t : tareas) {
-
-			
-			pw.println(equipo.getNombre()
-					+";"+equipo.getPilotos().get(0).getNombrePiloto()
-					+";"+equipo.getPilotos().get(0).getMundialesGanados()
-					+";"+equipo.getPilotos().get(0).getPuntos()
-					+";"+equipo.getPilotos().get(0).getEdad()
-					+";"+equipo.getPilotos().get(1).getNombrePiloto()
-					+";"+equipo.getPilotos().get(1).getMundialesGanados()
-					+";"+equipo.getPilotos().get(1).getPuntos()
-					+";"+equipo.getPilotos().get(1).getEdad()
-					
-					
+	
+			pw.println(t.getId()
+					+";"+t.getNombre()
+					+";"+t.getFecha_fin()
+					+";"+t.getCalificacion()
+					+";"+t.getId_asignatura()
+					+";"+t.getId_alumna()
 					+";");
-						
-		
-		
+
 		pw.close();
 		
 	}
@@ -186,7 +179,28 @@ public class Gestor {
 		}
 		return alumnos;
 	}
-	public void guardarAlumnosCSV(String filename) {}
+	public void guardarAlumnosCSV(ArrayList<Alumno> alumnos) throws FileNotFoundException {
+		PrintWriter pw = new PrintWriter("equipos.csv");
+		
+		pw.println("ID;NOMBRE;APELLIDO;CONTRASEÑA;DIRECCION;EDAD;EMAIL;CURSO;NOMBRE_USUARIO");
+			
+			for (Alumno t : alumnos) {
+		
+				pw.println(t.getId()
+						+";"+t.getNombre()
+						+";"+t.getApellidos()
+						+";"+t.getContraseña()
+						+";"+t.getDireccion()
+						+";"+t.getEdad()
+						+";"+t.getEmail()
+						+";"+t.getCurso()
+						+";"+t.getNombreUsuario()
+						+";");
+
+			pw.close();
+			
+		}
+	}
 	public ArrayList<Estudia> leerEstudiaCSV(String filename) {
 		ArrayList<Estudia> estudias = null;
 		try (BufferedReader in = new BufferedReader(new FileReader("usuarios.csv"))){
@@ -217,7 +231,21 @@ public class Gestor {
 
 		return estudias;
 	}
-	public void guardarEstudiaCSV(String filename) {}
+	public void guardarEstudiaCSV(ArrayList<Estudia> estudias) throws FileNotFoundException {
+	PrintWriter pw = new PrintWriter("equipos.csv");
+		
+		pw.println("ID_ALUMNO;ID_ASIGNATURA");
+			
+			for (Estudia t : estudias) {
+		
+				pw.println(t.getId_alumno()
+						+";"+t.getId_asignatura()
+						+";");
+
+			pw.close();
+			
+		}
+	}
 	public ArrayList<Profesor> leerProfesorCSV(String filename) {
 		ArrayList<Profesor> profesores = null;
 		try (BufferedReader in = new BufferedReader(new FileReader("usuarios.csv"))){
@@ -252,7 +280,29 @@ public class Gestor {
 		}
 		return profesores;
 	}
-	public void guardarProfesorCSV(String filename) {}
+	public void guardarProfesorCSV(ArrayList<Profesor> profesores) throws FileNotFoundException {
+	PrintWriter pw = new PrintWriter("equipos.csv");
+		
+		pw.println("ID;NOMBRE;APELLIDO;CONTRASEÑA;DIRECCION;EDAD;EMAIL;SALARIO;NOMBRE_USUARIO");
+			
+			for (Profesor t : profesores) {
+		
+				pw.println(t.getId()
+						+";"+t.getNombre()
+						+";"+t.getApellidos()
+						+";"+t.getContraseña()
+						+";"+t.getDireccion()
+						+";"+t.getEdad()
+						+";"+t.getEmail()
+						+";"+t.getSalario()
+						+";"+t.getNombreUsuario()
+						
+						+";");
+
+			pw.close();
+			
+		}
+	}
 	public ArrayList<Asignatura> leerAsignaturaCSV(String filename) {
 		ArrayList<Asignatura> asignaturas = null;
 		try (BufferedReader in = new BufferedReader(new FileReader("usuarios.csv"))){
@@ -281,7 +331,23 @@ public class Gestor {
 		}
 		return asignaturas;
 	}
-	public void guardarAsignaturaCSV(String filename) {}
+	public void guardarAsignaturaCSV(ArrayList<Asignatura> asignaturas) throws FileNotFoundException {
+PrintWriter pw = new PrintWriter("equipos.csv");
+		
+		pw.println("ID;NOMBRE;ID_PROFESOR");
+			
+			for (Asignatura t : asignaturas) {
+		
+				pw.println(t.getId()
+						+";"+t.getNombre()
+						+";"+t.getId_profesor()
+
+						+";");
+
+			pw.close();
+			
+		}
+	}
 	
 	 
 	/*
