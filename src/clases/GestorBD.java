@@ -275,7 +275,7 @@ public class GestorBD {
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement stmt = con.createStatement()) {
 			//Se define la plantilla de la sentencia SQL
-			String sql = "INSERT INTO ALUMNO ( ID, NOMBRE, APELLIDO, CONTRASEÑA, DIRECCION, EDAD, EMAIL, CURSO, NOMBRE_USUARIO) VALUES ( '%d','%s', '%s', '%s', '%s', '%d','%s', '%s', '%s');";
+			String sql = "INSERT INTO ALUMNO ( ID, NOMBRE, APELLIDO, CONTRASEÑA, DIRECCION, EDAD, EMAIL, CURSO, NOMBRE_USUARIO) VALUES ( ?,'%s', '%s', '%s', '%s', ?,'%s', '%s', '%s');";
 			
 			log( Level.INFO,"Insertando alumnos...", null);
 
@@ -303,7 +303,7 @@ public class GestorBD {
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement stmt = con.createStatement()) {
 			//Se define la plantilla de la sentencia SQL
-			String sql = "INSERT INTO PROFESOR ( ID, NOMBRE, APELLIDO, CONTRASEÑA, DIRECCION, EDAD, EMAIL, SALARIO, NOMBRE_USUARIO) VALUES ('%d','%s', '%s', '%s', '%s', '%d','%s', '%d', '%s');";
+			String sql = "INSERT INTO PROFESOR ( ID, NOMBRE, APELLIDO, CONTRASEÑA, DIRECCION, EDAD, EMAIL, SALARIO, NOMBRE_USUARIO) VALUES (?,'%s', '%s', '%s', '%s', ?,'%s', ?, '%s');";
 			
 		
 			log( Level.INFO, "Insertando profesores...", null);
@@ -330,14 +330,13 @@ public class GestorBD {
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement stmt = con.createStatement()) {
 			//Se define la plantilla de la sentencia SQL
-			String sql = "INSERT INTO TAREA ( ID, NOMBRE,  FECHA_FIN, CALIFICACION, ID_ASIGNATURA, ID_ALUMNO, PORCENTAJE) VALUES ('%d','%s', '%s', '%d', '%d', '%d','%s');";
+			String sql = "INSERT INTO TAREA ( ID, NOMBRE,  FECHA_FIN, CALIFICACION, ID_ASIGNATURA, ID_ALUMNO, PORCENTAJE) VALUES (?,'%s', '%s', ?, ?, ?, ?);";
 			
 		
 			log( Level.INFO, "Insertando tareas...", null);
 			//Se recorren las tareas y se insertan uno a uno
 			for (Tarea t : tarea) {
-				if (1 == stmt.executeUpdate(String.format(sql,t.getId(), t.getNombre(), t.getFecha_fin(), t.getCalificacion(), t.getId_asignatura(),t.getId_alumna()))) {					
-
+				if (1 == stmt.executeUpdate(String.format(sql,t.getId(), t.getNombre(), t.getFecha_fin(), t.getCalificacion(), t.getId_asignatura(),t.getId_alumna(), t.getPorcentaje()))) {					
 					log( Level.INFO, "Tarea insertada "+ t.toString(), null);
 				} else {
 					
@@ -356,7 +355,7 @@ public class GestorBD {
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement stmt = con.createStatement()) {
 			//Se define la plantilla de la sentencia SQL
-			String sql = "INSERT INTO ASIGNATURA ( ID, NOMBRE, ID_PROFESOR) VALUES ('%d', '%s', '%d');";
+			String sql = "INSERT INTO ASIGNATURA ( ID, NOMBRE, ID_PROFESOR) VALUES (?, ?, ?);";
 			
 		
 			log( Level.INFO, "Insertando asignaturas...", null);
@@ -381,7 +380,7 @@ public class GestorBD {
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement stmt = con.createStatement()) {
 			//Se define la plantilla de la sentencia SQL
-			String sql = "INSERT INTO ESTUDIA ( ID_ALUMNO, ID_ASIGNATURA) VALUES ('%d', '%d');";
+			String sql = "INSERT INTO ESTUDIA ( ID_ALUMNO, ID_ASIGNATURA) VALUES (?, ?);";
 			
 		
 			log( Level.INFO, "Insertando asignaturas...", null);
@@ -783,6 +782,34 @@ public class GestorBD {
 			log( Level.INFO,"Se ha borrado las tarea",null);
 		} catch (Exception ex) {
 			log( Level.SEVERE,"Error al actualizando datos de la  BBDD en tareas", ex);
+			ex.printStackTrace();						
+		}		
+	}
+	public void borrarDatosAsignaturas() {
+		//Se abre la conexión y se obtiene el Statement
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+		     Statement stmt = con.createStatement()) {
+			//Se ejecuta la sentencia de borrado de datos
+			String sql = "DELETE FROM ASIGNATURA;";			
+			int result = stmt.executeUpdate(sql);
+			
+			log( Level.INFO,"Se ha borrado las asignaturas",null);
+		} catch (Exception ex) {
+			log( Level.SEVERE,"Error al actualizando datos de la  BBDD en asignaturas", ex);
+			ex.printStackTrace();						
+		}		
+	}
+	public void borrarDatosEstudia() {
+		//Se abre la conexión y se obtiene el Statement
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+		     Statement stmt = con.createStatement()) {
+			//Se ejecuta la sentencia de borrado de datos
+			String sql = "DELETE FROM ESTUDIA;";			
+			int result = stmt.executeUpdate(sql);
+			
+			log( Level.INFO,"Se ha borrado los datos de la tabla estudia",null);
+		} catch (Exception ex) {
+			log( Level.SEVERE,"Error al actualizando datos de la  BBDD en estudia", ex);
 			ex.printStackTrace();						
 		}		
 	}

@@ -18,9 +18,9 @@ public class Tarea {
 		this.fecha_fin = "1";
 		this.calificacion =0;
 		this.nombre = "";
-	
 		this.id_asignatura =0;
 		this.id_alumna = 0;
+		this.porcentaje = 0;
 	}
 
 

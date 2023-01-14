@@ -113,7 +113,6 @@ public class Gestor {
 				tarea.setId_asignatura(Integer.parseInt(tokenizer.nextToken()));
 				tarea.setId_alumna(Integer.parseInt(tokenizer.nextToken()));
 				tarea.setPorcentaje(Integer.parseInt(tokenizer.nextToken()));
-			
 				tareas.add(tarea);
 			}
 			
@@ -386,8 +385,29 @@ PrintWriter pw = new PrintWriter("asignaturas.csv");
 	//	guardarEstudiaCSV(estudias);
 	//	guardarProfesorCSV(profesores);
 	//	guardarTareaCSV(tareas);
+		GestorBD.gestorBD.borrarDatosAlumnos();
+		GestorBD.gestorBD.borrarDatosProfesores();
+		GestorBD.gestorBD.borrarDatosAsignaturas();
+		GestorBD.gestorBD.borrarDatosEstudia();
+		GestorBD.gestorBD.borrarDatosTareas();
+		for (Alumno a : alumnos) {
+			GestorBD.gestorBD.insertarDatosAlumno(a);
+		}
+		for (Profesor p : profesores) {
+			GestorBD.gestorBD.insertarDatosProfesor(p);
+		}
 		
-		 
+		for (Asignatura a : asignaturas) {
+			GestorBD.gestorBD.insertarDatosAsignatura(a);
+		}
+		for (Estudia e : estudias) {
+			GestorBD.gestorBD.insertarDatosEstudia(e);
+		}
+		
+		for (Tarea t : tareas) {
+			GestorBD.gestorBD.insertarDatosTarea(t);
+		}
+		
 		 System.out.println( GestorBD.gestorBD.obtenerDatosAlumnos());
 		 System.out.println( GestorBD.gestorBD.obtenerDatosAsignaturas());
 		 System.out.println( GestorBD.gestorBD.obtenerDatosEstudia());

@@ -1,6 +1,7 @@
 package clases;
 
 public class Estudia {
+
 int id_alumno;
 int id_asignatura;
 public Estudia() {
@@ -20,5 +21,8 @@ public int getId_asignatura() {
 public void setId_asignatura(int id_asignatura) {
 	this.id_asignatura = id_asignatura;
 }
-
+@Override
+	public String toString() {
+		return "Estudia [id_alumno=" + id_alumno + ", id_asignatura=" + id_asignatura + "]";
+	}
 }
