@@ -382,8 +382,12 @@ PrintWriter pw = new PrintWriter("asignaturas.csv");
 		estudias=	leerEstudiaCSV();
 		profesores=	leerProfesorCSV();
 		tareas=	leerTareasCSV();
-
-
+		System.out.println(profesores);
+		guardarAlumnosCSV(alumnos);
+		guardarAsignaturaCSV(asignaturas);
+		guardarEstudiaCSV(estudias);
+	//	guardarProfesorCSV(profesores);
+	//	guardarTareaCSV(tareas);
 
 		 
 		 System.out.println( GestorBD.gestorBD.obtenerDatosAlumnos());
