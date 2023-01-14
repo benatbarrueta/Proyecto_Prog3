@@ -142,42 +142,7 @@ public class VentanaAsignatura extends JFrame{
  				actividadesPorNombre.get(tarea.getNombre()).add(tarea);
  			}
  		}
- 		
- 		DefaultTableCellRenderer renderSencillo = new DefaultTableCellRenderer() {
-			private static final long serialVersionUID = 1L;
 
-			@Override
-			public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
-				JLabel label = new JLabel(value.toString());
-				
-				
-				//El label se alinea a la izquierda
-				if(column == 0 || column == 1) {
-					label.setHorizontalAlignment(JLabel.LEFT);
-				}else if(column == 2) {
-					label.setHorizontalAlignment(JLabel.CENTER);
-				}
-				label.setBackground(Color.WHITE);
-				
-				if(isSelected) { 
-					label.setBackground(Color.CYAN);
-				}
-				
-			
-	if (column==2) {
-
-				if (value.toString().equals("SUSPENDIDO")) {
-					label.setForeground(Color.RED);
-				} else if (value.toString().equals("SIN CALIFICAR")) {
-					label.setForeground(Color.GRAY);
-				}
-	}
-				//Es necesaria esta sentencia para pintar correctamente el color de fondo
-				label.setOpaque(true);
-				
-				return label;
-			}
-		};
 		
 		//DIFERENCIAR SI ENTRA UN ALUMNO O PROFESOR
 			
@@ -263,9 +228,47 @@ public class VentanaAsignatura extends JFrame{
 					
 				}
 		
+ 		DefaultTableCellRenderer renderSencillo = new DefaultTableCellRenderer() {
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+				JLabel label = new JLabel(value.toString());
+				
+				
+				//El label se alinea a la izquierda
+				if(column == 0 || column == 1) {
+					label.setHorizontalAlignment(JLabel.LEFT);
+				}else if(column == 2) {
+					label.setHorizontalAlignment(JLabel.CENTER);
+				}
+				label.setBackground(Color.WHITE);
+				
+				if(isSelected) { 
+					label.setBackground(Color.CYAN);
+				}
+				
+			
+	if (column==2) {
+
+				if (value.toString().equals("SUSPENDIDO")) {
+					label.setForeground(Color.RED);
+				} else if (value.toString().equals("SIN CALIFICAR")) {
+					label.setForeground(Color.GRAY);
+				}
+	}
+				//Es necesaria esta sentencia para pintar correctamente el color de fondo
+				label.setOpaque(true);
+				
+				return label;
+			}
+		};
+		
+		
 		//ADD
 		cp.add(centro, BorderLayout.CENTER);
 		cp.add(norte, BorderLayout.NORTH);
+	
 		cp.add(south, BorderLayout.SOUTH);
 		
 		norte.setLayout(new GridLayout(1,1));
@@ -309,7 +312,7 @@ public class VentanaAsignatura extends JFrame{
 			}
 			
 		});
-		
+ 	
 	}
 	
 	

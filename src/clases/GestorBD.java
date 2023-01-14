@@ -771,6 +771,21 @@ public class GestorBD {
 			ex.printStackTrace();						
 		}		
 	}
+	public void borrarDatosTareas() {
+		//Se abre la conexión y se obtiene el Statement
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+		     Statement stmt = con.createStatement()) {
+			//Se ejecuta la sentencia de borrado de datos
+			String sql = "DELETE FROM TAREA;";			
+			int result = stmt.executeUpdate(sql);
+			
+			log( Level.INFO,"Se ha borrado las tarea",null);
+		} catch (Exception ex) {
+			log( Level.SEVERE,"Error al actualizando datos de la  BBDD en tareas", ex);
+			ex.printStackTrace();						
+		}		
+	}
+	
 	
 	private void log( Level level, String msg, Throwable excepcion ) {
 	

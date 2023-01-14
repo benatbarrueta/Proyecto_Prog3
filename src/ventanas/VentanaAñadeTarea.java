@@ -7,6 +7,7 @@ import java.awt.Container;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Properties;
 
 import javax.swing.JButton;
@@ -18,6 +19,7 @@ import javax.swing.JTextField;
 import clases.Alumno;
 import clases.Asignatura;
 import clases.Gestor;
+import clases.GestorBD;
 import clases.Tarea;
 
 public class VentanaAñadeTarea extends JFrame {
@@ -66,27 +68,33 @@ public VentanaAñadeTarea (Asignatura asignatura , Object object) {
 			
 			
 			//AÑADIR TAREA A GESTOR 
-		for (Asignatura asig: gestor.getAsignatura()) {
-			if(asig.equals(asignatura)) {	
-				for (Alumno alum : asig.getAlumnos()) {
+			ArrayList<Tarea> tareas = GestorBD.gestorBD.obtenerDatosTareas();
+		for (Asignatura asig: 	GestorBD.gestorBD.obtenerDatosAsignaturas()) {
+			if(asig.getId()==asignatura.getId()) {	
+				for (Alumno alum : GestorBD.gestorBD.obtenerDatosAlumnos()) {
 					Tarea tarea = new Tarea();
 					tarea.setNombre(nombre.getText());
 					tarea.setFecha_fin(fechaFin.getText());
-					tarea.setCalificacion(-1.0);
-					tarea.setEmailAlumno(alum.getEmail());
-					asig.getTareas().add(tarea);
+					tarea.setCalificacion(-1);
+					tarea.setId_alumna(alum.getId());
+					tarea.setId_asignatura(asig.getId());
+					
+					tareas.add(tarea);
 				}
 			}
 		}		
 			// GUARDAR TAREAS
-					Properties properties = Gestor.loadProperties();
-					gestor.guardarTareaCSV(properties.getProperty("guardarTarea"));
+					GestorBD.gestorBD.borrarDatosTareas();
+					for (Tarea tarea : tareas) {
+						GestorBD.gestorBD.insertarDatosTarea(tarea);
+					}
+				
 					
 			//REFESCAR LA TABLA DE ASIGNATURAS
 			
 			//SE CIERRRA LA VENTANA
 			dispose();
-			VentanaAsignatura v = new VentanaAsignatura(object, "Profesor",gestor,asignatura);
+			VentanaAsignatura v = new VentanaAsignatura(object, "Profesor",asignatura);
 		}
 	});
 	
@@ -97,7 +105,7 @@ public VentanaAñadeTarea (Asignatura asignatura , Object object) {
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
 			dispose();
-			VentanaAsignatura v = new VentanaAsignatura(object, "Profesor",gestor,asignatura);
+			VentanaAsignatura v = new VentanaAsignatura(object, "Profesor",asignatura);
 		}
 	});
 	
