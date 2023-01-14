@@ -42885,3 +42885,323 @@
   <message>Se han recuperado tareas</message>
 </record>
 </log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-14T14:37:28.330007Z</date>
+  <millis>1673707048330</millis>
+  <nanos>7000</nanos>
+  <sequence>0</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado alumnos</message>
+</record>
+<record>
+  <date>2023-01-14T14:37:28.361924600Z</date>
+  <millis>1673707048361</millis>
+  <nanos>924600</nanos>
+  <sequence>1</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado asignaturas</message>
+</record>
+<record>
+  <date>2023-01-14T14:37:28.363919300Z</date>
+  <millis>1673707048363</millis>
+  <nanos>919300</nanos>
+  <sequence>2</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado profesores</message>
+</record>
+<record>
+  <date>2023-01-14T14:37:28.366911800Z</date>
+  <millis>1673707048366</millis>
+  <nanos>911800</nanos>
+  <sequence>3</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado profesores</message>
+</record>
+<record>
+  <date>2023-01-14T14:37:28.368907Z</date>
+  <millis>1673707048368</millis>
+  <nanos>907000</nanos>
+  <sequence>4</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado tareas</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-14T14:38:35.687100600Z</date>
+  <millis>1673707115687</millis>
+  <nanos>100600</nanos>
+  <sequence>0</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado alumnos</message>
+</record>
+<record>
+  <date>2023-01-14T14:38:35.724997Z</date>
+  <millis>1673707115724</millis>
+  <nanos>997000</nanos>
+  <sequence>1</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado asignaturas</message>
+</record>
+<record>
+  <date>2023-01-14T14:38:35.726992500Z</date>
+  <millis>1673707115726</millis>
+  <nanos>992500</nanos>
+  <sequence>2</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado profesores</message>
+</record>
+<record>
+  <date>2023-01-14T14:38:35.728989300Z</date>
+  <millis>1673707115728</millis>
+  <nanos>989300</nanos>
+  <sequence>3</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado profesores</message>
+</record>
+<record>
+  <date>2023-01-14T14:38:35.731979400Z</date>
+  <millis>1673707115731</millis>
+  <nanos>979400</nanos>
+  <sequence>4</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado tareas</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-14T14:39:37.317309100Z</date>
+  <millis>1673707177317</millis>
+  <nanos>309100</nanos>
+  <sequence>0</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado alumnos</message>
+</record>
+<record>
+  <date>2023-01-14T14:39:37.341216800Z</date>
+  <millis>1673707177341</millis>
+  <nanos>216800</nanos>
+  <sequence>1</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado asignaturas</message>
+</record>
+<record>
+  <date>2023-01-14T14:39:37.342215Z</date>
+  <millis>1673707177342</millis>
+  <nanos>215000</nanos>
+  <sequence>2</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado profesores</message>
+</record>
+<record>
+  <date>2023-01-14T14:39:37.344239900Z</date>
+  <millis>1673707177344</millis>
+  <nanos>239900</nanos>
+  <sequence>3</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado profesores</message>
+</record>
+<record>
+  <date>2023-01-14T14:39:37.345207700Z</date>
+  <millis>1673707177345</millis>
+  <nanos>207700</nanos>
+  <sequence>4</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado tareas</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-14T14:39:49.813364100Z</date>
+  <millis>1673707189813</millis>
+  <nanos>364100</nanos>
+  <sequence>0</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado alumnos</message>
+</record>
+<record>
+  <date>2023-01-14T14:39:49.840267200Z</date>
+  <millis>1673707189840</millis>
+  <nanos>267200</nanos>
+  <sequence>1</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado asignaturas</message>
+</record>
+<record>
+  <date>2023-01-14T14:39:49.843293400Z</date>
+  <millis>1673707189843</millis>
+  <nanos>293400</nanos>
+  <sequence>2</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado profesores</message>
+</record>
+<record>
+  <date>2023-01-14T14:39:49.845256400Z</date>
+  <millis>1673707189845</millis>
+  <nanos>256400</nanos>
+  <sequence>3</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado profesores</message>
+</record>
+<record>
+  <date>2023-01-14T14:39:49.848247100Z</date>
+  <millis>1673707189848</millis>
+  <nanos>247100</nanos>
+  <sequence>4</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado tareas</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-14T14:40:16.652411800Z</date>
+  <millis>1673707216652</millis>
+  <nanos>411800</nanos>
+  <sequence>0</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado alumnos</message>
+</record>
+<record>
+  <date>2023-01-14T14:40:16.679340100Z</date>
+  <millis>1673707216679</millis>
+  <nanos>340100</nanos>
+  <sequence>1</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado asignaturas</message>
+</record>
+<record>
+  <date>2023-01-14T14:40:16.681334700Z</date>
+  <millis>1673707216681</millis>
+  <nanos>334700</nanos>
+  <sequence>2</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado profesores</message>
+</record>
+<record>
+  <date>2023-01-14T14:40:16.682332200Z</date>
+  <millis>1673707216682</millis>
+  <nanos>332200</nanos>
+  <sequence>3</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado profesores</message>
+</record>
+<record>
+  <date>2023-01-14T14:40:16.685328Z</date>
+  <millis>1673707216685</millis>
+  <nanos>328000</nanos>
+  <sequence>4</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado tareas</message>
+</record>
+</log>

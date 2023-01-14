@@ -96,12 +96,12 @@ public class Gestor {
 	
 	
 	public static ArrayList<Tarea> leerTareasCSV() {
-		
+		ArrayList<Tarea> tareas = null;
 		try (BufferedReader in = new BufferedReader(new FileReader("tareas.csv"))){
 			String linea;
 			StringTokenizer tokenizer;
 			Tarea tarea;
-			List<Tarea> tareas= new ArrayList<>();
+		 tareas= new ArrayList<>();
 			in.readLine(); // Saltar linea cabezera
 			while((linea = in.readLine())!= null) {
 				tokenizer= new StringTokenizer(linea,";");
@@ -113,10 +113,11 @@ public class Gestor {
 				tarea.setId_asignatura(Integer.parseInt(tokenizer.nextToken()));
 				tarea.setId_alumna(Integer.parseInt(tokenizer.nextToken()));
 				tarea.setPorcentaje(Integer.parseInt(tokenizer.nextToken()));
+			
 				tareas.add(tarea);
 			}
 			
-			
+
 			
 			
 		}catch (Exception ex) {
@@ -124,6 +125,7 @@ public class Gestor {
 			System.err.println("Error en el main: " +ex);
 			ex.printStackTrace();
 		}
+	
 		return tareas;
 	}
 	public static void guardarTareaCSV(ArrayList<Tarea> tareas) throws FileNotFoundException {
@@ -364,28 +366,25 @@ PrintWriter pw = new PrintWriter("asignaturas.csv");
 		
 		Properties properties = loadProperties();
 
-		 GestorBD.gestorBD.GestorBD();
-		Alumno a = new Alumno();
-		a.setNombre("BORJA");
-		
-		ArrayList<Alumno> as = new ArrayList<Alumno>();
-		ArrayList<Alumno> as2 = new ArrayList<Alumno>();
-		ArrayList<Alumno> as3= new ArrayList<Alumno>();
-		ArrayList<Tarea> as4 = new ArrayList<Tarea>();
-		
-	as4.add(new Tarea());
-	//	System.out.println(as);
-		as= leerAlumnosCSV();
-		 guardarAlumnosCSV(as);
-		 System.out.println(as4);
-		 guardarTareaCSV(as4);
-	//	 GestorBD.gestorBD.insertarDatosAlumno(as.get(0));
 
-	
-//		 guardarAsignaturaCSV(new ArrayList<Asignatura>());
-//	 guardarEstudiaCSV(new ArrayList<Estudia>());
-//	 guardarProfesorCSV(new ArrayList<Profesor>());
-	//	 guardarTareaCSV(new ArrayList<Tarea>());
+
+		
+		ArrayList<Alumno> alumnos = new ArrayList<Alumno>();
+		ArrayList<Asignatura> asignaturas = new ArrayList<Asignatura>();
+		ArrayList<Estudia> estudias= new ArrayList<Estudia>();
+		ArrayList<Tarea> tareas = new ArrayList<Tarea>();
+		ArrayList<Profesor> profesores = new ArrayList<Profesor>();
+		
+
+
+		alumnos= leerAlumnosCSV();
+		asignaturas= leerAsignaturaCSV();
+		estudias=	leerEstudiaCSV();
+		profesores=	leerProfesorCSV();
+		tareas=	leerTareasCSV();
+
+
+
 		 
 		 System.out.println( GestorBD.gestorBD.obtenerDatosAlumnos());
 		 System.out.println( GestorBD.gestorBD.obtenerDatosAsignaturas());
