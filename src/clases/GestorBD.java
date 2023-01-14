@@ -23,7 +23,7 @@ public class GestorBD {
 	protected static final String CONNECTION_STRING= "jdbc:sqlite:" + DATABASE_FILE;
 
 	private Logger logger = null;
-	public static GestorBD gestorBD;	
+	public static GestorBD gestorBD = new GestorBD();	
 	
 	
 	public void GestorBD() {		
@@ -676,8 +676,8 @@ public class GestorBD {
 		}		
 	}
 	
-	// ACTUALIZACION DE DATOS
-	
+	// ACTUALIZACION DE DATOS 
+/*	
 	public void actualizarAlumno(Alumno alumno, String newNombre, String newApellido, String newEmail, String newDirection, String newNombreUsuario, String newContraseña) {
 		//Se abre la conexion y obtenemos el statement
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
@@ -709,6 +709,54 @@ public class GestorBD {
 			e.printStackTrace();
 		}
 	}
+	public void actualizarTarea(Profesor profesor, String newNombre, String newApellido, String newEmail, String newDirection, String newNombreUsuario, String newContraseña) {
+		//Se abre la conexion y obtenemos el statement
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+			 Statement stmt = con.createStatement()){
+			//Se ejecuta la sentencia de actualizar datos
+			String sql = "UPDATE PROFESOR SET NOMBRE = '%s', APELLIDO = '%s', EMAIL = '%s', DIRECCION = '%s', NOMBRE_USUARIO = '%s', CONTRASEÑA = '%s' WHERE ID = %d;";
+			int result = stmt.executeUpdate(String.format(sql, newNombre, newApellido, newEmail, newDirection, newNombreUsuario, newContraseña, profesor.getId()));
+			
+		
+			log( Level.INFO,"Se ha actulizado datos de " + result + "profesor", null);
+		} catch (Exception e) {
+			log( Level.SEVERE,"Error al actualizar datos de la  BBDD", e);
+			e.printStackTrace();
+		}
+	}
+	public void actualizarEstudia(Profesor profesor, String newNombre, String newApellido, String newEmail, String newDirection, String newNombreUsuario, String newContraseña) {
+		//Se abre la conexion y obtenemos el statement
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+			 Statement stmt = con.createStatement()){
+			//Se ejecuta la sentencia de actualizar datos
+			String sql = "UPDATE PROFESOR SET NOMBRE = '%s', APELLIDO = '%s', EMAIL = '%s', DIRECCION = '%s', NOMBRE_USUARIO = '%s', CONTRASEÑA = '%s' WHERE ID = %d;";
+			int result = stmt.executeUpdate(String.format(sql, newNombre, newApellido, newEmail, newDirection, newNombreUsuario, newContraseña, profesor.getId()));
+			
+		
+			log( Level.INFO,"Se ha actulizado datos de " + result + "profesor", null);
+		} catch (Exception e) {
+			log( Level.SEVERE,"Error al actualizar datos de la  BBDD", e);
+			e.printStackTrace();
+		}
+	}
+	public void actualizarAsignatura(Profesor profesor, String newNombre, String newApellido, String newEmail, String newDirection, String newNombreUsuario, String newContraseña) {
+		//Se abre la conexion y obtenemos el statement
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+			 Statement stmt = con.createStatement()){
+			//Se ejecuta la sentencia de actualizar datos
+			String sql = "UPDATE PROFESOR SET NOMBRE = '%s', APELLIDO = '%s', EMAIL = '%s', DIRECCION = '%s', NOMBRE_USUARIO = '%s', CONTRASEÑA = '%s' WHERE ID = %d;";
+			int result = stmt.executeUpdate(String.format(sql, newNombre, newApellido, newEmail, newDirection, newNombreUsuario, newContraseña, profesor.getId()));
+			
+		
+			log( Level.INFO,"Se ha actulizado datos de " + result + "profesor", null);
+		} catch (Exception e) {
+			log( Level.SEVERE,"Error al actualizar datos de la  BBDD", e);
+			e.printStackTrace();
+		}
+	}
+	
+	
+	*/
 	public void borrarDatosProfesores() {
 		//Se abre la conexión y se obtiene el Statement
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
@@ -741,4 +789,6 @@ public class GestorBD {
 		else
 			logger.log( level, msg, excepcion );
 	}
+
+
 }

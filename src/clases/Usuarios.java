@@ -5,28 +5,17 @@ import static org.junit.Assert.assertArrayEquals;
 public class Usuarios {
 	protected String nombre;
 	protected String apellidos;
-	protected int edad;
+	protected Integer edad;
 	protected String direccion;
 	protected String nombreUsuario;
 	protected String contraseña;
-	protected   int  id = -1;
+	protected   Integer  id;
 	private Boolean tipo;
 	protected String email;
 	
 
-	public Usuarios(String nombre, String apellidos, int edad, String direccion, String nombreUsuario, String contraseña) {
-		super();
-		this.nombre = nombre;
-		this.apellidos = apellidos;
-		this.edad = edad;
-		this.direccion = direccion;
-		this.nombreUsuario = nombreUsuario;
-		this.contraseña = contraseña;
-		
-		this.email= nombre + apellidos + "@email.com";
 	
-	}
-	
+
 	public Usuarios() {
 		super();
 		this.nombre = "";
@@ -35,9 +24,9 @@ public class Usuarios {
 		this.direccion = "";
 		this.nombreUsuario = "";
 		this.contraseña = "";
-	
-		this.email="@email.com";
-	
+		this.id = 0;
+		this.tipo = true;
+		this.email = "";
 	}
 
 	public String getNombre() {
@@ -113,6 +102,14 @@ public class Usuarios {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public void setEdad(Integer edad) {
+		this.edad = edad;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	@Override

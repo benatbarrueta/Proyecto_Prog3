@@ -59,7 +59,7 @@ public class VentanaLogIn extends JFrame {
 				
 					for (Alumno alumno : GestorBD.gestorBD.obtenerDatosAlumnos()) {
 						if(textoUsuario.getText().equals(alumno.getNombreUsuario())  && textoContrasena.getText().equals(alumno.getContraseña())) {
-							VentanaAlud v = new VentanaAlud(alumno, "Alumno", gestor);
+							VentanaAlud v = new VentanaAlud(alumno, "Alumno");
 
 							dispose();
 						sesion=true;
@@ -93,7 +93,7 @@ public class VentanaLogIn extends JFrame {
 					for (Profesor profesor : GestorBD.gestorBD.obtenerDatosProfesor()) {
 						//System.out.println(profesor);
 						if(textoUsuario.getText().equals(profesor.getNombreUsuario()) && textoContrasena.getText().equals(profesor.getContraseña())) {
-							VentanaAlud v = new VentanaAlud(profesor, "Profesor", gestor);
+							VentanaAlud v = new VentanaAlud(profesor, "Profesor");
 							dispose();
 							sesion=true;
 							break;

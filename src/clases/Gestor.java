@@ -95,7 +95,7 @@ public class Gestor {
 	}
 	
 	
-	public ArrayList<Tarea> leerTareasCSV(String filename) {
+	public static ArrayList<Tarea> leerTareasCSV() {
 		
 		try (BufferedReader in = new BufferedReader(new FileReader("tareas.csv"))){
 			String linea;
@@ -126,7 +126,7 @@ public class Gestor {
 		}
 		return tareas;
 	}
-	public void guardarTareaCSV(ArrayList<Tarea> tareas) throws FileNotFoundException {
+	public static void guardarTareaCSV(ArrayList<Tarea> tareas) throws FileNotFoundException {
 		
 	PrintWriter pw = new PrintWriter("tareas.csv");
 		
@@ -146,16 +146,18 @@ public class Gestor {
 		
 	}
 	}
-	public ArrayList<Alumno> leerAlumnosCSV(String filename) {
+	public static ArrayList<Alumno> leerAlumnosCSV() {
+		ArrayList<Alumno> alumnos = null;
 		try (BufferedReader in = new BufferedReader(new FileReader("alumnos.csv"))){
 			String linea;
 			StringTokenizer tokenizer;
 			Alumno alumno;
-			List<Alumno> alumnos= new ArrayList<>();
+			alumnos	= new ArrayList<Alumno>();
 			in.readLine(); // Saltar linea cabezera
 			while((linea = in.readLine())!= null) {
 				tokenizer= new StringTokenizer(linea,";");
 				alumno = new Alumno();
+				
 				alumno.setId(Integer.parseInt(tokenizer.nextToken()));
 				alumno.setNombre(tokenizer.nextToken());
 				alumno.setApellidos(tokenizer.nextToken());
@@ -177,9 +179,9 @@ public class Gestor {
 			System.err.println("Error en el main: " +ex);
 			ex.printStackTrace();
 		}
-		return alumnos;
+		return  alumnos;
 	}
-	public void guardarAlumnosCSV(ArrayList<Alumno> alumnos) throws FileNotFoundException {
+	public static void guardarAlumnosCSV(ArrayList<Alumno> alumnos) throws FileNotFoundException {
 		PrintWriter pw = new PrintWriter("alumnos.csv");
 		
 		pw.println("ID;NOMBRE;APELLIDO;CONTRASEÑA;DIRECCION;EDAD;EMAIL;CURSO;NOMBRE_USUARIO");
@@ -197,11 +199,12 @@ public class Gestor {
 						+";"+t.getNombreUsuario()
 						+";");
 
-			pw.close();
+		
 			
 		}
+			pw.close();
 	}
-	public ArrayList<Estudia> leerEstudiaCSV(String filename) {
+	public static ArrayList<Estudia> leerEstudiaCSV() {
 		ArrayList<Estudia> estudias = null;
 		try (BufferedReader in = new BufferedReader(new FileReader("estudia.csv"))){
 			String linea;
@@ -231,7 +234,7 @@ public class Gestor {
 
 		return estudias;
 	}
-	public void guardarEstudiaCSV(ArrayList<Estudia> estudias) throws FileNotFoundException {
+	public static void guardarEstudiaCSV(ArrayList<Estudia> estudias) throws FileNotFoundException {
 	PrintWriter pw = new PrintWriter("estudia.csv");
 		
 		pw.println("ID_ALUMNO;ID_ASIGNATURA");
@@ -242,11 +245,12 @@ public class Gestor {
 						+";"+t.getId_asignatura()
 						+";");
 
-			pw.close();
+		
 			
 		}
+			pw.close();
 	}
-	public ArrayList<Profesor> leerProfesorCSV(String filename) {
+	public static ArrayList<Profesor> leerProfesorCSV() {
 		ArrayList<Profesor> profesores = null;
 		try (BufferedReader in = new BufferedReader(new FileReader("profesores.csv"))){
 			String linea;
@@ -280,7 +284,7 @@ public class Gestor {
 		}
 		return profesores;
 	}
-	public void guardarProfesorCSV(ArrayList<Profesor> profesores) throws FileNotFoundException {
+	public static void guardarProfesorCSV(ArrayList<Profesor> profesores) throws FileNotFoundException {
 	PrintWriter pw = new PrintWriter("profesores.csv");
 		
 		pw.println("ID;NOMBRE;APELLIDO;CONTRASEÑA;DIRECCION;EDAD;EMAIL;SALARIO;NOMBRE_USUARIO");
@@ -299,11 +303,12 @@ public class Gestor {
 						
 						+";");
 
-			pw.close();
 			
 		}
+
+			pw.close();
 	}
-	public ArrayList<Asignatura> leerAsignaturaCSV(String filename) {
+	public static ArrayList<Asignatura> leerAsignaturaCSV() {
 		ArrayList<Asignatura> asignaturas = null;
 		try (BufferedReader in = new BufferedReader(new FileReader("asignaturas.csv"))){
 			String linea;
@@ -331,7 +336,7 @@ public class Gestor {
 		}
 		return asignaturas;
 	}
-	public void guardarAsignaturaCSV(ArrayList<Asignatura> asignaturas) throws FileNotFoundException {
+	public static void guardarAsignaturaCSV(ArrayList<Asignatura> asignaturas) throws FileNotFoundException {
 PrintWriter pw = new PrintWriter("asignaturas.csv");
 		
 		pw.println("ID;NOMBRE;ID_PROFESOR");
@@ -344,31 +349,39 @@ PrintWriter pw = new PrintWriter("asignaturas.csv");
 
 						+";");
 
-			pw.close();
+		
 			
 		}
+			pw.close();
 	}
 	
 	 
 	
-	public ArrayList<Usuarios> initUsuarios() {
-		Usuarios	usuario;
-			for (int i = 0; i < 10; i++) {
-			String name = i +"";
-			String username="nombreUsuario"+i;
-		
-				usuario= new Usuarios(name,"apellidos",0,"direccion",username,username);
-			usuarios.add(usuario);
-			}
-			//System.out.println(usuarios);
-			return usuarios;
-			//System.out.println(asignaturas);
-		}
-	public static void main(String[] args) {
+
+	public static void main(String[] args) throws FileNotFoundException {
 		
 		Properties properties = loadProperties();
 
 		 GestorBD.gestorBD.GestorBD();
+		Alumno a = new Alumno();
+		a.setNombre("BORJA");
+		
+		ArrayList<Alumno> as = new ArrayList<Alumno>();
+		as.add(a);
+		System.out.println(as);
+		 guardarAlumnosCSV(as);
+		 leerAlumnosCSV();
+		 guardarAsignaturaCSV(new ArrayList<Asignatura>());
+		 guardarEstudiaCSV(new ArrayList<Estudia>());
+		 guardarProfesorCSV(new ArrayList<Profesor>());
+		 guardarTareaCSV(new ArrayList<Tarea>());
+		 
+		 System.out.println( GestorBD.gestorBD.obtenerDatosAlumnos());
+		 System.out.println( GestorBD.gestorBD.obtenerDatosAsignaturas());
+		 System.out.println( GestorBD.gestorBD.obtenerDatosEstudia());
+		 System.out.println( GestorBD.gestorBD.obtenerDatosProfesor());
+		 System.out.println( GestorBD.gestorBD.obtenerDatosTareas());
+		 
         
 		VentanaLogIn v = new VentanaLogIn();
 		

@@ -4,10 +4,6 @@ public class Alumno extends Usuarios {
 
 	protected int curso;
 
-	public Alumno(String nombre, String apellidos, int edad, String direccion, String nombreUsuario, String contraseña, int curso) {
-		super(nombre, apellidos, edad, direccion, nombreUsuario, contraseña);
-		this.curso = curso;
-	}
 
 	public Alumno() {
 		super();
@@ -15,6 +11,13 @@ public class Alumno extends Usuarios {
 	}
 
 	
+
+	public Alumno(int curso) {
+		super();
+		this.curso = curso;
+	}
+
+
 
 	public int getCurso() {
 		return curso;

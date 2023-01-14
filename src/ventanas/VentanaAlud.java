@@ -20,7 +20,7 @@ public class VentanaAlud extends JFrame {
 	
 	protected JButton mostrar_tareas;
 	
-	public VentanaAlud (Object objeto, String tipo, Gestor gestor) {
+	public VentanaAlud (Object objeto, String tipo) {
 			
 		Container cp = this.getContentPane();
 		
@@ -42,7 +42,7 @@ public class VentanaAlud extends JFrame {
 			Alumno alumno = (Alumno) objeto;
 			norte.add(new JLabel(alumno.getNombre()));
 			norte.add(new JLabel(alumno.getApellidos()));	
-			for (Asignatura asig : gestor.getAsignatura()) {
+			for (Asignatura asig : GestorBD.gestorBD.obtenerDatosAsignaturas()) {
 				if (("" + asig.getAlumnos()).contains("" + alumno)) {
 					 botonasig = new JButton(asig.getNombre());
 			            centro.add(botonasig);
