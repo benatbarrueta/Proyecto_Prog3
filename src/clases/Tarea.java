@@ -3,7 +3,7 @@ package clases;
 import java.awt.Point;
 
 public class Tarea {
-	protected Integer Id;
+	protected int id;
 	protected String fecha_fin;
 	protected int calificacion;
 	protected String nombre;
@@ -11,29 +11,10 @@ public class Tarea {
 	protected int id_alumna;
 	protected int porcentaje;
 		
-	
-
-	public int getPorcentaje() {
-		return porcentaje;
-	}
-
-
-
-	public void setPorcentaje(int porcentaje) {
-		this.porcentaje = porcentaje;
-	}
-
-
-
-	public void setId(Integer id) {
-		Id = id;
-	}
-
-
 
 	public Tarea() {
 		super();
-		this.Id = 0;
+		this.id = 0;
 		this.fecha_fin = "1";
 		this.calificacion =0;
 		this.nombre = "";
@@ -45,13 +26,13 @@ public class Tarea {
 
 
 	public int getId() {
-		return Id;
+		return id;
 	}
 
 
 
 	public void setId(int id) {
-		this.Id = id;
+		this.id = id;
 	}
 
 
@@ -114,7 +95,17 @@ public class Tarea {
 		this.id_alumna = id_alumna;
 	}
 
+	
+	
+	public int getPorcentaje() {
+		return porcentaje;
+	}
 
+
+
+	public void setPorcentaje(int porcentaje) {
+		this.porcentaje = porcentaje;
+	}
 
 	@Override
 	public String toString() {
