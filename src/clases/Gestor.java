@@ -130,7 +130,7 @@ public class Gestor {
 		
 	PrintWriter pw = new PrintWriter("tareas.csv");
 		
-	pw.println("ID;NOMBRE;FECHA_FIN;CONTRASEÑA;CALIFICACION;ID_ASIGNATURA;ID_ALUMNO");
+	pw.println("ID;NOMBRE;FECHA_FIN;CONTRASEÑA;CALIFICACION;ID_ASIGNATURA;ID_ALUMNO;PORCENTAJE");
 		
 		for (Tarea t : tareas) {
 	
@@ -379,7 +379,7 @@ PrintWriter pw = new PrintWriter("asignaturas.csv");
 //		 guardarAsignaturaCSV(new ArrayList<Asignatura>());
 //	 guardarEstudiaCSV(new ArrayList<Estudia>());
 //	 guardarProfesorCSV(new ArrayList<Profesor>());
-//		 guardarTareaCSV(new ArrayList<Tarea>());
+		 guardarTareaCSV(new ArrayList<Tarea>());
 		 
 		 System.out.println( GestorBD.gestorBD.obtenerDatosAlumnos());
 		 System.out.println( GestorBD.gestorBD.obtenerDatosAsignaturas());
