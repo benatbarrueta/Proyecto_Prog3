@@ -367,89 +367,8 @@ PrintWriter pw = new PrintWriter("asignaturas.csv");
 	public static void main(String[] args) {
 		
 		Properties properties = loadProperties();
-		GestorBD.gestorBD = new GestorBD();	
-	ArrayList<Estudia> a = GestorBD.gestorBD.obtenerDatosEstudia();
-	//	gestor.CrearAsignaturas();
-	//	gestor.leerTareasCSV(properties.getProperty(INPUT_KEY_TAREA ));
-	//	gestor.guardarTareaCSV(properties.getProperty(OUTPUT_KEY_TAREA ));
-		
-		
-	
-		//CREAR BASE DE DATOS
-		
-
-		//GestorBD.gestorBD.borrarBBDDAlumno();
-		//GestorBD.gestorBD.borrarBBDDProfesor();
-		/*
-		GestorBD.gestorBD.crearBBDDProfesor();
-		GestorBD.gestorBD.crearBBDDAlumno();
-		GestorBD.gestorBD.crearBBDDTarea();
-		GestorBD.gestorBD.crearBBDDAsignatura();
-		*/
-		
-		//CREAR PROFESORES, ALUMNOS, TAREAS Y ASIGNATURAS
-	//	ArrayList<Profesor> profesores = GestorBD.gestorBD.obtenerDatosProfesor();
-	
-		//ArrayList<Tarea> tareas = GestorBD.gestorBD.obtenerDatosTareas();
-		//ArrayList<Asignatura> asignaturas = GestorBD.gestorBD.obtenerDatosAsignaturas();
-		
 
 		
-		/*if (profesores.size() == 0) {
-			for (int i = 0; i < 2; i++) {
-		//		Profesor profesor = new Profesor();
-			//			profesor.setContraseña(i+"");
-			//			profesor.setApellidos("Apellido"+i);
-			//			profesor.setDireccion("dir");
-			//			profesor.setEdad(i);
-			//			profesor.setNombre("nombre"+i);
-				//		profesor.setSalario(i);
-				//		profesor.setNombreUsuario("Profe");
-				//		gestor.profesor.add(profesor);		
-			}
-			
-			Profesor profesor = new Profesor("Borja", "OM", 5, "DIR","NU","", 0);
-			gestor.profesor.add(profesor);*/
-	/*	}
-		if (alumnos.size() == 0) {
-			for (int i = 0; i < 5; i++) {
-				Alumno alumno= new Alumno("Alumno", "" + i, i*10, "", "Alumno"+i, "1", "PRIMERO");
-				
-				GestorBD.gestorBD.insertarDatosAlumno(alumno);
-				
-				gestor.alumnos.add(alumno);
-			}
-		}*/
-		//INSERTAS DATOS EN LAS TABLAS
-	/*	GestorBD.gestorBD.insertarDatosAlumno(gestor.alumnos.toArray(new Alumno[gestor.alumnos.size()]));
-		GestorBD.gestorBD.insertarDatosProfesor(gestor.profesor.toArray(new Profesor[gestor.profesor.size()]));
-		//GestorBD.gestorBD.insertarDatosTarea(gestor.tareas.toArray(new Tarea[gestor.tareas.size()]));
-		System.out.println(tareas);
-		
-		// VENTANAS
-		
-		//System.out.println(GestorBD.gestorBD.obtenerDatosProfesor());
-		gestor.alumnos=GestorBD.gestorBD.obtenerDatosAlumnos();
-        gestor.profesor= GestorBD.gestorBD.obtenerDatosProfesor();
-        
- /*       for (int i = 0; i < gestor.asignaturas.size(); i++) {
-        	gestor.asignaturas.get(i).setProfesor(gestor.profesor.get(0));
-		}*/
-        
-/*		gestor.asignaturas.get(0).getAlumnos().add(alumnos.get(0));
-		gestor.asignaturas.get(1).getAlumnos().add(alumnos.get(0));
-		gestor.asignaturas.get(2).getAlumnos().add(alumnos.get(0));
-		gestor.asignaturas.get(3).getAlumnos().add(alumnos.get(0));
-		gestor.asignaturas.get(4).getAlumnos().add(alumnos.get(0));
-		gestor.asignaturas.get(2).getAlumnos().add(alumnos.get(1));
-		gestor.asignaturas.get(3).getAlumnos().add(alumnos.get(1));
-		gestor.asignaturas.get(4).getAlumnos().add(alumnos.get(1));
-		gestor.asignaturas.get(1).getAlumnos().add(alumnos.get(2));
-		gestor.asignaturas.get(2).getAlumnos().add(alumnos.get(2));
-		gestor.asignaturas.get(5).getAlumnos().add(alumnos.get(2));
-		gestor.asignaturas.get(1).getAlumnos().add(alumnos.get(3));
-		gestor.asignaturas.get(6).getAlumnos().add(alumnos.get(3));
-		gestor.asignaturas.get(7).getAlumnos().add(alumnos.get(3));*/
         
 		VentanaLogIn v = new VentanaLogIn();
 		
