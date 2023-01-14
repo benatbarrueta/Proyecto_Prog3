@@ -112,7 +112,7 @@ public class Gestor {
 				tarea.setCalificacion(Integer.parseInt(tokenizer.nextToken()));
 				tarea.setId_asignatura(Integer.parseInt(tokenizer.nextToken()));
 				tarea.setId_alumna(Integer.parseInt(tokenizer.nextToken()));
-				
+				tarea.setPorcentaje(Integer.parseInt(tokenizer.nextToken()));
 				tareas.add(tarea);
 			}
 			
@@ -130,7 +130,7 @@ public class Gestor {
 		
 	PrintWriter pw = new PrintWriter("tareas.csv");
 		
-	pw.println("ID;NOMBRE;FECHA_FIN;CONTRASEÑA;CALIFICACION;ID_ASIGNATURA;ID_ALUMNO;PORCENTAJE");
+	pw.println("ID;NOMBRE;FECHA_FIN;CALIFICACION;ID_ASIGNATURA;ID_ALUMNO;PORCENTAJE");
 		
 		for (Tarea t : tareas) {
 	
@@ -140,6 +140,7 @@ public class Gestor {
 					+";"+t.getCalificacion()
 					+";"+t.getId_asignatura()
 					+";"+t.getId_alumna()
+					+";"+t.getPorcentaje()
 					+";");
 
 		pw.close();
@@ -368,18 +369,23 @@ PrintWriter pw = new PrintWriter("asignaturas.csv");
 		a.setNombre("BORJA");
 		
 		ArrayList<Alumno> as = new ArrayList<Alumno>();
-	
+		ArrayList<Alumno> as2 = new ArrayList<Alumno>();
+		ArrayList<Alumno> as3= new ArrayList<Alumno>();
+		ArrayList<Tarea> as4 = new ArrayList<Tarea>();
+		
+	as4.add(new Tarea());
 	//	System.out.println(as);
 		as= leerAlumnosCSV();
 		 guardarAlumnosCSV(as);
-		 
+		 System.out.println(as4);
+		 guardarTareaCSV(as4);
 	//	 GestorBD.gestorBD.insertarDatosAlumno(as.get(0));
 
 	
 //		 guardarAsignaturaCSV(new ArrayList<Asignatura>());
 //	 guardarEstudiaCSV(new ArrayList<Estudia>());
 //	 guardarProfesorCSV(new ArrayList<Profesor>());
-		 guardarTareaCSV(new ArrayList<Tarea>());
+	//	 guardarTareaCSV(new ArrayList<Tarea>());
 		 
 		 System.out.println( GestorBD.gestorBD.obtenerDatosAlumnos());
 		 System.out.println( GestorBD.gestorBD.obtenerDatosAsignaturas());
