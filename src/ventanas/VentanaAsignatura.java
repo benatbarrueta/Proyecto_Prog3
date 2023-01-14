@@ -42,13 +42,73 @@ public class VentanaAsignatura extends JFrame{
 	protected JButton tareaBoton;
 	
 	
-	public VentanaAsignatura(Object objeto, String tipo, Gestor gestor, Asignatura asignatura) {
+	public VentanaAsignatura(Object objeto, String tipo, Asignatura asignatura) {
 		
 		Container cp = this.getContentPane();
+		ArrayList<Tarea> listaTarea = new ArrayList<>();
+		// CREACIONES  //AÑADE LAS TAREAS DEL ALUMNO A LA LISTA
+		if(tipo.equals("Alumno")) {
+			Alumno alumno = (Alumno)objeto;
+			for (Tarea t : GestorBD.gestorBD.obtenerDatosTareas()) {
+				if(t.getId_alumna()==alumno.getId() && (t.getId_asignatura() == asignatura.getId())) {
+					listaTarea.add(t);
+				}
+			}
+			
+			modeloTareaLista = new DefaultTableModel(new Object[] { "NOMBRE", "FECHA ENTREGA", "ESTATUS", "CALIFICACION"}, 0);
+			tareaLista = new JTable(modeloTareaLista);
 		
-		// CREACIONES
+			String status = "";
+			String calificacion = "";
+			for(String s : actividadesPorNombre.keySet()) {
+				for (Tarea tarea : listaTarea) {
+					if (tarea.getCalificacion() >= 5) {
+						status = "APROBADO";
+						calificacion = "" + tarea.getCalificacion();
+					} else if(tarea.getCalificacion() == -1) {
+						status = "SIN CALIFICAR";
+						calificacion = "";
+					} else {
+						status = "SUSPENDIDO";
+						calificacion = "" + tarea.getCalificacion();
+					}
+				
+				
+						modeloTareaLista.addRow(new Object[] {tarea.getNombre(), tarea.getFecha_fin(), status, calificacion, alumno.getNombre()});
+					}
+				}
+		}else {
+			Profesor profesor = (Profesor) objeto;
+			for (Tarea t : GestorBD.gestorBD.obtenerDatosTareas()) {
+				
+				modeloTareaLista = new DefaultTableModel(new Object[] { "EMAIL ALUMNO", "FECHA ENTREGA", "ESTATUS", "CALIFICACION"}, 0);
+				tareaLista = new JTable(modeloTareaLista);
+			
+				String status = "";
+				String calificacion = "";
+				for (String s : actividadesPorNombre.keySet()) {
+					for (Tarea tarea : actividadesPorNombre.get(s)) {
+						if(s.equals("Actividad 01")) {
+							if (tarea.getCalificacion() >= 5) {
+								status = "APROBADO";
+								calificacion = "" + tarea.getCalificacion();
+							} else if(tarea.getCalificacion() == -1) {
+								status = "SIN CALIFICAR";
+								calificacion = "";
+							} else {
+								status = "SUSPENDIDO";
+								calificacion = "" + tarea.getCalificacion();
+							}
+						
+						modeloTareaLista.addRow(new Object[] {tarea.getEmailAlumno(), tarea.getFecha_fin(), status, calificacion});
+						}
+				
+			}
+			
+		}
 		cp.setLayout(new BorderLayout());
-		ArrayList<Tarea> listaTarea = asignatura.getTareas();
+		
+	
 		ArrayList<String> nombreTareas = new ArrayList<String>();
 		TreeMap<String, ArrayList<Tarea>>actividadesPorNombre = new TreeMap<>();
 		JPanel centro = new JPanel();
@@ -112,56 +172,8 @@ public class VentanaAsignatura extends JFrame{
 		};
 		
 		//DIFERENCIAR SI ENTRA UN ALUMNO O PROFESOR
-				if (tipo == "Alumno") {
-					modeloTareaLista = new DefaultTableModel(new Object[] { "NOMBRE", "FECHA ENTREGA", "ESTATUS", "CALIFICACION"}, 0);
-					tareaLista = new JTable(modeloTareaLista);
-					Alumno alumno = (Alumno) objeto;
-					String status = "";
-					String calificacion = "";
-					for(String s : actividadesPorNombre.keySet()) {
-						for (Tarea tarea : listaTarea) {
-							if (tarea.getCalificacion() >= 5) {
-								status = "APROBADO";
-								calificacion = "" + tarea.getCalificacion();
-							} else if(tarea.getCalificacion() == -1) {
-								status = "SIN CALIFICAR";
-								calificacion = "";
-							} else {
-								status = "SUSPENDIDO";
-								calificacion = "" + tarea.getCalificacion();
-							}
-						
-							if (tarea.getEmailAlumno().equals(alumno.getEmail())) {
-								modeloTareaLista.addRow(new Object[] {tarea.getNombre(), tarea.getFecha_fin(), status, calificacion, alumno.getNombre()});
-							}
-						}
-					}
-					
-				} else {
-					modeloTareaLista = new DefaultTableModel(new Object[] { "EMAIL ALUMNO", "FECHA ENTREGA", "ESTATUS", "CALIFICACION"}, 0);
-					tareaLista = new JTable(modeloTareaLista);
-					Profesor profesor = (Profesor) objeto;
-					String status = "";
-					String calificacion = "";
-					for (String s : actividadesPorNombre.keySet()) {
-						for (Tarea tarea : actividadesPorNombre.get(s)) {
-							if(s.equals("Actividad 01")) {
-								if (tarea.getCalificacion() >= 5) {
-									status = "APROBADO";
-									calificacion = "" + tarea.getCalificacion();
-								} else if(tarea.getCalificacion() == -1) {
-									status = "SIN CALIFICAR";
-									calificacion = "";
-								} else {
-									status = "SUSPENDIDO";
-									calificacion = "" + tarea.getCalificacion();
-								}
-							
-							modeloTareaLista.addRow(new Object[] {tarea.getEmailAlumno(), tarea.getFecha_fin(), status, calificacion});
-							}
-						
-						}
-					}
+			
+		
 					
 					comboTareas = new JComboBox();
 					for (String s : actividadesPorNombre.keySet()) {

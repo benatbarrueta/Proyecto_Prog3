@@ -41,24 +41,31 @@ public class VentanaAlud extends JFrame {
 			centro.setLayout(new GridLayout(1,1));
 			Alumno alumno = (Alumno) objeto;
 			norte.add(new JLabel(alumno.getNombre()));
-			norte.add(new JLabel(alumno.getApellidos()));	
-			for (Asignatura asig : GestorBD.gestorBD.obtenerDatosAsignaturas()) {
-				if (("" + asig.getAlumnos()).contains("" + alumno)) {
-					 botonasig = new JButton(asig.getNombre());
-			            centro.add(botonasig);
-			            botonasig.setBackground(new Color((int)(Math.random()*155 + 100), (int) (Math.random()*155 + 100), (int) (Math.random()*155 + 100)));
-			            
-			            botonasig.addActionListener(new ActionListener() {
+			norte.add(new JLabel(alumno.getApellidos()));
+			for (Estudia e : GestorBD.gestorBD.obtenerDatosEstudia()) {
+				if (alumno.getId()==e.getId_alumno()) {
+					for (Asignatura a :  GestorBD.gestorBD.obtenerDatosAsignaturas()) {
+						if(e.getId_asignatura()==a.getId()) {
 							
-							@Override
-							public void actionPerformed(ActionEvent e) {
-								// TODO Auto-generated method stub
-			        			VentanaAsignatura v= new VentanaAsignatura(objeto, "Alumno", gestor, asig);
-							}
-						});
-					contasig++;
-				} 
+							 botonasig = new JButton(a.getNombre());
+					            centro.add(botonasig);
+					            botonasig.setBackground(new Color((int)(Math.random()*155 + 100), (int) (Math.random()*155 + 100), (int) (Math.random()*155 + 100)));
+					            
+					            botonasig.addActionListener(new ActionListener() {
+									
+									@Override
+									public void actionPerformed(ActionEvent e) {
+										// TODO Auto-generated method stub
+					        			VentanaAsignatura v= new VentanaAsignatura(objeto, "Alumno", gestor, asig);
+									}
+								});
+							contasig++;
+						}
+					}
+				
+				}
 			}
+		
 			
 			
 			norte.add(new JLabel(""));
