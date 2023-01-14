@@ -376,10 +376,10 @@ PrintWriter pw = new PrintWriter("asignaturas.csv");
 		 GestorBD.gestorBD.insertarDatosAlumno(as.get(0));
 
 	
-		 guardarAsignaturaCSV(new ArrayList<Asignatura>());
-		 guardarEstudiaCSV(new ArrayList<Estudia>());
-		 guardarProfesorCSV(new ArrayList<Profesor>());
-		 guardarTareaCSV(new ArrayList<Tarea>());
+//		 guardarAsignaturaCSV(new ArrayList<Asignatura>());
+//	 guardarEstudiaCSV(new ArrayList<Estudia>());
+//	 guardarProfesorCSV(new ArrayList<Profesor>());
+//		 guardarTareaCSV(new ArrayList<Tarea>());
 		 
 		 System.out.println( GestorBD.gestorBD.obtenerDatosAlumnos());
 		 System.out.println( GestorBD.gestorBD.obtenerDatosAsignaturas());
