@@ -143,11 +143,9 @@ public class Gestor {
 					+";"+t.getId_asignatura()
 					+";"+t.getId_alumna()
 					+";"+t.getPorcentaje()
-					+";");
-
+					+";");		
+		}
 		pw.close();
-		
-	}
 	}
 	public static ArrayList<Alumno> leerAlumnosCSV() {
 		ArrayList<Alumno> alumnos = null;
@@ -388,7 +386,7 @@ PrintWriter pw = new PrintWriter("asignaturas.csv");
 	//	guardarEstudiaCSV(estudias);
 	//	guardarProfesorCSV(profesores);
 	//	guardarTareaCSV(tareas);
-
+		
 		 
 		 System.out.println( GestorBD.gestorBD.obtenerDatosAlumnos());
 		 System.out.println( GestorBD.gestorBD.obtenerDatosAsignaturas());
