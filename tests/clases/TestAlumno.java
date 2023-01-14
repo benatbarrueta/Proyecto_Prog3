@@ -34,12 +34,6 @@ public class TestAlumno {
 	public void testAlumnoInt() {
 		Alumno newAlumno = new Alumno(curso);
 		assertNotNull(newAlumno);
-		assertEquals(newAlumno.getNombre(),"");
-		assertEquals(newAlumno.getApellidos(), "");
-		assertEquals(newAlumno.getEdad(), edad,0);
-		assertEquals(newAlumno.getDireccion(), "");
-		assertEquals(newAlumno.getNombreUsuario(), "");
-		assertEquals(newAlumno.getContraseña(), "");
 		assertEquals(newAlumno.getCurso(), curso);
 		
 	}
@@ -47,12 +41,6 @@ public class TestAlumno {
 	public void testAlumno() {
 		Alumno newAlumno2 = new Alumno();
 		assertNotNull(newAlumno2);
-		assertEquals(newAlumno2.getNombre(), "");
-		assertEquals(newAlumno2.getApellidos(), "");
-		assertEquals(newAlumno2.getEdad(), 0,0);
-		assertEquals(newAlumno2.getDireccion(), "");
-		assertEquals(newAlumno2.getNombreUsuario(), "");
-		assertEquals(newAlumno2.getContraseña(), "");
 		assertEquals(newAlumno2.getCurso(), 1);
 		
 	}

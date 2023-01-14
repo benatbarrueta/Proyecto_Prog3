@@ -17,8 +17,6 @@ public class Alumno extends Usuarios {
 		this.curso = curso;
 	}
 
-
-
 	public int getCurso() {
 		return curso;
 	}
