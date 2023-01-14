@@ -163,7 +163,8 @@ public class Gestor {
 				alumno.setApellidos(tokenizer.nextToken());
 				alumno.setContraseña(tokenizer.nextToken());
 				alumno.setDireccion(tokenizer.nextToken());
-				alumno.setEdad(Integer.parseInt(tokenizer.nextToken()));
+				tokenizer.nextToken();
+		//		alumno.setEdad(Integer.parseInt(tokenizer.nextToken()));
 				alumno.setEmail(tokenizer.nextToken());
 				alumno.setCurso(Integer.parseInt(tokenizer.nextToken()));
 				alumno.setNombreUsuario(tokenizer.nextToken());
@@ -367,10 +368,12 @@ PrintWriter pw = new PrintWriter("asignaturas.csv");
 		a.setNombre("BORJA");
 		
 		ArrayList<Alumno> as = new ArrayList<Alumno>();
-		as.add(a);
-		System.out.println(as);
+	
+	//	System.out.println(as);
+		as= leerAlumnosCSV();
 		 guardarAlumnosCSV(as);
-		 leerAlumnosCSV();
+
+		System.out.println(as);
 		 guardarAsignaturaCSV(new ArrayList<Asignatura>());
 		 guardarEstudiaCSV(new ArrayList<Estudia>());
 		 guardarProfesorCSV(new ArrayList<Profesor>());

@@ -3,11 +3,6 @@ package clases;
 public class Profesor extends Usuarios {
 	protected int salario;
 
-	public Profesor(String nombre, String apellidos, int edad, String direccion, String nombreUsuario,
-			String contraseña, int salario) {
-		super(nombre, apellidos, edad, direccion, nombreUsuario, contraseña);
-		this.salario = salario;
-	}
 	
 	
 	public Profesor() {
