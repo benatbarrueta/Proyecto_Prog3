@@ -17,13 +17,7 @@ public class TestAlumno {
 	@Before
 	public void SetUp() {
 		alumno = new Alumno();
-//		alumno.setApellidos("Apellidos");
-//		alumno.setContraseña("Contraseña");
 		alumno.setCurso(curso);
-//		alumno.setDireccion("Direccion");
-//		alumno.setEdad(0);
-//		alumno.setNombre("Nombre");
-//		alumno.setNombreUsuario("Usuario");
 		
 	}
 
@@ -36,19 +30,6 @@ public class TestAlumno {
 		assertEquals(alumno.toString(), toString);
 	}
 
-//	@Test
-//	public void testAlumnoStringStringIntStringStringStringBooleanString() {
-//		Alumno newAlumno = new Alumno(nombre, apellidos, edad, direccion, nombreUsuario, contraseña, curso);
-//		assertNotNull(newAlumno);
-//		assertEquals(newAlumno.getNombre(),nombre);
-//		assertEquals(newAlumno.getApellidos(), apellidos);
-//		assertEquals(newAlumno.getEdad(), edad,0);
-//		assertEquals(newAlumno.getDireccion(), direccion);
-//		assertEquals(newAlumno.getNombreUsuario(), nombreUsuario);
-//		assertEquals(newAlumno.getContraseña(), contraseña);
-//		assertEquals(newAlumno.getCurso(), curso);
-//		
-//	}
 	@Test
 	public void testAlumnoInt() {
 		Alumno newAlumno = new Alumno(curso);
@@ -88,5 +69,4 @@ public class TestAlumno {
 		alumno.setCurso(newCurso);
 		assertEquals(alumno.getCurso(), newCurso);
 	}
-
 }
