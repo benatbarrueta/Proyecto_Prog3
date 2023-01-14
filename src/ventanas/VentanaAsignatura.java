@@ -119,10 +119,8 @@ public class VentanaAsignatura extends JFrame{
 	
 		ArrayList<String> nombreTareas = new ArrayList<String>();
 		TreeMap<String, ArrayList<Tarea>>actividadesPorNombre = new TreeMap<>();
-		JPanel centro = new JPanel();
-		JPanel norte = new JPanel();
-		JPanel south = new JPanel();
-		JPanel panelComboTareas = new JPanel();
+
+
 		Calendar calendario = new GregorianCalendar();
 		
 		tareas = new JLabel("Tareas");
@@ -133,7 +131,7 @@ public class VentanaAsignatura extends JFrame{
 		hora = calendario.get(Calendar.HOUR_OF_DAY);
  		minutos = calendario.get(Calendar.MINUTE);
  		fecha = new JLabel("Ultima entrada:  "+ hora + ":" + minutos);
- 		
+	
  		for (Tarea tarea : listaTarea) {
  			if (!actividadesPorNombre.containsKey(tarea.getNombre())) {
  				actividadesPorNombre.put(tarea.getNombre(), new ArrayList<Tarea>());
@@ -154,11 +152,7 @@ public class VentanaAsignatura extends JFrame{
 					}
 					
 					comboTareas.setSelectedItem("Clicka para ver las tareas");
-					
-					panelComboTareas.setLayout(new GridLayout(1, 2));
-					panelComboTareas.add(comboTareas);
-					panelComboTareas.add(new JLabel());
-					
+				
 					comboTareas.addActionListener(new ActionListener() {
 						
 						@Override
@@ -192,12 +186,7 @@ public class VentanaAsignatura extends JFrame{
 						}
 					});
 					
-					//SUR
-					añadirTarea = new JButton("Añadir Tarea");
-					editarTarea = new JButton("Editar Tarea");
-					
-					south.add(añadirTarea);
-					south.add(editarTarea);
+			
 					
 					
 					añadirTarea.addActionListener(new ActionListener() {
@@ -263,7 +252,19 @@ public class VentanaAsignatura extends JFrame{
 				return label;
 			}
 		};
+		//SUR
+		JPanel centro = new JPanel();
+		JPanel norte = new JPanel();
+		JPanel south = new JPanel();
+		añadirTarea = new JButton("Añadir Tarea");
+		editarTarea = new JButton("Editar Tarea");
+		JPanel panelComboTareas = new JPanel();
+		panelComboTareas.setLayout(new GridLayout(1, 2));
+		panelComboTareas.add(comboTareas);
+		panelComboTareas.add(new JLabel());
 		
+		south.add(añadirTarea);
+		south.add(editarTarea);
 		
 		//ADD
 		cp.add(centro, BorderLayout.CENTER);
