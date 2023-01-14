@@ -18,7 +18,7 @@ import clases.Gestor;
 import clases.Tarea;
 
 public class VentanaEditaTarea extends JFrame{
-	public VentanaEditaTarea (Asignatura asignatura, Gestor gestor , int numeroTarea, Object object) {
+	public VentanaEditaTarea (Asignatura asignatura,  int numeroTarea, Object object) {
 		Container cp = this.getContentPane();
 		
 		

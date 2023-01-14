@@ -45,9 +45,9 @@ public class VentanaAlud extends JFrame {
 			for (Estudia e : GestorBD.gestorBD.obtenerDatosEstudia()) {
 				if (alumno.getId()==e.getId_alumno()) {
 					for (Asignatura asig :  GestorBD.gestorBD.obtenerDatosAsignaturas()) {
-						if(e.getId_asignatura()==a.getId()) {
+						if(e.getId_asignatura()==asig.getId()) {
 							
-							 botonasig = new JButton(a.getNombre());
+							 botonasig = new JButton(asig.getNombre());
 					            centro.add(botonasig);
 					            botonasig.setBackground(new Color((int)(Math.random()*155 + 100), (int) (Math.random()*155 + 100), (int) (Math.random()*155 + 100)));
 					            
@@ -84,8 +84,8 @@ public class VentanaAlud extends JFrame {
 			
 			norte.add(new JLabel("Asignaturas"));
 			norte.add(new JLabel(""));
-			for (Asignatura asig : gestor.getAsignatura()) {
-				if (("" + asig.getProfesor()).contains("" + profesor)) {
+			for (Asignatura asig : GestorBD.gestorBD.obtenerDatosAsignaturas()) {
+				if (profesor.getId()==asig.getId_profesor()) {
 					 botonasig = new JButton(asig.getNombre());
 			            centro.add(botonasig);
 			            botonasig.setBackground(new Color((int)(Math.random()*155 + 100), (int) (Math.random()*155 + 100), (int) (Math.random()*155 + 100)));
@@ -95,7 +95,7 @@ public class VentanaAlud extends JFrame {
 							@Override
 							public void actionPerformed(ActionEvent e) {
 								// TODO Auto-generated method stub
-			        			VentanaAsignatura v= new VentanaAsignatura(objeto, "Profesor", gestor, asig);
+			        			VentanaAsignatura v= new VentanaAsignatura(objeto, "Profesor",  asig);
 							}
 						});
 					contasig++;
@@ -116,11 +116,11 @@ public class VentanaAlud extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if (tipo == "Alumno") {
 					Alumno alumno = (Alumno) objeto;
-					VentanaEdita v = new VentanaEdita(alumno, "Alumno", gestor);
+					VentanaEdita v = new VentanaEdita(alumno, "Alumno");
 					dispose();
 				} else {
 					Profesor profesor = (Profesor) objeto;
-					VentanaEdita v = new VentanaEdita(profesor, "Profesor", gestor);
+					VentanaEdita v = new VentanaEdita(profesor, "Profesor");
 					dispose();
 				}
 			}
@@ -148,7 +148,7 @@ public class VentanaAlud extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				VentanaLogIn v = new VentanaLogIn(gestor);
+				VentanaLogIn v = new VentanaLogIn();
 				dispose();
 				
 			}
@@ -167,13 +167,22 @@ public class VentanaAlud extends JFrame {
 			public HashMap<String, ArrayList<Tarea>> todas_tareas = new HashMap<>();
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				for (Asignatura asig : gestor.getAsignatura()) {
-					if (("" + asig.getAlumnos()).contains("" + alumno)) {
-						
-						
+				for (Estudia est :GestorBD.gestorBD.obtenerDatosEstudia()) {
+					if (alumno.getId()==est.getId_alumno()) {
+						for (Asignatura asig : GestorBD.gestorBD.obtenerDatosAsignaturas()) {
+							if(asig.getId()==est.getId_asignatura()) {
+								todas_tareas.putIfAbsent(asig.getNombre(), new ArrayList<Tarea>());
+								for (Tarea tar : GestorBD.gestorBD.obtenerDatosTareas()) {
+									if(alumno.getId()==tar.getId_alumna()) {
+									todas_tareas.get(asig.getNombre()).add(tar);
+									}
+								}
+							}
+						}
+			
 					}
 				}
-				
+			System.out.println(todas_tareas);	
 			}
 		});
 		sur.add(mostrar_tareas);

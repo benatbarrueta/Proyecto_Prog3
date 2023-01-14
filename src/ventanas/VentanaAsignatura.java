@@ -218,7 +218,7 @@ public class VentanaAsignatura extends JFrame{
 											status = "SUSPENDIDO";
 											calificacion = "" + tarea.getCalificacion();
 										}
-										modeloTareaLista.addRow(new Object[] {tarea.getEmailAlumno(), tarea.getFecha_fin(), status, calificacion});
+										modeloTareaLista.addRow(new Object[] {tarea.getId_alumna(), tarea.getFecha_fin(), status, calificacion});
 
 									}
 									tareaLista.repaint();
@@ -240,7 +240,7 @@ public class VentanaAsignatura extends JFrame{
 						@Override
 						public void actionPerformed(ActionEvent e) {
 
-						VentanaAñadeTarea v =new VentanaAñadeTarea(asignatura, gestor, objeto);
+						VentanaAñadeTarea v =new VentanaAñadeTarea(asignatura, objeto);
 						dispose();
 						}
 					});
@@ -252,7 +252,7 @@ public class VentanaAsignatura extends JFrame{
 							try {
 								int	tareaInt = tareaLista.getSelectedRow();
 							
-								VentanaEditaTarea v= new VentanaEditaTarea(asignatura,gestor,tareaInt,objeto);
+								VentanaEditaTarea v= new VentanaEditaTarea(asignatura, tareaInt,objeto);
 								dispose();
 						
 							} catch (Exception e2) {

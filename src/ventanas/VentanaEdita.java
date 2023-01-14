@@ -28,7 +28,7 @@ public class VentanaEdita extends JFrame {
 	protected JButton botonAtras;
 	
 
-	public VentanaEdita(Object objeto, String tipo, Gestor gestor) {
+	public VentanaEdita(Object objeto, String tipo) {
 		
 		Container cp = this.getContentPane();
 		

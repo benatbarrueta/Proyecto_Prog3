@@ -22,7 +22,7 @@ import clases.Tarea;
 
 public class VentanaAñadeTarea extends JFrame {
 
-public VentanaAñadeTarea (Asignatura asignatura ,Gestor gestor, Object object) {
+public VentanaAñadeTarea (Asignatura asignatura , Object object) {
 	Container cp = this.getContentPane();
 	
 	
