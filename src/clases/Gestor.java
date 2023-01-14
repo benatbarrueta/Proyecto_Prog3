@@ -368,7 +368,7 @@ PrintWriter pw = new PrintWriter("asignaturas.csv");
 		
 		Properties properties = loadProperties();
 
-		
+		 GestorBD.gestorBD.GestorBD();
         
 		VentanaLogIn v = new VentanaLogIn();
 		

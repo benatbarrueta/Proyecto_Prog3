@@ -26,7 +26,7 @@ public class GestorBD {
 	public static GestorBD gestorBD;	
 	
 	
-	public GestorBD() {		
+	public void GestorBD() {		
 		try {
 			//Cargar el diver SQLite
 			Class.forName("org.sqlite.JDBC");
