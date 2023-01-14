@@ -19,7 +19,7 @@ import java.sql.*;
 public class GestorBD {
 
 	protected static final String DRIVER_NAME = "lib/sqlite-jdbc";
-	protected static final String DATABASE_FILE = "db/s.db";
+	protected static final String DATABASE_FILE = "db/borja.db";
 	protected static final String CONNECTION_STRING= "jdbc:sqlite:" + DATABASE_FILE;
 
 	private Logger logger = null;
@@ -270,136 +270,178 @@ public class GestorBD {
 	*/
 	// FUNCIONES DE INSERCION
 	
-	public void insertarDatosAlumno(Alumno... alumno) {
-		//Se abre la conexión y se obtiene el Statement
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
-		     Statement stmt = con.createStatement()) {
-			//Se define la plantilla de la sentencia SQL
-			String sql = "INSERT INTO ALUMNO ( ID, NOMBRE, APELLIDO, CONTRASEÑA, DIRECCION, EDAD, EMAIL, CURSO, NOMBRE_USUARIO) VALUES ( ?,'%s', '%s', '%s', '%s', ?,'%s', '%s', '%s');";
-			
-			log( Level.INFO,"Insertando alumnos...", null);
 
-		
-			//Se recorren los alumnos y se insertan uno a uno
-			for (Alumno c : alumno) {
-				
-				if (1 == stmt.executeUpdate(String.format(sql,c.getId(), c.getNombre(), c.getApellidos(), c.getContraseña(), c.getDireccion(),  c.getEdad(), c.getEmail(), c.getCurso(), c.getNombreUsuario()))) {					
-					
-					log( Level.INFO,"Alumno insertado", null);
-				} else {
-				
-					log( Level.INFO,"No se ha insertado el aluno", null);
-				}
-			}			
-		} catch (Exception ex) {
-
-			log( Level.SEVERE,"Error al insertar datos en la  BBDD", ex);
-			ex.printStackTrace();						
-		}				
-	}
 	
-	public void insertarDatosProfesor(Profesor... profesor) {
-		//Se abre la conexión y se obtiene el Statement
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
-		     Statement stmt = con.createStatement()) {
-			//Se define la plantilla de la sentencia SQL
-			String sql = "INSERT INTO PROFESOR ( ID, NOMBRE, APELLIDO, CONTRASEÑA, DIRECCION, EDAD, EMAIL, SALARIO, NOMBRE_USUARIO) VALUES (?,'%s', '%s', '%s', '%s', ?,'%s', ?, '%s');";
-			
+	public void insertarDatosAlumno(Alumno a) {
 		
-			log( Level.INFO, "Insertando profesores...", null);
-			//Se recorren los profesores y se insertan uno a uno
-			for (Profesor c : profesor) {
-				if (1 == stmt.executeUpdate(String.format(sql,c.getId(), c.getNombre(), c.getApellidos(), c.getContraseña(), c.getDireccion(),  c.getEdad(), c.getEmail(), c.getSalario(), c.getNombreUsuario()))) {					
-					//System.out.println(String.format(" - Profesor insertado: %s", c.toString()));
-
-					log( Level.INFO, "Profesor insertado "+c.toString(), null);
-				} else {
+		//Se define la plantilla de la sentencia SQL
+				String sql = "INSERT INTO ALUMNO  ( ID, NOMBRE, APELLIDO, CONTRASEÑA, DIRECCION, EDAD, EMAIL, CURSO, NOMBRE_USUARIO)  VALUES (?, ?, ?, ?,?, ?, ?, ?,?);";
+				
+				//Se abre la conexiÃ³n y se crea el PreparedStatement con la sentencia SQL
+				try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+					 PreparedStatement pStmt = con.prepareStatement(sql)) {
+											
+					//Se recorren los clientes y se insertan uno a uno
+						//Se definen los parÃ¡metros de la sentencia SQL
+						pStmt.setInt(1, a.getId());
+						pStmt.setString(2, a.getNombre());
+						pStmt.setString(3, a.getApellidos());
+						pStmt.setString(4, a.getContraseña());
+						pStmt.setString(5, a.getDireccion());
+						pStmt.setInt(6, a.getEdad());
+						pStmt.setString(7, a.getEmail());
+						pStmt.setInt(8, a.getCurso());
+						pStmt.setString(9, a.getNombreUsuario());
 					
-					log( Level.INFO, "No se ha insertado el profesor "+c.toString(), null);
-				}
-			}			
-		} catch (Exception ex) {
-			System.out.println(ex);
-			log( Level.SEVERE,"Error al insertar datos en la  BBDD", ex);
-			ex.printStackTrace();						
-		}				
+						
+						if (pStmt.executeUpdate() != 1) {					
+							log( Level.INFO,"Alumno insertado", null);
+						} else {
+							//Se actualiza el ID del personaje haciendo un Select									
+							log( Level.INFO,"No se ha insertado el aluno", null);
+						}
+					
+					log( Level.INFO,"Alumnos insertado", null);
+				} catch (Exception ex) {
+					log( Level.SEVERE,"Error al insertar datos en la  BBDD", ex);
+				}		
+						
+					
+				
 	}
+public void insertarDatosProfesor(Profesor a) {
+		
+		//Se define la plantilla de la sentencia SQL
+				String sql = "INSERT INTO PROFESOR  ( ID, NOMBRE, APELLIDO, CONTRASEÑA, DIRECCION, EDAD, EMAIL, SALARIO, NOMBRE_USUARIO)  VALUES (?, ?, ?, ?,?, ?, ?, ?,?);";
+				
+				//Se abre la conexiÃ³n y se crea el PreparedStatement con la sentencia SQL
+				try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+					 PreparedStatement pStmt = con.prepareStatement(sql)) {
+											
+					//Se recorren los clientes y se insertan uno a uno
+						//Se definen los parÃ¡metros de la sentencia SQL
+						pStmt.setInt(1, a.getId());
+						pStmt.setString(2, a.getNombre());
+						pStmt.setString(3, a.getApellidos());
+						pStmt.setString(4, a.getContraseña());
+						pStmt.setString(5, a.getDireccion());
+						pStmt.setInt(6, a.getEdad());
+						pStmt.setString(7, a.getEmail());
+						pStmt.setInt(8, a.getSalario());
+						pStmt.setString(9, a.getNombreUsuario());
+					
+						
+						if (pStmt.executeUpdate() != 1) {					
+							log( Level.INFO,"Alumno insertado", null);
+						} else {
+							//Se actualiza el ID del personaje haciendo un Select									
+							log( Level.INFO,"No se ha insertado el aluno", null);
+						}
+					
+					log( Level.INFO,"Alumnos insertado", null);
+				} catch (Exception ex) {
+					log( Level.SEVERE,"Error al insertar datos en la  BBDD", ex);
+				}		
+						
+					
+				
+	}
+public void insertarDatosEstudia(Estudia a) {
+	
+	//Se define la plantilla de la sentencia SQL
+			String sql = "INSERT INTO ESTUDIA  ( ID_ALUMNO, ID_ASIGNATURA)  VALUES (?, ?);";
+			
+			//Se abre la conexiÃ³n y se crea el PreparedStatement con la sentencia SQL
+			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+				 PreparedStatement pStmt = con.prepareStatement(sql)) {
+										
+				//Se recorren los clientes y se insertan uno a uno
+					//Se definen los parÃ¡metros de la sentencia SQL
+					pStmt.setInt(1, a.getId_alumno());
+					pStmt.setInt(2, a.getId_asignatura());
+				
+					
+					if (pStmt.executeUpdate() != 1) {					
+						log( Level.INFO,"Alumno insertado", null);
+					} else {
+						//Se actualiza el ID del personaje haciendo un Select									
+						log( Level.INFO,"No se ha insertado el aluno", null);
+					}
+				
+				log( Level.INFO,"Alumnos insertado", null);
+			} catch (Exception ex) {
+				log( Level.SEVERE,"Error al insertar datos en la  BBDD", ex);
+			}		
+					
+				
+			
+}
 	
 	public void insertarDatosTarea(Tarea... tarea) {
-		//Se abre la conexión y se obtiene el Statement
+		//Se define la plantilla de la sentencia SQL
+		String sql = "INSERT INTO TAREA ( ID, NOMBRE,  FECHA_FIN, CALIFICACION, ID_ASIGNATURA, ID_ALUMNO, PORCENTAJE) VALUES (?, ?, ?, ?, ?, ?, ?);";
+		
+		//Se abre la conexiÃ³n y se crea el PreparedStatement con la sentencia SQL
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
-		     Statement stmt = con.createStatement()) {
-			//Se define la plantilla de la sentencia SQL
-			String sql = "INSERT INTO TAREA ( ID, NOMBRE,  FECHA_FIN, CALIFICACION, ID_ASIGNATURA, ID_ALUMNO, PORCENTAJE) VALUES (?,'%s', '%s', ?, ?, ?, ?);";
-			
-		
-			log( Level.INFO, "Insertando tareas...", null);
-			//Se recorren las tareas y se insertan uno a uno
+			 PreparedStatement pStmt = con.prepareStatement(sql)) {
+									
+			//Se recorren los clientes y se insertan uno a uno
 			for (Tarea t : tarea) {
-				if (1 == stmt.executeUpdate(String.format(sql,t.getId(), t.getNombre(), t.getFecha_fin(), t.getCalificacion(), t.getId_asignatura(),t.getId_alumna(), t.getPorcentaje()))) {					
-					log( Level.INFO, "Tarea insertada "+ t.toString(), null);
+				//Se definen los parÃ¡metros de la sentencia SQL
+				pStmt.setInt(1, t.getId());
+				pStmt.setString(2, t.getNombre());
+				pStmt.setString(3, t.getFecha_fin());
+				pStmt.setInt(4, t.getCalificacion());
+				pStmt.setInt(5, t.getId_asignatura());
+				pStmt.setInt(6, t.getId_alumna());
+				pStmt.setInt(7, t.getPorcentaje());
+				
+				if (pStmt.executeUpdate() != 1) {					
+					logger.warning(String.format("No se ha insertado la tarea: %s", t));
 				} else {
-					
-					log( Level.INFO, "No se ha insertado el profesor "+t.toString(), null);
+					//Se actualiza el ID del personaje haciendo un Select									
+					logger.info(String.format("Se ha insertado la tarea: %s", t));
 				}
-			}			
+			}
+			
+			logger.info(String.format("%d Tareas insertadas en la BBDD", tarea.length));
 		} catch (Exception ex) {
-		
-			log( Level.SEVERE,"Error al insertar datos en la  BBDD", ex);
-			ex.printStackTrace();						
-		}				
+			logger.warning(String.format("Error al insertar Tareas: %s", ex.getMessage()));
+		}			
 	}
 	
-	public void insertarDatosAsignatura(Asignatura... asignatura) {
-		//Se abre la conexión y se obtiene el Statement
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
-		     Statement stmt = con.createStatement()) {
-			//Se define la plantilla de la sentencia SQL
-			String sql = "INSERT INTO ASIGNATURA ( ID, NOMBRE, ID_PROFESOR) VALUES (?, ?, ?);";
-			
+	public void insertarDatosAsignatura(Asignatura a) {
 		
-			log( Level.INFO, "Insertando asignaturas...", null);
-			//Se recorren las asignaturas y se insertan uno a uno
-			for (Asignatura a : asignatura) {
-				if (1 == stmt.executeUpdate(String.format(sql, a.getId(), a.getNombre(), a.getId_profesor()))) {					
-
-					log( Level.INFO, "Asignatura insertada ", null);
-				} else {
+		//Se define la plantilla de la sentencia SQL
+				String sql = "INSERT INTO ASIGNATURA  (ID , NOMBRE, ID_PROFESOR)  VALUES (?, ?, ?);";
+				
+				//Se abre la conexiÃ³n y se crea el PreparedStatement con la sentencia SQL
+				try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+					 PreparedStatement pStmt = con.prepareStatement(sql)) {
+											
+					//Se recorren los clientes y se insertan uno a uno
+						//Se definen los parÃ¡metros de la sentencia SQL
+						pStmt.setInt(1, a.getId());
+						pStmt.setString(2, a.getNombre());
+						pStmt.setInt(3, a.getId_profesor());
 					
-					log( Level.INFO, "No se ha insertado el profesor ", null);
-				}
-			}			
-		} catch (Exception ex) {
-		
-			log( Level.SEVERE,"Error al insertar datos en la  BBDD", ex);
-			ex.printStackTrace();						
-		}				
-	}
-	public void insertarDatosEstudia(Estudia... estudia) {
-		//Se abre la conexión y se obtiene el Statement
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
-		     Statement stmt = con.createStatement()) {
-			//Se define la plantilla de la sentencia SQL
-			String sql = "INSERT INTO ESTUDIA ( ID_ALUMNO, ID_ASIGNATURA) VALUES (?, ?);";
-			
-		
-			log( Level.INFO, "Insertando asignaturas...", null);
-			//Se recorren las asignaturas y se insertan uno a uno
-			for (Estudia a : estudia) {
-				if (1 == stmt.executeUpdate(String.format(sql, a.getId_alumno(), a.getId_asignatura()))) {					
-
-					log( Level.INFO, "Asignatura insertada ", null);
-				} else {
+						
+						if (pStmt.executeUpdate() != 1) {					
+							log( Level.INFO,"Alumno insertado", null);
+						} else {
+							//Se actualiza el ID del personaje haciendo un Select									
+							log( Level.INFO,"No se ha insertado el aluno", null);
+						}
 					
-					log( Level.INFO, "No se ha insertado el profesor ", null);
-				}
-			}			
-		} catch (Exception ex) {
-		
-			log( Level.SEVERE,"Error al insertar datos en la  BBDD", ex);
-			ex.printStackTrace();						
-		}				
+					log( Level.INFO,"Alumnos insertado", null);
+				} catch (Exception ex) {
+					log( Level.SEVERE,"Error al insertar datos en la  BBDD", ex);
+				}		
+						
+					
+				
 	}
+				
 	// OBTENCION DE DATOS
 	
 	public ArrayList<Alumno> obtenerDatosAlumnos() {
@@ -456,11 +498,10 @@ public class GestorBD {
 		     Statement stmt = con.createStatement()) {
 			String sql = "SELECT * FROM PROFESOR WHERE ID >= 0";
 			
-			
 			//Se ejecuta la sentencia y se obtiene el ResultSet con los resutlados
-			ResultSet rs = stmt.executeQuery(sql);			
-			Profesor profesor;
+			ResultSet rs = stmt.executeQuery(sql);	
 			
+			Profesor profesor;
 			//Se recorre el ResultSet y se crean objetos Cliente
 			while (rs.next()) {
 				profesor= new Profesor();

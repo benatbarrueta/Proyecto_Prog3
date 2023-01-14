@@ -11,7 +11,7 @@ public class Profesor extends Usuarios {
 	}
 
 
-	public double getSalario() {
+	public int getSalario() {
 		return salario;
 	}
 
