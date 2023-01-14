@@ -10,8 +10,6 @@ public class Alumno extends Usuarios {
 		this.curso = 1;
 	}
 
-	
-
 	public Alumno(int curso) {
 		super();
 		this.curso = curso;

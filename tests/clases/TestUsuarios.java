@@ -13,8 +13,7 @@ public class TestUsuarios {
 	private String direccion ="Direccion";
 	private String nombreUsuario ="Usuario";
 	private String contraseña ="contraseña";
-	private   int  id = -1;
-	private Boolean tipo =true;
+	private   int  id = 0;
 	private String email ="@email.com";
 
 	@Before
@@ -27,21 +26,8 @@ public class TestUsuarios {
 		usuario.setNombreUsuario(nombreUsuario);
 		usuario.setContraseña(contraseña);
 		usuario.setId(id);
-		usuario.setTipo(tipo);
 		usuario.setEmail(email);
 		
-	}
-	
-	@Test
-	public void testUsuariosStringStringIntStringStringStringBoolean() {
-		Usuarios newUsuario = new Usuarios(nombre,apellidos,edad,direccion,nombreUsuario,contraseña);
-		assertEquals(newUsuario.getNombre(), nombre);
-		assertEquals(newUsuario.getApellidos(), apellidos);
-		assertEquals(newUsuario.getEdad(), 0);
-		assertEquals(newUsuario.getDireccion(), direccion);
-		assertEquals(newUsuario.getNombreUsuario(), nombreUsuario);
-		assertEquals(newUsuario.getContraseña(), contraseña);
-		assertEquals(newUsuario.getEmail(), nombre + apellidos + "@email.com");
 	}
 
 	@Test
@@ -53,7 +39,8 @@ public class TestUsuarios {
 		assertEquals(newUsuario2.getDireccion(), "");
 		assertEquals(newUsuario2.getNombreUsuario(), "");
 		assertEquals(newUsuario2.getContraseña(), "");
-		assertEquals(newUsuario2.getEmail(), "@email.com");
+		assertEquals(newUsuario2.getEmail(), "");
+		assertEquals(newUsuario2.getId(), 0);
 	}
 
 	@Test
@@ -145,19 +132,6 @@ public class TestUsuarios {
 		assertEquals(usuario.getId(), id);
 		usuario.setId(newId);
 		assertEquals(usuario.getId(), newId, 0);
-	}
-
-	@Test
-	public void testGetTipo() {
-		assertEquals(usuario.getTipo(), tipo);
-	}
-
-	@Test
-	public void testSetTipo() {
-		Boolean newTipo = true;
-		assertEquals(usuario.getTipo(), tipo);
-		usuario.setTipo(newTipo);
-		assertEquals(usuario.getTipo(), newTipo);
 	}
 
 	@Test

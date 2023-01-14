@@ -10,7 +10,6 @@ public class Usuarios {
 	protected String nombreUsuario;
 	protected String contraseña;
 	protected   Integer  id;
-	private Boolean tipo;
 	protected String email;
 	
 
@@ -25,7 +24,6 @@ public class Usuarios {
 		this.nombreUsuario = "";
 		this.contraseña = "";
 		this.id = 0;
-		this.tipo = true;
 		this.email = "";
 	}
 
@@ -86,14 +84,6 @@ public class Usuarios {
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public Boolean getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(Boolean tipo) {
-		this.tipo = tipo;
 	}
 
 	public String getEmail() {
