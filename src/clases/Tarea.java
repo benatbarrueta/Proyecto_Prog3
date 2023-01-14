@@ -9,6 +9,8 @@ public class Tarea {
 	protected String nombre;
 	protected int id_asignatura;
 	protected int id_alumna;
+	protected int porcentaje;
+		
 	
 
 	public Tarea() {
