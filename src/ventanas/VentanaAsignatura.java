@@ -80,6 +80,9 @@ public class VentanaAsignatura extends JFrame{
 		}else {
 			Profesor profesor = (Profesor) objeto;
 			for (Tarea t : GestorBD.gestorBD.obtenerDatosTareas()) {
+				if(t.getId_asignatura()== asignatura.getId()) {
+					listaTarea.add(t);
+				}
 				
 				modeloTareaLista = new DefaultTableModel(new Object[] { "EMAIL ALUMNO", "FECHA ENTREGA", "ESTATUS", "CALIFICACION"}, 0);
 				tareaLista = new JTable(modeloTareaLista);
@@ -99,9 +102,14 @@ public class VentanaAsignatura extends JFrame{
 								status = "SUSPENDIDO";
 								calificacion = "" + tarea.getCalificacion();
 							}
-						
-						modeloTareaLista.addRow(new Object[] {tarea.getEmailAlumno(), tarea.getFecha_fin(), status, calificacion});
-						}
+
+							modeloTareaLista.addRow(new Object[] {tarea.getId_alumna(), tarea.getFecha_fin(), status, calificacion});
+							}
+					
+				
+				
+			}
+				
 				
 			}
 			

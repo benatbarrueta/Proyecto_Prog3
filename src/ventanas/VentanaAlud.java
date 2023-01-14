@@ -44,7 +44,7 @@ public class VentanaAlud extends JFrame {
 			norte.add(new JLabel(alumno.getApellidos()));
 			for (Estudia e : GestorBD.gestorBD.obtenerDatosEstudia()) {
 				if (alumno.getId()==e.getId_alumno()) {
-					for (Asignatura a :  GestorBD.gestorBD.obtenerDatosAsignaturas()) {
+					for (Asignatura asig :  GestorBD.gestorBD.obtenerDatosAsignaturas()) {
 						if(e.getId_asignatura()==a.getId()) {
 							
 							 botonasig = new JButton(a.getNombre());
@@ -56,7 +56,7 @@ public class VentanaAlud extends JFrame {
 									@Override
 									public void actionPerformed(ActionEvent e) {
 										// TODO Auto-generated method stub
-					        			VentanaAsignatura v= new VentanaAsignatura(objeto, "Alumno", gestor, asig);
+					        			VentanaAsignatura v= new VentanaAsignatura(alumno, "Alumno", asig);
 									}
 								});
 							contasig++;
