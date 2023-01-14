@@ -10,11 +10,8 @@ import org.junit.Test;
 public class TestAsignatura {
 	protected Asignatura asignatura; 
 	protected String nombre = "";
-	private Profesor profesor = new Profesor();
-	protected ArrayList<Alumno> alumnos =new ArrayList<Alumno>();
-	protected ArrayList<Tarea> tareas= new ArrayList<Tarea>();
-	protected double calificacion =0;
-	protected int id = -1;
+	protected int id_profesor =0;
+	protected int id = 0;
 	
 	@Before
 	public void SetUp() {
