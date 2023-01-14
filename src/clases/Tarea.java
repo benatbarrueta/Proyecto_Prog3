@@ -13,6 +13,24 @@ public class Tarea {
 		
 	
 
+	public int getPorcentaje() {
+		return porcentaje;
+	}
+
+
+
+	public void setPorcentaje(int porcentaje) {
+		this.porcentaje = porcentaje;
+	}
+
+
+
+	public void setId(Integer id) {
+		Id = id;
+	}
+
+
+
 	public Tarea() {
 		super();
 		this.Id = 0;

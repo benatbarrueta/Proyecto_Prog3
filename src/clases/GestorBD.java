@@ -330,7 +330,7 @@ public class GestorBD {
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement stmt = con.createStatement()) {
 			//Se define la plantilla de la sentencia SQL
-			String sql = "INSERT INTO TAREA ( ID, NOMBRE,  FECHA_FIN, CALIFICACION, ID_ASIGNATURA, ID_ALUMNO) VALUES ('%d','%s', '%s', '%d', '%d', '%d');";
+			String sql = "INSERT INTO TAREA ( ID, NOMBRE,  FECHA_FIN, CALIFICACION, ID_ASIGNATURA, ID_ALUMNO, PORCENTAJE) VALUES ('%d','%s', '%s', '%d', '%d', '%d','%s');";
 			
 		
 			log( Level.INFO, "Insertando tareas...", null);
@@ -562,6 +562,7 @@ public class GestorBD {
 				tarea.setCalificacion(rs.getInt("CALIFICACION"));
 				tarea.setId_asignatura(rs.getInt("ID_ASIGNATURA"));
 				tarea.setId_alumna(rs.getInt("ID_ALUMNO"));
+				tarea.setPorcentaje(Integer.parseInt(rs.getString("PORCENTAJE")));
 				//Se inserta cada nuevo cliente en la lista de clientes
 				tareas.add(tarea);
 			}
