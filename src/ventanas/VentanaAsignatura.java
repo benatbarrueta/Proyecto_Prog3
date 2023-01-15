@@ -43,7 +43,7 @@ public class VentanaAsignatura extends JFrame{
 	
 	
 	public VentanaAsignatura(Object objeto, String tipo, Asignatura asignatura) {
-		
+		ArrayList<Tarea> tareasEnTabla = new ArrayList<Tarea>();
 		Container cp = this.getContentPane();
 		ArrayList<Tarea> listaTarea = new ArrayList<>();
 	
@@ -119,7 +119,7 @@ public class VentanaAsignatura extends JFrame{
 				
 		}else {
 			ArrayList<String> nombreTareas = new ArrayList<String>();
-			TreeMap<String, ArrayList<Tarea>>actividadesPorNombre = new TreeMap<>();
+		
 			Profesor profesor = (Profesor) objeto;
 			for (Tarea t : GestorBD.gestorBD.obtenerDatosTareas()) {
 				if(t.getId_asignatura()== asignatura.getId()) {
@@ -170,8 +170,7 @@ public class VentanaAsignatura extends JFrame{
 			
 			
 		
-			
-			comboTareas.setSelectedItem("Clicka para ver las tareas");
+	
 		
 			comboTareas.addActionListener(new ActionListener() {
 				
@@ -179,14 +178,18 @@ public class VentanaAsignatura extends JFrame{
 				public void actionPerformed(ActionEvent e) {
 					String nombreTarea = (String) comboTareas.getSelectedItem();
 					String status = "";
-					String calificacion = "";
+					String calificacion = ""; 
 					
 					while (modeloTareaLista.getRowCount() > 0) {
 						modeloTareaLista.removeRow(0);
 					}
-					for (String s : actividadesPorNombre.keySet()) {
-						for (Tarea tarea : actividadesPorNombre.get(s)) {
-							if (tarea.getNombre().equals(nombreTarea)) {
+			
+				tareasEnTabla.clear();
+					for (Tarea tarea : GestorBD.gestorBD.obtenerDatosTareas()) {
+						if (tarea.getNombre().equals(nombreTarea)) {
+							
+						
+						
 								if (tarea.getCalificacion() >= 5) {
 									status = "APROBADO";
 									calificacion = "" + tarea.getCalificacion();
@@ -197,13 +200,12 @@ public class VentanaAsignatura extends JFrame{
 									status = "SUSPENDIDO";
 									calificacion = "" + tarea.getCalificacion();
 								}
-								modeloTareaLista.addRow(new Object[] {tarea.getId_alumna(), tarea.getFecha_fin(), status, calificacion});
-
+								tareasEnTabla.add(tarea);
+								modeloTareaLista.addRow(new Object[] {tarea.getNombre(), tarea.getFecha_fin(), status, calificacion});
+						}
 							}
 							tareaLista.repaint();
 						}
-					}
-				}
 			});
 			
 			
@@ -224,8 +226,9 @@ public class VentanaAsignatura extends JFrame{
 				public void actionPerformed(ActionEvent e) {
 					try {
 						int	tareaInt = tareaLista.getSelectedRow();
-					
-						VentanaEditaTarea v= new VentanaEditaTarea(asignatura, tareaInt,objeto);
+					tareaLista.getSelectedRow();
+					Tarea tarea = tareasEnTabla.get(tareaLista.getSelectedRow());
+						VentanaEditaTarea v= new VentanaEditaTarea(asignatura,tarea,  objeto);
 						dispose();
 				
 					} catch (Exception e2) {
@@ -272,7 +275,7 @@ public class VentanaAsignatura extends JFrame{
 			panelComboTareas.setLayout(new GridLayout(1, 2));
 			panelComboTareas.add(comboTareas);
 			panelComboTareas.add(new JLabel());
-			
+			 
 			
 			centro.add(apuntes);
 			centro.add(new JLabel());

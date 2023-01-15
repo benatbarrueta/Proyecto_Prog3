@@ -15,10 +15,11 @@ import javax.swing.JTextField;
 
 import clases.Asignatura;
 import clases.Gestor;
+import clases.GestorBD;
 import clases.Tarea;
 
 public class VentanaEditaTarea extends JFrame{
-	public VentanaEditaTarea (Asignatura asignatura,  int numeroTarea, Object object) {
+	public VentanaEditaTarea (Asignatura asignatura, Tarea tarea, Object objeto) {
 		Container cp = this.getContentPane();
 		
 		
@@ -54,9 +55,9 @@ public class VentanaEditaTarea extends JFrame{
 		centro.add(labeCalificacion);
 		centro.add(calificacion);
 		
-		nombre.setText(asignatura.getTareas().get(numeroTarea).getNombre());
-		fechaFin.setText(asignatura.getTareas().get(numeroTarea).getFecha_fin());
-		calificacion.setText("" + asignatura.getTareas().get(numeroTarea).getCalificacion());
+		nombre.setText(tarea.getNombre());
+		fechaFin.setText(tarea.getFecha_fin());
+		calificacion.setText(""+tarea.getCalificacion());
 		
 		
 		JButton botonAceptar = new JButton("Edita Tarea");
@@ -67,38 +68,21 @@ public class VentanaEditaTarea extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				Tarea tarea = new Tarea();
-				tarea.setNombre(nombre.getText());
-				tarea.setFecha_fin(fechaFin.getText());
+				Tarea tarea2 = new Tarea();
+				tarea2.setNombre(nombre.getText());
+				tarea2.setFecha_fin(fechaFin.getText());
 				if (calificacion.getText().equals("")) {
-					tarea.setCalificacion(-1.0);
+					tarea2.setCalificacion(-1);
 				} else {
-					tarea.setCalificacion(Double.parseDouble(calificacion.getText()));
+					tarea2.setCalificacion(Integer.parseInt(calificacion.getText()));
 				}
 				
-				
-				//EDITAR TAREA A GESTOR 
-				for (Asignatura asig: gestor.getAsignatura()) {
-					if(asig.equals(asignatura)) {
-						asig.getTareas().get(numeroTarea).setNombre(nombre.getText());
-						asig.getTareas().get(numeroTarea).setFecha_fin(fechaFin.getText());
-						if (calificacion.getText().equals("")) {
-							asig.getTareas().get(numeroTarea).setCalificacion(-1.0);
-						} else {
-							asig.getTareas().get(numeroTarea).setCalificacion(Double.parseDouble(calificacion.getText()));
-						}
-						
-					}
-				}
 			
-				
-				
-				Properties properties = Gestor.loadProperties();
-				gestor.guardarTareaCSV(properties.getProperty("guardarTarea"));
+			GestorBD.gestorBD.actualizarTarea(tarea, nombre.getText(), fechaFin.getText(), calificacion.getText(), tarea.getPorcentaje());
 			
 			
 				//SE CIERRRA LA VENTANA
-				VentanaAsignatura v = new VentanaAsignatura(object, "Profesor",gestor,asignatura);
+				VentanaAsignatura v = new VentanaAsignatura(objeto, "Profesor",asignatura);
 				dispose();
 			}
 		});
@@ -109,7 +93,7 @@ public class VentanaEditaTarea extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				VentanaAsignatura v = new VentanaAsignatura(object, "Profesor",gestor,asignatura);
+				VentanaAsignatura v = new VentanaAsignatura(objeto, "Profesor",asignatura);
 				dispose();
 			}
 		});
