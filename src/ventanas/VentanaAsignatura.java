@@ -47,6 +47,15 @@ public class VentanaAsignatura extends JFrame{
 		Container cp = this.getContentPane();
 		ArrayList<Tarea> listaTarea = new ArrayList<>();
 		// CREACIONES  //AÑADE LAS TAREAS DEL ALUMNO A LA LISTA
+		
+		//SUR
+		JPanel centro = new JPanel();
+		JPanel norte = new JPanel();
+		JPanel south = new JPanel();
+		
+		
+		
+		
 		if(tipo.equals("Alumno")) {
 			Alumno alumno = (Alumno)objeto;
 			for (Tarea t : GestorBD.gestorBD.obtenerDatosTareas()) {
@@ -60,7 +69,7 @@ public class VentanaAsignatura extends JFrame{
 		
 			String status = "";
 			String calificacion = "";
-			for(String s : actividadesPorNombre.keySet()) {
+		
 				for (Tarea tarea : listaTarea) {
 					if (tarea.getCalificacion() >= 5) {
 						status = "APROBADO";
@@ -76,8 +85,12 @@ public class VentanaAsignatura extends JFrame{
 				
 						modeloTareaLista.addRow(new Object[] {tarea.getNombre(), tarea.getFecha_fin(), status, calificacion, alumno.getNombre()});
 					}
-				}
+			
+
+				
 		}else {
+			ArrayList<String> nombreTareas = new ArrayList<String>();
+			TreeMap<String, ArrayList<Tarea>>actividadesPorNombre = new TreeMap<>();
 			Profesor profesor = (Profesor) objeto;
 			for (Tarea t : GestorBD.gestorBD.obtenerDatosTareas()) {
 				if(t.getId_asignatura()== asignatura.getId()) {
@@ -105,20 +118,105 @@ public class VentanaAsignatura extends JFrame{
 
 							modeloTareaLista.addRow(new Object[] {tarea.getId_alumna(), tarea.getFecha_fin(), status, calificacion});
 							}
-					
-				
-				
-			}
-				
-				
+
+			}	
+			}				
+		}
+			
+		añadirTarea = new JButton("Añadir Tarea");
+		editarTarea = new JButton("Editar Tarea");
+		
+			
+			comboTareas = new JComboBox();
+			for (String s : actividadesPorNombre.keySet()) {
+				comboTareas.addItem(s);
 			}
 			
-		}
+			comboTareas.setSelectedItem("Clicka para ver las tareas");
+		
+			comboTareas.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					String nombreTarea = (String) comboTareas.getSelectedItem();
+					String status = "";
+					String calificacion = "";
+					
+					while (modeloTareaLista.getRowCount() > 0) {
+						modeloTareaLista.removeRow(0);
+					}
+					for (String s : actividadesPorNombre.keySet()) {
+						for (Tarea tarea : actividadesPorNombre.get(s)) {
+							if (tarea.getNombre().equals(nombreTarea)) {
+								if (tarea.getCalificacion() >= 5) {
+									status = "APROBADO";
+									calificacion = "" + tarea.getCalificacion();
+								} else if(tarea.getCalificacion() == -1) {
+									status = "SIN CALIFICAR";
+									calificacion = "";
+								} else {
+									status = "SUSPENDIDO";
+									calificacion = "" + tarea.getCalificacion();
+								}
+								modeloTareaLista.addRow(new Object[] {tarea.getId_alumna(), tarea.getFecha_fin(), status, calificacion});
+
+							}
+							tareaLista.repaint();
+						}
+					}
+				}
+			});
+			
+			
+			
+			añadirTarea.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+
+				VentanaAñadeTarea v =new VentanaAñadeTarea(asignatura, objeto);
+				dispose();
+				}
+			});
+			
+			editarTarea.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					try {
+						int	tareaInt = tareaLista.getSelectedRow();
+					
+						VentanaEditaTarea v= new VentanaEditaTarea(asignatura, tareaInt,objeto);
+						dispose();
+				
+					} catch (Exception e2) {
+						JOptionPane.showMessageDialog(null, "No hay ninguna tarea seleccionada");
+					}	
+				}
+			});	
+			
+
+
+			south.add(añadirTarea);
+			south.add(editarTarea);
+			
+			
+			JPanel panelComboTareas = new JPanel();
+			panelComboTareas.setLayout(new GridLayout(1, 2));
+			panelComboTareas.add(comboTareas);
+			panelComboTareas.add(new JLabel());
+			centro.add(panelComboTareas);
+			
+			
+}
+		
+	
+		
+		
 		cp.setLayout(new BorderLayout());
 		
 	
-		ArrayList<String> nombreTareas = new ArrayList<String>();
-		TreeMap<String, ArrayList<Tarea>>actividadesPorNombre = new TreeMap<>();
+		
 
 
 		Calendar calendario = new GregorianCalendar();
@@ -127,95 +225,62 @@ public class VentanaAsignatura extends JFrame{
 		nombreAsig = new JLabel("Asignatura:  " + asignatura.getNombre());
 		apuntes = new JLabel("Apuntes");
 		
-		
 		hora = calendario.get(Calendar.HOUR_OF_DAY);
  		minutos = calendario.get(Calendar.MINUTE);
- 		fecha = new JLabel("Ultima entrada:  "+ hora + ":" + minutos);
-	
- 		for (Tarea tarea : listaTarea) {
- 			if (!actividadesPorNombre.containsKey(tarea.getNombre())) {
- 				actividadesPorNombre.put(tarea.getNombre(), new ArrayList<Tarea>());
- 				actividadesPorNombre.get(tarea.getNombre()).add(tarea);
- 			} else {
- 				actividadesPorNombre.get(tarea.getNombre()).add(tarea);
- 			}
- 		}
-
 		
-		//DIFERENCIAR SI ENTRA UN ALUMNO O PROFESOR
+ 	String	texto=("Hora:  "+ hora + ":" + minutos);
+ 		fecha = new JLabel(texto);
+ 		Thread hilo = new Thread(new Runnable() {
 			
-		
-					
-					comboTareas = new JComboBox();
-					for (String s : actividadesPorNombre.keySet()) {
-						comboTareas.addItem(s);
-					}
-					
-					comboTareas.setSelectedItem("Clicka para ver las tareas");
+			@Override
+			public void run() {
+				while (true) {
 				
-					comboTareas.addActionListener(new ActionListener() {
-						
-						@Override
-						public void actionPerformed(ActionEvent e) {
-							String nombreTarea = (String) comboTareas.getSelectedItem();
-							String status = "";
-							String calificacion = "";
-							
-							while (modeloTareaLista.getRowCount() > 0) {
-								modeloTareaLista.removeRow(0);
-							}
-							for (String s : actividadesPorNombre.keySet()) {
-								for (Tarea tarea : actividadesPorNombre.get(s)) {
-									if (tarea.getNombre().equals(nombreTarea)) {
-										if (tarea.getCalificacion() >= 5) {
-											status = "APROBADO";
-											calificacion = "" + tarea.getCalificacion();
-										} else if(tarea.getCalificacion() == -1) {
-											status = "SIN CALIFICAR";
-											calificacion = "";
-										} else {
-											status = "SUSPENDIDO";
-											calificacion = "" + tarea.getCalificacion();
-										}
-										modeloTareaLista.addRow(new Object[] {tarea.getId_alumna(), tarea.getFecha_fin(), status, calificacion});
-
-									}
-									tareaLista.repaint();
-								}
-							}
+					
+					// TODO Auto-generated method stub
+					
+				
+	
+					try {
+						Thread.sleep(60000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					minutos=minutos+1;
+					if(minutos==60) {
+						minutos=0;
+						hora=hora+1;
+						if(hora==24) {
+							hora=0;
 						}
-					});
-					
-			
-					
-					
-					añadirTarea.addActionListener(new ActionListener() {
-						
-						@Override
-						public void actionPerformed(ActionEvent e) {
-
-						VentanaAñadeTarea v =new VentanaAñadeTarea(asignatura, objeto);
-						dispose();
-						}
-					});
-					
-					editarTarea.addActionListener(new ActionListener() {
-						
-						@Override
-						public void actionPerformed(ActionEvent e) {
-							try {
-								int	tareaInt = tareaLista.getSelectedRow();
-							
-								VentanaEditaTarea v= new VentanaEditaTarea(asignatura, tareaInt,objeto);
-								dispose();
-						
-							} catch (Exception e2) {
-								JOptionPane.showMessageDialog(null, "No hay ninguna tarea seleccionada");
-							}	
-						}
-					});
+					}
+				String texto2=("Hora:  "+ hora + ":" + minutos);
+					fecha.setText(texto2);
+				//	System.out.println(texto2);
 					
 				}
+			
+			
+		
+			}
+			
+		});
+ 		
+ 		hilo.start();
+ 		
+ 		
+
+		
+
+		
+					
+ 		
+					
+			
+					
+					
+			
 		
  		DefaultTableCellRenderer renderSencillo = new DefaultTableCellRenderer() {
 			private static final long serialVersionUID = 1L;
@@ -252,20 +317,16 @@ public class VentanaAsignatura extends JFrame{
 				return label;
 			}
 		};
-		//SUR
-		JPanel centro = new JPanel();
-		JPanel norte = new JPanel();
-		JPanel south = new JPanel();
-		añadirTarea = new JButton("Añadir Tarea");
-		editarTarea = new JButton("Editar Tarea");
-		JPanel panelComboTareas = new JPanel();
-		panelComboTareas.setLayout(new GridLayout(1, 2));
-		panelComboTareas.add(comboTareas);
-		panelComboTareas.add(new JLabel());
+	
 		
-		south.add(añadirTarea);
-		south.add(editarTarea);
+	
+
 		
+		
+	
+	
+		
+	
 		//ADD
 		cp.add(centro, BorderLayout.CENTER);
 		cp.add(norte, BorderLayout.NORTH);
@@ -276,6 +337,7 @@ public class VentanaAsignatura extends JFrame{
 		centro.setLayout(new GridLayout(5, 1));
 		south.setLayout(new GridLayout(1,4));
 		//NORTE
+
 		norte.add(nombreAsig);
 		norte.add(fecha);
 		
@@ -283,8 +345,7 @@ public class VentanaAsignatura extends JFrame{
 		//CENTRO
 		centro.add(apuntes);
 		centro.add(new JLabel());
-		centro.add(tareas);
-		centro.add(panelComboTareas);
+		centro.add(tareas);	
 		JScrollPane scrollDato = new JScrollPane(tareaLista);
 		centro.add(scrollDato);
 	
@@ -315,7 +376,6 @@ public class VentanaAsignatura extends JFrame{
 		});
  	
 	}
-	
 	
 	
 }

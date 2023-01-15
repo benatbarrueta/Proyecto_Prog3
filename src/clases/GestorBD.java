@@ -37,237 +37,7 @@ public class GestorBD {
 		}
 	}
 		
-	// CREACION TABLAS
-	/*
-	public void crearBBDDAlumno() {
-		//Se abre la conexión y se obtiene el Statement
-		//Al abrir la conexión, si no existía el fichero, se crea la base de datos
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
-		     Statement stmt = con.createStatement()) {
-			
-	        String sql = "CREATE TABLE IF NOT EXISTS ALUMNO(\n"
-	        		   + " ID INTEGER PRIMARY KEY AUTOINCREMENT,\n"
-	                   + " NOMBRE TEXT NOT NULL,\n"
-	                   + " APELLIDO TEXT NOT NULL,\n"
-	                   + " CONTRASEÑA TEXT NOT NULL,\n"
-	                   + " DIRECCION TEXT NOT NULL,\n"
-	                   + " EDAD TEXT NOT NULL,\n"
-	                   + " EMAIL TEXT NOT NULL,\n"
-	                   + " CURSO TEXT NOT NULL,\n"
-	                   + " NOMBRE_USUARIO TEXT NOT NULL\n"
-	                   + ");";
-	   
-		
-	        if (!stmt.execute(sql)) {
-	        	log( Level.INFO,"Se ha creado la tabla alumno", null);
-	        }
-		} catch (Exception ex) {
-		
-			log( Level.SEVERE,"Error al crear la  BBDD alumno", ex);
-			ex.printStackTrace();			
-		}
-	}
-	public void crearBBDDProfesor() {
-		//Se abre la conexión y se obtiene el Statement
-		//Al abrir la conexión, si no existía el fichero, se crea la base de datos
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
-		     Statement stmt = con.createStatement()) {
-			
-	        String sql = "CREATE TABLE IF NOT EXISTS PROFESOR(\n"
-	        		   + " ID INTEGER PRIMARY KEY AUTOINCREMENT,\n"
-	                   + " NOMBRE TEXT NOT NULL,\n"
-	                   + " APELLIDO TEXT NOT NULL,\n"
-	                   + " CONTRASEÑA TEXT NOT NULL,\n"
-	                   + " DIRECCION TEXT NOT NULL,\n"
-	                   + " EDAD TEXT NOT NULL,\n"
-	                   + " EMAIL TEXT NOT NULL,\n"
-	                   + " SALARIO TEXT NOT NULL,\n"
-	                   + " NOMBRE_USUARIO TEXT NOT NULL\n"
-	                   + ");";
-	   
-		
-	        if (!stmt.execute(sql)) {
-	        	log( Level.INFO,"Se ha creado la tabla profesor", null);
-	        }
-		} catch (Exception ex) {
-			
-			
-			log( Level.SEVERE,"Error al crear la  BBDD profesor", ex);
-			ex.printStackTrace();			
-		}
-	}
-	
-	public void crearBBDDTarea() {
-		//Se abre la conexión y se obtiene el Statement
-		//Al abrir la conexión, si no existía el fichero, se crea la base de datos
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
-		     Statement stmt = con.createStatement()) {
-			
-	        String sql = " CREATE TABLE IF NOT EXISTS TAREA(\n"
-	        		   + " ID INTEGER PRIMARY KEY AUTOINCREMENT,\n"
-	                   + " NOMBRE TEXT NOT NULL,\n"
-	                   + " EMAIL TEXT NOT NULL,\n"
-	                   + " FECHA_FIN TEXT NOT NULL,\n"
-	                   + " CALIFICACION DOUBLE NOT NULL,\n"
-	                   + " );";
-		
-	        //if (!stmt.execute(sql)) {
-	        	log( Level.INFO,"Se ha creado la tabla tarea", null);
-	        //}
-		} catch (Exception ex) {
-		
-			log( Level.SEVERE,"Error al crear la  BBDD tarea", ex);
-			ex.printStackTrace();			
-		}
-	}
-	
-	public void crearBBDDAsignatura() {
-		//Se abre la conexión y se obtiene el Statement
-		//Al abrir la conexión, si no existía el fichero, se crea la base de datos
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
-		     Statement stmt = con.createStatement()) {
-			
-	        String sql = "CREATE TABLE IF NOT EXISTS ASIGNATURA(\n"
-	        		   + " ID INTEGER PRIMARY KEY AUTOINCREMENT,\n"
-	                   + " NOMBRE TEXT NOT NULL,\n"
-	                   + " PROFESOR TEXT NOT NULL,\n"
-	                   + " ALUMNOS TEXT NOT NULL,\n"
-	                   + " TAREAS TEXT NOT NULL,\n"
-	                   + " CALIFICACION DOUBLE, \n"
-	                   + ");";
-		
-	        // if (!stmt.execute(sql)) {
-	        	log( Level.INFO,"Se ha creado la tabla asignatura", null);
-	        // }
-		} catch (Exception ex) {
-		
-			log( Level.SEVERE,"Error al crear la  BBDD asignatura", ex);
-			ex.printStackTrace();			
-		}
-	}
-	*/
-	// FUNCIONES BORRADO
-/*	
-	public void borrarBBDDAlumno() {
-		//Se abre la conexión y se obtiene el Statement
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
-		     Statement stmt = con.createStatement()) {
-			
-	        String sql = "DROP TABLE IF EXISTS ALUMNO";
-			
-	        //Se ejecuta la sentencia de creación de la tabla Estudiantes
-	        if (!stmt.execute(sql)) {
-	        
-	        	log( Level.INFO,"Se ha borrado la tabla ALUMNO", null);
-	        }
-		} catch (Exception ex) {
-			log( Level.SEVERE,"Error al borrar la  BBDD", ex);
-			ex.printStackTrace();			
-		}
-		
-		try {
-			//Se borra el fichero de la BBDD
-			Files.delete(Paths.get(DATABASE_FILE));
-			
-			log( Level.INFO,"Se ha borrado el fichero de la BD", null);
-		} catch (Exception ex) {
-		
-			
-			log( Level.SEVERE,"Error al borrar el archivo de la  BBDD", ex);
-			ex.printStackTrace();						
-		}
-	}
-	
-	public void borrarBBDDProfesor() {
-		//Se abre la conexión y se obtiene el Statement
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
-		     Statement stmt = con.createStatement()) {
-			
-	        String sql = "DROP TABLE IF EXISTS PROFESOR";
-			
-	        //Se ejecuta la sentencia de creación de la tabla Estudiantes
-	        if (!stmt.execute(sql)) {
-	        	
-				log( Level.INFO,"Se ha borrado la tabla profesor", null);
-	        
-	        }
-		} catch (Exception ex) {
-			log( Level.SEVERE,"Error al borrar la  BBDD", ex);
-			ex.printStackTrace();			
-		}
-		
-		try {
-			//Se borra el fichero de la BBDD
-			Files.delete(Paths.get(DATABASE_FILE));
-			log( Level.INFO,"Se ha borrado el fichero de la BBDD", null);
-		} catch (Exception ex) {
-		
-			log( Level.SEVERE,"Error al borrar el archivo de la  BBDD", ex);
-	
-			ex.printStackTrace();						
-		}
-	}
-	
-	public void borrarBBDDTarea() {
-		//Se abre la conexión y se obtiene el Statement
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
-		     Statement stmt = con.createStatement()) {
-			
-	        String sql = "DROP TABLE IF EXISTS TAREA";
-			
-	        //Se ejecuta la sentencia de creación de la tabla Estudiantes
-	        if (!stmt.execute(sql)) {
-	        	
-				log( Level.INFO,"Se ha borrado la tabla tarea", null);
-	        
-	        }
-		} catch (Exception ex) {
-			log( Level.SEVERE,"Error al borrar la  BBDD", ex);
-			ex.printStackTrace();			
-		}
-		
-		try {
-			//Se borra el fichero de la BBDD
-			Files.delete(Paths.get(DATABASE_FILE));
-			log( Level.INFO,"Se ha borrado el fichero de la BBDD", null);
-		} catch (Exception ex) {
-		
-			log( Level.SEVERE,"Error al borrar el archivo de la  BBDD", ex);
-	
-			ex.printStackTrace();						
-		}
-	}
-	
-	public void borrarBBDDAsignatura() {
-		//Se abre la conexión y se obtiene el Statement
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
-		     Statement stmt = con.createStatement()) {
-			
-	        String sql = "DROP TABLE IF EXISTS ASIGNATURA";
-			
-	        //Se ejecuta la sentencia de creación de la tabla Estudiantes
-	        if (!stmt.execute(sql)) {
-	        	
-				log( Level.INFO,"Se ha borrado la tabla asignatura", null);
-	        
-	        }
-		} catch (Exception ex) {
-			log( Level.SEVERE,"Error al borrar la  BBDD", ex);
-			ex.printStackTrace();			
-		}
-		
-		try {
-			//Se borra el fichero de la BBDD
-			Files.delete(Paths.get(DATABASE_FILE));
-			log( Level.INFO,"Se ha borrado el fichero de la BBDD", null);
-		} catch (Exception ex) {
-		
-			log( Level.SEVERE,"Error al borrar el archivo de la  BBDD", ex);
-	
-			ex.printStackTrace();						
-		}
-	}
-	*/
+
 	// FUNCIONES DE INSERCION
 	
 
@@ -575,7 +345,7 @@ public void insertarDatosEstudia(Estudia a) {
 		
 			ex.printStackTrace();						
 		}		
-		//System.out.println(profesores);
+	
 		return estudiar;
 	}
 
@@ -718,7 +488,7 @@ public void insertarDatosEstudia(Estudia a) {
 	}
 	
 	// ACTUALIZACION DE DATOS 
-/*	
+
 	public void actualizarAlumno(Alumno alumno, String newNombre, String newApellido, String newEmail, String newDirection, String newNombreUsuario, String newContraseña) {
 		//Se abre la conexion y obtenemos el statement
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
@@ -734,7 +504,7 @@ public void insertarDatosEstudia(Estudia a) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void actualizarProfesor(Profesor profesor, String newNombre, String newApellido, String newEmail, String newDirection, String newNombreUsuario, String newContraseña) {
 		//Se abre la conexion y obtenemos el statement
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
@@ -750,46 +520,17 @@ public void insertarDatosEstudia(Estudia a) {
 			e.printStackTrace();
 		}
 	}
-	public void actualizarTarea(Profesor profesor, String newNombre, String newApellido, String newEmail, String newDirection, String newNombreUsuario, String newContraseña) {
+	
+	public void actualizarTarea(Tarea tarea, String newNombre, String fechaFin, String Calificacion, int porcentaje) {
 		//Se abre la conexion y obtenemos el statement
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 			 Statement stmt = con.createStatement()){
 			//Se ejecuta la sentencia de actualizar datos
-			String sql = "UPDATE PROFESOR SET NOMBRE = '%s', APELLIDO = '%s', EMAIL = '%s', DIRECCION = '%s', NOMBRE_USUARIO = '%s', CONTRASEÑA = '%s' WHERE ID = %d;";
-			int result = stmt.executeUpdate(String.format(sql, newNombre, newApellido, newEmail, newDirection, newNombreUsuario, newContraseña, profesor.getId()));
+			String sql = "UPDATE TAREA SET NOMBRE = '%s', FECHA_FIN = '%s', CALIFICACION = '%d', PORCENTAJE = '%s';";
+			int result = stmt.executeUpdate(String.format(sql, newNombre, fechaFin, Calificacion, porcentaje, tarea.getId()));
 			
 		
-			log( Level.INFO,"Se ha actulizado datos de " + result + "profesor", null);
-		} catch (Exception e) {
-			log( Level.SEVERE,"Error al actualizar datos de la  BBDD", e);
-			e.printStackTrace();
-		}
-	}
-	public void actualizarEstudia(Profesor profesor, String newNombre, String newApellido, String newEmail, String newDirection, String newNombreUsuario, String newContraseña) {
-		//Se abre la conexion y obtenemos el statement
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
-			 Statement stmt = con.createStatement()){
-			//Se ejecuta la sentencia de actualizar datos
-			String sql = "UPDATE PROFESOR SET NOMBRE = '%s', APELLIDO = '%s', EMAIL = '%s', DIRECCION = '%s', NOMBRE_USUARIO = '%s', CONTRASEÑA = '%s' WHERE ID = %d;";
-			int result = stmt.executeUpdate(String.format(sql, newNombre, newApellido, newEmail, newDirection, newNombreUsuario, newContraseña, profesor.getId()));
-			
-		
-			log( Level.INFO,"Se ha actulizado datos de " + result + "profesor", null);
-		} catch (Exception e) {
-			log( Level.SEVERE,"Error al actualizar datos de la  BBDD", e);
-			e.printStackTrace();
-		}
-	}
-	public void actualizarAsignatura(Profesor profesor, String newNombre, String newApellido, String newEmail, String newDirection, String newNombreUsuario, String newContraseña) {
-		//Se abre la conexion y obtenemos el statement
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
-			 Statement stmt = con.createStatement()){
-			//Se ejecuta la sentencia de actualizar datos
-			String sql = "UPDATE PROFESOR SET NOMBRE = '%s', APELLIDO = '%s', EMAIL = '%s', DIRECCION = '%s', NOMBRE_USUARIO = '%s', CONTRASEÑA = '%s' WHERE ID = %d;";
-			int result = stmt.executeUpdate(String.format(sql, newNombre, newApellido, newEmail, newDirection, newNombreUsuario, newContraseña, profesor.getId()));
-			
-		
-			log( Level.INFO,"Se ha actulizado datos de " + result + "profesor", null);
+			log( Level.INFO,"Se ha actulizado datos de " + result + "tarea", null);
 		} catch (Exception e) {
 			log( Level.SEVERE,"Error al actualizar datos de la  BBDD", e);
 			e.printStackTrace();
@@ -797,7 +538,21 @@ public void insertarDatosEstudia(Estudia a) {
 	}
 	
 	
-	*/
+	public void actualizarAsignatura(Asignatura asignatura, String newNombre, int id_profesor) {
+		//Se abre la conexion y obtenemos el statement
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+			 Statement stmt = con.createStatement()){
+			//Se ejecuta la sentencia de actualizar datos
+			String sql = "UPDATE ASIGNATURA SET NOMBRE = '%s', ID_PROFESOR = '%d' WHERE ID = %d;";
+			int result = stmt.executeUpdate(String.format(sql, newNombre, id_profesor, asignatura.getId()));
+			
+		
+			log( Level.INFO,"Se ha actulizado datos de " + result + "profesor", null);
+		} catch (Exception e) {
+			log( Level.SEVERE,"Error al actualizar datos de la  BBDD", e);
+			e.printStackTrace();
+		}
+	}
 	public void borrarDatosProfesores() {
 		//Se abre la conexión y se obtiene el Statement
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
