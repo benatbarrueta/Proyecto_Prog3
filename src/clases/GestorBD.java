@@ -19,7 +19,7 @@ import java.sql.*;
 public class GestorBD {
 
 	protected static final String DRIVER_NAME = "lib/sqlite-jdbc";
-	protected static final String DATABASE_FILE = "db/borja.db";
+	protected static final String DATABASE_FILE = "db/s_1.db";
 	protected static final String CONNECTION_STRING= "jdbc:sqlite:" + DATABASE_FILE;
 
 	private Logger logger = null;
@@ -275,7 +275,7 @@ public class GestorBD {
 	public void insertarDatosAlumno(Alumno a) {
 		
 		//Se define la plantilla de la sentencia SQL
-				String sql = "INSERT INTO ALUMNO  ( ID, NOMBRE, APELLIDO, CONTRASEÑA, DIRECCION, EDAD, EMAIL, CURSO, NOMBRE_USUARIO)  VALUES (?, ?, ?, ?,?, ?, ?, ?,?);";
+				String sql = "INSERT INTO ALUMNO  ( ID, NOMBRE, APELLIDO, CONTRASÑEA, DIRECCION, EDAD, EMAIL, CURSO, NOMBRE_USUARIO)  VALUES (?, ?, ?, ?,?, ?, ?, ?,?);";
 				
 				//Se abre la conexiÃ³n y se crea el PreparedStatement con la sentencia SQL
 				try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
@@ -465,7 +465,7 @@ public void insertarDatosEstudia(Estudia a) {
 				alumno.setId(rs.getInt("ID"));
 				alumno.setNombre(rs.getString("NOMBRE"));
 				alumno.setApellidos(rs.getString("APELLIDO"));
-				alumno.setContraseña(rs.getString("CONTRASEÑA"));
+				alumno.setContraseña(rs.getString("CONTRASÑEA"));
 				alumno.setDireccion(rs.getString("DIRECCION"));
 				alumno.setEdad(rs.getInt("EDAD"));
 				alumno.setEmail(rs.getString("EMAIL"));
@@ -641,7 +641,7 @@ public void insertarDatosEstudia(Estudia a) {
 				asignatura = new Asignatura();
 				asignatura.setId(rs.getInt("ID"));
 				asignatura.setNombre(rs.getString("NOMBRE"));
-				asignatura.setNombre(rs.getString("ID_PROFESOR"));
+				asignatura.setId_profesor(rs.getInt("ID_PROFESOR"));
 				
 				//Se inserta cada nuevo cliente en la lista de clientes
 				asignaturas.add(asignatura);
