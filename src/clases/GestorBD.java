@@ -534,7 +534,7 @@ public void insertarDatosEstudia(Estudia a) {
 		} catch (Exception e) {
 			log( Level.SEVERE,"Error al actualizar datos de la  BBDD", e);
 			e.printStackTrace();
-		}
+		} 
 	}
 	
 	
