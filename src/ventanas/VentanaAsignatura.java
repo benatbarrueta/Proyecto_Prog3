@@ -46,14 +46,25 @@ public class VentanaAsignatura extends JFrame{
 		
 		Container cp = this.getContentPane();
 		ArrayList<Tarea> listaTarea = new ArrayList<>();
-		// CREACIONES  //AÑADE LAS TAREAS DEL ALUMNO A LA LISTA
-		
-		//SUR
+	
 		JPanel centro = new JPanel();
 		JPanel norte = new JPanel();
 		JPanel south = new JPanel();
+		cp.setLayout(new BorderLayout());
+		cp.add(centro, BorderLayout.CENTER);
+		cp.add(norte, BorderLayout.NORTH);
+		cp.add(south, BorderLayout.SOUTH);
+		
+		norte.setLayout(new GridLayout(1,1));
+		centro.setLayout(new GridLayout(5, 1));
+		south.setLayout(new GridLayout(1,4));
+		
+
 		
 		
+		
+
+
 		
 		
 		if(tipo.equals("Alumno")) {
@@ -85,6 +96,24 @@ public class VentanaAsignatura extends JFrame{
 				
 						modeloTareaLista.addRow(new Object[] {tarea.getNombre(), tarea.getFecha_fin(), status, calificacion, alumno.getNombre()});
 					}
+
+				Calendar calendario = new GregorianCalendar();
+				
+				tareas = new JLabel("Tareas");
+				nombreAsig = new JLabel("Asignatura:  " + asignatura.getNombre());
+				apuntes = new JLabel("Apuntes");
+				
+				hora = calendario.get(Calendar.HOUR_OF_DAY);
+		 		minutos = calendario.get(Calendar.MINUTE);
+				
+		 		String	texto=("Hora:  "+ hora + ":" + minutos);
+		 		fecha = new JLabel(texto);
+				
+				centro.add(apuntes);
+				centro.add(new JLabel());
+				centro.add(tareas);	
+				JScrollPane scrollDato = new JScrollPane(tareaLista);
+				centro.add(scrollDato);
 			
 
 				
@@ -95,42 +124,52 @@ public class VentanaAsignatura extends JFrame{
 			for (Tarea t : GestorBD.gestorBD.obtenerDatosTareas()) {
 				if(t.getId_asignatura()== asignatura.getId()) {
 					listaTarea.add(t);
-				}
-				
-				modeloTareaLista = new DefaultTableModel(new Object[] { "EMAIL ALUMNO", "FECHA ENTREGA", "ESTATUS", "CALIFICACION"}, 0);
-				tareaLista = new JTable(modeloTareaLista);
+				}			
+		}
+			modeloTareaLista = new DefaultTableModel(new Object[] { "NOMBRE ALUMNO", "FECHA ENTREGA", "ESTATUS", "CALIFICACION"}, 0);
+			tareaLista = new JTable(modeloTareaLista);
+		
+			String status = "";
+			String calificacion = "";
+			comboTareas = new JComboBox();
+			for (Tarea s : listaTarea) {
 			
-				String status = "";
-				String calificacion = "";
-				for (String s : actividadesPorNombre.keySet()) {
-					for (Tarea tarea : actividadesPorNombre.get(s)) {
-						if(s.equals("Actividad 01")) {
-							if (tarea.getCalificacion() >= 5) {
-								status = "APROBADO";
-								calificacion = "" + tarea.getCalificacion();
-							} else if(tarea.getCalificacion() == -1) {
-								status = "SIN CALIFICAR";
-								calificacion = "";
-							} else {
-								status = "SUSPENDIDO";
-								calificacion = "" + tarea.getCalificacion();
+						if (s.getCalificacion() >= 5) {
+							status = "APROBADO";
+							calificacion = "" + s.getCalificacion();
+						} else if(s.getCalificacion() == -1) {
+							status = "SIN CALIFICAR";
+							calificacion = "";
+						} else {
+							status = "SUSPENDIDO";
+							calificacion = "" + s.getCalificacion();
+						}
+						for (Alumno a : GestorBD.gestorBD.obtenerDatosAlumnos()) {
+							
+							if(a.getId()==s.getId_alumna()) {
+								
+								modeloTareaLista.addRow(new Object[] {a.getNombre(), s.getFecha_fin(), status, calificacion});				
 							}
+							
+							
+						}
+						
+						
+						
+						
+							comboTareas.addItem(s.getNombre());
+					
+				
 
-							modeloTareaLista.addRow(new Object[] {tarea.getId_alumna(), tarea.getFecha_fin(), status, calificacion});
-							}
-
-			}	
-			}				
+		
 		}
 			
 		añadirTarea = new JButton("Añadir Tarea");
 		editarTarea = new JButton("Editar Tarea");
 		
 			
-			comboTareas = new JComboBox();
-			for (String s : actividadesPorNombre.keySet()) {
-				comboTareas.addItem(s);
-			}
+			
+		
 			
 			comboTareas.setSelectedItem("Clicka para ver las tareas");
 		
@@ -196,40 +235,66 @@ public class VentanaAsignatura extends JFrame{
 			});	
 			
 
+			
+
+			Calendar calendario = new GregorianCalendar();
+			
+			tareas = new JLabel("Tareas");
+			nombreAsig = new JLabel("Asignatura:  " + asignatura.getNombre());
+			apuntes = new JLabel("Apuntes");
+			
+			hora = calendario.get(Calendar.HOUR_OF_DAY);
+	 		minutos = calendario.get(Calendar.MINUTE);
+			
+	 		String	texto=("Hora:  "+ hora + ":" + minutos);
+	 		fecha = new JLabel(texto);
+			
 
 			south.add(añadirTarea);
 			south.add(editarTarea);
+			
+			JButton crearGrupos = new JButton("Crear Grupos");
+			
+			south.add(crearGrupos);
+			
+			
+			crearGrupos.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					VentanaGrupos v =new VentanaGrupos(asignatura);
+				}
+			});
 			
 			
 			JPanel panelComboTareas = new JPanel();
 			panelComboTareas.setLayout(new GridLayout(1, 2));
 			panelComboTareas.add(comboTareas);
 			panelComboTareas.add(new JLabel());
-			centro.add(panelComboTareas);
 			
+			
+			centro.add(apuntes);
+			centro.add(new JLabel());
+			centro.add(tareas);	
+			JScrollPane scrollDato = new JScrollPane(tareaLista);
+			centro.add(panelComboTareas);
+			centro.add(scrollDato);
+		
+			
+
+
 			
 }
 		
 	
 		
 		
-		cp.setLayout(new BorderLayout());
+		
 		
 	
 		
 
-
-		Calendar calendario = new GregorianCalendar();
-		
-		tareas = new JLabel("Tareas");
-		nombreAsig = new JLabel("Asignatura:  " + asignatura.getNombre());
-		apuntes = new JLabel("Apuntes");
-		
-		hora = calendario.get(Calendar.HOUR_OF_DAY);
- 		minutos = calendario.get(Calendar.MINUTE);
-		
- 	String	texto=("Hora:  "+ hora + ":" + minutos);
- 		fecha = new JLabel(texto);
  		Thread hilo = new Thread(new Runnable() {
 			
 			@Override
@@ -320,34 +385,15 @@ public class VentanaAsignatura extends JFrame{
 	
 		
 	
-
-		
-		
-	
-	
-		
-	
-		//ADD
-		cp.add(centro, BorderLayout.CENTER);
-		cp.add(norte, BorderLayout.NORTH);
-	
-		cp.add(south, BorderLayout.SOUTH);
-		
-		norte.setLayout(new GridLayout(1,1));
-		centro.setLayout(new GridLayout(5, 1));
-		south.setLayout(new GridLayout(1,4));
-		//NORTE
-
 		norte.add(nombreAsig);
 		norte.add(fecha);
 		
 		
-		//CENTRO
-		centro.add(apuntes);
-		centro.add(new JLabel());
-		centro.add(tareas);	
-		JScrollPane scrollDato = new JScrollPane(tareaLista);
-		centro.add(scrollDato);
+		
+	
+		
+
+		
 	
 		
 		

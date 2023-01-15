@@ -164,25 +164,12 @@ public class VentanaAlud extends JFrame {
 		
 		Alumno alumno = (Alumno) objeto;
 		mostrar_tareas.addActionListener(new ActionListener() {
-			public HashMap<String, ArrayList<Tarea>> todas_tareas = new HashMap<>();
+			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				for (Estudia est :GestorBD.gestorBD.obtenerDatosEstudia()) {
-					if (alumno.getId()==est.getId_alumno()) {
-						for (Asignatura asig : GestorBD.gestorBD.obtenerDatosAsignaturas()) {
-							if(asig.getId()==est.getId_asignatura()) {
-								todas_tareas.putIfAbsent(asig.getNombre(), new ArrayList<Tarea>());
-								for (Tarea tar : GestorBD.gestorBD.obtenerDatosTareas()) {
-									if(alumno.getId()==tar.getId_alumna()) {
-									todas_tareas.get(asig.getNombre()).add(tar);
-									}
-								}
-							}
-						}
-			
-					}
-				}
-			System.out.println(todas_tareas);	
+				
+				VentanaMapa v = new VentanaMapa(alumno);
+				
 			}
 		});
 		sur.add(mostrar_tareas);

@@ -10,7 +10,7 @@ import clases.*;
 
 public class VentanaEdita extends JFrame {
 	
-	protected GestorBD gestorBD;
+
 	
 	protected JTextField nombre;
 	protected JLabel labelNombre;

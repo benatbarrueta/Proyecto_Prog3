@@ -58,8 +58,7 @@ public class VentanaLogIn extends JFrame {
 				if (comboTipo.getSelectedItem() == Tipo.ALUMNO) {
 				
 					for (Alumno alumno : GestorBD.gestorBD.obtenerDatosAlumnos()) {
-						System.out.println(alumno.getNombreUsuario());
-						System.out.println(alumno.getContraseña());
+				
 						if(textoUsuario.getText().equals(alumno.getNombreUsuario())  && textoContrasena.getText().equals(alumno.getContraseña())) {
 							VentanaAlud v = new VentanaAlud(alumno, "Alumno");
 
