@@ -521,12 +521,12 @@ public void insertarDatosEstudia(Estudia a) {
 		}
 	}
 	
-	public void actualizarTarea(Tarea tarea, String newNombre, String fechaFin, String Calificacion, int porcentaje) {
+	public void actualizarTarea(Tarea tarea, String newNombre, String fechaFin, int Calificacion, int porcentaje) {
 		//Se abre la conexion y obtenemos el statement
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 			 Statement stmt = con.createStatement()){
 			//Se ejecuta la sentencia de actualizar datos
-			String sql = "UPDATE TAREA SET NOMBRE = '%s', FECHA_FIN = '%s', CALIFICACION = '%D', PORCENTAJE = '%s';";
+			String sql = "UPDATE TAREA SET NOMBRE = '%s', FECHA_FIN = '%s', CALIFICACION = '%d', PORCENTAJE = '%s' WHERE ID = %d;";
 			int result = stmt.executeUpdate(String.format(sql, newNombre, fechaFin, Calificacion, porcentaje, tarea.getId()));
 			
 		

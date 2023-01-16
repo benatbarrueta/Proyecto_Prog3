@@ -69,14 +69,14 @@ public class VentanaEditaTarea extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-			GestorBD.gestorBD.actualizarTarea(tarea, nombre.getText(), fechaFin.getText(), calificacion.getText(), tarea.getPorcentaje());
-			System.out.println(GestorBD.gestorBD.obtenerDatosTareas());
-			try {
-				Gestor.guardarTareaCSV(GestorBD.gestorBD.obtenerDatosTareas());
-			} catch (FileNotFoundException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
+				GestorBD.gestorBD.actualizarTarea(tarea, nombre.getText(), fechaFin.getText(), Integer.parseInt(calificacion.getText()), tarea.getPorcentaje());
+				System.out.println(GestorBD.gestorBD.obtenerDatosTareas());
+				try {
+					Gestor.guardarTareaCSV(GestorBD.gestorBD.obtenerDatosTareas());
+				} catch (FileNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				//SE CIERRRA LA VENTANA
 				VentanaAsignatura v = new VentanaAsignatura(objeto, "Profesor",asignatura);
 				dispose();

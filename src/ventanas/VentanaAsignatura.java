@@ -128,27 +128,15 @@ public class VentanaAsignatura extends JFrame{
 		}
 			modeloTareaLista = new DefaultTableModel(new Object[] { "NOMBRE TAREA", "FECHA ENTREGA", "NOMBRE ALUMNO", "CALIFICACION"}, 0);
 			tareaLista = new JTable(modeloTareaLista);
-		
-			String status = "";
-			String calificacion = "";
+
 			comboTareas = new JComboBox();
 			for (Tarea s : listaTarea) {
 			
-						if (s.getCalificacion() >= 5) {
-							status = "APROBADO";
-							calificacion = "" + s.getCalificacion();
-						} else if(s.getCalificacion() == -1) {
-							status = "SIN CALIFICAR";
-							calificacion = "";
-						} else {
-							status = "SUSPENDIDO";
-							calificacion = "" + s.getCalificacion();
-						}
 						for (Alumno a : GestorBD.gestorBD.obtenerDatosAlumnos()) {
 							
 							if(a.getId()==s.getId_alumna()) {
 								
-								modeloTareaLista.addRow(new Object[] {s.getNombre(), s.getFecha_fin(), a.getNombre(), calificacion});				
+								modeloTareaLista.addRow(new Object[] {s.getNombre(), s.getFecha_fin(), a.getNombre(), s.getCalificacion()});				
 							}
 							
 							
@@ -169,6 +157,7 @@ public class VentanaAsignatura extends JFrame{
 				}
 			}
 		}
+		comboTareas.addItem("Seleccione tarea");
 		
 		for (String t : listaTareaCombo) {
 			comboTareas.addItem(t);
@@ -194,34 +183,33 @@ public class VentanaAsignatura extends JFrame{
 						modeloTareaLista.removeRow(0);
 					}
 			
-				tareasEnTabla.clear();
+					tareasEnTabla.clear();
 					for (Tarea tarea : GestorBD.gestorBD.obtenerDatosTareas()) {
 						if (tarea.getNombre().equals(nombreTarea)) {
-							
-						
-						
-								if (tarea.getCalificacion() >= 5) {
-									status = "APROBADO";
-									calificacion = "" + tarea.getCalificacion();
-								} else if(tarea.getCalificacion() == -1) {
-									status = "SIN CALIFICAR";
-									calificacion = "";
-								} else {
-									status = "SUSPENDIDO";
-									calificacion = "" + tarea.getCalificacion();
-								}
+								
 								tareasEnTabla.add(tarea);
+								
 								for (Alumno a : GestorBD.gestorBD.obtenerDatosAlumnos()) {
 									if(a.getId()==tarea.getId_alumna()) {
 										
-										modeloTareaLista.addRow(new Object[] {tarea.getNombre(), tarea.getFecha_fin(), a.getNombre(), calificacion});				
+										modeloTareaLista.addRow(new Object[] {tarea.getNombre(), tarea.getFecha_fin(), a.getNombre(), tarea.getCalificacion()});				
 										System.out.println(a);
 									}
 								}
-						}
+						} else if(nombreTarea.equals("Seleccione tarea")){
+							if (tarea.getId_asignatura() == asignatura.getId()) {
+								for (Alumno a : GestorBD.gestorBD.obtenerDatosAlumnos()) {
+									if(a.getId()==tarea.getId_alumna()) {
+									
+										modeloTareaLista.addRow(new Object[] {tarea.getNombre(), tarea.getFecha_fin(), a.getNombre(), tarea.getCalificacion()});				
+										System.out.println(a);
+									}
+								}
 							}
-							tareaLista.repaint();
 						}
+					}
+					tareaLista.repaint();
+				}
 			});
 			
 			
@@ -319,18 +307,15 @@ public class VentanaAsignatura extends JFrame{
 			@Override
 			public void run() {
 				while (true) {
-				
-					
 					// TODO Auto-generated method stub
 					
-				
-	
 					try {
 						Thread.sleep(60000);
 					} catch (InterruptedException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
+					
 					minutos=minutos+1;
 					if(minutos==60) {
 						minutos=0;
@@ -339,33 +324,28 @@ public class VentanaAsignatura extends JFrame{
 							hora=0;
 						}
 					}
-				String texto2=("Hora:  "+ hora + ":" + minutos);
-					fecha.setText(texto2);
-				//	System.out.println(texto2);
 					
+					String minutos2 = "" + minutos;
+					String hora2 = "" + hora;
+					
+					if (minutos < 10) {
+						minutos2 = "0" + minutos;
+					}
+					
+					if (hora < 10) {
+						hora2 = "0" + hora;
+					}
+					
+					String texto2=("Hora:  "+ hora2 + ":" + minutos2);
+					fecha.setText(texto2);					
 				}
-			
-			
-		
+
 			}
 			
 		});
  		
  		hilo.start();
- 		
- 		
-
-		
-
-		
-					
- 		
-					
-			
-					
-					
-			
-		
+ 	
  		DefaultTableCellRenderer renderSencillo = new DefaultTableCellRenderer() {
 			private static final long serialVersionUID = 1L;
 
@@ -387,13 +367,18 @@ public class VentanaAsignatura extends JFrame{
 				}
 				
 			
-	if (column==2) {
-
-				if (value.toString().equals("SUSPENDIDO")) {
-					label.setForeground(Color.RED);
-				} else if (value.toString().equals("SIN CALIFICAR")) {
-					label.setForeground(Color.GRAY);
-				}
+				if (column==3) {
+					String valor = value.toString();
+					System.out.println(valor);
+					if ((int) value < 5 && (int) value >= 0) {
+						label.setForeground(Color.RED);
+					} else if (value.toString().equals("-1")) {
+						label.setForeground(Color.GRAY);
+						label.setText("SIN CALIFICAR");
+						
+					} else {
+						label.setForeground(Color.BLACK);
+					}
 	}
 				//Es necesaria esta sentencia para pintar correctamente el color de fondo
 				label.setOpaque(true);
@@ -417,19 +402,6 @@ public class VentanaAsignatura extends JFrame{
 		tareaLista.getColumnModel().getColumn(2).setCellRenderer(renderSencillo);
 		tareaLista.getColumnModel().getColumn(3).setCellRenderer(renderSencillo);
 		
-		
-
-		this.addWindowListener(new WindowAdapter() {
-			
-			@Override
-			public void windowOpened(WindowEvent e) {
-				
-				if (modeloTareaLista.getColumnCount()>4) {
-					tareaLista.getColumnModel().getColumn(4).setCellRenderer(renderSencillo);
-				}
-			}
-			
-		});
  	
 	}
 	
