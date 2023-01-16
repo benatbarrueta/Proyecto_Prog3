@@ -5,6 +5,7 @@ import javax.swing.table.DefaultTableCellRenderer;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.io.FileNotFoundException;
 
 import clases.*;
 
@@ -108,11 +109,20 @@ public class VentanaEdita extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if (tipo == "Alumno") {
 					Alumno alumno = (Alumno) objeto;
-					VentanaAlud v = new VentanaAlud(alumno, "Alumno");
+					for (Alumno a : GestorBD.gestorBD.obtenerDatosAlumnos()) {
+						if (a.getId() == alumno.getId()) {
+							VentanaAlud v = new VentanaAlud(a, "Alumno");
+						}
+					}
 					dispose();
 				} else {
 					Profesor profesor = (Profesor) objeto;
-					VentanaAlud v = new VentanaAlud(profesor, "Profesor");
+					for (Profesor p : GestorBD.gestorBD.obtenerDatosProfesor()) {
+						if (p.getId() == profesor.getId()) {
+							VentanaAlud v = new VentanaAlud(p, "Profesor");
+						}
+					}
+					
 					dispose();
 				}
 			}
@@ -127,6 +137,12 @@ public class VentanaEdita extends JFrame {
 					if (nombre.getText() != null || apellido.getText() != null || email.getText() != null ||  nombreUsuario.getText() != null || contraseña.getText() != null) {
 						GestorBD.gestorBD.actualizarAlumno(alumno, nombre.getText(), apellido.getText(), email.getText(), direccion.getText(), nombreUsuario.getText(), contraseña.getText());
 						System.out.println("- Nombre: " + nombre.getText() + "\n- Apellido: " + apellido.getText() + "\n- Email: " + email.getText() + "\n- Dirección:" + direccion.getText() + "\n- Nombre de usuario : " + nombreUsuario.getText() + "\n- Contraseña: " + contraseña.getText());
+						try {
+							Gestor.guardarAlumnosCSV(GestorBD.gestorBD.obtenerDatosAlumnos());
+						} catch (FileNotFoundException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
 					}
 				} else {
 					Profesor profesor = (Profesor) objeto;
@@ -134,6 +150,12 @@ public class VentanaEdita extends JFrame {
 					if (nombre.getText() != null || apellido.getText() != null || email.getText() != null ||  nombreUsuario.getText() != null || contraseña.getText() != null) {
 						GestorBD.gestorBD.actualizarProfesor(profesor, nombre.getText(), apellido.getText(), email.getText(), direccion.getText(), nombreUsuario.getText(), contraseña.getText());
 						System.out.println("- Nombre: " + nombre.getText() + "\n- Apellido: " + apellido.getText() + "\n- Email: " + email.getText() + "\n- Dirección:" + direccion.getText() + "\n- Nombre de usuario : " + nombreUsuario.getText() + "\n- Contraseña: " + contraseña.getText());
+						try {
+							Gestor.guardarProfesorCSV(GestorBD.gestorBD.obtenerDatosProfesor());
+						} catch (FileNotFoundException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
 					}
 				}
 			}
@@ -146,6 +168,7 @@ public class VentanaEdita extends JFrame {
 			Profesor profesor = (Profesor) objeto;
 			this.setTitle(profesor.getNombre() + " " + profesor.getApellidos());
 		}
+		
 		
 		this.setSize(600, 400);
 		this.setVisible(true);

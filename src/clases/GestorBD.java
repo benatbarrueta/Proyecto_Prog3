@@ -494,10 +494,10 @@ public void insertarDatosEstudia(Estudia a) {
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 			 Statement stmt = con.createStatement()){
 			//Se ejecuta la sentencia de actualizar datos
-			String sql = "UPDATE ALUMNO SET NOMBRE = '%s', APELLIDO = '%s', EMAIL = '%s', DIRECCION = '%s', NOMBRE_USUARIO = '%s', CONTRASEÑA = '%s' WHERE ID = %d;";
+			String sql = "UPDATE ALUMNO SET NOMBRE = '%s', APELLIDO = '%s', EMAIL = '%s', DIRECCION = '%s', NOMBRE_USUARIO = '%s', CONTRASÑEA = '%s' WHERE ID = %d;";
 			int result = stmt.executeUpdate(String.format(sql, newNombre, newApellido, newEmail, newDirection, newNombreUsuario, newContraseña, alumno.getId()));
 			
-			log( Level.INFO,"Se ha actulizado los datos de " + result + "alumno",null);
+			log( Level.INFO,"Se ha actulizado los datos de " + result + " alumno",null);
 			
 		} catch (Exception e) {
 			log( Level.SEVERE,"Error al actualizar datos de la  BBDD", e);
@@ -526,7 +526,7 @@ public void insertarDatosEstudia(Estudia a) {
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 			 Statement stmt = con.createStatement()){
 			//Se ejecuta la sentencia de actualizar datos
-			String sql = "UPDATE TAREA SET NOMBRE = '%s', FECHA_FIN = '%s', CALIFICACION = '%d', PORCENTAJE = '%s';";
+			String sql = "UPDATE TAREA SET NOMBRE = '%s', FECHA_FIN = '%s', CALIFICACION = '%D', PORCENTAJE = '%s';";
 			int result = stmt.executeUpdate(String.format(sql, newNombre, fechaFin, Calificacion, porcentaje, tarea.getId()));
 			
 		

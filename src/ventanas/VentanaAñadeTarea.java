@@ -7,6 +7,7 @@ import java.awt.Container;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Properties;
 
@@ -78,11 +79,25 @@ public VentanaAñadeTarea (Asignatura asignatura , Object object) {
 					tarea.setCalificacion(-1);
 					tarea.setId_alumna(alum.getId());
 					tarea.setId_asignatura(asig.getId());
+					tarea.setId(tareas.get(tareas.size()-1).getId() + 1);
 					
 					tareas.add(tarea);
+					
+					GestorBD.gestorBD.insertarDatosTarea(tarea);
+					
+					
+					
+					
 				}
 			}
-		}		
+		}
+		
+		try {
+			Gestor.guardarTareaCSV(tareas);
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 			// GUARDAR TAREAS
 					GestorBD.gestorBD.borrarDatosTareas();
 					for (Tarea tarea : tareas) {

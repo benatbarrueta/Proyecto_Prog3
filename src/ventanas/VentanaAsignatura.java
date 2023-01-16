@@ -46,6 +46,7 @@ public class VentanaAsignatura extends JFrame{
 		ArrayList<Tarea> tareasEnTabla = new ArrayList<Tarea>();
 		Container cp = this.getContentPane();
 		ArrayList<Tarea> listaTarea = new ArrayList<>();
+		ArrayList<String> listaTareaCombo = new ArrayList<String>();
 	
 		JPanel centro = new JPanel();
 		JPanel norte = new JPanel();
@@ -115,9 +116,8 @@ public class VentanaAsignatura extends JFrame{
 				JScrollPane scrollDato = new JScrollPane(tareaLista);
 				centro.add(scrollDato);
 			
-
 				
-		}else {
+		} else {
 			ArrayList<String> nombreTareas = new ArrayList<String>();
 		
 			Profesor profesor = (Profesor) objeto;
@@ -126,7 +126,7 @@ public class VentanaAsignatura extends JFrame{
 					listaTarea.add(t);
 				}			
 		}
-			modeloTareaLista = new DefaultTableModel(new Object[] { "NOMBRE ALUMNO", "FECHA ENTREGA", "ESTATUS", "CALIFICACION"}, 0);
+			modeloTareaLista = new DefaultTableModel(new Object[] { "NOMBRE TAREA", "FECHA ENTREGA", "NOMBRE ALUMNO", "CALIFICACION"}, 0);
 			tareaLista = new JTable(modeloTareaLista);
 		
 			String status = "";
@@ -148,20 +148,30 @@ public class VentanaAsignatura extends JFrame{
 							
 							if(a.getId()==s.getId_alumna()) {
 								
-								modeloTareaLista.addRow(new Object[] {a.getNombre(), s.getFecha_fin(), status, calificacion});				
+								modeloTareaLista.addRow(new Object[] {s.getNombre(), s.getFecha_fin(), a.getNombre(), calificacion});				
 							}
 							
 							
 						}
 						
 						
-						
-						
-							comboTareas.addItem(s.getNombre());
 					
 				
 
 		
+		}
+			
+		for (Tarea t : GestorBD.gestorBD.obtenerDatosTareas()) {
+			if (!listaTareaCombo.contains(t.getNombre())) {
+				if (t.getId_asignatura() == asignatura.getId()) {
+					listaTareaCombo.add(t.getNombre());
+					
+				}
+			}
+		}
+		
+		for (String t : listaTareaCombo) {
+			comboTareas.addItem(t);
 		}
 			
 		añadirTarea = new JButton("Añadir Tarea");
@@ -201,7 +211,13 @@ public class VentanaAsignatura extends JFrame{
 									calificacion = "" + tarea.getCalificacion();
 								}
 								tareasEnTabla.add(tarea);
-								modeloTareaLista.addRow(new Object[] {tarea.getNombre(), tarea.getFecha_fin(), status, calificacion});
+								for (Alumno a : GestorBD.gestorBD.obtenerDatosAlumnos()) {
+									if(a.getId()==tarea.getId_alumna()) {
+										
+										modeloTareaLista.addRow(new Object[] {tarea.getNombre(), tarea.getFecha_fin(), a.getNombre(), calificacion});				
+										System.out.println(a);
+									}
+								}
 						}
 							}
 							tareaLista.repaint();
@@ -390,15 +406,6 @@ public class VentanaAsignatura extends JFrame{
 	
 		norte.add(nombreAsig);
 		norte.add(fecha);
-		
-		
-		
-	
-		
-
-		
-	
-		
 		
 		
 		this.setTitle(asignatura.getNombre());

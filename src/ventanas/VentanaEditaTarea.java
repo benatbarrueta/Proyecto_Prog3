@@ -5,6 +5,7 @@ import java.awt.Container;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
 import java.util.Properties;
 
 import javax.swing.JButton;
@@ -68,19 +69,14 @@ public class VentanaEditaTarea extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				Tarea tarea2 = new Tarea();
-				tarea2.setNombre(nombre.getText());
-				tarea2.setFecha_fin(fechaFin.getText());
-				if (calificacion.getText().equals("")) {
-					tarea2.setCalificacion(-1);
-				} else {
-					tarea2.setCalificacion(Integer.parseInt(calificacion.getText()));
-				}
-				
-			
 			GestorBD.gestorBD.actualizarTarea(tarea, nombre.getText(), fechaFin.getText(), calificacion.getText(), tarea.getPorcentaje());
-			
-			
+			System.out.println(GestorBD.gestorBD.obtenerDatosTareas());
+			try {
+				Gestor.guardarTareaCSV(GestorBD.gestorBD.obtenerDatosTareas());
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 				//SE CIERRRA LA VENTANA
 				VentanaAsignatura v = new VentanaAsignatura(objeto, "Profesor",asignatura);
 				dispose();
