@@ -24,60 +24,13 @@ import java.util.Properties;
 import clases.GestorBD;
 
 public class Gestor {
-	protected ArrayList<Alumno> alumnos;
-	protected ArrayList<Profesor> profesor;
-	protected ArrayList<Asignatura> asignaturas;
-	protected ArrayList<Usuarios> usuarios;
-	protected static ArrayList<Tarea> tareas;
+	
 	protected Properties properties;
 	public static final String PROPERTIES_FILE = "src/config/Properties";
 	public static final String INPUT_KEY_TAREA = "leerTarea";
 	public static final String OUTPUT_KEY_TAREA = "guardarTarea";
 	public static final String KEY_ASIGNATURA = "guardarLeerAsgignatura";
 	
-	public Gestor(ArrayList<Alumno> alumnos, ArrayList<Profesor> profesor, ArrayList<Asignatura> asignaturas,
-			ArrayList<Usuarios> usuarios, ArrayList<Tarea> tareas) {
-		super();
-		this.alumnos = alumnos;
-		this.profesor = profesor;
-		this.asignaturas = asignaturas;
-		this.usuarios = usuarios;
-		this.tareas = tareas;
-		
-	}
-	public Gestor() {
-		super();
-		this.alumnos = new ArrayList<Alumno>();
-		this.profesor = new ArrayList<Profesor>();
-		this.asignaturas = new ArrayList<Asignatura>();
-		this.usuarios = new ArrayList<Usuarios>();
-		this.tareas = new ArrayList<Tarea>();
-		
-	}
-	public ArrayList<Alumno> getAlumnos() {
-		return alumnos;
-	}
-	public void setAlumnos(ArrayList<Alumno> alumnos) {
-		this.alumnos = alumnos;
-	}
-	public ArrayList<Profesor> getProfesor() {
-		return profesor;
-	}
-	public void setProfesor(ArrayList<Profesor> profesor) {
-		this.profesor = profesor;
-	}
-	public ArrayList<Asignatura> getAsignatura() { 
-		return asignaturas;
-	}
-	public void setAsignatura(ArrayList<Asignatura> asignatura) {
-		this.asignaturas = asignatura;
-	}
-	public ArrayList<Tarea> getTareas() {
-		return tareas;
-	}
-	public void setTareas(ArrayList<Tarea> tareas) {
-		this.tareas = tareas;
-	}
 	
 	public  static Properties loadProperties() {
 		Properties properties = new Properties();

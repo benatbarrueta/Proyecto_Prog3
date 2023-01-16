@@ -80,22 +80,22 @@ public class VentanaAsignatura extends JFrame{
 			tareaLista = new JTable(modeloTareaLista);
 		
 			String status = "";
-			String calificacion = "";
+		
 		
 				for (Tarea tarea : listaTarea) {
 					if (tarea.getCalificacion() >= 5) {
 						status = "APROBADO";
-						calificacion = "" + tarea.getCalificacion();
+					
 					} else if(tarea.getCalificacion() == -1) {
 						status = "SIN CALIFICAR";
-						calificacion = "";
+					
 					} else {
 						status = "SUSPENDIDO";
-						calificacion = "" + tarea.getCalificacion();
+						
 					}
 				
 				
-						modeloTareaLista.addRow(new Object[] {tarea.getNombre(), tarea.getFecha_fin(), status, calificacion, alumno.getNombre()});
+						modeloTareaLista.addRow(new Object[] {tarea.getNombre(), tarea.getFecha_fin(), status, tarea.getCalificacion(), alumno.getNombre()});
 					}
 
 				Calendar calendario = new GregorianCalendar();

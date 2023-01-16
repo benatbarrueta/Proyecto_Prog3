@@ -362,3 +362,3463 @@
   <message>Se han recuperado alunos</message>
 </record>
 </log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-16T12:31:27.578332800Z</date>
+  <millis>1673872287578</millis>
+  <nanos>332800</nanos>
+  <sequence>0</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado alumnos </message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.610791900Z</date>
+  <millis>1673872287610</millis>
+  <nanos>791900</nanos>
+  <sequence>1</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se ha borrado los profesores</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.616433300Z</date>
+  <millis>1673872287616</millis>
+  <nanos>433300</nanos>
+  <sequence>2</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se ha borrado las asignaturas</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.623417100Z</date>
+  <millis>1673872287623</millis>
+  <nanos>417100</nanos>
+  <sequence>3</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se ha borrado los datos de la tabla estudia</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.630399600Z</date>
+  <millis>1673872287630</millis>
+  <nanos>399600</nanos>
+  <sequence>4</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se ha borrado las tarea</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.649349500Z</date>
+  <millis>1673872287649</millis>
+  <nanos>349500</nanos>
+  <sequence>5</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.650346600Z</date>
+  <millis>1673872287650</millis>
+  <nanos>346600</nanos>
+  <sequence>6</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.656365700Z</date>
+  <millis>1673872287656</millis>
+  <nanos>365700</nanos>
+  <sequence>7</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.657358300Z</date>
+  <millis>1673872287657</millis>
+  <nanos>358300</nanos>
+  <sequence>8</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.663335400Z</date>
+  <millis>1673872287663</millis>
+  <nanos>335400</nanos>
+  <sequence>9</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.664309200Z</date>
+  <millis>1673872287664</millis>
+  <nanos>309200</nanos>
+  <sequence>10</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.670293500Z</date>
+  <millis>1673872287670</millis>
+  <nanos>293500</nanos>
+  <sequence>11</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.670293500Z</date>
+  <millis>1673872287670</millis>
+  <nanos>293500</nanos>
+  <sequence>12</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.678270800Z</date>
+  <millis>1673872287678</millis>
+  <nanos>270800</nanos>
+  <sequence>13</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.678270800Z</date>
+  <millis>1673872287678</millis>
+  <nanos>270800</nanos>
+  <sequence>14</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.685398700Z</date>
+  <millis>1673872287685</millis>
+  <nanos>398700</nanos>
+  <sequence>15</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.686395800Z</date>
+  <millis>1673872287686</millis>
+  <nanos>395800</nanos>
+  <sequence>16</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.693378400Z</date>
+  <millis>1673872287693</millis>
+  <nanos>378400</nanos>
+  <sequence>17</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.694376300Z</date>
+  <millis>1673872287694</millis>
+  <nanos>376300</nanos>
+  <sequence>18</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.700359600Z</date>
+  <millis>1673872287700</millis>
+  <nanos>359600</nanos>
+  <sequence>19</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.700359600Z</date>
+  <millis>1673872287700</millis>
+  <nanos>359600</nanos>
+  <sequence>20</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.707340600Z</date>
+  <millis>1673872287707</millis>
+  <nanos>340600</nanos>
+  <sequence>21</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.707340600Z</date>
+  <millis>1673872287707</millis>
+  <nanos>340600</nanos>
+  <sequence>22</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.714321900Z</date>
+  <millis>1673872287714</millis>
+  <nanos>321900</nanos>
+  <sequence>23</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.714321900Z</date>
+  <millis>1673872287714</millis>
+  <nanos>321900</nanos>
+  <sequence>24</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.720305400Z</date>
+  <millis>1673872287720</millis>
+  <nanos>305400</nanos>
+  <sequence>25</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.722302100Z</date>
+  <millis>1673872287722</millis>
+  <nanos>302100</nanos>
+  <sequence>26</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.729282900Z</date>
+  <millis>1673872287729</millis>
+  <nanos>282900</nanos>
+  <sequence>27</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.733294100Z</date>
+  <millis>1673872287733</millis>
+  <nanos>294100</nanos>
+  <sequence>28</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.749228300Z</date>
+  <millis>1673872287749</millis>
+  <nanos>228300</nanos>
+  <sequence>29</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.750234400Z</date>
+  <millis>1673872287750</millis>
+  <nanos>234400</nanos>
+  <sequence>30</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.758227700Z</date>
+  <millis>1673872287758</millis>
+  <nanos>227700</nanos>
+  <sequence>31</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.758227700Z</date>
+  <millis>1673872287758</millis>
+  <nanos>227700</nanos>
+  <sequence>32</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.764225300Z</date>
+  <millis>1673872287764</millis>
+  <nanos>225300</nanos>
+  <sequence>33</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.765208100Z</date>
+  <millis>1673872287765</millis>
+  <nanos>208100</nanos>
+  <sequence>34</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.787244600Z</date>
+  <millis>1673872287787</millis>
+  <nanos>244600</nanos>
+  <sequence>35</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.787244600Z</date>
+  <millis>1673872287787</millis>
+  <nanos>244600</nanos>
+  <sequence>36</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.794247200Z</date>
+  <millis>1673872287794</millis>
+  <nanos>247200</nanos>
+  <sequence>37</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.795213100Z</date>
+  <millis>1673872287795</millis>
+  <nanos>213100</nanos>
+  <sequence>38</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.802193700Z</date>
+  <millis>1673872287802</millis>
+  <nanos>193700</nanos>
+  <sequence>39</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.802193700Z</date>
+  <millis>1673872287802</millis>
+  <nanos>193700</nanos>
+  <sequence>40</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.810172400Z</date>
+  <millis>1673872287810</millis>
+  <nanos>172400</nanos>
+  <sequence>41</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.810172400Z</date>
+  <millis>1673872287810</millis>
+  <nanos>172400</nanos>
+  <sequence>42</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.817510900Z</date>
+  <millis>1673872287817</millis>
+  <nanos>510900</nanos>
+  <sequence>43</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.817510900Z</date>
+  <millis>1673872287817</millis>
+  <nanos>510900</nanos>
+  <sequence>44</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.824494400Z</date>
+  <millis>1673872287824</millis>
+  <nanos>494400</nanos>
+  <sequence>45</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.825493100Z</date>
+  <millis>1673872287825</millis>
+  <nanos>493100</nanos>
+  <sequence>46</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.864672300Z</date>
+  <millis>1673872287864</millis>
+  <nanos>672300</nanos>
+  <sequence>47</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.864672300Z</date>
+  <millis>1673872287864</millis>
+  <nanos>672300</nanos>
+  <sequence>48</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.871631Z</date>
+  <millis>1673872287871</millis>
+  <nanos>631000</nanos>
+  <sequence>49</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.871631Z</date>
+  <millis>1673872287871</millis>
+  <nanos>631000</nanos>
+  <sequence>50</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.878635500Z</date>
+  <millis>1673872287878</millis>
+  <nanos>635500</nanos>
+  <sequence>51</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.879611100Z</date>
+  <millis>1673872287879</millis>
+  <nanos>611100</nanos>
+  <sequence>52</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.886600700Z</date>
+  <millis>1673872287886</millis>
+  <nanos>600700</nanos>
+  <sequence>53</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.886600700Z</date>
+  <millis>1673872287886</millis>
+  <nanos>600700</nanos>
+  <sequence>54</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.893571500Z</date>
+  <millis>1673872287893</millis>
+  <nanos>571500</nanos>
+  <sequence>55</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.893571500Z</date>
+  <millis>1673872287893</millis>
+  <nanos>571500</nanos>
+  <sequence>56</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.900552400Z</date>
+  <millis>1673872287900</millis>
+  <nanos>552400</nanos>
+  <sequence>57</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.900552400Z</date>
+  <millis>1673872287900</millis>
+  <nanos>552400</nanos>
+  <sequence>58</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.906597700Z</date>
+  <millis>1673872287906</millis>
+  <nanos>597700</nanos>
+  <sequence>59</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.907535Z</date>
+  <millis>1673872287907</millis>
+  <nanos>535000</nanos>
+  <sequence>60</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.913517100Z</date>
+  <millis>1673872287913</millis>
+  <nanos>517100</nanos>
+  <sequence>61</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.914539200Z</date>
+  <millis>1673872287914</millis>
+  <nanos>539200</nanos>
+  <sequence>62</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.920497900Z</date>
+  <millis>1673872287920</millis>
+  <nanos>497900</nanos>
+  <sequence>63</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.921494700Z</date>
+  <millis>1673872287921</millis>
+  <nanos>494700</nanos>
+  <sequence>64</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.945463400Z</date>
+  <millis>1673872287945</millis>
+  <nanos>463400</nanos>
+  <sequence>65</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.946463700Z</date>
+  <millis>1673872287946</millis>
+  <nanos>463700</nanos>
+  <sequence>66</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.953433Z</date>
+  <millis>1673872287953</millis>
+  <nanos>433000</nanos>
+  <sequence>67</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.953433Z</date>
+  <millis>1673872287953</millis>
+  <nanos>433000</nanos>
+  <sequence>68</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.991322700Z</date>
+  <millis>1673872287991</millis>
+  <nanos>322700</nanos>
+  <sequence>69</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.991322700Z</date>
+  <millis>1673872287991</millis>
+  <nanos>322700</nanos>
+  <sequence>70</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.997306900Z</date>
+  <millis>1673872287997</millis>
+  <nanos>306900</nanos>
+  <sequence>71</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:27.997306900Z</date>
+  <millis>1673872287997</millis>
+  <nanos>306900</nanos>
+  <sequence>72</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.003315900Z</date>
+  <millis>1673872288003</millis>
+  <nanos>315900</nanos>
+  <sequence>73</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.004311800Z</date>
+  <millis>1673872288004</millis>
+  <nanos>311800</nanos>
+  <sequence>74</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.010754400Z</date>
+  <millis>1673872288010</millis>
+  <nanos>754400</nanos>
+  <sequence>75</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.010754400Z</date>
+  <millis>1673872288010</millis>
+  <nanos>754400</nanos>
+  <sequence>76</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.017760600Z</date>
+  <millis>1673872288017</millis>
+  <nanos>760600</nanos>
+  <sequence>77</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.017760600Z</date>
+  <millis>1673872288017</millis>
+  <nanos>760600</nanos>
+  <sequence>78</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.023743400Z</date>
+  <millis>1673872288023</millis>
+  <nanos>743400</nanos>
+  <sequence>79</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.024742300Z</date>
+  <millis>1673872288024</millis>
+  <nanos>742300</nanos>
+  <sequence>80</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.030729600Z</date>
+  <millis>1673872288030</millis>
+  <nanos>729600</nanos>
+  <sequence>81</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.031701200Z</date>
+  <millis>1673872288031</millis>
+  <nanos>701200</nanos>
+  <sequence>82</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.069598600Z</date>
+  <millis>1673872288069</millis>
+  <nanos>598600</nanos>
+  <sequence>83</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.069598600Z</date>
+  <millis>1673872288069</millis>
+  <nanos>598600</nanos>
+  <sequence>84</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.077575700Z</date>
+  <millis>1673872288077</millis>
+  <nanos>575700</nanos>
+  <sequence>85</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.077575700Z</date>
+  <millis>1673872288077</millis>
+  <nanos>575700</nanos>
+  <sequence>86</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.161352500Z</date>
+  <millis>1673872288161</millis>
+  <nanos>352500</nanos>
+  <sequence>87</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.161352500Z</date>
+  <millis>1673872288161</millis>
+  <nanos>352500</nanos>
+  <sequence>88</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.167367600Z</date>
+  <millis>1673872288167</millis>
+  <nanos>367600</nanos>
+  <sequence>89</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.168333400Z</date>
+  <millis>1673872288168</millis>
+  <nanos>333400</nanos>
+  <sequence>90</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.174349200Z</date>
+  <millis>1673872288174</millis>
+  <nanos>349200</nanos>
+  <sequence>91</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.174349200Z</date>
+  <millis>1673872288174</millis>
+  <nanos>349200</nanos>
+  <sequence>92</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.181299500Z</date>
+  <millis>1673872288181</millis>
+  <nanos>299500</nanos>
+  <sequence>93</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.181299500Z</date>
+  <millis>1673872288181</millis>
+  <nanos>299500</nanos>
+  <sequence>94</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.187547100Z</date>
+  <millis>1673872288187</millis>
+  <nanos>547100</nanos>
+  <sequence>95</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.188544Z</date>
+  <millis>1673872288188</millis>
+  <nanos>544000</nanos>
+  <sequence>96</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.196522900Z</date>
+  <millis>1673872288196</millis>
+  <nanos>522900</nanos>
+  <sequence>97</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.197519300Z</date>
+  <millis>1673872288197</millis>
+  <nanos>519300</nanos>
+  <sequence>98</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.203502900Z</date>
+  <millis>1673872288203</millis>
+  <nanos>502900</nanos>
+  <sequence>99</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.204500100Z</date>
+  <millis>1673872288204</millis>
+  <nanos>500100</nanos>
+  <sequence>100</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.220491800Z</date>
+  <millis>1673872288220</millis>
+  <nanos>491800</nanos>
+  <sequence>101</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.221457500Z</date>
+  <millis>1673872288221</millis>
+  <nanos>457500</nanos>
+  <sequence>102</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.227471200Z</date>
+  <millis>1673872288227</millis>
+  <nanos>471200</nanos>
+  <sequence>103</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.228468600Z</date>
+  <millis>1673872288228</millis>
+  <nanos>468600</nanos>
+  <sequence>104</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.235442600Z</date>
+  <millis>1673872288235</millis>
+  <nanos>442600</nanos>
+  <sequence>105</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.236417100Z</date>
+  <millis>1673872288236</millis>
+  <nanos>417100</nanos>
+  <sequence>106</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.243420800Z</date>
+  <millis>1673872288243</millis>
+  <nanos>420800</nanos>
+  <sequence>107</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.244419300Z</date>
+  <millis>1673872288244</millis>
+  <nanos>419300</nanos>
+  <sequence>108</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.251374700Z</date>
+  <millis>1673872288251</millis>
+  <nanos>374700</nanos>
+  <sequence>109</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.252398500Z</date>
+  <millis>1673872288252</millis>
+  <nanos>398500</nanos>
+  <sequence>110</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.259356600Z</date>
+  <millis>1673872288259</millis>
+  <nanos>356600</nanos>
+  <sequence>111</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.260374800Z</date>
+  <millis>1673872288260</millis>
+  <nanos>374800</nanos>
+  <sequence>112</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.267345500Z</date>
+  <millis>1673872288267</millis>
+  <nanos>345500</nanos>
+  <sequence>113</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.267345500Z</date>
+  <millis>1673872288267</millis>
+  <nanos>345500</nanos>
+  <sequence>114</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.274335600Z</date>
+  <millis>1673872288274</millis>
+  <nanos>335600</nanos>
+  <sequence>115</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.274335600Z</date>
+  <millis>1673872288274</millis>
+  <nanos>335600</nanos>
+  <sequence>116</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.281337200Z</date>
+  <millis>1673872288281</millis>
+  <nanos>337200</nanos>
+  <sequence>117</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.282293Z</date>
+  <millis>1673872288282</millis>
+  <nanos>293000</nanos>
+  <sequence>118</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.288793Z</date>
+  <millis>1673872288288</millis>
+  <nanos>793000</nanos>
+  <sequence>119</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.289792Z</date>
+  <millis>1673872288289</millis>
+  <nanos>792000</nanos>
+  <sequence>120</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.296781400Z</date>
+  <millis>1673872288296</millis>
+  <nanos>781400</nanos>
+  <sequence>121</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.296781400Z</date>
+  <millis>1673872288296</millis>
+  <nanos>781400</nanos>
+  <sequence>122</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.303792500Z</date>
+  <millis>1673872288303</millis>
+  <nanos>792500</nanos>
+  <sequence>123</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.304751700Z</date>
+  <millis>1673872288304</millis>
+  <nanos>751700</nanos>
+  <sequence>124</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.311769600Z</date>
+  <millis>1673872288311</millis>
+  <nanos>769600</nanos>
+  <sequence>125</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.312730700Z</date>
+  <millis>1673872288312</millis>
+  <nanos>730700</nanos>
+  <sequence>126</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.321705500Z</date>
+  <millis>1673872288321</millis>
+  <nanos>705500</nanos>
+  <sequence>127</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.321705500Z</date>
+  <millis>1673872288321</millis>
+  <nanos>705500</nanos>
+  <sequence>128</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.330686200Z</date>
+  <millis>1673872288330</millis>
+  <nanos>686200</nanos>
+  <sequence>129</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.332679800Z</date>
+  <millis>1673872288332</millis>
+  <nanos>679800</nanos>
+  <sequence>130</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.348634700Z</date>
+  <millis>1673872288348</millis>
+  <nanos>634700</nanos>
+  <sequence>131</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.348634700Z</date>
+  <millis>1673872288348</millis>
+  <nanos>634700</nanos>
+  <sequence>132</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.356611900Z</date>
+  <millis>1673872288356</millis>
+  <nanos>611900</nanos>
+  <sequence>133</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.357609Z</date>
+  <millis>1673872288357</millis>
+  <nanos>609000</nanos>
+  <sequence>134</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.364590500Z</date>
+  <millis>1673872288364</millis>
+  <nanos>590500</nanos>
+  <sequence>135</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.365593500Z</date>
+  <millis>1673872288365</millis>
+  <nanos>593500</nanos>
+  <sequence>136</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.372569600Z</date>
+  <millis>1673872288372</millis>
+  <nanos>569600</nanos>
+  <sequence>137</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.372569600Z</date>
+  <millis>1673872288372</millis>
+  <nanos>569600</nanos>
+  <sequence>138</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.380554100Z</date>
+  <millis>1673872288380</millis>
+  <nanos>554100</nanos>
+  <sequence>139</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.381588300Z</date>
+  <millis>1673872288381</millis>
+  <nanos>588300</nanos>
+  <sequence>140</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.388529500Z</date>
+  <millis>1673872288388</millis>
+  <nanos>529500</nanos>
+  <sequence>141</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.389524900Z</date>
+  <millis>1673872288389</millis>
+  <nanos>524900</nanos>
+  <sequence>142</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.427421Z</date>
+  <millis>1673872288427</millis>
+  <nanos>421000</nanos>
+  <sequence>143</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.427421Z</date>
+  <millis>1673872288427</millis>
+  <nanos>421000</nanos>
+  <sequence>144</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.435401400Z</date>
+  <millis>1673872288435</millis>
+  <nanos>401400</nanos>
+  <sequence>145</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.435401400Z</date>
+  <millis>1673872288435</millis>
+  <nanos>401400</nanos>
+  <sequence>146</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.442400500Z</date>
+  <millis>1673872288442</millis>
+  <nanos>400500</nanos>
+  <sequence>147</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.442400500Z</date>
+  <millis>1673872288442</millis>
+  <nanos>400500</nanos>
+  <sequence>148</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.448365800Z</date>
+  <millis>1673872288448</millis>
+  <nanos>365800</nanos>
+  <sequence>149</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.449362900Z</date>
+  <millis>1673872288449</millis>
+  <nanos>362900</nanos>
+  <sequence>150</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.455347200Z</date>
+  <millis>1673872288455</millis>
+  <nanos>347200</nanos>
+  <sequence>151</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.456344900Z</date>
+  <millis>1673872288456</millis>
+  <nanos>344900</nanos>
+  <sequence>152</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.463326100Z</date>
+  <millis>1673872288463</millis>
+  <nanos>326100</nanos>
+  <sequence>153</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.463326100Z</date>
+  <millis>1673872288463</millis>
+  <nanos>326100</nanos>
+  <sequence>154</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.470306500Z</date>
+  <millis>1673872288470</millis>
+  <nanos>306500</nanos>
+  <sequence>155</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.471305Z</date>
+  <millis>1673872288471</millis>
+  <nanos>305000</nanos>
+  <sequence>156</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.493245300Z</date>
+  <millis>1673872288493</millis>
+  <nanos>245300</nanos>
+  <sequence>157</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.494244Z</date>
+  <millis>1673872288494</millis>
+  <nanos>244000</nanos>
+  <sequence>158</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.502284400Z</date>
+  <millis>1673872288502</millis>
+  <nanos>284400</nanos>
+  <sequence>159</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.502284400Z</date>
+  <millis>1673872288502</millis>
+  <nanos>284400</nanos>
+  <sequence>160</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.556098200Z</date>
+  <millis>1673872288556</millis>
+  <nanos>98200</nanos>
+  <sequence>161</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.556098200Z</date>
+  <millis>1673872288556</millis>
+  <nanos>98200</nanos>
+  <sequence>162</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.564071300Z</date>
+  <millis>1673872288564</millis>
+  <nanos>71300</nanos>
+  <sequence>163</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.565058400Z</date>
+  <millis>1673872288565</millis>
+  <nanos>58400</nanos>
+  <sequence>164</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.572037200Z</date>
+  <millis>1673872288572</millis>
+  <nanos>37200</nanos>
+  <sequence>165</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.573062500Z</date>
+  <millis>1673872288573</millis>
+  <nanos>62500</nanos>
+  <sequence>166</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.581013500Z</date>
+  <millis>1673872288581</millis>
+  <nanos>13500</nanos>
+  <sequence>167</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.581013500Z</date>
+  <millis>1673872288581</millis>
+  <nanos>13500</nanos>
+  <sequence>168</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.587994300Z</date>
+  <millis>1673872288587</millis>
+  <nanos>994300</nanos>
+  <sequence>169</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.589003Z</date>
+  <millis>1673872288589</millis>
+  <nanos>3000</nanos>
+  <sequence>170</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.595972500Z</date>
+  <millis>1673872288595</millis>
+  <nanos>972500</nanos>
+  <sequence>171</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.596969300Z</date>
+  <millis>1673872288596</millis>
+  <nanos>969300</nanos>
+  <sequence>172</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.619909500Z</date>
+  <millis>1673872288619</millis>
+  <nanos>909500</nanos>
+  <sequence>173</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.619909500Z</date>
+  <millis>1673872288619</millis>
+  <nanos>909500</nanos>
+  <sequence>174</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.627885800Z</date>
+  <millis>1673872288627</millis>
+  <nanos>885800</nanos>
+  <sequence>175</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.627885800Z</date>
+  <millis>1673872288627</millis>
+  <nanos>885800</nanos>
+  <sequence>176</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.635896900Z</date>
+  <millis>1673872288635</millis>
+  <nanos>896900</nanos>
+  <sequence>177</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.636895600Z</date>
+  <millis>1673872288636</millis>
+  <nanos>895600</nanos>
+  <sequence>178</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.643866600Z</date>
+  <millis>1673872288643</millis>
+  <nanos>866600</nanos>
+  <sequence>179</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.644865400Z</date>
+  <millis>1673872288644</millis>
+  <nanos>865400</nanos>
+  <sequence>180</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.651821900Z</date>
+  <millis>1673872288651</millis>
+  <nanos>821900</nanos>
+  <sequence>181</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>No se ha insertado el aluno</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.652827400Z</date>
+  <millis>1673872288652</millis>
+  <nanos>827400</nanos>
+  <sequence>182</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Alumnos insertado</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.659802600Z</date>
+  <millis>1673872288659</millis>
+  <nanos>802600</nanos>
+  <sequence>183</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 0: Nombre:TAREA1, Fecha fin:15/1/23, Calificacion:0</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.660832900Z</date>
+  <millis>1673872288660</millis>
+  <nanos>832900</nanos>
+  <sequence>184</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.684768500Z</date>
+  <millis>1673872288684</millis>
+  <nanos>768500</nanos>
+  <sequence>185</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 0: Nombre:TAREA2, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.684768500Z</date>
+  <millis>1673872288684</millis>
+  <nanos>768500</nanos>
+  <sequence>186</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.691714900Z</date>
+  <millis>1673872288691</millis>
+  <nanos>714900</nanos>
+  <sequence>187</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 0: Nombre:TAREA3, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.692713300Z</date>
+  <millis>1673872288692</millis>
+  <nanos>713300</nanos>
+  <sequence>188</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.714679Z</date>
+  <millis>1673872288714</millis>
+  <nanos>679000</nanos>
+  <sequence>189</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 0: Nombre:TAREA4, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.714679Z</date>
+  <millis>1673872288714</millis>
+  <nanos>679000</nanos>
+  <sequence>190</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.722633500Z</date>
+  <millis>1673872288722</millis>
+  <nanos>633500</nanos>
+  <sequence>191</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 0: Nombre:TAREA5, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.722633500Z</date>
+  <millis>1673872288722</millis>
+  <nanos>633500</nanos>
+  <sequence>192</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.728618300Z</date>
+  <millis>1673872288728</millis>
+  <nanos>618300</nanos>
+  <sequence>193</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 0: Nombre:TAREA6, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.730621400Z</date>
+  <millis>1673872288730</millis>
+  <nanos>621400</nanos>
+  <sequence>194</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.745572300Z</date>
+  <millis>1673872288745</millis>
+  <nanos>572300</nanos>
+  <sequence>195</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 0: Nombre:TAREA7, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.746569700Z</date>
+  <millis>1673872288746</millis>
+  <nanos>569700</nanos>
+  <sequence>196</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.755545300Z</date>
+  <millis>1673872288755</millis>
+  <nanos>545300</nanos>
+  <sequence>197</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 0: Nombre:TAREA8, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.756544200Z</date>
+  <millis>1673872288756</millis>
+  <nanos>544200</nanos>
+  <sequence>198</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.778484500Z</date>
+  <millis>1673872288778</millis>
+  <nanos>484500</nanos>
+  <sequence>199</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 0: Nombre:TAREA9, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.778484500Z</date>
+  <millis>1673872288778</millis>
+  <nanos>484500</nanos>
+  <sequence>200</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.785497600Z</date>
+  <millis>1673872288785</millis>
+  <nanos>497600</nanos>
+  <sequence>201</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 0: Nombre:TAREA10, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.785497600Z</date>
+  <millis>1673872288785</millis>
+  <nanos>497600</nanos>
+  <sequence>202</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.792446500Z</date>
+  <millis>1673872288792</millis>
+  <nanos>446500</nanos>
+  <sequence>203</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 0: Nombre:TAREA11, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.793448Z</date>
+  <millis>1673872288793</millis>
+  <nanos>448000</nanos>
+  <sequence>204</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.799437300Z</date>
+  <millis>1673872288799</millis>
+  <nanos>437300</nanos>
+  <sequence>205</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 0: Nombre:TAREA12, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.800426500Z</date>
+  <millis>1673872288800</millis>
+  <nanos>426500</nanos>
+  <sequence>206</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.806435500Z</date>
+  <millis>1673872288806</millis>
+  <nanos>435500</nanos>
+  <sequence>207</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 0: Nombre:TAREA13, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.807406200Z</date>
+  <millis>1673872288807</millis>
+  <nanos>406200</nanos>
+  <sequence>208</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.814412Z</date>
+  <millis>1673872288814</millis>
+  <nanos>412000</nanos>
+  <sequence>209</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 0: Nombre:TAREA14, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.815420500Z</date>
+  <millis>1673872288815</millis>
+  <nanos>420500</nanos>
+  <sequence>210</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.822369700Z</date>
+  <millis>1673872288822</millis>
+  <nanos>369700</nanos>
+  <sequence>211</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 0: Nombre:TAREA15, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.823364Z</date>
+  <millis>1673872288823</millis>
+  <nanos>364000</nanos>
+  <sequence>212</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.830349500Z</date>
+  <millis>1673872288830</millis>
+  <nanos>349500</nanos>
+  <sequence>213</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 0: Nombre:TAREA16, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.831344600Z</date>
+  <millis>1673872288831</millis>
+  <nanos>344600</nanos>
+  <sequence>214</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.837357900Z</date>
+  <millis>1673872288837</millis>
+  <nanos>357900</nanos>
+  <sequence>215</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 0: Nombre:TAREA17, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.838323900Z</date>
+  <millis>1673872288838</millis>
+  <nanos>323900</nanos>
+  <sequence>216</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.858270900Z</date>
+  <millis>1673872288858</millis>
+  <nanos>270900</nanos>
+  <sequence>217</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 1: Nombre:TAREA1, Fecha fin:15/1/23, Calificacion:-1</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.859268300Z</date>
+  <millis>1673872288859</millis>
+  <nanos>268300</nanos>
+  <sequence>218</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.865284500Z</date>
+  <millis>1673872288865</millis>
+  <nanos>284500</nanos>
+  <sequence>219</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 1: Nombre:TAREA2, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.866250700Z</date>
+  <millis>1673872288866</millis>
+  <nanos>250700</nanos>
+  <sequence>220</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.872233800Z</date>
+  <millis>1673872288872</millis>
+  <nanos>233800</nanos>
+  <sequence>221</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 1: Nombre:TAREA3, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.873232600Z</date>
+  <millis>1673872288873</millis>
+  <nanos>232600</nanos>
+  <sequence>222</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.880223200Z</date>
+  <millis>1673872288880</millis>
+  <nanos>223200</nanos>
+  <sequence>223</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 1: Nombre:TAREA4, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.880223200Z</date>
+  <millis>1673872288880</millis>
+  <nanos>223200</nanos>
+  <sequence>224</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.887225600Z</date>
+  <millis>1673872288887</millis>
+  <nanos>225600</nanos>
+  <sequence>225</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 1: Nombre:TAREA5, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.887225600Z</date>
+  <millis>1673872288887</millis>
+  <nanos>225600</nanos>
+  <sequence>226</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.895196200Z</date>
+  <millis>1673872288895</millis>
+  <nanos>196200</nanos>
+  <sequence>227</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 1: Nombre:TAREA6, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.896171900Z</date>
+  <millis>1673872288896</millis>
+  <nanos>171900</nanos>
+  <sequence>228</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.902179Z</date>
+  <millis>1673872288902</millis>
+  <nanos>179000</nanos>
+  <sequence>229</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 1: Nombre:TAREA7, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.903152600Z</date>
+  <millis>1673872288903</millis>
+  <nanos>152600</nanos>
+  <sequence>230</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.911130200Z</date>
+  <millis>1673872288911</millis>
+  <nanos>130200</nanos>
+  <sequence>231</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 1: Nombre:TAREA8, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.911130200Z</date>
+  <millis>1673872288911</millis>
+  <nanos>130200</nanos>
+  <sequence>232</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.920106900Z</date>
+  <millis>1673872288920</millis>
+  <nanos>106900</nanos>
+  <sequence>233</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 1: Nombre:TAREA9, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.920106900Z</date>
+  <millis>1673872288920</millis>
+  <nanos>106900</nanos>
+  <sequence>234</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.928085300Z</date>
+  <millis>1673872288928</millis>
+  <nanos>85300</nanos>
+  <sequence>235</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 1: Nombre:TAREA10, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.929088100Z</date>
+  <millis>1673872288929</millis>
+  <nanos>88100</nanos>
+  <sequence>236</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.955012700Z</date>
+  <millis>1673872288955</millis>
+  <nanos>12700</nanos>
+  <sequence>237</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 1: Nombre:TAREA11, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.956016200Z</date>
+  <millis>1673872288956</millis>
+  <nanos>16200</nanos>
+  <sequence>238</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.963995400Z</date>
+  <millis>1673872288963</millis>
+  <nanos>995400</nanos>
+  <sequence>239</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 1: Nombre:TAREA12, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.964988500Z</date>
+  <millis>1673872288964</millis>
+  <nanos>988500</nanos>
+  <sequence>240</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.972968900Z</date>
+  <millis>1673872288972</millis>
+  <nanos>968900</nanos>
+  <sequence>241</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 1: Nombre:TAREA13, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.972968900Z</date>
+  <millis>1673872288972</millis>
+  <nanos>968900</nanos>
+  <sequence>242</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.979950400Z</date>
+  <millis>1673872288979</millis>
+  <nanos>950400</nanos>
+  <sequence>243</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 1: Nombre:TAREA14, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.980942700Z</date>
+  <millis>1673872288980</millis>
+  <nanos>942700</nanos>
+  <sequence>244</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.987923800Z</date>
+  <millis>1673872288987</millis>
+  <nanos>923800</nanos>
+  <sequence>245</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 1: Nombre:TAREA15, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.987923800Z</date>
+  <millis>1673872288987</millis>
+  <nanos>923800</nanos>
+  <sequence>246</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.993907700Z</date>
+  <millis>1673872288993</millis>
+  <nanos>907700</nanos>
+  <sequence>247</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 1: Nombre:TAREA16, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:28.994905Z</date>
+  <millis>1673872288994</millis>
+  <nanos>905000</nanos>
+  <sequence>248</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:29.000913500Z</date>
+  <millis>1673872289000</millis>
+  <nanos>913500</nanos>
+  <sequence>249</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 1: Nombre:TAREA17, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:29.001886600Z</date>
+  <millis>1673872289001</millis>
+  <nanos>886600</nanos>
+  <sequence>250</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:29.008867Z</date>
+  <millis>1673872289008</millis>
+  <nanos>867000</nanos>
+  <sequence>251</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 0: Nombre:TAREA11, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:29.008867Z</date>
+  <millis>1673872289008</millis>
+  <nanos>867000</nanos>
+  <sequence>252</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:29.016847200Z</date>
+  <millis>1673872289016</millis>
+  <nanos>847200</nanos>
+  <sequence>253</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 1: Nombre:TAREA11, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:29.016847200Z</date>
+  <millis>1673872289016</millis>
+  <nanos>847200</nanos>
+  <sequence>254</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:29.023828100Z</date>
+  <millis>1673872289023</millis>
+  <nanos>828100</nanos>
+  <sequence>255</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 2: Nombre:TAREA11, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:29.023828100Z</date>
+  <millis>1673872289023</millis>
+  <nanos>828100</nanos>
+  <sequence>256</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:29.031810Z</date>
+  <millis>1673872289031</millis>
+  <nanos>810000</nanos>
+  <sequence>257</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 3: Nombre:TAREA11, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:29.031810Z</date>
+  <millis>1673872289031</millis>
+  <nanos>810000</nanos>
+  <sequence>258</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:29.038787900Z</date>
+  <millis>1673872289038</millis>
+  <nanos>787900</nanos>
+  <sequence>259</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 4: Nombre:TAREA11, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:29.039793700Z</date>
+  <millis>1673872289039</millis>
+  <nanos>793700</nanos>
+  <sequence>260</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:29.045816Z</date>
+  <millis>1673872289045</millis>
+  <nanos>816000</nanos>
+  <sequence>261</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 5: Nombre:TAREA11, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:29.046771Z</date>
+  <millis>1673872289046</millis>
+  <nanos>771000</nanos>
+  <sequence>262</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:29.052750400Z</date>
+  <millis>1673872289052</millis>
+  <nanos>750400</nanos>
+  <sequence>263</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 6: Nombre:TAREA11, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:29.053748800Z</date>
+  <millis>1673872289053</millis>
+  <nanos>748800</nanos>
+  <sequence>264</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:29.059771700Z</date>
+  <millis>1673872289059</millis>
+  <nanos>771700</nanos>
+  <sequence>265</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 7: Nombre:TAREA11, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:29.060738700Z</date>
+  <millis>1673872289060</millis>
+  <nanos>738700</nanos>
+  <sequence>266</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:29.066712800Z</date>
+  <millis>1673872289066</millis>
+  <nanos>712800</nanos>
+  <sequence>267</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 8: Nombre:TAREA11, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:29.067710700Z</date>
+  <millis>1673872289067</millis>
+  <nanos>710700</nanos>
+  <sequence>268</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:29.074692100Z</date>
+  <millis>1673872289074</millis>
+  <nanos>692100</nanos>
+  <sequence>269</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 9: Nombre:TAREA11, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:29.075691200Z</date>
+  <millis>1673872289075</millis>
+  <nanos>691200</nanos>
+  <sequence>270</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:29.081672700Z</date>
+  <millis>1673872289081</millis>
+  <nanos>672700</nanos>
+  <sequence>271</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 10: Nombre:TAREA11, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:29.082670800Z</date>
+  <millis>1673872289082</millis>
+  <nanos>670800</nanos>
+  <sequence>272</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:29.088655200Z</date>
+  <millis>1673872289088</millis>
+  <nanos>655200</nanos>
+  <sequence>273</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 11: Nombre:TAREA11, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:29.088655200Z</date>
+  <millis>1673872289088</millis>
+  <nanos>655200</nanos>
+  <sequence>274</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:29.094638100Z</date>
+  <millis>1673872289094</millis>
+  <nanos>638100</nanos>
+  <sequence>275</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 12: Nombre:TAREA11, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:29.094638100Z</date>
+  <millis>1673872289094</millis>
+  <nanos>638100</nanos>
+  <sequence>276</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:29.101619200Z</date>
+  <millis>1673872289101</millis>
+  <nanos>619200</nanos>
+  <sequence>277</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 13: Nombre:TAREA11, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:29.102617600Z</date>
+  <millis>1673872289102</millis>
+  <nanos>617600</nanos>
+  <sequence>278</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:29.109598Z</date>
+  <millis>1673872289109</millis>
+  <nanos>598000</nanos>
+  <sequence>279</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 14: Nombre:TAREA11, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:29.110602Z</date>
+  <millis>1673872289110</millis>
+  <nanos>602000</nanos>
+  <sequence>280</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:29.117583Z</date>
+  <millis>1673872289117</millis>
+  <nanos>583000</nanos>
+  <sequence>281</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>Se ha insertado la tarea: Tarea de 15: Nombre:TAREA11, Fecha fin:15/1/23, Calificacion:5</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:29.117583Z</date>
+  <millis>1673872289117</millis>
+  <nanos>583000</nanos>
+  <sequence>282</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>insertarDatosTarea</method>
+  <thread>1</thread>
+  <message>1 Tareas insertadas en la BBDD</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:29.126554800Z</date>
+  <millis>1673872289126</millis>
+  <nanos>554800</nanos>
+  <sequence>283</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado alumnos</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:29.135546500Z</date>
+  <millis>1673872289135</millis>
+  <nanos>546500</nanos>
+  <sequence>284</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado asignaturas</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:29.146502800Z</date>
+  <millis>1673872289146</millis>
+  <nanos>502800</nanos>
+  <sequence>285</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado profesores</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:29.153484200Z</date>
+  <millis>1673872289153</millis>
+  <nanos>484200</nanos>
+  <sequence>286</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado profesores</message>
+</record>
+<record>
+  <date>2023-01-16T12:31:29.161465600Z</date>
+  <millis>1673872289161</millis>
+  <nanos>465600</nanos>
+  <sequence>287</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>clases.GestorBD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado tareas</message>
+</record>
+</log>
