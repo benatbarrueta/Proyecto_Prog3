@@ -4,12 +4,17 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
+import java.awt.Desktop;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -102,7 +107,25 @@ public class VentanaAsignatura extends JFrame {
 			fecha = new JLabel(texto);
 
 			centro.add(apuntes);
-			centro.add(new JLabel());
+			JLabel link = new JLabel("<html><a href=\"http://www.google.com/\">Apuntes</a></html>\"");
+			link.addMouseListener(new MouseAdapter() {
+	
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					// TODO Auto-generated method stub
+					try {
+						if (Desktop.isDesktopSupported()) {
+						Desktop desktop = Desktop.getDesktop();
+						if (desktop.isSupported(Desktop.Action.BROWSE)) {
+						desktop.browse(new URI("https://es.wikipedia.org"));
+						}
+						}
+						} catch (Exception ex) {
+						ex.printStackTrace();
+						}
+				}
+			});
+			centro.add(link);
 			centro.add(tareas);
 			JScrollPane scrollDato = new JScrollPane(tareaLista);
 			centro.add(scrollDato);
@@ -254,7 +277,27 @@ public class VentanaAsignatura extends JFrame {
 			panelComboTareas.add(new JLabel());
 
 			centro.add(apuntes);
-			centro.add(new JLabel());
+
+			centro.add(apuntes);
+			JLabel link = new JLabel("<html><a href=\"http://www.google.com/\">Apuntes</a></html>\"");
+			link.addMouseListener(new MouseAdapter() {
+	
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					// TODO Auto-generated method stub
+					try {
+						if (Desktop.isDesktopSupported()) {
+						Desktop desktop = Desktop.getDesktop();
+						if (desktop.isSupported(Desktop.Action.BROWSE)) {
+						desktop.browse(new URI("https://es.wikipedia.org"));
+						}
+						}
+						} catch (Exception ex) {
+						ex.printStackTrace();
+						}
+				}
+			});
+			centro.add(link);
 			centro.add(tareas);
 			JScrollPane scrollDato = new JScrollPane(tareaLista);
 			centro.add(panelComboTareas);
