@@ -10,9 +10,7 @@ import java.io.FileNotFoundException;
 import clases.*;
 
 public class VentanaEdita extends JFrame {
-	
 
-	
 	protected JTextField nombre;
 	protected JLabel labelNombre;
 	protected JTextField apellido;
@@ -27,19 +25,17 @@ public class VentanaEdita extends JFrame {
 	protected JLabel labelContraseña;
 	protected JButton botonAceptar;
 	protected JButton botonAtras;
-	
 
 	public VentanaEdita(Object objeto, String tipo) {
-		
+
 		Container cp = this.getContentPane();
-		
+
 		JPanel norte = new JPanel();
 		JPanel centro = new JPanel();
 		JPanel sur = new JPanel();
-		
-	
+
 		JTextField nombre = new JTextField();
-		JLabel labelNombre = new JLabel ("Nombre*: ");
+		JLabel labelNombre = new JLabel("Nombre*: ");
 		JTextField apellido = new JTextField();
 		JLabel labelApellido = new JLabel("Apellido(s)*: ");
 		JTextField email = new JTextField();
@@ -52,15 +48,14 @@ public class VentanaEdita extends JFrame {
 		JLabel labelContraseña = new JLabel("Contraseña*: ");
 		JButton botonAceptar = new JButton("Aceptar cambios");
 		JButton botonAtras = new JButton("Atras");
-		
+
 		cp.setLayout(new BorderLayout());
 		cp.add(norte, BorderLayout.NORTH);
 		cp.add(centro, BorderLayout.CENTER);
 		cp.add(sur, BorderLayout.SOUTH);
-		
+
 		norte.setLayout(new GridLayout(2, 1));
-		
-		
+
 		centro.setLayout(new GridLayout(6, 2));
 		centro.add(labelNombre);
 		centro.add(nombre);
@@ -74,7 +69,7 @@ public class VentanaEdita extends JFrame {
 		centro.add(nombreUsuario);
 		centro.add(labelContraseña);
 		centro.add(contraseña);
-		
+
 		if (tipo == "Alumno") {
 			Alumno alumno = (Alumno) objeto;
 			nombre.setText(alumno.getNombre());
@@ -83,7 +78,7 @@ public class VentanaEdita extends JFrame {
 			direccion.setText(alumno.getDireccion());
 			nombreUsuario.setText(alumno.getNombreUsuario());
 			contraseña.setText(alumno.getContraseña());
-			
+
 			norte.add(new JLabel(alumno.getNombre() + " " + alumno.getApellidos()));
 		} else {
 			Profesor profesor = (Profesor) objeto;
@@ -93,18 +88,17 @@ public class VentanaEdita extends JFrame {
 			direccion.setText(profesor.getDireccion());
 			nombreUsuario.setText(profesor.getNombreUsuario());
 			contraseña.setText(profesor.getContraseña());
-			
+
 			norte.add(new JLabel(profesor.getNombre() + " " + profesor.getApellidos()));
 		}
-		
-		
+
 		norte.add(new JLabel("Editando perfil..."));
-		
+
 		sur.add(botonAtras);
 		sur.add(botonAceptar);
-		
+
 		botonAtras.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (tipo == "Alumno") {
@@ -122,21 +116,26 @@ public class VentanaEdita extends JFrame {
 							VentanaAlud v = new VentanaAlud(p, "Profesor");
 						}
 					}
-					
+
 					dispose();
 				}
 			}
 		});
-		
+
 		botonAceptar.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (tipo == "Alumno") {
 					Alumno alumno = (Alumno) objeto;
-					if (nombre.getText() != null || apellido.getText() != null || email.getText() != null ||  nombreUsuario.getText() != null || contraseña.getText() != null) {
-						GestorBD.gestorBD.actualizarAlumno(alumno, nombre.getText(), apellido.getText(), email.getText(), direccion.getText(), nombreUsuario.getText(), contraseña.getText());
-						System.out.println("- Nombre: " + nombre.getText() + "\n- Apellido: " + apellido.getText() + "\n- Email: " + email.getText() + "\n- Dirección:" + direccion.getText() + "\n- Nombre de usuario : " + nombreUsuario.getText() + "\n- Contraseña: " + contraseña.getText());
+					if (nombre.getText() != null || apellido.getText() != null || email.getText() != null
+							|| nombreUsuario.getText() != null || contraseña.getText() != null) {
+						GestorBD.gestorBD.actualizarAlumno(alumno, nombre.getText(), apellido.getText(),
+								email.getText(), direccion.getText(), nombreUsuario.getText(), contraseña.getText());
+						System.out.println("- Nombre: " + nombre.getText() + "\n- Apellido: " + apellido.getText()
+								+ "\n- Email: " + email.getText() + "\n- Dirección:" + direccion.getText()
+								+ "\n- Nombre de usuario : " + nombreUsuario.getText() + "\n- Contraseña: "
+								+ contraseña.getText());
 						try {
 							Gestor.guardarAlumnosCSV(GestorBD.gestorBD.obtenerDatosAlumnos());
 						} catch (FileNotFoundException e1) {
@@ -146,10 +145,15 @@ public class VentanaEdita extends JFrame {
 					}
 				} else {
 					Profesor profesor = (Profesor) objeto;
-					
-					if (nombre.getText() != null || apellido.getText() != null || email.getText() != null ||  nombreUsuario.getText() != null || contraseña.getText() != null) {
-						GestorBD.gestorBD.actualizarProfesor(profesor, nombre.getText(), apellido.getText(), email.getText(), direccion.getText(), nombreUsuario.getText(), contraseña.getText());
-						System.out.println("- Nombre: " + nombre.getText() + "\n- Apellido: " + apellido.getText() + "\n- Email: " + email.getText() + "\n- Dirección:" + direccion.getText() + "\n- Nombre de usuario : " + nombreUsuario.getText() + "\n- Contraseña: " + contraseña.getText());
+
+					if (nombre.getText() != null || apellido.getText() != null || email.getText() != null
+							|| nombreUsuario.getText() != null || contraseña.getText() != null) {
+						GestorBD.gestorBD.actualizarProfesor(profesor, nombre.getText(), apellido.getText(),
+								email.getText(), direccion.getText(), nombreUsuario.getText(), contraseña.getText());
+						System.out.println("- Nombre: " + nombre.getText() + "\n- Apellido: " + apellido.getText()
+								+ "\n- Email: " + email.getText() + "\n- Dirección:" + direccion.getText()
+								+ "\n- Nombre de usuario : " + nombreUsuario.getText() + "\n- Contraseña: "
+								+ contraseña.getText());
 						try {
 							Gestor.guardarProfesorCSV(GestorBD.gestorBD.obtenerDatosProfesor());
 						} catch (FileNotFoundException e1) {
@@ -160,7 +164,7 @@ public class VentanaEdita extends JFrame {
 				}
 			}
 		});
-		
+
 		if (tipo == "Alumno") {
 			Alumno alumno = (Alumno) objeto;
 			this.setTitle(alumno.getNombre() + " " + alumno.getApellidos());
@@ -168,8 +172,7 @@ public class VentanaEdita extends JFrame {
 			Profesor profesor = (Profesor) objeto;
 			this.setTitle(profesor.getNombre() + " " + profesor.getApellidos());
 		}
-		
-		
+
 		this.setSize(600, 400);
 		this.setVisible(true);
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);

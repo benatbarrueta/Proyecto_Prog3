@@ -221,7 +221,7 @@ public void insertarDatosEstudia(Estudia a) {
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement stmt = con.createStatement()) {
 			String sql = "SELECT * FROM ALUMNO WHERE ID >= 0";
-	//		System.out.println(sql);
+	//		.println(sql);
 			
 			//Se ejecuta la sentencia y se obtiene el ResultSet con los resutlados
 			ResultSet rs = stmt.executeQuery(sql);		
@@ -304,7 +304,7 @@ public void insertarDatosEstudia(Estudia a) {
 		
 			ex.printStackTrace();						
 		}		
-		//System.out.println(profesores);
+		//.println(profesores);
 		return profesores;
 	}
 	public ArrayList<Estudia> obtenerDatosEstudia() { // DEBERIA FUNCIONAR
@@ -389,7 +389,7 @@ public void insertarDatosEstudia(Estudia a) {
 		
 			ex.printStackTrace();						
 		}		
-		//System.out.println(profesores);
+		//.println(profesores);
 		return tareas;
 	}
 	
@@ -429,7 +429,7 @@ public void insertarDatosEstudia(Estudia a) {
 		
 			ex.printStackTrace();						
 		}		
-		//System.out.println(profesores);
+		//.println(profesores);
 		return asignaturas;
 	}
 
@@ -464,7 +464,6 @@ public void insertarDatosEstudia(Estudia a) {
 			log( Level.INFO,"Se han actualizado alumnos ", null);
 		
 			
-			//	System.out.println();
 		} catch (Exception ex) {
 		
 			log( Level.SEVERE,"Error al actualizando datos de la  BBDD", ex);

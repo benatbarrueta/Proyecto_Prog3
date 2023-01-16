@@ -3,23 +3,18 @@ package clases;
 public class Profesor extends Usuarios {
 	protected int salario;
 
-	
-	
 	public Profesor() {
 		super();
 		this.salario = 0;
 	}
 
-
 	public int getSalario() {
 		return salario;
 	}
 
-
 	public void setSalario(int salario) {
 		this.salario = salario;
 	}
-
 
 	@Override
 	public String toString() {
@@ -28,15 +23,4 @@ public class Profesor extends Usuarios {
 				+ ", id=" + id + ", email=" + email + "]";
 	}
 
-
-
-	
-
-
-	
-	
-	
-	
-	
-	
 }

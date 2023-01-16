@@ -9,11 +9,8 @@ public class Usuarios {
 	protected String direccion;
 	protected String nombreUsuario;
 	protected String contraseña;
-	protected   Integer  id;
+	protected Integer id;
 	protected String email;
-	
-
-	
 
 	public Usuarios() {
 		super();
@@ -28,12 +25,12 @@ public class Usuarios {
 	}
 
 	public String getNombre() {
-		
+
 		return nombre;
 	}
 
 	public void setNombre(String nombre) {
-		this.email= nombre + this.apellidos + "@email.com";
+		this.email = nombre + this.apellidos + "@email.com";
 		this.nombre = nombre;
 	}
 
@@ -42,7 +39,7 @@ public class Usuarios {
 	}
 
 	public void setApellidos(String apellidos) {
-		this.email= this.nombre + apellidos + "@email.com";
+		this.email = this.nombre + apellidos + "@email.com";
 		this.apellidos = apellidos;
 	}
 

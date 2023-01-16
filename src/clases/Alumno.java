@@ -4,7 +4,6 @@ public class Alumno extends Usuarios {
 
 	protected int curso;
 
-
 	public Alumno() {
 		super();
 		this.curso = 1;
@@ -30,13 +29,4 @@ public class Alumno extends Usuarios {
 				+ ", id=" + id + ", email=" + email + "]";
 	}
 
-	
-
-	
-
-
-
-
-
-	
 }

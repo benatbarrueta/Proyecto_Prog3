@@ -7,14 +7,14 @@ import org.junit.Test;
 
 public class TestUsuarios {
 	private Usuarios usuario;
-	private String nombre ="Nombre";
-	private String apellidos ="Apellidos";
-	private int edad =0;
-	private String direccion ="Direccion";
-	private String nombreUsuario ="Usuario";
-	private String contraseña ="contraseña";
-	private   int  id = 0;
-	private String email ="@email.com";
+	private String nombre = "Nombre";
+	private String apellidos = "Apellidos";
+	private int edad = 0;
+	private String direccion = "Direccion";
+	private String nombreUsuario = "Usuario";
+	private String contraseña = "contraseña";
+	private int id = 0;
+	private String email = "@email.com";
 
 	@Before
 	public void setUp() throws Exception {
@@ -27,7 +27,7 @@ public class TestUsuarios {
 		usuario.setContraseña(contraseña);
 		usuario.setId(id);
 		usuario.setEmail(email);
-		
+
 	}
 
 	@Test
@@ -58,7 +58,7 @@ public class TestUsuarios {
 
 	@Test
 	public void testGetApellidos() {
-		assertEquals(usuario.getApellidos(), apellidos);	
+		assertEquals(usuario.getApellidos(), apellidos);
 	}
 
 	@Test

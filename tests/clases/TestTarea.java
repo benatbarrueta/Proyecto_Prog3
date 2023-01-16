@@ -14,7 +14,7 @@ public class TestTarea {
 	protected int id_asignatura = 0;
 	protected int id = 0;
 	protected int porcentaje = 0;
-	
+
 	@Before
 	public void setUp() throws Exception {
 		tarea = new Tarea();
@@ -29,15 +29,15 @@ public class TestTarea {
 
 	@Test
 	public void testTarea() {
-	Tarea tarea2=new Tarea();
-	assertNotNull(tarea2);
-	assertEquals(tarea2.getCalificacion(), 0,0.0);
-	assertEquals(tarea2.getFecha_fin(), "1");
-	assertEquals(tarea2.getNombre(), "");
-	assertEquals(tarea2.getId(), 0);
-	assertEquals(tarea2.getId_alumna(), 0);
-	assertEquals(tarea2.getId_asignatura(), 0);
-	assertEquals(tarea2.getPorcentaje(), 0);
+		Tarea tarea2 = new Tarea();
+		assertNotNull(tarea2);
+		assertEquals(tarea2.getCalificacion(), 0, 0.0);
+		assertEquals(tarea2.getFecha_fin(), "1");
+		assertEquals(tarea2.getNombre(), "");
+		assertEquals(tarea2.getId(), 0);
+		assertEquals(tarea2.getId_alumna(), 0);
+		assertEquals(tarea2.getId_asignatura(), 0);
+		assertEquals(tarea2.getPorcentaje(), 0);
 	}
 
 	@Test
@@ -47,7 +47,7 @@ public class TestTarea {
 
 	@Test
 	public void testSetFecha_fin() {
-		String newFecha_fin= "25";
+		String newFecha_fin = "25";
 		assertEquals(tarea.getFecha_fin(), fecha_fin);
 		tarea.setFecha_fin(newFecha_fin);
 		assertEquals(tarea.getFecha_fin(), newFecha_fin);
@@ -55,15 +55,15 @@ public class TestTarea {
 
 	@Test
 	public void testGetCalificacion() {
-		assertEquals(tarea.getCalificacion(), calificacion,0.0);
+		assertEquals(tarea.getCalificacion(), calificacion, 0.0);
 	}
 
 	@Test
 	public void testSetCalificacion() {
-		int newCalificacion=10;
-		assertEquals(tarea.getCalificacion(), calificacion,0);
+		int newCalificacion = 10;
+		assertEquals(tarea.getCalificacion(), calificacion, 0);
 		tarea.setCalificacion(newCalificacion);
-		assertEquals(tarea.getCalificacion(), newCalificacion,0);
+		assertEquals(tarea.getCalificacion(), newCalificacion, 0);
 	}
 
 	@Test
@@ -73,17 +73,17 @@ public class TestTarea {
 
 	@Test
 	public void testSetNombre() {
-		String newNombre= "nombre2";
+		String newNombre = "nombre2";
 		assertEquals(tarea.getNombre(), nombre);
 		tarea.setNombre(newNombre);
 		assertEquals(tarea.getNombre(), newNombre);
 	}
-	
+
 	@Test
 	public void testGetId() {
 		assertEquals(tarea.getId(), 0);
 	}
-	
+
 	@Test
 	public void testSetId() {
 		int newId = 0;
@@ -91,12 +91,11 @@ public class TestTarea {
 		tarea.setId(newId);
 		assertEquals(tarea.getId(), newId);
 	}
-	
+
 	@Test
 	public void getId_asignatura() {
 		assertEquals(tarea.getId_asignatura(), 0);
 	}
-
 
 	@Test
 	public void setId_asignatura() {
@@ -106,12 +105,10 @@ public class TestTarea {
 		assertEquals(tarea.getId_asignatura(), newId_asignatura);
 	}
 
-
 	@Test
 	public void getId_alumna() {
 		assertEquals(tarea.getId_alumna(), 0);
 	}
-
 
 	@Test
 	public void setId_alumna() {
@@ -121,12 +118,10 @@ public class TestTarea {
 		assertEquals(tarea.getId_alumna(), newId_alumna);
 	}
 
-	
 	@Test
 	public void getPorcentaje() {
 		assertEquals(tarea.getId(), 0);
 	}
-
 
 	@Test
 	public void setPorcentaje() {
@@ -138,9 +133,10 @@ public class TestTarea {
 
 	@Test
 	public void testToString() {
-	String toString="Tarea de " +id_alumna+ ": Nombre:" +nombre + ", Fecha fin:" + fecha_fin + ", Calificacion:" + calificacion ;
-	assertEquals(tarea.toString(),toString);
-	
+		String toString = "Tarea de " + id_alumna + ": Nombre:" + nombre + ", Fecha fin:" + fecha_fin
+				+ ", Calificacion:" + calificacion;
+		assertEquals(tarea.toString(), toString);
+
 	}
 
 }
