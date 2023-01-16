@@ -386,7 +386,10 @@ public class VentanaAsignatura extends JFrame{
 				return label;
 			}
 		};
-	
+		
+		for (int c = 0; c < tareaLista.getColumnCount(); c++) { Class<?> col_class = tareaLista.getColumnClass(c); 
+		tareaLista.setDefaultEditor(col_class, null);
+		}
 		
 	
 		norte.add(nombreAsig);
