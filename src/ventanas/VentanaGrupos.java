@@ -85,21 +85,43 @@ public class VentanaGrupos extends JFrame {
 				// TODO Auto-generated method stub
 		
 			ArrayList<ArrayList<String>> alumnos =	combinaciones(nombreAlumnos, numeroGruposFill.getValue() );
-
+			ArrayList<String> alumnosUsado = new ArrayList<>();
+			lista.addElement("GRUPOS:");
 			for (ArrayList<String> grupo : alumnos) {
 			String grupoString= "";
-		
+			
 				for (String string : grupo) {
 					
 				
 					grupoString = grupoString + string +"     ";
-		
+					alumnosUsado.add(string);
 				}
 				
 			
 				lista.addElement(grupoString);
 		
 			}
+			ArrayList<String> alumnosSinGrupo = new ArrayList<>();
+			
+	
+			for (String string : nombreAlumnos) {
+				if(!alumnosUsado.contains(string)) {
+					alumnosSinGrupo.add(string);
+				}
+			}
+		
+			lista.addElement("ALUMNOS SIN GRUPO:");
+			String sinUsar= "";
+			for (String string : alumnosSinGrupo) {
+				
+				
+				sinUsar = sinUsar + string  +"     ";
+				
+			}
+			lista.addElement(sinUsar);
+			System.out.println(alumnosSinGrupo);
+		
+			
 			
 				jlist.repaint();
 				
@@ -138,24 +160,57 @@ public class VentanaGrupos extends JFrame {
     private static void combinaciones(ArrayList<ArrayList<String>> result, ArrayList<String> elementos, int n, ArrayList<String> temp) {
         // Caso base. n=0 
         if (n == temp.size()) {
-        	result.sort(null);
+      //  	System.out.println(result);
+       
+		
+	
         	temp.sort(null);
-        	//Se añade la lista temporal a la lista de resultados
-        	if(!result.contains(temp)) {
+        	
+        	//Se añade la lista temporal a la lista de resultados   
+        	
+        	if(result.size()==0){
+        		  result.add(new ArrayList<>(temp)); 
+        	
+        	}else{
+        		Boolean contiene = false;
+        		for (ArrayList<String> string : result) {
+					for (String nombre : temp) {
+						if(string.contains(nombre)) {
+							
+						contiene= true;
+							
+						}
+					}
+					
+				}
+        		if(contiene.equals(false)) {
+        			
+        			if(!result.contains(temp)) {            		
+        				   result.add(new ArrayList<>(temp));  
+             	}
+        		} 
         		
-            result.add(new ArrayList<>(temp));   }         
+        	     	
+        	}
+        	
+        	
+      
         } else {
             // Caso recursivo. Por cada elemento        	
         	for(String e : elementos) {
         		//Se añade el elemento a la lista temporal
-        		;
+        
         		
         		//Se realiza la invocación recursiva para n-1 elementos y una lista temporal
-        		if(!temp.contains(e)) {
-        			temp.add(e);
-        			combinaciones(result, elementos, n, temp);
-            		//Se elimina el último de la lista temporal
-            		temp.remove(temp.size()-1);
+        		if(!temp.contains(e) ) {
+        		
+        		
+        		
+								temp.add(e);
+			        			combinaciones(result, elementos, n, temp);
+			            		//Se elimina el último de la lista temporal
+			            		temp.remove(temp.size()-1);
+        		}
         		}
         		
         	}
@@ -165,4 +220,4 @@ public class VentanaGrupos extends JFrame {
 	
 
 
-}
+
