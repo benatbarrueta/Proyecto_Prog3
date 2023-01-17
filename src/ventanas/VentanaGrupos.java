@@ -61,7 +61,8 @@ public class VentanaGrupos extends JFrame {
 
 			}
 		}
-		JLabel numero_Grupos = new JLabel("Numero de Grupos");
+		JLabel numero_Grupos = new JLabel("       Numero de Grupos");
+		JLabel numero_Alumnos = new JLabel("        Numero de Alumnos: " + nombreAlumnos.size());
 		JSlider numeroGruposFill = new JSlider();
 		numeroGruposFill.setMinimum(2);
 		numeroGruposFill.setMaximum(10);
@@ -117,6 +118,7 @@ public class VentanaGrupos extends JFrame {
 
 		norte.add(numero_Grupos);
 		norte.add(numeroGruposFill);
+		norte.add(numero_Alumnos);
 
 		JScrollPane scrollGrupos = new JScrollPane(jlist);
 		centro.add(scrollGrupos);

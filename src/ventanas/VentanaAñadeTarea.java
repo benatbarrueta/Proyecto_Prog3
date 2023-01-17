@@ -20,6 +20,7 @@ import javax.swing.JTextField;
 
 import clases.Alumno;
 import clases.Asignatura;
+import clases.Estudia;
 import clases.Gestor;
 import clases.GestorBD;
 import clases.Tarea;
@@ -64,20 +65,27 @@ public class VentanaAñadeTarea extends JFrame {
 
 				// AÑADIR TAREA A GESTOR
 				ArrayList<Tarea> tareas = GestorBD.gestorBD.obtenerDatosTareas();
+				ArrayList<Estudia> estudia = GestorBD.gestorBD.obtenerDatosEstudia();
 				for (Asignatura asig : GestorBD.gestorBD.obtenerDatosAsignaturas()) {
 					if (asig.getId() == asignatura.getId()) {
 						for (Alumno alum : GestorBD.gestorBD.obtenerDatosAlumnos()) {
-							Tarea tarea = new Tarea();
-							tarea.setNombre(nombre.getText());
-							tarea.setFecha_fin(fechaFin.getText());
-							tarea.setCalificacion(-1);
-							tarea.setId_alumna(alum.getId());
-							tarea.setId_asignatura(asig.getId());
-							tarea.setId(tareas.get(tareas.size() - 1).getId() + 1);
+							for (Estudia est : estudia) {
+								if (est.getId_alumno() == alum.getId() && est.getId_asignatura() == asig.getId()) {
+									Tarea tarea = new Tarea();
+									tarea.setNombre(nombre.getText());
+									tarea.setFecha_fin(fechaFin.getText());
+									tarea.setCalificacion(-1);
+									tarea.setId_alumna(alum.getId());
+									tarea.setId_asignatura(asig.getId());
+									tarea.setId(tareas.get(tareas.size() - 1).getId() + 1);
 
-							tareas.add(tarea);
+									tareas.add(tarea);
+									GestorBD.gestorBD.insertarDatosTarea(tarea);
+								}
+							}
+							
 
-							GestorBD.gestorBD.insertarDatosTarea(tarea);
+							
 
 						}
 					}
