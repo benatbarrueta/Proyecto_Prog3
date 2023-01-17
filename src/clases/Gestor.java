@@ -27,9 +27,13 @@ public class Gestor {
 
 	protected Properties properties;
 	public static final String PROPERTIES_FILE = "src/config/Properties";
-	public static final String INPUT_KEY_TAREA = "leerTarea";
-	public static final String OUTPUT_KEY_TAREA = "guardarTarea";
-	public static final String KEY_ASIGNATURA = "guardarLeerAsgignatura";
+	public static final String TAREA = "Tarea";
+	public static final String PROFESOR = "Profesor";
+	public static final String ALUMNO = "Alumno";
+	public static final String ESTUDIA = "Estudia";
+	public static final String ASIGNATURA = "Estudia";
+
+
 
 	public static Properties loadProperties() {
 		Properties properties = new Properties();
@@ -48,7 +52,7 @@ public class Gestor {
 
 	public static ArrayList<Tarea> leerTareasCSV() {
 		ArrayList<Tarea> tareas = null;
-		try (BufferedReader in = new BufferedReader(new FileReader("tareas.csv"))) {
+		try (BufferedReader in = new BufferedReader(new FileReader(TAREA))) {
 			String linea;
 			StringTokenizer tokenizer;
 			Tarea tarea;
@@ -78,7 +82,7 @@ public class Gestor {
 
 	public static void guardarTareaCSV(ArrayList<Tarea> tareas) throws FileNotFoundException {
 
-		PrintWriter pw = new PrintWriter("tareas.csv");
+		PrintWriter pw = new PrintWriter(TAREA);
 
 		pw.println("ID;NOMBRE;FECHA_FIN;CALIFICACION;ID_ASIGNATURA;ID_ALUMNO;PORCENTAJE");
 
@@ -92,7 +96,7 @@ public class Gestor {
 
 	public static ArrayList<Alumno> leerAlumnosCSV() {
 		ArrayList<Alumno> alumnos = null;
-		try (BufferedReader in = new BufferedReader(new FileReader("alumnos.csv"))) {
+		try (BufferedReader in = new BufferedReader(new FileReader(ALUMNO))) {
 			String linea;
 			StringTokenizer tokenizer;
 			Alumno alumno;
@@ -125,7 +129,7 @@ public class Gestor {
 	}
 
 	public static void guardarAlumnosCSV(ArrayList<Alumno> alumnos) throws FileNotFoundException {
-		PrintWriter pw = new PrintWriter("alumnos.csv");
+		PrintWriter pw = new PrintWriter(ALUMNO);
 
 		pw.println("ID;NOMBRE;APELLIDO;CONTRASEÑA;DIRECCION;EDAD;EMAIL;CURSO;NOMBRE_USUARIO");
 
@@ -141,7 +145,7 @@ public class Gestor {
 
 	public static ArrayList<Estudia> leerEstudiaCSV() {
 		ArrayList<Estudia> estudias = null;
-		try (BufferedReader in = new BufferedReader(new FileReader("estudia.csv"))) {
+		try (BufferedReader in = new BufferedReader(new FileReader(ESTUDIA))) {
 			String linea;
 			StringTokenizer tokenizer;
 			Estudia estudia;
@@ -166,7 +170,7 @@ public class Gestor {
 	}
 
 	public static void guardarEstudiaCSV(ArrayList<Estudia> estudias) throws FileNotFoundException {
-		PrintWriter pw = new PrintWriter("estudia.csv");
+		PrintWriter pw = new PrintWriter(ESTUDIA);
 
 		pw.println("ID_ALUMNO;ID_ASIGNATURA");
 
@@ -180,7 +184,7 @@ public class Gestor {
 
 	public static ArrayList<Profesor> leerProfesorCSV() {
 		ArrayList<Profesor> profesores = null;
-		try (BufferedReader in = new BufferedReader(new FileReader("profesores.csv"))) {
+		try (BufferedReader in = new BufferedReader(new FileReader(PROFESOR))) {
 			String linea;
 			StringTokenizer tokenizer;
 			Profesor profesor;
@@ -211,7 +215,7 @@ public class Gestor {
 	}
 
 	public static void guardarProfesorCSV(ArrayList<Profesor> profesores) throws FileNotFoundException {
-		PrintWriter pw = new PrintWriter("profesores.csv");
+		PrintWriter pw = new PrintWriter(PROFESOR);
 
 		pw.println("ID;NOMBRE;APELLIDO;CONTRASEÑA;DIRECCION;EDAD;EMAIL;SALARIO;NOMBRE_USUARIO");
 
@@ -230,7 +234,7 @@ public class Gestor {
 
 	public static ArrayList<Asignatura> leerAsignaturaCSV() {
 		ArrayList<Asignatura> asignaturas = null;
-		try (BufferedReader in = new BufferedReader(new FileReader("asignaturas.csv"))) {
+		try (BufferedReader in = new BufferedReader(new FileReader(ASIGNATURA))) {
 			String linea;
 			StringTokenizer tokenizer;
 			Asignatura asignatura;
@@ -255,7 +259,7 @@ public class Gestor {
 	}
 
 	public static void guardarAsignaturaCSV(ArrayList<Asignatura> asignaturas) throws FileNotFoundException {
-		PrintWriter pw = new PrintWriter("asignaturas.csv");
+		PrintWriter pw = new PrintWriter(ASIGNATURA);
 
 		pw.println("ID;NOMBRE;ID_PROFESOR");
 

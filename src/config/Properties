@@ -1,3 +1,5 @@
-leerTarea=src/ficheros/tarea.csv
-guardarTarea=src/ficheros/tarea.csv
-guardarLeerAsgignatura=src/ficheros/asignatura.txt
+Tarea=tareas.csv
+Asignatura=asignaturas.csv
+Estudia=profesores.csv
+Alumno=alumnos.csv
+Profesor=profesores.csv
