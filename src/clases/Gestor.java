@@ -27,12 +27,12 @@ public class Gestor {
 
 	protected Properties properties;
 	public static final String PROPERTIES_FILE = "src/config/Properties";
-	public static final String TAREA = "Tarea";
-	public static final String PROFESOR = "Profesor";
-	public static final String ALUMNO = "Alumno";
-	public static final String ESTUDIA = "Estudia";
-	public static final String ASIGNATURA = "Estudia";
-
+	public static  String TAREA = "";
+	public static  String PROFESOR = "";
+	public static  String ALUMNO = ""; 
+	public static  String ESTUDIA = "";
+	public static  String ASIGNATURA = "";
+	
 
 
 	public static Properties loadProperties() {
@@ -260,6 +260,8 @@ public class Gestor {
 
 	public static void guardarAsignaturaCSV(ArrayList<Asignatura> asignaturas) throws FileNotFoundException {
 		PrintWriter pw = new PrintWriter(ASIGNATURA);
+		
+		
 
 		pw.println("ID;NOMBRE;ID_PROFESOR");
 
@@ -276,7 +278,12 @@ public class Gestor {
 	public static void main(String[] args) throws FileNotFoundException {
 
 		Properties properties = loadProperties();
-
+		TAREA = (String) properties.get("Tarea");
+		ASIGNATURA= (String) properties.get("Asignatura");
+		ALUMNO= (String) properties.get("Alumno");
+		ESTUDIA = (String) properties.get("Estudia");
+		PROFESOR= (String) properties.get("Profesor");
+	
 		ArrayList<Alumno> alumnos = new ArrayList<Alumno>();
 		ArrayList<Asignatura> asignaturas = new ArrayList<Asignatura>();
 		ArrayList<Estudia> estudias = new ArrayList<Estudia>();
