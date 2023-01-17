@@ -1,5 +1,5 @@
 Tarea=tareas.csv
 Asignatura=asignaturas.csv
-Estudia=profesores.csv
+Estudia=estudia.csv
 Alumno=alumnos.csv
 Profesor=profesores.csv
