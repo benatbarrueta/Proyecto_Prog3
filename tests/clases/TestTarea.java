@@ -7,13 +7,13 @@ import org.junit.Test;
 
 public class TestTarea {
 	private Tarea tarea;
-	protected String fecha_fin = "1";
-	protected int calificacion = 0;
-	protected String nombre = "nombre";
-	protected int id_alumna = 0;
-	protected int id_asignatura = 0;
-	protected int id = 0;
-	protected int porcentaje = 0;
+	private String fecha_fin = "1";
+	private int calificacion = 0;
+	private String nombre = "nombre";
+	private int id_alumna = 0;
+	private int id_asignatura = 0;
+	private int id = 0;
+	private int porcentaje = 0;
 
 	@Before
 	public void setUp() throws Exception {

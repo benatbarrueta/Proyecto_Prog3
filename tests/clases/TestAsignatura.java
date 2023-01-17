@@ -8,10 +8,10 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class TestAsignatura {
-	protected Asignatura asignatura;
-	protected String nombre = "";
-	protected int id_profesor = 0;
-	protected int id = 0;
+	private Asignatura asignatura;
+	private String nombre = "";
+	private int id_profesor = 0;
+	private int id = 0;
 
 	@Before
 	public void SetUp() {

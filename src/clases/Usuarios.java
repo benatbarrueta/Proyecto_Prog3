@@ -47,7 +47,7 @@ public class Usuarios {
 		return edad;
 	}
 
-	public void setEdad(int edad) {
+	public void setEdad(Integer edad) {
 		this.edad = edad;
 	}
 
@@ -79,7 +79,7 @@ public class Usuarios {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -91,13 +91,6 @@ public class Usuarios {
 		this.email = email;
 	}
 
-	public void setEdad(Integer edad) {
-		this.edad = edad;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
 
 	@Override
 	public String toString() {

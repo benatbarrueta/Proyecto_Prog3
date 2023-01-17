@@ -2,8 +2,8 @@ package clases;
 
 public class Estudia {
 
-	int id_alumno;
-	int id_asignatura;
+	protected int id_alumno;
+	protected int id_asignatura;
 
 	public Estudia() {
 		super();
