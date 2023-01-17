@@ -170,8 +170,9 @@ public class VentanaAlud extends JFrame {
 			sur.add(new JLabel(""));
 		}
 		//
-
+		setIconImage(new ImageIcon("deusto.png").getImage());
 		this.setSize(600, 400);
+		setLocationRelativeTo(null);
 		this.setVisible(true);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}

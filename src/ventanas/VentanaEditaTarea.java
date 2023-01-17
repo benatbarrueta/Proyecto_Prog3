@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 import java.util.Properties;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -91,8 +92,9 @@ public class VentanaEditaTarea extends JFrame {
 		sur.add(botonAceptar);
 
 		this.setTitle("Editar Tarea");
-
+		setIconImage(new ImageIcon("deusto.png").getImage());
 		this.pack();
+		setLocationRelativeTo(null);
 		this.setVisible(true);
 	}
 }

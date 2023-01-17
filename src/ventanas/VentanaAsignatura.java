@@ -61,7 +61,7 @@ public class VentanaAsignatura extends JFrame {
 		cp.add(south, BorderLayout.SOUTH);
 
 		norte.setLayout(new GridLayout(1, 1));
-		centro.setLayout(new GridLayout(5, 1));
+		centro.setLayout(new GridLayout(3, 1));
 		south.setLayout(new GridLayout(1, 4));
 
 		if (tipo.equals("Alumno")) {
@@ -98,7 +98,6 @@ public class VentanaAsignatura extends JFrame {
 
 			tareas = new JLabel("Tareas");
 			nombreAsig = new JLabel("Asignatura:  " + asignatura.getNombre());
-			apuntes = new JLabel("Apuntes");
 
 			hora = calendario.get(Calendar.HOUR_OF_DAY);
 			minutos = calendario.get(Calendar.MINUTE);
@@ -106,7 +105,6 @@ public class VentanaAsignatura extends JFrame {
 			String texto = ("Hora:  " + hora + ":" + minutos);
 			fecha = new JLabel(texto);
 
-			centro.add(apuntes);
 			JLabel link = new JLabel("<html><a href=\"http://www.google.com/\">Apuntes</a></html>\"");
 			link.addMouseListener(new MouseAdapter() {
 	
@@ -132,7 +130,7 @@ public class VentanaAsignatura extends JFrame {
 
 		} else {
 			ArrayList<String> nombreTareas = new ArrayList<String>();
-
+			centro.setLayout(new GridLayout(4, 1));
 			Profesor profesor = (Profesor) objeto;
 			for (Tarea t : GestorBD.gestorBD.obtenerDatosTareas()) {
 				if (t.getId_asignatura() == asignatura.getId()) {
@@ -276,9 +274,6 @@ public class VentanaAsignatura extends JFrame {
 			panelComboTareas.add(comboTareas);
 			panelComboTareas.add(new JLabel());
 
-			centro.add(apuntes);
-
-			centro.add(apuntes);
 			JLabel link = new JLabel("<html><a href=\"http://www.google.com/\">Apuntes</a></html>\"");
 			link.addMouseListener(new MouseAdapter() {
 	
@@ -395,9 +390,10 @@ public class VentanaAsignatura extends JFrame {
 
 		norte.add(nombreAsig);
 		norte.add(fecha);
-
+		setIconImage(new ImageIcon("deusto.png").getImage());
 		this.setTitle(asignatura.getNombre());
 		this.setSize(600, 400);
+		setLocationRelativeTo(null);
 		this.setVisible(true);
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		tareaLista.getColumnModel().getColumn(0).setCellRenderer(renderSencillo);

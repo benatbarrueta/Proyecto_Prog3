@@ -172,8 +172,10 @@ public class VentanaEdita extends JFrame {
 			Profesor profesor = (Profesor) objeto;
 			this.setTitle(profesor.getNombre() + " " + profesor.getApellidos());
 		}
-
+		
+		setIconImage(new ImageIcon("deusto.png").getImage());
 		this.setSize(600, 400);
+		setLocationRelativeTo(null);
 		this.setVisible(true);
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 	}

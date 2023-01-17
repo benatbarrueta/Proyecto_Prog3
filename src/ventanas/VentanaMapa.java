@@ -6,6 +6,7 @@ import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -64,9 +65,10 @@ public class VentanaMapa extends JFrame {
 		norte.setLayout(new GridLayout(1, 1));
 		centro.setLayout(new GridLayout(1, 1));
 		south.setLayout(new GridLayout(1, 4));
-
+		setIconImage(new ImageIcon("deusto.png").getImage());
 		this.setTitle("Mostrar Tareas");
 		this.setSize(600, 400);
+		setLocationRelativeTo(null);
 		this.setVisible(true);
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 	}

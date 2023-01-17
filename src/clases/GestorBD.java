@@ -68,10 +68,10 @@ public class GestorBD {
 							log( Level.INFO,"Alumno insertado", null);
 						} else {
 							//Se actualiza el ID del personaje haciendo un Select									
-							log( Level.INFO,"No se ha insertado el aluno", null);
+							log( Level.INFO,"No se ha insertado el alumno", null);
 						}
 					
-					log( Level.INFO,"Alumnos insertado", null);
+					log( Level.INFO,"Alumno insertado", null);
 				} catch (Exception ex) {
 					log( Level.SEVERE,"Error al insertar datos en la  BBDD", ex);
 				}		
@@ -102,13 +102,13 @@ public void insertarDatosProfesor(Profesor a) {
 					
 						
 						if (pStmt.executeUpdate() != 1) {					
-							log( Level.INFO,"Alumno insertado", null);
+							log( Level.INFO,"Profesor insertado", null);
 						} else {
 							//Se actualiza el ID del personaje haciendo un Select									
-							log( Level.INFO,"No se ha insertado el aluno", null);
+							log( Level.INFO,"No se ha insertado el profesor", null);
 						}
 					
-					log( Level.INFO,"Alumnos insertado", null);
+					log( Level.INFO,"Profesor insertado", null);
 				} catch (Exception ex) {
 					log( Level.SEVERE,"Error al insertar datos en la  BBDD", ex);
 				}		
@@ -132,13 +132,13 @@ public void insertarDatosEstudia(Estudia a) {
 				
 					
 					if (pStmt.executeUpdate() != 1) {					
-						log( Level.INFO,"Alumno insertado", null);
+						log( Level.INFO,"Estudia insertado", null);
 					} else {
 						//Se actualiza el ID del personaje haciendo un Select									
-						log( Level.INFO,"No se ha insertado el aluno", null);
+						log( Level.INFO,"No se ha insertado estudia", null);
 					}
 				
-				log( Level.INFO,"Alumnos insertado", null);
+				log( Level.INFO,"Estudia insertado", null);
 			} catch (Exception ex) {
 				log( Level.SEVERE,"Error al insertar datos en la  BBDD", ex);
 			}		
@@ -174,7 +174,7 @@ public void insertarDatosEstudia(Estudia a) {
 				}
 			}
 			
-			logger.info(String.format("%d Tareas insertadas en la BBDD", tarea.length));
+			logger.info(String.format("%d Tarea insertada en la BBDD", tarea.length));
 		} catch (Exception ex) {
 			logger.warning(String.format("Error al insertar Tareas: %s", ex.getMessage()));
 		}			
@@ -197,13 +197,13 @@ public void insertarDatosEstudia(Estudia a) {
 					
 						
 						if (pStmt.executeUpdate() != 1) {					
-							log( Level.INFO,"Alumno insertado", null);
+							log( Level.INFO,"Asignatura insertada", null);
 						} else {
 							//Se actualiza el ID del personaje haciendo un Select									
-							log( Level.INFO,"No se ha insertado el aluno", null);
+							log( Level.INFO,"No se ha insertado la asignatura", null);
 						}
 					
-					log( Level.INFO,"Alumnos insertado", null);
+					log( Level.INFO,"Asignatura insertada", null);
 				} catch (Exception ex) {
 					log( Level.SEVERE,"Error al insertar datos en la  BBDD", ex);
 				}		
@@ -250,7 +250,7 @@ public void insertarDatosEstudia(Estudia a) {
 			//Se cierra el ResultSet
 			rs.close();
 		
-			log( Level.INFO,"Se han recuperado alumnos", null);
+			log( Level.INFO,"Alumno recuperado", null);
 		} catch (Exception ex) {
 		
 			log( Level.SEVERE,"Error al obtener datos de la  BBDD", ex);
@@ -295,7 +295,7 @@ public void insertarDatosEstudia(Estudia a) {
 			rs.close();
 			
 			
-			log( Level.INFO,"Se han recuperado profesores", null);;
+			log( Level.INFO,"Profesor recuperado", null);;
 			
 			
 		} catch (Exception ex) {
@@ -337,7 +337,7 @@ public void insertarDatosEstudia(Estudia a) {
 			rs.close();
 			
 			
-			log( Level.INFO,"Se han recuperado profesores", null);;
+			log( Level.INFO,"Estudia recuperado", null);;
 			
 			
 		} catch (Exception ex) {
@@ -381,7 +381,7 @@ public void insertarDatosEstudia(Estudia a) {
 			rs.close();
 			
 			
-			log( Level.INFO,"Se han recuperado tareas", null);;
+			log( Level.INFO,"Tarea recuperada", null);;
 			
 			
 		} catch (Exception ex) {
@@ -421,7 +421,7 @@ public void insertarDatosEstudia(Estudia a) {
 			rs.close();
 			
 			
-			log( Level.INFO,"Se han recuperado asignaturas", null);;
+			log( Level.INFO,"Asignatura recuperada", null);;
 			
 			
 		} catch (Exception ex) {
@@ -433,22 +433,6 @@ public void insertarDatosEstudia(Estudia a) {
 		return asignaturas;
 	}
 
-	public void borrarDatosAlumnos() {
-		//Se abre la conexión y se obtiene el Statement
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
-		     Statement stmt = con.createStatement()) {
-			//Se ejecuta la sentencia de borrado de datos
-			String sql = "DELETE FROM ALUMNO;";			
-			int result = stmt.executeUpdate(sql);
-			
-			log( Level.INFO,"Se han borrado alumnos ", null);
-		} catch (Exception ex) {
-		
-			log( Level.SEVERE,"Error al borrar datos de la  BBDD", ex);
-			
-			ex.printStackTrace();						
-		}		
-	}	
 	//ACTUALIZACIONES HAY QUE CAMBIAR TODAS
 	// ACTUALIZACION DE CONTRASEÑAS
 	
@@ -461,7 +445,7 @@ public void insertarDatosEstudia(Estudia a) {
 	
 			
 			int result = stmt.executeUpdate(String.format(sql, newPassword, alumno.getId()));
-			log( Level.INFO,"Se han actualizado alumnos ", null);
+			log( Level.INFO,"Contraseña actualizada", null);
 		
 			
 		} catch (Exception ex) {
@@ -479,7 +463,7 @@ public void insertarDatosEstudia(Estudia a) {
 			
 			int result = stmt.executeUpdate(String.format(sql, newPassword, profesor.getId()));
 			
-			log( Level.INFO,"Se ha actulizado la contraseña del profesor",null);
+			log( Level.INFO,"Contraseña actualizada",null);
 		} catch (Exception ex) {
 			log( Level.SEVERE,"Error al actualizando datos de la  BBDD", ex);
 			ex.printStackTrace();						
@@ -552,6 +536,23 @@ public void insertarDatosEstudia(Estudia a) {
 			e.printStackTrace();
 		}
 	}
+	public void borrarDatosAlumnos() {
+		//Se abre la conexión y se obtiene el Statement
+		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+		     Statement stmt = con.createStatement()) {
+			//Se ejecuta la sentencia de borrado de datos
+			String sql = "DELETE FROM ALUMNO;";			
+			int result = stmt.executeUpdate(sql);
+			
+			log( Level.INFO,"Alumnos borrados", null);
+		} catch (Exception ex) {
+		
+			log( Level.SEVERE,"Error al borrar datos de la  BBDD", ex);
+			
+			ex.printStackTrace();						
+		}		
+	}	
+	
 	public void borrarDatosProfesores() {
 		//Se abre la conexión y se obtiene el Statement
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
@@ -574,7 +575,7 @@ public void insertarDatosEstudia(Estudia a) {
 			String sql = "DELETE FROM TAREA;";			
 			int result = stmt.executeUpdate(sql);
 			
-			log( Level.INFO,"Se ha borrado las tarea",null);
+			log( Level.INFO,"Se han borrado las tarea",null);
 		} catch (Exception ex) {
 			log( Level.SEVERE,"Error al actualizando datos de la  BBDD en tareas", ex);
 			ex.printStackTrace();						
@@ -588,7 +589,7 @@ public void insertarDatosEstudia(Estudia a) {
 			String sql = "DELETE FROM ASIGNATURA;";			
 			int result = stmt.executeUpdate(sql);
 			
-			log( Level.INFO,"Se ha borrado las asignaturas",null);
+			log( Level.INFO,"Se han borrado las asignaturas",null);
 		} catch (Exception ex) {
 			log( Level.SEVERE,"Error al actualizando datos de la  BBDD en asignaturas", ex);
 			ex.printStackTrace();						
@@ -602,7 +603,7 @@ public void insertarDatosEstudia(Estudia a) {
 			String sql = "DELETE FROM ESTUDIA;";			
 			int result = stmt.executeUpdate(sql);
 			
-			log( Level.INFO,"Se ha borrado los datos de la tabla estudia",null);
+			log( Level.INFO,"Se han borrado los datos de la tabla estudia",null);
 		} catch (Exception ex) {
 			log( Level.SEVERE,"Error al actualizando datos de la  BBDD en estudia", ex);
 			ex.printStackTrace();						

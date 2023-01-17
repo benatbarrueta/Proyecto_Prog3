@@ -102,8 +102,10 @@ public class VentanaLogIn extends JFrame {
 		cp.add(center, BorderLayout.CENTER);
 
 		this.setTitle("LOG IN");
+		setIconImage(new ImageIcon("deusto.png").getImage());		
 		this.setVisible(true);
-		this.pack();
+		this.setSize(400, 200);
+		setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 	}

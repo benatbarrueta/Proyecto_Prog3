@@ -11,6 +11,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Properties;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -114,10 +115,10 @@ public class VentanaAñadeTarea extends JFrame {
 
 		sur.add(botonAtras);
 		sur.add(botonAceptar);
-
+		setIconImage(new ImageIcon("deusto.png").getImage());
 		this.setTitle("Añadir Tarea");
-
 		this.pack();
+		setLocationRelativeTo(null);
 		this.setVisible(true);
 
 	}

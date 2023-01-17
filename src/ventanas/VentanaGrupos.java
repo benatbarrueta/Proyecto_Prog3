@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -121,9 +122,10 @@ public class VentanaGrupos extends JFrame {
 		centro.add(scrollGrupos);
 
 		south.add(crear);
-
+		setIconImage(new ImageIcon("deusto.png").getImage());
 		this.setTitle("Crear Grupos");
 		this.setSize(600, 400);
+		setLocationRelativeTo(null);
 		this.setVisible(true);
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
