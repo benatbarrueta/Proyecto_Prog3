@@ -56,7 +56,7 @@ public class VentanaGrupos extends JFrame {
 		for (Alumno a : GestorBD.gestorBD.obtenerDatosAlumnos()) {
 			for (Estudia e : GestorBD.gestorBD.obtenerDatosEstudia()) {
 				if (a.getId() == e.getId_alumno() && asignatura.getId() == e.getId_asignatura()) {
-					nombreAlumnos.add(a.getNombre() + " " + a.getApellidos());
+					nombreAlumnos.add(a.getId() + " " + a.getNombre() + " " + a.getApellidos());
 				}
 
 			}
@@ -65,7 +65,7 @@ public class VentanaGrupos extends JFrame {
 		JLabel numero_Alumnos = new JLabel("        Numero de Alumnos: " + nombreAlumnos.size());
 		JSlider numeroGruposFill = new JSlider();
 		numeroGruposFill.setMinimum(2);
-		numeroGruposFill.setMaximum(10);
+		numeroGruposFill.setMaximum(8);
 
 		numeroGruposFill.setPaintTicks(true);
 		numeroGruposFill.setPaintLabels(true);
@@ -148,42 +148,41 @@ public class VentanaGrupos extends JFrame {
 		if (n == temp.size()) {
 
 			temp.sort(null);
-
+			result.add(new ArrayList<>(temp));
 			// Se añade la lista temporal a la lista de resultados
 
-			if (result.size() == 0) {
-				result.add(new ArrayList<>(temp));
-
-			} else {
-				Boolean contiene = false;
-				for (ArrayList<String> string : result) {
-					for (String nombre : temp) {
-						if (string.contains(nombre)) {
-
-							contiene = true;
-
-						}
-					}
-
-				}
-				if (contiene.equals(false)) {
-
-					if (!result.contains(temp)) {
-						result.add(new ArrayList<>(temp));
-					}
-				}
-
-			}
+		
 
 		} else {
 			// Caso recursivo. Por cada elemento
 			for (String e : elementos) {
 				if (!temp.contains(e)) {
+					
+					if (result.size() == 0) {
+						result.add(new ArrayList<>(temp));
+
+					} else {
+						Boolean contiene = false;
+						for (ArrayList<String> string : result) {
+							for (String nombre : temp) {
+								if (string.contains(nombre) || string.contains(e)) {
+									contiene = true;
+
+								}
+							}
+
+						}
+						if (contiene.equals(false)) {
+							temp.add(e);
+							combinaciones(result, elementos, n, temp);
+							// Se elimina el último de la lista temporal
+							temp.remove(temp.size() - 1);
+							
+						}
+
+					}
 					// Se añade el elemento a la lista temporal
-					temp.add(e);
-					combinaciones(result, elementos, n, temp);
-					// Se elimina el último de la lista temporal
-					temp.remove(temp.size() - 1);
+					
 				}
 			}
 
